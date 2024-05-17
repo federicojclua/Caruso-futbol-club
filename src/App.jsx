@@ -7,6 +7,7 @@ import Galeria from './components/Galeria-productos/Galeria';
 import Header from './components/header/Header';
 import InfoTorneos from './components/Info-torneos/InfoTorneos';
 import NavBar from './components/header/nav-bar/NavBar';
+import WhatsAppButton from './components/WhatsAppButton/WhatsAppButton';
 function App() {
  
 
@@ -14,10 +15,14 @@ function App() {
     <>
     
       <Header/>
+      <Galeria/>
       <Escuelita/>
       <InfoTorneos/>
       
+
+      
       <Footer/>
+      <WhatsAppButton/>
       
     </>
   )

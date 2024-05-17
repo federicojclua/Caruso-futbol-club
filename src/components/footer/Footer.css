@@ -1,0 +1,18 @@
+.footer {
+    background-color: #343a40; /* Fondo oscuro */
+    color: white;
+  }
+  
+  .footer-logo {
+    width: 150px; /* Ajusta el tamaño del logo según sea necesario */
+    height: auto;
+  }
+  
+  .footer a {
+    color: white;
+  }
+  
+  .footer a:hover {
+    color: #adb5bd; /* Color cuando el cursor está encima del enlace */
+  }
+  
