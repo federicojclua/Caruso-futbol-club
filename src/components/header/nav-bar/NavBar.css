@@ -1,0 +1,13 @@
+.cfc-logo {
+    width: 10%; /* Ancho del 50% del contenedor */
+    height: auto; /* Altura automática para mantener la proporción */
+}
+.navbar {
+    background-color: transparent !important;
+    position: absolute;
+    top: 0; /* Colocar el NavBar en la parte superior */
+    width: 100%;
+    z-index: 1;
+    color: #8cc63f; /* Cambia el color del texto a verde claro */
+  }
+  
