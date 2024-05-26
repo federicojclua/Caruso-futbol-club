@@ -1,7 +1,7 @@
 import React from 'react';
-import "./Publicidad.css";
+import "./Sponsors.css";
 
-const Publicidad = () => {
+const Sponsors= () => {
   return (
    <>
    
@@ -13,4 +13,4 @@ const Publicidad = () => {
    </>
   );
 }
-export default Publicidad;
+export default Sponsors;
