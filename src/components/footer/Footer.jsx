@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import "./Footer.css";
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faInstagram, faTwitter, faTiktok } from '@fortawesome/free-brands-svg-icons';
+
 
 const Footer = () => {
   return (
@@ -14,22 +15,28 @@ const Footer = () => {
           </Col>
           <Col xs={12} md={4} className="text-center text-md-left mb-3 mb-md-0">
             <ul className="footer-links">
-              <li><a href="/contact">Contacto</a></li>
-              <li><a href="/address">Dirección</a></li>
-              <li><a href="/about">Quiénes Somos</a></li>
+              <li><a href="/contact"><button class="btn-hover color-1">Contacto</button></a></li>
+              <li><a href="/address"><button class="btn-hover color-1">Quienes somos</button></a></li>
+              <li><a href="/about"><button class="btn-hover color-1">Dirección</button></a></li>
+              
             </ul>
           </Col>
           <Col xs={12} md={4} className="text-center text-md-right">
-            <div className="social-icons">
-              <Button variant="link" className="mx-2" href="https://facebook.com">
-                <FontAwesomeIcon icon={faFacebook} size="2x" />
-              </Button>
-              <Button variant="link" className="mx-2" href="https://twitter.com">
-                <FontAwesomeIcon icon={faTwitter} size="2x" />
-              </Button>
-              <Button variant="link" className="mx-2" href="https://instagram.com">
-                <FontAwesomeIcon icon={faInstagram} size="2x" />
-              </Button>
+            <div className="social-icons">     
+             <div className="rounded-social-buttons">
+        <a className="social-button facebook" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+          <FontAwesomeIcon icon={faFacebook} size="2x" />
+        </a>
+        <a className="social-button twitter" href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer">
+          <FontAwesomeIcon icon={faTwitter} size="2x" />
+        </a>
+        <a className="social-button tiktok" href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer">
+          <FontAwesomeIcon icon={faTiktok} size="2x" />
+        </a>
+        <a className="social-button instagram" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+          <FontAwesomeIcon icon={faInstagram} size="2x" />
+        </a>
+      </div>
             </div>
           </Col>
         </Row>
