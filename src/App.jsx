@@ -10,7 +10,7 @@ import InfoTorneos from './components/Info-torneos/InfoTorneos';
 import Sponsors from './components/Sponsors/Sponsors';
 import NavBar from './components/header/nav-bar/NavBar';
 import WhatsAppButton from './components/WhatsAppButton/WhatsAppButton';
-import Error404 from './components/Error404/Error404';
+
 
 function App() {
   return (
@@ -20,11 +20,9 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="/" element={<Galeria />} />
-          <Route path="/escuelita" element={<Escuelita />} />
-          <Route path="/info-torneos" element={<InfoTorneos />} />
-          <Route path="/error-404" element={<Error404 />} />
-          <Route path="*" element={<Error404 />} />
-        </Routes>
+          <Route path="/escuelita" element={<Escuelita />}/>
+          <Route path="/info-torneos" element={<InfoTorneos/>} />
+          </Routes>
         <Footer />
         <WhatsAppButton />
       </>

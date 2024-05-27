@@ -1,7 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import './Header.css';
-import Reservacion from './reservacion/Reservacion';
 import NavBar from './nav-bar/NavBar';
 
 const Header = () => {
@@ -25,7 +24,7 @@ const Header = () => {
         {/* Aquí va tu Navbar de Bootstrap */}
       </nav>
     </header>
-  <Reservation/>
+  
  
   </div>
   
