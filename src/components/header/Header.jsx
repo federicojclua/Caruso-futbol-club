@@ -1,12 +1,13 @@
 import React from 'react';
-import "./Header.css";
-import {Reservation} from './reservation/Reservation';
+import { useLocation } from 'react-router-dom';
+import './Header.css';
+import Reservacion from './reservacion/Reservacion';
 import NavBar from './nav-bar/NavBar';
 
-
-
-
 const Header = () => {
+  const location = useLocation();
+  const isErrorPage = location.pathname === '/error-404' || location.pathname === '*';
+
   return (
   <>
   
@@ -31,4 +32,5 @@ const Header = () => {
   </>
   );
 }
+
 export default Header;
