@@ -1,19 +1,18 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
-import './Header.css';
+import "./Header.css";
+import Reservation from './reservation/Reservation';
 import NavBar from './nav-bar/NavBar';
 
-const Header = () => {
-  const location = useLocation();
-  const isErrorPage = location.pathname === '/error-404' || location.pathname === '*';
 
+
+const Header = () => {
   return (
-  <>
+   <>
   
   
-  <div>
-  <NavBar/>
-  <header className="header">
+   <div>
+   <NavBar/>
+   <header className="header">
       <div className="video-container">
         <video autoPlay loop muted>
           <source src="src\assets\video\header-video2.mp4" type="video/mp4" />
@@ -24,12 +23,12 @@ const Header = () => {
         {/* Aquí va tu Navbar de Bootstrap */}
       </nav>
     </header>
-  
- 
-  </div>
-  
-  </>
+      
+        
+        <Reservation/>
+      </div>
+   
+   </>
   );
 }
-
 export default Header;
