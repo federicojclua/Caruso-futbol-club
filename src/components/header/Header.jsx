@@ -1,8 +1,7 @@
 import React from 'react';
 import "./Header.css";
-import Reservacion from './reservacion/Reservacion';
+import Reservation from './reservation/Reservation';
 import NavBar from './nav-bar/NavBar';
-
 
 
 
@@ -26,7 +25,7 @@ const Header = () => {
     </header>
       
         
-        <Reservacion/>
+        <Reservation/>
       </div>
    
    </>

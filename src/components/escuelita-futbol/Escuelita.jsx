@@ -6,8 +6,9 @@ const Escuelita = () => {
    <>
    
    
-   <div>
+   <div className='Escuelita-caja'>
         <h1>Bienvenidos a la Escuelita de Fútbol</h1>
+     
       </div>
    
    </>
