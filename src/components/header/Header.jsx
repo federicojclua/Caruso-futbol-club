@@ -1,6 +1,6 @@
 import React from 'react';
 import "./Header.css";
-import Reservacion from './reservacion/Reservacion';
+import {Reservation} from './reservation/Reservation';
 import NavBar from './nav-bar/NavBar';
 
 
@@ -8,12 +8,12 @@ import NavBar from './nav-bar/NavBar';
 
 const Header = () => {
   return (
-   <>
+  <>
   
   
-   <div>
-   <NavBar/>
-   <header className="header">
+  <div>
+  <NavBar/>
+  <header className="header">
       <div className="video-container">
         <video autoPlay loop muted>
           <source src="src\assets\video\header-video2.mp4" type="video/mp4" />
@@ -24,12 +24,11 @@ const Header = () => {
         {/* Aquí va tu Navbar de Bootstrap */}
       </nav>
     </header>
-      
-        
-        <Reservacion/>
-      </div>
-   
-   </>
+  <Reservation/>
+ 
+  </div>
+  
+  </>
   );
 }
 export default Header;

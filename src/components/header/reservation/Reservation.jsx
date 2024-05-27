@@ -2,23 +2,34 @@ import React from 'react';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
-import "./List.css"
+import "./Reservation.css";
 
 
-function List() {
-  // Array de objetos con las opciones de cada botón
+const Reservation = () => {
+  return (
+    <>
+      <div className="reservation-container">
+        <div className="reservation-button">
+          <h2>Hace tu reservación</h2>
+        </div>
+      </div>
+    
+    </>
+  );
+}
+
+const List = () => {
   const buttons = [
     {
       title: 'Elegi tu Predio',
       options: ['Opción 1', 'Opción 2', 'Opción 3']
-    
     },
     {
       title: 'Tipo de Cancha',
       options: ['Opción A', 'Opción B', 'Opción C']
     },
     {
-      title: 'Elegi tu Futbol...',
+      title: 'Elegi tu Futbol',
       options: ['Opción X', 'Opción Y', 'Opción Z']
     },
     {
@@ -32,13 +43,13 @@ function List() {
   ];
 
   return (
-    <div className="buttons-container"> {/* Contenedor de los botones */}
+    <div className="buttons-container" style={{ display: 'flex' }}>
       {buttons.map((button, index) => (
         <DropdownButton
           key={index}
           as={ButtonGroup}
           title={button.title}
-          className="dropdown-button" // Agrega la clase CSS a cada botón
+          className="dropdown-button"
         >
           {button.options.map((option, i) => (
             <Dropdown.Item key={i} eventKey={i}>
@@ -51,5 +62,4 @@ function List() {
   );
 }
 
-export default List;
-
+export { Reservation, List }; // Exporta los componentes
