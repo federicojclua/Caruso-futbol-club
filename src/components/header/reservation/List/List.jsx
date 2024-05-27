@@ -17,7 +17,7 @@ function List() {
       options: ['Opción A', 'Opción B', 'Opción C']
     },
     {
-      title: 'Elegi tu Futbol...',
+      title: 'Elegi tu Futbol',
       options: ['Opción X', 'Opción Y', 'Opción Z']
     },
     {
@@ -30,14 +30,15 @@ function List() {
     }
   ];
 
+
   return (
-    <div className="buttons-container"> {/* Contenedor de los botones */}
+    <div className="buttons-container" style={{ display: 'flex' }}>
       {buttons.map((button, index) => (
         <DropdownButton
           key={index}
           as={ButtonGroup}
           title={button.title}
-          className="dropdown-button" // Agrega la clase CSS a cada botón
+          className="dropdown-button"
         >
           {button.options.map((option, i) => (
             <Dropdown.Item key={i} eventKey={i}>

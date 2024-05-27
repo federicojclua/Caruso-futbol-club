@@ -17,14 +17,5 @@
     height: 60px;
 
 }
-.reserve-list {
-    position: absolute;
-    top: 400px; /* Ajusta este valor para mover el contenedor hacia arriba o abajo */
-    left: 200px; /* Ajusta este valor para mover el contenedor hacia la izquierda o derecha */
-    z-index: 2; /* Asegura que el contenedor esté encima del video */
-    background-color: #014638;
-    padding:10px;
-    border-radius: 10px;
-    width: 400px;
-    height: 60px;
-}
+
+
