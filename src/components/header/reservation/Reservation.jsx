@@ -6,12 +6,12 @@ import List from './List/List'
 const Reservation = () => {
   return (
     <>
-      <div className="reservation-container">
+      <container className="reservation-container">
         <div className="reservation-button">
           <h2>Hace tu reservación</h2>
         </div>
       
-      </div>
+      </container>
       <List/>
 
     </>

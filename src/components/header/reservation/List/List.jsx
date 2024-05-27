@@ -32,7 +32,7 @@ function List() {
 
 
   return (
-    <div className="buttons-container" style={{ display: 'flex' }}>
+    <container className="buttons-container" style={{ display: 'flex' }}>
       {buttons.map((button, index) => (
         <DropdownButton
           key={index}
@@ -47,7 +47,7 @@ function List() {
           ))}
         </DropdownButton>
       ))}
-    </div>
+    </container>
   );
 }
 

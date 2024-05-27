@@ -4,14 +4,15 @@
     margin-right: 0;
   }
   .buttons-container{
+    display: flex;  
     position: absolute;
     z-index: 2;
-    background-color: #014638;
+    /* background-color: #014638; */
     top:700px;
     left: 50px;
-    width: 1000px;
     height: 70px;
     border-radius: 20px;
+   
   }
 
     /* Estilos para el botón desplegable */
