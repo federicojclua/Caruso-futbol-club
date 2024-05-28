@@ -1,16 +1,18 @@
 import React from 'react';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
-import "./List.css"
+import "./List.css";
 
-function List() {
+function CombinedComponent() {
   // Array de objetos con las opciones de cada botón
   const buttons = [
     {
       title: 'Elegi tu Predio',
       options: ['Opción 1', 'Opción 2', 'Opción 3']
-    
     },
     {
       title: 'Tipo de Cancha',
@@ -30,25 +32,23 @@ function List() {
     }
   ];
 
-
   return (
-    <container className="buttons-container" style={{ display: 'flex' }}>
-      {buttons.map((button, index) => (
-        <DropdownButton
-          key={index}
-          as={ButtonGroup}
-          title={button.title}
-          className="dropdown-button"
-        >
-          {button.options.map((option, i) => (
-            <Dropdown.Item key={i} eventKey={i}>
-              {option}
-            </Dropdown.Item>
-          ))}
-        </DropdownButton>
-      ))}
-    </container>
+    <Container>
+      <Row>
+        {buttons.map((button, index) => (
+          <Col key={index}>
+            <DropdownButton as={ButtonGroup} title={button.title} className="dropdown-button">
+              {button.options.map((option, i) => (
+                <Dropdown.Item key={i} eventKey={i}>
+                  {option}
+                </Dropdown.Item>
+              ))}
+            </DropdownButton>
+          </Col>
+        ))}
+      </Row>
+    </Container>
   );
 }
 
-export default List;
+export default CombinedComponent;
