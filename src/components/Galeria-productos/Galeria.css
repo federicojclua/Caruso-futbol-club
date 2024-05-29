@@ -1,12 +1,21 @@
-.gallery{
-    background-color:#f1e4e4;
-}
-.carousel-container {
+/* .gallery{
+    background-color:#f1e4e4; */
+.car    ousel-container {
     width: 60%;
     margin: 0 auto; /* Centrar horizontalmente */
   }
   
-
+  .flexible-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ajusta la altura según tus necesidades */
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
+    background-position: center; /* Centra la imagen en el contenedor */
+    /* Puedes agregar otras propiedades según tus necesidades, como color de fondo, opacidad, etc. */
+    background-image: url('/src/assets/img/fondo_1.jpg'); /* Agrega la imagen de fondo */
+  }
+  
   
 
   
