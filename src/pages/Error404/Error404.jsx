@@ -1,20 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Error404.css';
-import NavBar from '../header/nav-bar/NavBar';
+import NavBar from '../../components/header/nav-bar/NavBar';  // Ruta corregida
 import Container from 'react-bootstrap/Container';
-import Reservation from '../header/reservation/Reservation';
 
 const Error404 = () => {
   return (
     <div className="error-404">
       <header className="header">
         <NavBar />
-        <Container fluid>
-          <div className="content">
-            <Reservation />
-          </div>
-        </Container>
       </header>
       <main className="main-content">
         <h1>Lo sentimos, ocurrió un error inesperado...</h1>

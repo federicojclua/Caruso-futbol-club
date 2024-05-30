@@ -10,7 +10,7 @@ import Sponsors from './components/Sponsors/Sponsors';
 import InfoTorneos from './components/Info-torneos/InfoTorneos';
 import NavBar from './components/header/nav-bar/NavBar';
 import WhatsAppButton from './components/WhatsAppButton/WhatsAppButton';
-import Error404 from './components/Error404/Error404';
+import Error404 from './pages/Error404/Error404';
 
 function App() {
   return (
