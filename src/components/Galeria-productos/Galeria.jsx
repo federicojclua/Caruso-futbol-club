@@ -1,59 +1,56 @@
 import React from 'react';
 import "./Galeria.css";
 import Carousel from 'react-bootstrap/Carousel';
-
-const FlexibleContainer = ({ children }) => {
-  return (
-    <div className="flexible-container">
-      {children}
-    </div>
-  );
-}
+import { Container } from 'react-bootstrap';
 
 const Galeria = () => {
   return (
-    <FlexibleContainer>
-      <div className="gallery">
-        {/* Contenedor para el Carousel */}
-        <div className="carousel-container">
-          <Carousel>
-            <Carousel.Item interval={500}>
-              <img
-                className="d-block w-100"
-                src="/src/assets/img/canchas_3.jpg"
-                alt="First slide"
-              />
-              <Carousel.Caption>
-                <h3>First slide label</h3>
-                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item interval={500}>
-              <img
-                className="d-block w-100"
-                src="/src/assets/img/canchas_3.jpg"
-                alt="Second slide"
-              />
-              <Carousel.Caption>
-                <h3>Second slide label</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item interval={500}>
-              <img
-                className="d-block w-100"
-                src="/src/assets/img/canchas_3.jpg"
-                alt="Third slide"
-              />
-              <Carousel.Caption>
-                <h3>Third slide label</h3>
-                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-              </Carousel.Caption>
-            </Carousel.Item>
-          </Carousel>
-        </div>
+    <Container className="container-gallery">
+      {/* Contenedor para el texto */}
+      <div className="gallery-text">
+        <h1>CARUSO FUTBOL CLUB</h1>
+        <p>Veni a disfrutar de nuestras instalaciones
+          Contamos con 2 predios de 3 y 4 canchas en ubicaciones.</p>
       </div>
-    </FlexibleContainer>
+      {/* Contenedor para el Carousel */}
+      <div className="carousel-container">
+        <Carousel>
+          <Carousel.Item interval={1000}>
+            <img
+              className="d-block w-100 img-carousel"
+              src="/src/assets/img/canchas_3.jpg"
+              alt="First slide"
+            />
+            <Carousel.Caption>
+              <h3>First slide label</h3>
+              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item interval={500}>
+            <img
+              className="d-block w-100 img-carousel"
+              src="/src/assets/img/canchas_3.jpg"
+              alt="Second slide"
+            />
+            <Carousel.Caption>
+              <h3>Second slide label</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img 
+              className="d-block w-100 img-carousel"
+              src="/src/assets/img/canchas_3.jpg"
+              alt="Third slide"
+            />
+            <Carousel.Caption>
+              <h3>Third slide label</h3>
+              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+        </Carousel>
+      </div>
+    </Container>
   );
 }
 
