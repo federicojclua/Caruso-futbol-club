@@ -1,17 +1,24 @@
 import React from 'react';
 import "./Galeria.css";
 import Carousel from 'react-bootstrap/Carousel';
+import { Container } from 'react-bootstrap';
 
 const Galeria = () => {
   return (
-    <div className="gallery">
+    <Container className="container-gallery">
+      {/* Contenedor para el texto */}
+      <div className="gallery-text">
+        <h1>CARUSO FUTBOL CLUB</h1>
+        <p>Veni a disfrutar de nuestras instalaciones
+          Contamos con 2 predios de 3 y 4 canchas en ubicaciones.</p>
+      </div>
       {/* Contenedor para el Carousel */}
       <div className="carousel-container">
         <Carousel>
           <Carousel.Item interval={1000}>
             <img
-              className="d-block w-100"
-              src="src\assets\img\canchas.jpg"
+              className="d-block w-100 img-carousel"
+              src="/src/assets/img/canchas_3.jpg"
               alt="First slide"
             />
             <Carousel.Caption>
@@ -21,8 +28,8 @@ const Galeria = () => {
           </Carousel.Item>
           <Carousel.Item interval={500}>
             <img
-              className="d-block w-100"
-              src="src\assets\img\cantina2.jpg"
+              className="d-block w-100 img-carousel"
+              src="/src/assets/img/canchas_3.jpg"
               alt="Second slide"
             />
             <Carousel.Caption>
@@ -31,9 +38,9 @@ const Galeria = () => {
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src="src\assets\img\market.png"
+            <img 
+              className="d-block w-100 img-carousel"
+              src="/src/assets/img/canchas_3.jpg"
               alt="Third slide"
             />
             <Carousel.Caption>
@@ -43,7 +50,7 @@ const Galeria = () => {
           </Carousel.Item>
         </Carousel>
       </div>
-    </div>
+    </Container>
   );
 }
 

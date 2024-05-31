@@ -15,3 +15,7 @@ const Escuelita = () => {
   );
 }
 export default Escuelita;
+
+
+
+
