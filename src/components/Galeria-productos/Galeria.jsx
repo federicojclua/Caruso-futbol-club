@@ -8,9 +8,9 @@ const Galeria = () => {
     <Container className="container-gallery">
       {/* Contenedor para el texto */}
       <div className="gallery-text">
-        <h1>CARUSO FUTBOL CLUB</h1>
-        <p>Veni a disfrutar de nuestras instalaciones
-          Contamos con 2 predios de 3 y 4 canchas en ubicaciones.</p>
+        <h1>CARUSO FÚTBOL CLUB</h1>
+        <p>¡Vení a disfrutar de nuestras instalaciones!</p>
+          <p>Contamos con 2 predios de 3 y 4 canchas en ubicaciones.</p>
       </div>
       {/* Contenedor para el Carousel */}
       <div className="carousel-container">
