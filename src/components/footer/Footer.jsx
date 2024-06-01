@@ -20,7 +20,7 @@ const Footer = () => {
         <div className="footer-column">
           <h5>Accesos útiles</h5>
           <ul>
-            <li><a href="#">Contacto</a></li>
+            <li><a href="/Contacto">Contacto</a></li>
             <li><a href="#">Acerca de nosotros</a></li>
             <li><a href="#">Donde encontrarnos</a></li>
             <li><a href="#">Política de Privacidad</a></li>
