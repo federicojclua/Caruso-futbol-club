@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Contacto.css';
+import './Contact.css';
 import NavBar from '../../components/header/nav-bar/NavBar';  
-import Container from 'react-bootstrap/Container';
+// import Container from 'react-bootstrap/Container';
 import Footer from '../../components/footer/Footer';
 
 const Contacto = () => {
