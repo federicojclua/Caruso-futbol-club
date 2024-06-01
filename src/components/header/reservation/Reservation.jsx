@@ -8,7 +8,7 @@ const Reservation = () => {
     <>
       <Container className="reservation-container">
         <div className="reservation-button">
-          <h2>Hace tu reservación el día de</h2>
+          <h2>Hacé tu reservación el día de...</h2>
         </div>
       
       </Container>

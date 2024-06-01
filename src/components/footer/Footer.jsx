@@ -16,7 +16,7 @@ const Footer = () => {
           <Col xs={12} md={4} className="text-center text-md-left mb-3 mb-md-0">
             <ul className="footer-links">
               <li><a href="/contact"><button class="btn-hover color-1">Contacto</button></a></li>
-              <li><a href="/address"><button class="btn-hover color-1">Quienes somos</button></a></li>
+              <li><a href="/address"><button class="btn-hover color-1">Quiénes somos</button></a></li>
               <li><a href="/about"><button class="btn-hover color-1">Dirección</button></a></li>
               
             </ul>

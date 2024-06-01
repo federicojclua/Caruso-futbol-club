@@ -7,7 +7,7 @@ const InfoTorneos = () => {
    
    
    <div>
-        <h1>InfoTorneos</h1>
+        <h1>Info Torneos</h1>
       </div>
    
    </>
