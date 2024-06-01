@@ -24,7 +24,7 @@ const NavBar = () => {
             </Nav>
             <Nav>
               <Nav.Link style={{ color: '#8cc63f' }} eventKey={2} href="#memes">
-                iniciar sesion
+                iniciar sesión
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
