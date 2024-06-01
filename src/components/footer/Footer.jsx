@@ -8,21 +8,27 @@ import { faFacebook, faInstagram, faTwitter, faTiktok } from '@fortawesome/free-
 const Footer = () => {
   return (
     <footer className="footer">
-      <Container>
-        <Row className="align-items-center">
-          <Col xs={12} md={4} className="text-center text-md-left mb-3 mb-md-0">
+        <div class="footer-container">
+            <div class="footer-column">
             <img src="src/assets/img/cfc-logo.png" alt="Logo Caruso" className="footer-logo" />
-          </Col>
-          <Col xs={12} md={4} className="text-center text-md-left mb-3 mb-md-0">
-            <ul className="footer-links">
-              <li><a href="/contact"><button class="btn-hover color-1">Contacto</button></a></li>
-              <li><a href="/address"><button class="btn-hover color-1">Quienes somos</button></a></li>
-              <li><a href="/about"><button class="btn-hover color-1">Dirección</button></a></li>
-              
-            </ul>
-          </Col>
-          <Col xs={12} md={4} className="text-center text-md-right">
-            <div className="social-icons">     
+            </div>
+            <div class="footer-column">
+                <h3>Información</h3>
+                <p>Algunas líneas sobre la página web y su propósito.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Enlaces</h3>
+                <ul>
+                    <li><a href="#">Contacto</a></li>
+                    <li><a href="#">Quiénes Somos</a></li>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Síguenos</h3>
+                <div class="social-icons">
+                <div className="social-icons">     
              <div className="rounded-social-buttons">
         <a className="social-button facebook" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
           <FontAwesomeIcon icon={faFacebook} size="2x" />
@@ -38,9 +44,9 @@ const Footer = () => {
         </a>
       </div>
             </div>
-          </Col>
-        </Row>
-      </Container>
+                </div>
+            </div>
+        </div>
     </footer>
   );
 }
