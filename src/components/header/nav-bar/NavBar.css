@@ -1,13 +1,47 @@
-.cfc-logo {
-    width: 10%; /* Ancho del 50% del contenedor */
+div.container{
+    max-width:100% ;
+    margin:0 auto;
+    background-color: black;
+    opacity: 0.7;
+    
+  }
+  .bg-body-tertiary{
+    padding-top:-8px !important;
+
+  }
+  
+  
+  
+  .cfc-logo {
+    width: 8vw; /* Ancho del 50% del contenedor */
     height: auto; /* Altura automática para mantener la proporción */
-}
-.navbar {
+  }
+  .navbar {
     background-color: transparent !important;
     position: absolute;
-    top: 0; /* Colocar el NavBar en la parte superior */
     width: 100%;
     z-index: 1;
     color: #8cc63f; /* Cambia el color del texto a verde claro */
-  }
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+    padding: 0 !important;
+    
   
+  }
+  .nav-link, .item-dropdown {
+    font-size: 1vw; /* Usa una unidad relativa para el tamaño del texto */
+    font-weight: bold;
+    color: #8cc63f;
+    margin-right: 100px;
+    
+    
+  }
+   
+  /* Anula el estilo de hover */
+  .dropdown-toggle.nav-link:hover,
+  .dropdown-toggle.nav-link:focus,
+  .dropdown-toggle.nav-link:active {
+    color: inherit; /* Mantiene el color original */
+    background-color: transparent; /* Elimina el fondo de hover y activo */
+    text-decoration: none; /* Elimina cualquier subrayado o decoración de texto */
+  }

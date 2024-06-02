@@ -17,9 +17,9 @@ const NavBar = () => {
             <Nav className="me-auto">
               <Nav.Link style={{ color: '#8cc63f' }} href="#features">Nuestro Merch</Nav.Link>
               <Nav.Link style={{ color: '#8cc63f' }} href="#pricing">Nuestra tienda</Nav.Link>
-              <NavDropdown title="Los Estadios" id="collapsible-nav-dropdown" style={{ backgroundColor: '#8cc63f', color: '#fff' }}>
-                <NavDropdown.Item href="#action/3.1">Estadio1</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Estadio2</NavDropdown.Item>
+              <NavDropdown clasName="item-dropdown" style={{ color: '#8cc63f' }} title="Los Estadios"  >
+                <NavDropdown.Item style={{ color: '#8cc63f' }} href="#action/3.1">Estadio1</NavDropdown.Item>
+                <NavDropdown.Item style={{ color: '#8cc63f' }}href="#action/3.3">Estadio2</NavDropdown.Item>
               </NavDropdown>
             </Nav>
             <Nav>
