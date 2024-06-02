@@ -51,8 +51,13 @@
 }
 
 .social-icons a {
-  color: white;
+  color: #bbb;
   font-size: 20px;
+}
+
+/* Efecto hover para los iconos sociales */
+.social-icons a:hover {
+  color: white;
 }
 
 .footer-bottom {

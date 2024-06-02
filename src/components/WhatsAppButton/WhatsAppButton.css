@@ -5,8 +5,8 @@
     background-color: #25D366;
     color: white;
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -18,5 +18,7 @@
   .whatsapp-button:hover {
     background-color: #1ebd59;
     color: white;
+    width: 75px;
+    height: 75px;
   }
   

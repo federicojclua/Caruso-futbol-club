@@ -11,7 +11,7 @@ const WhatsAppButton = () => {
       target="_blank"
       rel="noopener noreferrer"
     >
-      <FontAwesomeIcon icon={faWhatsapp} size="2x" />
+      <FontAwesomeIcon icon={faWhatsapp} size="3x" />
     </a>
   );
 }
