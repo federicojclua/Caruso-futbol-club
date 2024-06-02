@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Aboutus.css';
+import './AboutUs.css';
 import NavBar from '../../components/header/nav-bar/NavBar';
 import Footer from '../../components/footer/Footer';
 
-const Aboutus = () => {
+const AboutUs = () => {
   return (
     <div className="acerca-de-nosotros">
       <header className="header">
@@ -24,4 +24,4 @@ const Aboutus = () => {
   );
 }
 
-export default Aboutus;
+export default AboutUs;
