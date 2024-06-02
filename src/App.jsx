@@ -26,7 +26,10 @@ function App() {
           <Sponsors />
           <Footer />
           <WhatsAppButton />
+          
         </div>} />
+         <Route path="/Contact" element={<Contact />} />
+         
          <Route path="/Contact" element={<Contact />} />
         <Route path="*" element={<Error404 />} />
       </Routes>

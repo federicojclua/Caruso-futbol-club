@@ -24,7 +24,6 @@ const Footer = () => {
           <ul>
             <li><a href="/Contact">Contacto</a></li>
             <li><a href="">Acerca de nosotros</a></li>
-            <Link to="/Contact">Volver a la página principal</Link>
             <li><a href="#">Donde encontrarnos</a></li>
             <li><a href="#">Política de Privacidad</a></li>
           </ul>
