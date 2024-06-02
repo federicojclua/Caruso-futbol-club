@@ -1,14 +1,14 @@
 import React from 'react';
 import "./Footer.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faInstagram, faTwitter, faTiktok } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-column">
-          <img src="src/assets/img/cfc-logo.png" alt="Logo Caruso" className="footer-logo" />
+        <a href="/"><img src="src/assets/img/cfc-logo.png" alt="Logo Caruso" className="footer-logo" /></a>
         </div>
         <div className="footer-column">
           <h5>Información</h5>
@@ -32,12 +32,6 @@ const Footer = () => {
           <div className="social-icons">
             <a className="social-button facebook" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faFacebook} size="2x" />
-            </a>
-            <a className="social-button twitter" href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faTwitter} size="2x" />
-            </a>
-            <a className="social-button tiktok" href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faTiktok} size="2x" />
             </a>
             <a className="social-button instagram" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faInstagram} size="2x" />

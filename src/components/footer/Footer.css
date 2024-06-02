@@ -1,8 +1,9 @@
 .footer {
   background-color: #333;
   color: white;
-  padding: 20px 0;
+  padding: 0px;
   text-align: center;
+  bottom: 0px;
 }
 
 .footer-container {
@@ -33,15 +34,22 @@
 .footer-column a {
   color: #bbb;
   text-decoration: none;
+  transition: transform 0.5s ease-in-out;
 }
 
 .footer-column a:hover {
   color: #fff;
+  transform: rotate(720deg);
 }
 
 .footer-logo {
   max-width: 50%;
   height: auto;
+  transition: transform 0.5s ease-in-out;
+}
+
+.footer-logo:hover {
+  transform: rotate(720deg);
 }
 
 .social-icons {
@@ -53,6 +61,8 @@
 .social-icons a {
   color: #bbb;
   font-size: 20px;
+  margin-left: 1%;
+  margin-right: 1%;
 }
 
 /* Efecto hover para los iconos sociales */
@@ -84,6 +94,6 @@
   }
 
   .footer-bottom {
-    padding-top: 10px;
+    padding-top: 0px;
   }
 }
