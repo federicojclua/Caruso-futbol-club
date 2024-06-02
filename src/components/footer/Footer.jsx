@@ -14,6 +14,7 @@ const Footer = () => {
           <h5>Información</h5>
           <p>| Caruso Fútbol Club |<br />
             ⚽️ Alquiler de canchas de fútbol 5, 6, 7 y 8 <br />
+            Excelente iluminación por la noche <br />
             Contamos con Parrilla, Buffet, Bebidas y más
           </p>
         </div>
@@ -21,7 +22,7 @@ const Footer = () => {
           <h5>Accesos útiles</h5>
           <ul>
             <li><a href="/Contact">Contacto</a></li>
-            <li><a href="#">Acerca de nosotros</a></li>
+            <li><a href="">Acerca de nosotros</a></li>
             <li><a href="#">Donde encontrarnos</a></li>
             <li><a href="#">Política de Privacidad</a></li>
           </ul>
