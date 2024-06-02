@@ -1,8 +1,6 @@
 div.container{
     max-width:100% ;
     margin:0 auto;
-    background-color: black;
-    opacity: 0.7;
     
   }
   .bg-body-tertiary{
@@ -17,7 +15,7 @@ div.container{
     height: auto; /* Altura automática para mantener la proporción */
   }
   .navbar {
-    background-color: transparent !important;
+   
     position: absolute;
     width: 100%;
     z-index: 1;
@@ -25,6 +23,10 @@ div.container{
     display: flex;
     flex-wrap: wrap; /* Permite que los elementos se envuelvan */
     padding: 0 !important;
+    max-width:100% ;
+    margin:0 auto;
+    background-color: black !important ;
+    opacity: 0.7;
     
   
   }

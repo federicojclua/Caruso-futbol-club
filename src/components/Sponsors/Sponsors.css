@@ -1,0 +1,18 @@
+.Sponsors{
+    
+    background-image: url('/src/assets/img/fond_sponsors.png');
+    background-size: cover;       /* Asegura que la imagen cubra todo el fondo del contenedor */
+    background-position: center;   /*Centra la imagen*/
+    background-repeat: no-repeat; /* Evita que la imagen se repita */ 
+
+}
+
+.text-sponsors {
+    color: #014638;
+    font-weight: bold; 
+    font-size: 1.5rem; /* Tamaño de texto inicial */
+    text-align: center;
+  }
+  img{
+    text-align: center;
+  }
