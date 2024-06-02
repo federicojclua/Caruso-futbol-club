@@ -17,6 +17,9 @@ const Aboutus = () => {
         <p>Nuestro equipo está formado por...</p>
         <Link to="/">Volver a la página principal</Link>
       </main>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }
