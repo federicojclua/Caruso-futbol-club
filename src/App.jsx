@@ -12,7 +12,7 @@ import NavBar from './components/header/nav-bar/NavBar';
 import WhatsAppButton from './components/WhatsAppButton/WhatsAppButton';
 import Error404 from './pages/Error404/Error404';
 import Contact from './pages/Contact/Contact';
-
+//import Aboutus from './pages/Aboutus/Aboutus';
 
 function App() {
   return (
@@ -27,8 +27,7 @@ function App() {
           <Footer />
           <WhatsAppButton />
         </div>} />
-         
-         <Route path="/Contac" element={<Contact />} />
+         <Route path="/Contact" element={<Contact />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
     </BrowserRouter>

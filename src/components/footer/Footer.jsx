@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import "./Footer.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faTwitter, faTiktok } from '@fortawesome/free-brands-svg-icons';
@@ -14,14 +15,16 @@ const Footer = () => {
           <h5>Información</h5>
           <p>| Caruso Fútbol Club |<br />
             ⚽️ Alquiler de canchas de fútbol 5, 6, 7 y 8 <br />
+            Excelente iluminación por la noche <br />
             Contamos con Parrilla, Buffet, Bebidas y más
           </p>
         </div>
         <div className="footer-column">
           <h5>Accesos útiles</h5>
           <ul>
-            <li><a href="/Contacto">Contacto</a></li>
-            <li><a href="#">Acerca de nosotros</a></li>
+            <li><a href="/Contact">Contacto</a></li>
+            <li><a href="">Acerca de nosotros</a></li>
+            <Link to="/Contact">Volver a la página principal</Link>
             <li><a href="#">Donde encontrarnos</a></li>
             <li><a href="#">Política de Privacidad</a></li>
           </ul>
