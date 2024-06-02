@@ -39,7 +39,7 @@
 
 .footer-column a:hover {
   color: #fff;
-  transform: rotate(720deg);
+  transform: rotate(360deg);
 }
 
 .footer-logo {
@@ -49,7 +49,7 @@
 }
 
 .footer-logo:hover {
-  transform: rotate(720deg);
+  transform: rotate(360deg);
 }
 
 .social-icons {

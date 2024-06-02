@@ -8,7 +8,9 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-column">
-        <a href="/"><img src="src/assets/img/cfc-logo.png" alt="Logo Caruso" className="footer-logo" /></a>
+        <a href="/">
+          
+          <img src="src/assets/img/logo_sin_fondo_bw.png" alt="Logo Caruso" className="footer-logo" /></a>
         </div>
         <div className="footer-column">
           <h5>Información</h5>
@@ -28,7 +30,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className="footer-column">
-          <h3>Síguenos</h3>
+          <h5>Síguenos</h5>
           <div className="social-icons">
             <a className="social-button facebook" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faFacebook} size="2x" />
