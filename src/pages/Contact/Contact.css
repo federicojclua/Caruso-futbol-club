@@ -13,18 +13,22 @@
   margin: 20px 0;
 }
 
-.cont-975 {
+.cont-contact {
   max-width: 975px;
-  margin: 0 auto;
+  margin: auto;
   padding: 20px;
   background-color: #f5f5f5;
   border-radius: 8px;
   color: #333333; /* Color del texto */
   border: 2px solid #333333;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
 }
 
 .informacion {
   margin-bottom: 20px;
+  right:  0%;
 }
 
 .informacion a {

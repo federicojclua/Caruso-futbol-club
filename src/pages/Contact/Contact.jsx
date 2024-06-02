@@ -16,7 +16,7 @@ const Contacto = () => {
         <p>Ponte en contacto con nosotros para cualquier consulta o duda.</p>
 
         <section className="form">
-          <div className="cont-975">
+          <div className="cont-contact">
             <div className="informacion">
             <a className='caller' href="tel:01122500777">011 2250 0777</a>
               <p><strong>Servicio de Atención al Cliente</strong></p>
