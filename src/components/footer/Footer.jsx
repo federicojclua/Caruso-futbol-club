@@ -22,7 +22,7 @@ const Footer = () => {
           <h5>Accesos útiles</h5>
           <ul>
             <li><a href="/Contact">Contacto</a></li>
-            <li><a href="">Acerca de nosotros</a></li>
+            <li><a href="/AboutUs">Acerca de nosotros</a></li>
             <li><a href="#">Donde encontrarnos</a></li>
             <li><a href="#">Política de Privacidad</a></li>
           </ul>
