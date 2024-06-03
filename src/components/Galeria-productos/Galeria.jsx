@@ -8,9 +8,17 @@ const Galeria = () => {
     <Container className="container-gallery">
       {/* Contenedor para el texto */}
       <div className="gallery-text">
-        <h1>CARUSO FÚTBOL CLUB</h1>
-        <p>¡Vení a disfrutar de nuestras instalaciones!</p>
-          <p>Contamos con 2 predios de 3 y 4 canchas en ubicaciones.</p>
+        <h1 className="gallery-title">¡Mirá todo lo que tenemos para vos!</h1>
+        
+          <p className="gallery-subtitle">Te Invitamos a Disfrutar   </p>
+            <p classname="gallery-list-text">
+            <li>Nuestras canchas son de césped sintético de alta calidad. </li>
+            <li>Ambiente familiar y seguro, ideal para todas las edades y niveles. </li>
+            <li>Horarios flexibles: Abierto todos los días para que puedas jugar cuando más te convenga.. </li>
+            <li>Eventos y torneos: Participa en nuestras competiciones y demuestra tus habilidades. </li>
+            </p>
+
+          
       </div>
       {/* Contenedor para el Carousel */}
       <div className="carousel-container">

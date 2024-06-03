@@ -13,6 +13,8 @@
     font-size: 1.5rem; /* Tamaño de texto inicial */
     text-align: center;
   }
-  img{
+  .img-sponsors{
     text-align: center;
+    margin-right: 0px !important;
+    
   }

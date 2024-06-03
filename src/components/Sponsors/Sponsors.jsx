@@ -6,7 +6,7 @@ const Sponsors = () => {
   return (
     <Container className='Sponsors'>
       <p className='text-sponsors'>Confían en Nosotros</p>
-    <Row>
+    <Row className="img-sponsors">
       <Col className="d-flex justify-content-center">
         <img src="src/assets/img/sponsor1.png" alt="Sponsor 1" className="img-fluid w-100" style={{ maxWidth: '200px' }}/>
       </Col>
