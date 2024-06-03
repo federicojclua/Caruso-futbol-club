@@ -1,12 +1,13 @@
-.acerca-de-nosotros {
-  background-color: white;
-  color: #333;
-  font-family: Arial, sans-serif;
+body {
+  background-image: url(/src/assets/img/Fondo-galeria.jpg);
+  background-size: cover; /* Ajusta el ancho al 50% del contenedor y la altura automáticamente */
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .main-content {
-  padding: 40px 20px;
-  max-width: 800px;
+  padding-top: 150px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
