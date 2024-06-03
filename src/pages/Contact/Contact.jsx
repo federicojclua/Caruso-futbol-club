@@ -8,7 +8,7 @@ import WhatsAppButton from '../../components/WhatsAppButton/WhatsAppButton';
 
 const Contacto = () => {
   return (
-   <div>
+   <div className='Contact-component'>
         <NavBar />
         <div className="">
       <Container className="main-contact-content">

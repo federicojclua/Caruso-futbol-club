@@ -1,4 +1,4 @@
-body {
+.AboutUs-component {
   background-image: url(/src/assets/img/Fondo-galeria.jpg);
   background-size: cover; /* Ajusta el ancho al 50% del contenedor y la altura automáticamente */
   background-repeat: no-repeat;
