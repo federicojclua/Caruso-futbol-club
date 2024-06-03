@@ -1,4 +1,39 @@
-
-.Escuelita-caja{
-    background-color: red;
-}
+.Services-container {
+    background-image: url('src/assets/img/Fondo-galeria.jpg');
+    background-size: cover;       /* Asegura que la imagen cubra todo el fondo del contenedor */
+    background-position: center;   /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    max-width: 70%; /* Limita el ancho del contenedor al 70% de la página */
+    margin: 0 auto; /* Centra el contenedor */
+  }
+  
+  .text-sponsors {
+    color: #014638;
+    font-weight: bold; 
+    font-size: 1.5rem; /* Tamaño de texto inicial */
+    text-align: center;
+  }
+  
+  .img-sponsors {
+    text-align: center;
+    margin-right: 0px !important;
+  }
+  
+  .services {
+    justify-content: space-around; /* Espacia uniformemente los elementos */
+  }
+  
+  .box-1 {
+    background-color: #014638;
+    border-radius: 10px; /* Borde redondeado */
+    padding: 10px; /* Relleno interno */
+    color: #fff; /* Color del texto */
+    width: 230px;
+    height: 320px; /* Altura de la caja */
+    display: flex; /* Uso de flexbox para centrar el contenido verticalmente */
+    flex-direction: column;
+    align-items: center; /* Centrar verticalmente el contenido */
+    justify-content: center; /* Centrar horizontalmente el contenido */
+    margin: 0px; /* Espacio entre los boxes */
+  }
+  
