@@ -1,15 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './AboutUs.css';
-import NavBar from '../../components/header/nav-bar/NavBar';
+import NavBar from '../../components/header/nav-bar/NavBar';  
 import Footer from '../../components/footer/Footer';
 
 const AboutUs = () => {
   return (
-    <div className="acerca-de-nosotros">
-      <header className="header">
+    <div className="">
         <NavBar />
-      </header>
       <main className="main-content">
         <h1>Acerca de Nosotros</h1>
         <p>
