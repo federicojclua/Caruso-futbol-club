@@ -2,12 +2,12 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import Escuelita from './components/escuelita-futbol/Escuelita';
+import Info from './components/Info/Info';
 import Footer from './components/footer/Footer';
 import Galeria from './components/Galeria-productos/Galeria';
 import Header from './components/header/Header';
 import Sponsors from './components/Sponsors/Sponsors';
-import InfoTorneos from './components/Info-torneos/InfoTorneos';
+import Tournament from './components/Tournament/Tournament';
 import NavBar from './components/header/nav-bar/NavBar';
 import WhatsAppButton from './components/WhatsAppButton/WhatsAppButton';
 import Error404 from './pages/Error404/Error404';
@@ -22,8 +22,8 @@ function App() {
         <Route path="/" element={<div>
           <Header />
           <Galeria />
-          <Escuelita />
-          <InfoTorneos />
+          <Info />
+          <Tournament />
           <Sponsors />
           <Footer />
           <WhatsAppButton />

@@ -1,0 +1,26 @@
+.container-tournament {
+    display: flex; /* Utiliza flexbox para alinear los elementos en una fila */
+    flex-direction: row; /* Asegura que los elementos se alineen en una fila */
+    width: 100%; /* Asegura que el contenedor principal ocupe el 100% del ancho */
+    justify-content: space-between; /* Añade espacio entre los elementos */
+    max-width: 80%;
+    height: 900px;
+    background-image: url('src/assets/img/3.jpg');
+    background-size: cover;       /* Asegura que la imagen cubra todo el fondo del contenedor */
+    background-position: center;   /*Centra la imagen*/
+    background-repeat: no-repeat; /* Evita que la imagen se repita */ 
+  }
+  .img-tournament{
+    width: 600px;
+    height: auto;
+    margin-right: 230px;
+    margin-top: 80px;
+  }
+  .tournament-text{
+    display: flex;
+    justify-content: center;
+    max-width: 40%;
+    margin-top: 80px;
+
+
+  }
