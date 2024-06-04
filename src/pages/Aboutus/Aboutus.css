@@ -5,35 +5,42 @@
   background-position: center;
 }
 
-.main-content {
+.main-content-about {
   padding-top: 150px;
-  max-width: 100%;
+  width: 80%;
   margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.6); /* 0.8 es la transparencia, 1 es opaco y 0 es completamente transparente */
 }
 
-.main-content h1 {
+.main-content-about h2 {
   margin-bottom: 20px;
   font-size: 2.5em;
   color: #333;
   text-align: center;
 }
 
-.main-content p,
-.main-content ul {
+.main-content-about p,
+.main-content-about ul {
   margin-bottom: 20px;
   line-height: 1.6;
   color: #555;
 }
 
-.main-content ul {
+.main-content-about p,
+.main-content-about li {
+ font-size: 1vw;
+ font-weight: bold;
+}
+
+.main-content-about ul {
   padding-left: 20px;
 }
 
-.main-content ul li {
+.main-content-about ul li {
   margin-bottom: 10px;
 }
 
-.main-content ul li a {
+.main-content-about ul li a {
   color: #333333; /* Color de los enlaces */
   text-decoration: none;
   font-size: 18px;
@@ -41,11 +48,11 @@
   transition: color 0.3s ease-in-out;
 }
 
-.main-content ul li a:hover {
+.main-content-about ul li a:hover {
   color: #258d19; /* Color de hover */
 }
 
-.main-content p a {
+.main-content-about p a {
   color: #333333; /* Color de los enlaces */
   text-decoration: none;
   font-size: 18px;
@@ -53,7 +60,7 @@
   transition: color 0.3s ease-in-out;
 }
 
-.main-content p a:hover {
+.main-content-about p a:hover {
   color: #258d19; /* Color de hover */
 }
 

@@ -1,43 +1,54 @@
-.error-404 {
-    text-align: center;
-    padding: 50px;
-  }
-  
-  .header {
-    position: relative;
-    width: 100%;
-    padding: 20px 0;
-    background-color: #f8f9fa; /* Fondo para el header */
-  }
-  
-  .content {
-    padding: 20px;
-  }
-  
-  .main-content {
-    margin-top: 50px;
-  }
-  
-  .error-404 h1 {
-    font-size: 2em;
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  .error-404 img {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    margin-bottom: 20px;
-  }
-  
-  .error-404 a {
-    font-size: 1.2em;
-    color: #007bff;
-    text-decoration: none;
-  }
-  
-  .error-404 a:hover {
-    text-decoration: underline;
-  }
-  
+.Error404-component {
+  background-image: url(/src/assets/img/Fondo-galeria.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.main-content-error {
+  padding-top: 120px;
+  padding-bottom: 50px;
+  width: 80%;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.6);
+  text-align: center;  /* Centra el texto */
+  border-radius: 10px;  /* Opcional: Añade bordes redondeados */
+}
+
+.main-content-error h2 {
+  margin-bottom: 5px;
+  font-size: 2.5vw;
+  color: #333;
+  text-align: center;
+  font-weight: bold;
+}
+
+.error-gif {
+  width: 70%;
+  max-width: 400px;  /* Ajusta el tamaño máximo del GIF */
+  height: auto;
+  margin: 20px 0;
+}
+
+.main-content-error p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+  color: #555;
+  font-size: 1vw;
+ font-weight: bold;
+  text-align: center;
+}
+
+
+.link-error {
+  color: #333333; /* Color de los enlaces */
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+.link-error:hover {
+  color: #258d19; /* Color de hover */
+}
+

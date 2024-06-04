@@ -3,12 +3,13 @@ import "./Footer.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
+
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
-        <div className="footer-column">
-        <a href="/">
+        <div className="footer-column animate__animated animate__rollIn">
+        <a href="/" className=''>
           
           <img src="src/assets/img/logo_sin_fondo_bw.png" alt="Logo Caruso" className="footer-logo" /></a>
         </div>

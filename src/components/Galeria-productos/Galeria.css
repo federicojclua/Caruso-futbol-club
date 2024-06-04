@@ -54,16 +54,6 @@
   font-weight: bold; /* Hace que el texto sea grueso */
 
 }
-.gallery-list-text, li{
-  display: flex;
-  margin-left: 40px;
-  font-size: 1.3vw; /* Utiliza unidades relativas para el tamaño del texto */
-  font-weight: bold; /* Hace que el texto sea grueso */
-  margin-bottom: 15px;
-  color: #258D19;
-
-}
-
 
 /* Consulta de medios para pantallas más pequeñas */
 @media (max-width: 1500px) {
