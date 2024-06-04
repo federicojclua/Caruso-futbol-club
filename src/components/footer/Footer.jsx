@@ -14,11 +14,11 @@ const Footer = () => {
         </div>
         <div className="footer-column">
           <h5>Información</h5>
-          <p>| Caruso Fútbol Club |<br />
-            ⚽️ Alquiler de canchas de fútbol 5, 6, 7 y 8 <br />
-            Excelente iluminación por la noche <br />
-            Contamos con Parrilla, Buffet, Bebidas y más
-          </p>
+          <p>Caruso Fútbol Club</p>
+<p>⚽️ Alquiler de canchas de fútbol 5, 6, 7 y 8</p>
+<p>Excelente iluminación por la noche</p>
+<p>Contamos con Parrilla, Buffet, Bebidas y más</p>
+
         </div>
         <div className="footer-column">
           <h5>Accesos útiles</h5>
