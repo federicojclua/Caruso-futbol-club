@@ -13,12 +13,13 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 1000;
     text-decoration: none;
+    transition: transform 0.5s ease-in-out;
   }
   
   .whatsapp-button:hover {
     background-color: #1ebd59;
     color: white;
-    width: 75px;
-    height: 75px;
+    transform: rotate(360deg);   
+    
   }
   
