@@ -1,0 +1,64 @@
+.EcommercePage-component {
+    background-image: url('/src/assets/img/Fondo-galeria.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  .main-ecommerce-content {
+    max-width: 80%;
+    margin: auto;
+    padding: 100px;
+    color: #333333;
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+  
+  .subtitle-ecommerce {
+    font-size: 2.5vw;
+    font-weight: bold;
+    text-align: center;
+    padding: 50px 0;
+  }
+  
+  .product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .product-item {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
+    max-width: 300px;
+    text-align: center;
+  }
+  
+  .product-item img {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+  
+  .product-item h2 {
+    font-size: 1.8vw;
+    margin: 10px 0;
+  }
+  
+  .product-item p {
+    font-size: 1.5vw;
+    color: #666;
+  }
+  
+  .product-item a {
+    font-size: 1.5vw;
+    font-weight: bold;
+    color: #258d19;
+    text-decoration: none;
+  }
+  
+  .product-item a:hover {
+    color: #e55812;
+  }
+  

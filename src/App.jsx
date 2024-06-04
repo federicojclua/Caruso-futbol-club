@@ -14,6 +14,7 @@ import WhatsAppButton from './components/WhatsAppButton/WhatsAppButton';
 import Error404 from './pages/Error404/Error404';
 import Contact from './pages/Contact/Contact';
 import AboutUs from './pages/AboutUs/AboutUs';
+import Ecommerce from './pages/Ecommerce/Ecommerce'
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           <WhatsAppButton />
 
         </div>} />
+        <Route path="/Ecommerce" element={<Ecommerce />} />
         <Route path="/AboutUs" element={<AboutUs />} />
          <Route path="/Contact" element={<Contact />} />
         <Route path="*" element={<Error404 />} />
