@@ -1,7 +1,7 @@
 /* Escuelita.css */
 
 .Services-container {
-  background-image: url('src/assets/img/2.jpg'); 
+  background-image: url('/src/assets/img/2.2.jpg');
   background-size: cover;       /* Asegura que la imagen cubra todo el fondo del contenedor */
   background-position: center;   /* Centra la imagen */
   background-repeat: no-repeat; /* Evita que la imagen se repita */
