@@ -14,7 +14,7 @@ const Tournament = () => {
         
             <img
               className="d-block w-100 img-carousel"
-              src="/src/assets/img/torneo.jpg"
+              src="/src/assets/img/imagen-torneo.png"
               alt="First slide"
             />
             

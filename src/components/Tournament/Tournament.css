@@ -5,7 +5,7 @@
     justify-content: space-between; /* Añade espacio entre los elementos */
     max-width: 80%;
     height: 900px;
-    background-image: url('src/assets/img/3.jpg');
+    background-image: url('/src/assets/img/3.3.jpg');
     background-size: cover;       /* Asegura que la imagen cubra todo el fondo del contenedor */
     background-position: center;   /*Centra la imagen*/
     background-repeat: no-repeat; /* Evita que la imagen se repita */ 
