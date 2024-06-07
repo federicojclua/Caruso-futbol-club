@@ -43,6 +43,9 @@
   color: #fff;
   text-decoration: none;
 }
+.footer-column p {
+  margin: 0px;
+}
 
 .footer-column a:hover {
   color: #bbb;
