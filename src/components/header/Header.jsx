@@ -13,7 +13,7 @@ const Header = () => {
         <video autoPlay loop muted className="background-video">
           <source src="src/assets/video/header-video2.mp4" type="video/mp4" />
         </video>
-      </Container>
+        </Container>
 
     </header>
   );

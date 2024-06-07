@@ -10,9 +10,11 @@
   padding-bottom: 50px;
   width: 80%;
   margin: 0 auto;
+  margin-bottom: 100px;
   /* background-color: rgba(255, 255, 255, 0.6); */
   text-align: center;  /* Centra el texto */
   border-radius: 10px;  /* Opcional: Añade bordes redondeados */
+
 }
 
 .main-content-error h2 {
@@ -25,7 +27,7 @@
 
 .error-gif {
   width: 70%;
-  max-width: 400px;  /* Ajusta el tamaño máximo del GIF */
+  max-width: 600px;  /* Ajusta el tamaño máximo del GIF */
   height: auto;
   margin: 20px 0;
 }

@@ -10,8 +10,7 @@ const Galeria = () => {
     <Container className="container-gallery">
       {/* Contenedor para el texto */}
       <div className="gallery-text">
-        <h1 className="gallery-title">¡Mirá todo lo que tenemos para vos!</h1>
-          
+        ¡Mirá todo lo que tenemos para vos!
       </div>
       {/* Contenedor para el Carousel */}
       <div className="carousel-container">

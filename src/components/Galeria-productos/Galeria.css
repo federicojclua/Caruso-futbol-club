@@ -31,22 +31,20 @@
   margin: 20px; /* Añade margen para el espaciado */
   padding: 70px;  
   border-radius: 10px;  
+  margin-top: 130px;
+  margin-left: 130px;
+  font-size: 4.5vw; /* Utiliza unidades relativas para el tamaño del texto */
+  font-weight: bold; /* Hace que el texto sea grueso */
+  display: flex;
+  justify-content: center;
+  text-align: center;
   
   /* background-color: rgba(255, 255, 255, 0.8); Fondo semitransparente para mejorar la legibilidad */
   
   
   height: 100%;
 }
-.gallery-title{
-  display: flex;
-  justify-content: center;
-  font-size: 3vw; /* Utiliza unidades relativas para el tamaño del texto */
-  font-weight: bold; /* Hace que el texto sea grueso */
-  max-width: 500px;
-  margin-top: 230px;
-  margin-left: 400px;
-  
-}
+
 .gallery-subtitle{
   margin-top: 40px;
   display: flex;
@@ -59,15 +57,53 @@
 
 /* Consulta de medios para pantallas más pequeñas */
 @media (max-width: 1500px) {
-  .container-gallery {
+  .container-gallery  {
     flex-direction: column; /* Cambia a una columna en pantallas pequeñas */
     align-items: center; /* Centra los elementos en una columna */
     height: auto; /* Ajusta la altura automáticamente */
   }
 
-  .carousel-container, .gallery-text {
+  .gallery-text{
+   
+    padding-top: 30px;
+    padding-bottom: 0px;
+    margin: 10px 0; /* Ajusta los márgenes para el espaciado vertical */
+    flex: none; /* Desactiva el comportamiento flexible */
+    width: 70%; /* Hace que cada contenedor ocupe el 100% del ancho */
+
+  }
+  .carousel-container {
     flex: none; /* Desactiva el comportamiento flexible */
     width: 70%; /* Hace que cada contenedor ocupe el 100% del ancho */
     margin: 10px 0; /* Ajusta los márgenes para el espaciado vertical */
+    padding-top:-30px;
+  
+  
+  }
+}
+
+@media (max-width: 440px) {
+  .container-gallery  {
+    flex-direction: column; /* Cambia a una columna en pantallas pequeñas */
+    align-items: center; /* Centra los elementos en una columna */
+    height: auto; /* Ajusta la altura automáticamente */
+  }
+
+  .gallery-text{
+   
+    padding-top: 30px;
+    padding-bottom: 0px;
+    margin: 10px 0; /* Ajusta los márgenes para el espaciado vertical */
+    flex: none; /* Desactiva el comportamiento flexible */
+    width: 85%; /* Hace que cada contenedor ocupe el 100% del ancho */
+    font-size: 6.5vw;
+  }
+  .carousel-container {
+    flex: none; /* Desactiva el comportamiento flexible */
+    width: 85%; /* Hace que cada contenedor ocupe el 100% del ancho */
+    margin: 10px 0; /* Ajusta los márgenes para el espaciado vertical */
+    padding: 0px;
+  
+  
   }
 }
