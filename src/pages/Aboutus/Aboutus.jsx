@@ -4,6 +4,7 @@ import '../AboutUs/AboutUs.css';
 import NavBar from '../../components/header/nav-bar/NavBar';  
 import Footer from '../../components/footer/Footer';
 import { Container } from 'react-bootstrap';
+import WhatsAppButton from '../../components/WhatsAppButton/WhatsAppButton';
 
 const AboutUs = () => {
   return (
@@ -15,9 +16,10 @@ const AboutUs = () => {
         <p>
           En Caruso Fútbol Club, creemos que el fútbol es más que un deporte; es una pasión que une a amigos, familias y compañeros de trabajo. Ubicados en los predios de Padua, Merlo y Paso del Rey, ofrecemos un espacio ideal para disfrutar del deporte rey en un ambiente amigable y con todas las comodidades.
         </p>
+        
         <p>
         <i className="line-orange animate__animated animate__lightSpeedInLeft"></i>
-          <strong>Nuestras Instalaciones</strong>
+        <div className='animate__animated animate__rotateIn'><strong >Nuestras Instalaciones</strong></div>
         </p>
         <p>
           Contamos con canchas de fútbol de diferentes tamaños para adaptarnos a tus necesidades:
@@ -31,7 +33,7 @@ const AboutUs = () => {
         </ul>
         <p>
         <i className="line-orange animate__animated animate__lightSpeedInLeft"></i>
-          <strong>Eventos y Reservas</strong>
+        <div className='animate__animated animate__rotateIn'><strong>Eventos y Reservas</strong></div>
         </p>
         <p>
           En Caruso Fútbol Club, nos aseguramos de que cada visita sea especial. Ya sea que vengas a practicar con tu equipo, celebrar un evento o simplemente a pasar un buen rato, tenemos todo lo que necesitas.
@@ -42,14 +44,14 @@ const AboutUs = () => {
         </ul>
         <p>
         <i className="line-orange animate__animated animate__lightSpeedInLeft"></i>
-          <strong>Nuestra Filosofía</strong>
+        <div className='animate__animated animate__rotateIn'><strong>Nuestra Filosofía</strong></div>
         </p>
         <p>
           En Caruso Fútbol Club, promovemos el espíritu de equipo, la comunicación y el amor por el fútbol. Nos enorgullece ofrecer un espacio donde se puedan crear recuerdos inolvidables y fortalecer vínculos a través del deporte.
         </p>
         <p>
         <i className="line-orange animate__animated animate__lightSpeedInLeft"></i>
-          <strong>Ubicación</strong>
+        <div className='animate__animated animate__rotateIn'><strong>Ubicación</strong></div>
         </p>
         <p>
           Te esperamos en nuestros predios de <a href="/">Merlo</a> y <a href="/">Paso del Rey</a>. Ven y descubre por qué somos el lugar preferido para jugar al fútbol y disfrutar de buenos momentos con amigos y familia.
@@ -59,6 +61,7 @@ const AboutUs = () => {
       <footer>
         <Footer />
       </footer>
+      <WhatsAppButton />
     </div>
   );
 }
