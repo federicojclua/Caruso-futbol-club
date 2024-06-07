@@ -26,8 +26,7 @@ const Footer = () => {
           <ul>
             <li><a href="/Contact">Contacto</a></li>
             <li><a href="/AboutUs">Acerca de nosotros</a></li>
-            <li><a href="#">Donde encontrarnos</a></li>
-            <li><a href="#">Política de Privacidad</a></li>
+            <li><a href="/Location">Donde encontrarnos</a></li>
           </ul>
         </div>
         <div className="footer-column">
