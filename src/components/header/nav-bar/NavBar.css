@@ -57,6 +57,31 @@
   font-size: 1vw; /* Ajusta el tamaño del texto */
 }
 
+/* Media query para pantallas hasta 1200 píxeles */
+@media (max-width: 1200px) {
+  .navbar {
+    height: auto; /* Ajusta la altura automáticamente */
+  }
+  
+  .cfc-logo {
+    width: 6vw; /* Aumenta el tamaño del logo en pantallas más pequeñas */
+  }
+  
+  .nav-link, .item-dropdown, .inicio-btn {
+    font-size: 1.5vw; /* Ajusta el tamaño del texto */  
+    margin-right: 0;
+    margin-left: 10px;
+  }
+  
+  .me-auto {
+    background-color: #258D19;
+  }
+  
+  .dropdown-item {
+    font-size: 1.5vw; /* Ajusta el tamaño del texto */
+  }
+}
+
 /* Media query para pantallas hasta 991 píxeles */
 @media (max-width: 991px) {
   .navbar {
@@ -108,51 +133,27 @@
 }
 
 /* Media query para pantallas hasta 430 píxeles */
-@media (max-width: 430px) {
+@media (max-width: 766px) {
   .navbar {
     flex-direction: column; /* Cambia la dirección del flex a columna */
     height: auto; /* Ajusta la altura automáticamente */
   }
   
   .cfc-logo {
-    width: 10vw; /* Aumenta el tamaño del logo en pantallas más pequeñas */
+    width: 12vw; /* Aumenta el tamaño del logo en pantallas más pequeñas */
   }
   
-  .inicio-btn, .nav-link, .item-dropdown {
-    font-size: 6vw; /* Ajusta el tamaño del texto */
+  .nav-link, .item-dropdown, .inicio-btn {
+    font-size: 3vw; /* Ajusta el tamaño del texto */  
     margin-right: auto;
+    margin-left: 10px;
   }
-  
+
   .me-auto {
     width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
   }
 
   .dropdown-item {
-    font-size: 4vw; /* Ajusta el tamaño del texto */
-  }
-}
-
-/* Media query para pantallas hasta 1200 píxeles */
-@media (max-width: 1200px) {
-  .navbar {
-    height: auto; /* Ajusta la altura automáticamente */
-  }
-  
-  .cfc-logo {
-    width: 6vw; /* Aumenta el tamaño del logo en pantallas más pequeñas */
-  }
-  
-  .nav-link, .item-dropdown, .inicio-btn {
-    font-size: 1.5vw; /* Ajusta el tamaño del texto */
-    margin-right: 0;
-    margin-left: 10px;
-  }
-  
-  .me-auto {
-    background-color: #258D19;
-  }
-  
-  .dropdown-item {
-    font-size: 1.5vw; /* Ajusta el tamaño del texto */
+    font-size: 3vw; /* Ajusta el tamaño del texto */
   }
 }
