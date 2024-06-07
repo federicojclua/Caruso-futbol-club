@@ -1,6 +1,5 @@
 .LocationPage-component {
     background-image: url('/src/assets/img/Fondo-galeria.jpg');
-    background-size: ;
     background-repeat: no-repeat;
     background-position: center;
   }
@@ -27,15 +26,17 @@
     padding: 20px;
     max-width: 45%; /* ajusta el tamaño según tu preferencia */
   }  
-  .location-section h2 {
+  .location-section h3 {
     font-size: 1.5vw;
     margin-bottom: 10px;
+    font-weight: bold;
+    color: #258d19;;
   }
   
   .location-section p {
     font-size: 1vw;
     margin: 5px 0;
-    color: #666;
+    color: #444;
   }
 
   .maps-container {

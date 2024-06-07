@@ -19,10 +19,10 @@ const LocationPage = () => {
       </Helmet>
       <NavBar />
       <div className="main-location-content">
-        <h1 className='subtitle-location'>Nuestras Ubicaciones</h1>
+        <h2 className='subtitle-location'>Nuestras Ubicaciones</h2>
         <div className="maps-container">
           <section className="location-section animate__animated animate__pulse">
-            <h2>Paso del Rey</h2>
+            <h3>Paso del Rey</h3>
             <p>Dirección: Av. Alcorta 943, B1742 Paso del Rey, Provincia de Buenos Aires</p>
             <div className="map-container">
               <iframe 
@@ -38,7 +38,7 @@ const LocationPage = () => {
           </section>
 
           <section className="location-section location-section animate__animated animate__pulse">
-            <h2>Merlo</h2>
+            <h3>Merlo</h3>
             <p>Dirección: Moreno 2500, B1722DAB Merlo, Provincia de Buenos Aires</p>
             <div className="map-container">
               <iframe 
