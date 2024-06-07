@@ -29,31 +29,24 @@
   flex: 1; /* Permite que el contenedor de texto ocupe el 50% del espacio disponible */
   color: #014638; 
   margin: 20px; /* Añade margen para el espaciado */
-  padding: 70px;  
-  border-radius: 10px;  
-  margin-top: 130px;
-  margin-left: 130px;
-  font-size: 4.5vw; /* Utiliza unidades relativas para el tamaño del texto */
+  max-width: 100%;
+  border-radius: 10px;
+  font-size: 4vw; /* Utiliza unidades relativas para el tamaño del texto */
   font-weight: bold; /* Hace que el texto sea grueso */
   display: flex;
   justify-content: center;
+  align-items: center;
+  
   text-align: center;
+
   
   /* background-color: rgba(255, 255, 255, 0.8); Fondo semitransparente para mejorar la legibilidad */
   
   
-  height: 100%;
+ 
 }
 
-.gallery-subtitle{
-  margin-top: 40px;
-  display: flex;
-  margin-left: 40px;
-  
-  font-size: 2vw; /* Utiliza unidades relativas para el tamaño del texto */
-  font-weight: bold; /* Hace que el texto sea grueso */
 
-}
 
 /* Consulta de medios para pantallas más pequeñas */
 @media (max-width: 1500px) {
@@ -65,7 +58,7 @@
 
   .gallery-text{
    
-    padding-top: 30px;
+    padding-top: 130px;
     padding-bottom: 0px;
     margin: 10px 0; /* Ajusta los márgenes para el espaciado vertical */
     flex: none; /* Desactiva el comportamiento flexible */
@@ -74,7 +67,7 @@
   }
   .carousel-container {
     flex: none; /* Desactiva el comportamiento flexible */
-    width: 70%; /* Hace que cada contenedor ocupe el 100% del ancho */
+    width: 80%; /* Hace que cada contenedor ocupe el 100% del ancho */
     margin: 10px 0; /* Ajusta los márgenes para el espaciado vertical */
     padding-top:-30px;
   
