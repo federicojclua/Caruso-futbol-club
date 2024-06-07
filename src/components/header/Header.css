@@ -1,28 +1,27 @@
-
-
 /* Header.css */
-.container{
-  padding-right: 0px;
-  padding-left: 0px;
-  padding-bottom: 0px;
-}
+
 .header {
   position: relative;
-  display: inline-block; /* Ajusta la altura automáticamente según el contenido */
-  overflow: hidden; /* Oculta cualquier contenido desbordante */
-  padding:0 !important;
-}
-
-.video-container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.background-video {
   width: 100%;
   height: auto;
-  min-height: 100%;
-  object-fit: cover;
+  overflow: hidden; /* Oculta cualquier contenido desbordante */
+  
 }
+.container{
+  padding-left: 0px !important;
+  padding-right: 0px !important ;
+  position: relative; /* Cambiado a relative */
+  
+}
+
+
+
+
+.background-video {
+  width: 100%; /* Ajustado al 100% del contenedor */
+  height: auto; /* Ajusta el alto automáticamente para mantener la relación de aspecto */
+  min-height: auto; /* Asegura que el video tenga al menos el 100% de la altura del contenedor */
+  object-fit: cover; /* Escala el video para cubrir todo el contenedor manteniendo la relación de aspecto */
+}
+
+

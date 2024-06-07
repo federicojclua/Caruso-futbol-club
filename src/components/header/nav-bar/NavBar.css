@@ -19,7 +19,7 @@ div.container{
    
     position: fixed; /* Fija la barra de navegación en la parte superior */
     width: 100%;
-    height: 80px;
+    height: 100px;
     z-index: 1;
     color: #ffffff; /* Cambia el color del texto a verde claro */
     display: flex;
@@ -34,11 +34,15 @@ div.container{
     
   
   }
+ 
   .nav-link, .item-dropdown {
-    font-size: 1vw; /* Usa una unidad relativa para el tamaño del texto */
+    font-size:1vw; /* Usa una unidad relativa para el tamaño del texto */
     font-weight: bold;
     color: #ffffff  !important;
     margin-right: 100px;
+    background-color: #258D19;
+   
+   
     
     
   }
@@ -51,3 +55,17 @@ div.container{
     background-color: transparent; /* Elimina el fondo de hover y activo */
     text-decoration: none; /* Elimina cualquier subrayado o decoración de texto */
   }
+
+  /* Media query para pantallas más pequeñas (hasta 991 píxeles) */
+  @media (max-width: 991px) {
+    .nav-link, .item-dropdown {
+      font-size: 2vw; /* Aumenta el tamaño del texto en pantallas pequeñas */
+      margin-right: 0;
+      margin-left: 10px; /* Agrega un margen a la izquierda */
+
+  
+  }
+    .me-auto{ background-color: #258D19;
+
+  }
+}
