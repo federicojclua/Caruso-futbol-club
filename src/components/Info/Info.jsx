@@ -13,7 +13,7 @@ const Info = () => {
               <div className="content-container">
                 <img src="src/assets/img/logo_info/Logo-canchas.png" alt="Canchas" />
               </div>
-              <h4 >Canchas de Césped Sintético </h4>
+              <h4>Canchas de Césped Sintético</h4>
             </div>
           </Col>
           <Col xs={12} sm={6} md={3} className="mb-2">
@@ -43,7 +43,7 @@ const Info = () => {
           <Col xs={12} sm={6} md={3} className="mb-2">
             <div className="box-1">
               <div className="content-container">
-                <img src="src/assets/img/logo_info/Logo-venta.png" alt="Baños" />
+                <img src="src/assets/img/logo_info/Logo-venta.png" alt="Cantina" />
               </div>
               <h4>Cantina</h4>
             </div>
@@ -51,7 +51,7 @@ const Info = () => {
           <Col xs={12} sm={6} md={3} className="mb-2">
             <div className="box-1">
               <div className="content-container">
-                <img src="src/assets/img/logo_info/logo-torneos.png" alt="Baños" />
+                <img src="src/assets/img/logo_info/logo-torneos.png" alt="Torneos" />
               </div>
               <h4>Torneos</h4>
             </div>
@@ -59,7 +59,7 @@ const Info = () => {
           <Col xs={12} sm={6} md={3} className="mb-2">
             <div className="box-1">
               <div className="content-container">
-                <img src="src/assets/img/logo_info/logo-esculafem.png" alt="Baños" />
+                <img src="src/assets/img/logo_info/logo-esculafem.png" alt="Futbol Femenino" />
               </div>
               <h4>Futbol Femenino</h4>
             </div>
@@ -67,9 +67,9 @@ const Info = () => {
           <Col xs={12} sm={6} md={3} className="mb-2">
             <div className="box-1">
               <div className="content-container">
-                <img src="src/assets/img/logo_info/logo-escuela.png" alt="Baños" />
+                <img src="src/assets/img/logo_info/logo-escuela.png" alt="Futbol para niños" />
               </div>
-              <h4> Futbol para niños</h4>
+              <h4>Futbol para niños</h4>
             </div>
           </Col>
         </Row>
