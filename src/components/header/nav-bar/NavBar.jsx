@@ -10,29 +10,25 @@ const NavBar = () => {
     <>
       <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
         <Container>
-          <img className='cfc-logo' src="src\assets\img\cfc-logo.png" alt="logo-caruso" />
-          
+          <img className='cfc-logo' src="src/assets/img/cfc-logo.png" alt="logo-caruso" />
+
+
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link style={{ color: '#ffffff;' }} href="#features">Nuestro Merch</Nav.Link> 
-              <Nav.Link style={{ color: '#ffffff;' }} href="#features">Nuestro Merch</Nav.Link> 
-              <Nav.Link style={{ color: '#ffffff;' }} href="#pricing">Nuestra tienda</Nav.Link>
-              <NavDropdown clasName="item-dropdown" style={{ color: '#ffffff;' }} title="Los Estadios"  >
-                <NavDropdown.Item style={{ color: '#ffffff;' }} href="#action/3.1">Estadio1</NavDropdown.Item>
-                <NavDropdown.Item style={{ color: '#ffffff;' }}href="#action/3.3">Estadio2</NavDropdown.Item>
+              <Nav.Link href="#features">Nuestra Tienda</Nav.Link>
+              <Nav.Link href="#complexes">Nuestros Complejos</Nav.Link>
+              <NavDropdown title="Reservas">
+                <NavDropdown.Item href="#action/3.1">Reservar</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">Mis Reservas</NavDropdown.Item>
               </NavDropdown>
-              <Nav>
-              <NavDropdown clasName="item-dropdown" style={{ color: '#ffffff;' }} title="Los Estadios"  >
-                <NavDropdown.Item style={{ color: '#ffffff;' }} href="#action/3.1">Estadio1</NavDropdown.Item>
-                <NavDropdown.Item style={{ color: '#ffffff;' }}href="#action/3.3">Estadio2</NavDropdown.Item>
+            </Nav>
+            <Nav>
+              <NavDropdown title="Iniciar Sesión" className="button-inicio">
+                <NavDropdown.Item href="#action/3.1">¿Ya tienes cuenta? Regístrate</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">Inicia Sesión</NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link style={{ color: '#ffffff;' }} eventKey={2} href="#memes">
-                iniciar sesión
-              </Nav.Link>
             </Nav>
-            </Nav>
-
           </Navbar.Collapse>
         </Container>
       </Navbar>

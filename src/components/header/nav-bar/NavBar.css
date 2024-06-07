@@ -1,71 +1,158 @@
-div.container{
-    max-width:100% ;
-    margin:0 auto;
-    
-    
-  }
-  .bg-body-tertiary{
-    padding-top:-8px !important;
+/* Estilo para el contenedor principal */
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+}
 
+/* Ajustes para la barra de navegación */
+.bg-body-tertiary {
+  padding-top: -8px !important;
+}
+
+/* Estilo para el logo */
+.cfc-logo {
+  width: 4vw; /* Ancho relativo del logo */
+  height: auto; /* Altura automática para mantener la proporción */
+}
+
+/* Estilo para la barra de navegación */
+.navbar {
+  position: fixed; /* Fija la barra de navegación en la parte superior */
+  width: 100%;
+  z-index: 1;
+  color: #ffffff;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 !important;
+  max-width: 100%;
+  margin: 0 auto;
+  background-color: #258D19 !important;
+  box-shadow: 0 10px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* Estilo para los enlaces y los dropdowns */
+.nav-link, .dropdown-toggle, .nav-dropdown, .inicio-btn {
+  font-size: 1vw;
+  font-weight: bold;
+  color: #ffffff !important;
+  background-color: #258D19;
+  margin-right: 100px;
+  transition: background-color 0.3s; /* Transición suave para el cambio de color */
+  padding: 10px 15px; /* Añade padding para que el hover cubra todo el contenedor */
+  border-radius: 5px; /* Añade un borde redondeado */
+}
+
+/* Estilo para el hover y el focus de los enlaces */
+.nav-link:hover,
+.nav-link:active,
+.dropdown-toggle:hover,
+.dropdown-toggle:active,
+.inicio-btn:hover,
+.inicio-btn:active {
+  background-color: #1a5d12; /* Color de fondo al pasar el mouse o hacer clic */
+}
+
+/* Estilo para los elementos dentro de la lista desplegable */
+.dropdown-item {
+  font-size: 1vw; /* Ajusta el tamaño del texto */
+}
+
+/* Media query para pantallas hasta 991 píxeles */
+@media (max-width: 991px) {
+  .navbar {
+    height: auto; /* Ajusta la altura automáticamente */
   }
-  
-  
   
   .cfc-logo {
-    width: 4vw; /* Ancho del 50% del contenedor */
-    height: auto; /* Altura automática para mantener la proporción */
+    width: 6vw; /* Aumenta el tamaño del logo en pantallas más pequeñas */
   }
-  .navbar {
-   
-    position: fixed; /* Fija la barra de navegación en la parte superior */
-    width: 100%;
-    height: 100px;
-    z-index: 1;
-    color: #ffffff; /* Cambia el color del texto a verde claro */
-    display: flex;
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan */
-    padding: 0 !important;
-    max-width:100% ;
-    margin:0 auto;
-    background-color: #258D19 !important ;
-    box-shadow: 0 10px 6px rgba(0, 0, 0, 0.6);
-    
-    
-    
   
+  .nav-link, .item-dropdown, .inicio-btn {
+    font-size: 2vw; /* Ajusta el tamaño del texto */
+    margin-right: 0;
+    margin-left: 10px;
   }
- 
-  .nav-link, .item-dropdown {
-    font-size:1vw; /* Usa una unidad relativa para el tamaño del texto */
-    font-weight: bold;
-    color: #ffffff  !important;
-    margin-right: 100px;
+  
+  .me-auto {
     background-color: #258D19;
-   
-   
-    
-    
   }
-   
-  /* Anula el estilo de hover */
-  .dropdown-toggle.nav-link:hover,
-  .dropdown-toggle.nav-link:focus,
-  .dropdown-toggle.nav-link:active {
-    color: inherit; /* Mantiene el color original */
-    background-color: transparent; /* Elimina el fondo de hover y activo */
-    text-decoration: none; /* Elimina cualquier subrayado o decoración de texto */
-  }
-
-  /* Media query para pantallas más pequeñas (hasta 991 píxeles) */
-  @media (max-width: 991px) {
-    .nav-link, .item-dropdown {
-      font-size: 2vw; /* Aumenta el tamaño del texto en pantallas pequeñas */
-      margin-right: 0;
-      margin-left: 10px; /* Agrega un margen a la izquierda */
-
   
+  .dropdown-item {
+    font-size: 1.5vw; /* Ajusta el tamaño del texto */
   }
-    .me-auto{ background-color: #258D19;
+}
 
+/* Media query para pantallas hasta 767 píxeles */
+@media (max-width: 767px) {
+  .navbar {
+    flex-direction: column; /* Cambia la dirección del flex a columna */
+    height: auto; /* Ajusta la altura automáticamente */
+  }
+  
+  .cfc-logo {
+    width: 8vw; /* Aumenta el tamaño del logo en pantallas más pequeñas */
+  }
+  
+  .inicio-btn, .nav-link, .item-dropdown {
+    font-size: 4vw; /* Ajusta el tamaño del texto */
+    margin-right: auto;
+  }
+  
+  .me-auto {
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
+  }
+
+  .dropdown-item {
+    font-size: 3vw; /* Ajusta el tamaño del texto */
+  }
+}
+
+/* Media query para pantallas hasta 430 píxeles */
+@media (max-width: 430px) {
+  .navbar {
+    flex-direction: column; /* Cambia la dirección del flex a columna */
+    height: auto; /* Ajusta la altura automáticamente */
+  }
+  
+  .cfc-logo {
+    width: 10vw; /* Aumenta el tamaño del logo en pantallas más pequeñas */
+  }
+  
+  .inicio-btn, .nav-link, .item-dropdown {
+    font-size: 6vw; /* Ajusta el tamaño del texto */
+    margin-right: auto;
+  }
+  
+  .me-auto {
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
+  }
+
+  .dropdown-item {
+    font-size: 4vw; /* Ajusta el tamaño del texto */
+  }
+}
+
+/* Media query para pantallas hasta 1200 píxeles */
+@media (max-width: 1200px) {
+  .navbar {
+    height: auto; /* Ajusta la altura automáticamente */
+  }
+  
+  .cfc-logo {
+    width: 6vw; /* Aumenta el tamaño del logo en pantallas más pequeñas */
+  }
+  
+  .nav-link, .item-dropdown, .inicio-btn {
+    font-size: 1.5vw; /* Ajusta el tamaño del texto */
+    margin-right: 0;
+    margin-left: 10px;
+  }
+  
+  .me-auto {
+    background-color: #258D19;
+  }
+  
+  .dropdown-item {
+    font-size: 1.5vw; /* Ajusta el tamaño del texto */
   }
 }
