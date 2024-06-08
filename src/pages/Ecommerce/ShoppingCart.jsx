@@ -21,7 +21,7 @@ const ShoppingCart = ({ show, handleClose, cartItems }) => {
               <img src={item.image} alt={item.name} />
               <h5>{item.name}</h5>
               <p>{item.price}</p>
-              <Button variant="danger" onClick={() => handleRemoveItem(index)}>Remove</Button>
+              <Button variant="danger" onClick={() => handleRemoveItem(index)}>Remover del Carrito</Button>
             </div>
           ))
         ) : (
@@ -30,7 +30,7 @@ const ShoppingCart = ({ show, handleClose, cartItems }) => {
       </Modal.Body>
       <Modal.Footer>
         <Button variant="secondary" onClick={handleClose}>
-          Close
+          Cerrar
         </Button>
         <Button variant="primary" onClick={() => alert('Ir a pagar')}>
           Pagar
