@@ -1,43 +1,34 @@
 import React from 'react';
-import { Button, Modal } from 'react-bootstrap';
 import './ShoppingCart.css';
 
-const ShoppingCart = ({ show, handleClose, cartItems }) => {
-  const handleRemoveItem = (index) => {
-    const newCartItems = [...cartItems];
-    newCartItems.splice(index, 1);
-    setCartItems(newCartItems);
+const ShoppingCart = ({ show, handleClose, cartItems, handleRemoveItem }) => {
+  // Calcular el precio total del carrito
+  const calculateTotalPrice = () => {
+    return cartItems.reduce((total, item) => total + (parseFloat(item.price) * item.quantity), 0);
   };
 
   return (
-    <Modal show={show} onHide={handleClose}>
-      <Modal.Header closeButton>
-        <Modal.Title>Carrito de Compras</Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        {cartItems.length > 0 ? (
-          cartItems.map((item, index) => (
-            <div key={index} className="cart-item">
-              <img src={item.image} alt={item.name} />
-              <h5>{item.name}</h5>
-              <p>{item.price}</p>
-              <Button variant="danger" onClick={() => handleRemoveItem(index)}>Remover del Carrito</Button>
+    <div className={`shopping-cart ${show ? 'show' : ''}`}>
+      <div className="cart-header">
+        <h2>Carrito de Compras</h2>
+        <button className="close-cart" onClick={handleClose}>Cerrar</button>
+      </div>
+      <div className="cart-items">
+        {cartItems.map((item, index) => (
+          <div key={index} className="cart-item">
+            <img src={item.image} alt={item.name} />
+            <div>
+              <h3>{item.name}</h3>
+              <p>Cantidad: {item.quantity}</p>
+              <p>Precio: ${item.price * item.quantity}</p>
+              <button onClick={() => handleRemoveItem(index)}>Eliminar</button>
             </div>
-          ))
-        ) : (
-          <p>El carrito está vacío</p>
-        )}
-      </Modal.Body>
-      <Modal.Footer>
-        <Button variant="secondary" onClick={handleClose}>
-          Cerrar
-        </Button>
-        <Button variant="primary" onClick={() => alert('Ir a pagar')}>
-          Pagar
-        </Button>
-      </Modal.Footer>
-    </Modal>
+          </div>
+        ))}
+      </div>
+      <div className="total-price">Precio Total: ${calculateTotalPrice()}</div>
+    </div>
   );
-};
+}
 
 export default ShoppingCart;

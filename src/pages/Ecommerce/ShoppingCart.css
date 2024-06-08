@@ -1,33 +1,51 @@
 .modal-content {
-    padding: 20px;
-  }
-  
-  .cart-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  .cart-item img {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
-  }
-  
-  .floating-cart-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    padding: 15px;
-    font-size: 24px;
-    cursor: pointer;
-  }
-  
-  .floating-cart-button:hover {
-    background-color: #0056b3;
-  }
-  
+  padding: 20px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.cart-item img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.shopping-cart {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  display: none; /* Ocultar el carrito por defecto */
+}
+
+.shopping-cart.show {
+  display: block; /* Mostrar el carrito cuando la clase "show" está presente */
+}
+
+.floating-cart-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 999; /* Asegurar que el botón esté en la parte superior */
+}
+
+.floating-cart-button:hover {
+  background-color: #0056b3;
+}

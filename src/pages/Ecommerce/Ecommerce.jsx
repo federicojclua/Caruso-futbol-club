@@ -14,9 +14,22 @@ const EcommercePage = () => {
   const handleShowCart = () => setShowCart(true);
   const handleCloseCart = () => setShowCart(false);
 
-  const addToCart = (product) => {
-    setCartItems([...cartItems, product]);
+  const addToCart = (product, quantity) => {
+    const existingIndex = cartItems.findIndex(item => item.id === product.id);
+    if (existingIndex !== -1) {
+      const updatedCartItems = [...cartItems];
+      updatedCartItems[existingIndex].quantity += quantity;
+      setCartItems(updatedCartItems);
+    } else {
+      setCartItems([...cartItems, { ...product, quantity }]);
+    }
     handleShowCart();
+  };
+
+  const handleRemoveFromCart = (index) => {
+    const newCartItems = [...cartItems];
+    newCartItems.splice(index, 1);
+    setCartItems(newCartItems);
   };
 
   return (
@@ -35,7 +48,7 @@ const EcommercePage = () => {
       <Footer />
       <WhatsAppButton />
       <button className="floating-cart-button" onClick={handleShowCart}>🛒</button>
-      <ShoppingCart show={showCart} handleClose={handleCloseCart} cartItems={cartItems} />
+      <ShoppingCart show={showCart} handleClose={handleCloseCart} cartItems={cartItems} handleRemoveItem={handleRemoveFromCart} />
     </div>
   );
 }
