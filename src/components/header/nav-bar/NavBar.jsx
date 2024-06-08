@@ -18,13 +18,13 @@ const NavBar = () => {
               <Nav.Link as={Link} to="/Ecommerce">Nuestra Tienda</Nav.Link>
               <Nav.Link as={Link} to="/Location">Nuestros Complejos</Nav.Link>
               <NavDropdown title="Reservas">
-                <NavDropdown.Item as={Link} to="#action/3.1">Reservar</NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="#action/3.3">Mis Reservas</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/reservar">Reservar</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/mis-reservas">Mis Reservas</NavDropdown.Item>
               </NavDropdown>
             </Nav>
             <Nav>
               <NavDropdown title="Iniciar Sesión" className="button-inicio">
-                <NavDropdown.Item as={Link} to="/Login">¿Ya tienes cuenta? Regístrate</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/registrarse">¿Ya tienes cuenta? Regístrate</NavDropdown.Item>
                 <NavDropdown.Item as={Link} to="/Login">Inicia Sesión</NavDropdown.Item>
               </NavDropdown>
             </Nav>

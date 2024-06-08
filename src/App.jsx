@@ -17,7 +17,7 @@ import AboutUs from './pages/AboutUs/AboutUs';
 import Ecommerce from './pages/Ecommerce/Ecommerce';
 import Location from './pages/Location/Location';
 import Login from './pages/Login/Login';
-import CartPage from './pages/Ecommerce/CartPage';
+import ShoppingCart from './pages/Ecommerce/ShoppingCart';  // Importa el componente ShoppingCart
 
 function App() {
   return (
@@ -40,7 +40,7 @@ function App() {
         <Route path="/Ecommerce" element={<Ecommerce />} />
         <Route path="/AboutUs" element={<AboutUs />} />
         <Route path="/Contact" element={<Contact />} />
-        <Route path="/Cart" element={<CartPage />} />
+        <Route path="/Cart" element={<ShoppingCart />} />  {/* Ruta para la página del carrito */}
         <Route path="*" element={<Error404 />} />
       </Routes>
     </BrowserRouter>
