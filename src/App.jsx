@@ -14,30 +14,33 @@ import WhatsAppButton from './components/WhatsAppButton/WhatsAppButton';
 import Error404 from './pages/Error404/Error404';
 import Contact from './pages/Contact/Contact';
 import AboutUs from './pages/AboutUs/AboutUs';
-import Ecommerce from './pages/Ecommerce/Ecommerce'
-import Location from './pages/Location/Location'
-import Login from './pages/Login/Login'
-
+import Ecommerce from './pages/Ecommerce/Ecommerce';
+import Location from './pages/Location/Location';
+import Login from './pages/Login/Login';
+import CartPage from './pages/Ecommerce/CartPage';
 
 function App() {
   return (
     <BrowserRouter>
+      <NavBar />
       <Routes>
-        <Route path="/" element={<div>
-          <Header />
-          <Galeria />
-          <Info />
-          <Tournament />
-          <Sponsors />
-          <Footer />
-          <WhatsAppButton />
-
-        </div>} />
+        <Route path="/" element={
+          <div>
+            <Header />
+            <Galeria />
+            <Info />
+            <Tournament />
+            <Sponsors />
+            <Footer />
+            <WhatsAppButton />
+          </div>
+        } />
         <Route path="/Login" element={<Login />} />
         <Route path="/Location" element={<Location />} />
         <Route path="/Ecommerce" element={<Ecommerce />} />
         <Route path="/AboutUs" element={<AboutUs />} />
-         <Route path="/Contact" element={<Contact />} />
+        <Route path="/Contact" element={<Contact />} />
+        <Route path="/Cart" element={<CartPage />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
     </BrowserRouter>
