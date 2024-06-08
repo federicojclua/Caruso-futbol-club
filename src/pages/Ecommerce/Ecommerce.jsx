@@ -32,6 +32,10 @@ const EcommercePage = () => {
     setCartItems(newCartItems);
   };
 
+  const calculateTotalPrice = () => {
+    return cartItems.reduce((total, item) => total + (parseFloat(item.price.replace('$', '')) * item.quantity), 0).toFixed(2);
+  };
+
   return (
     <div className='EcommercePage-component'>
       <Helmet>
