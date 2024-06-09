@@ -20,6 +20,7 @@
 
 .footer-column h5 {
   margin-bottom: 10px;
+  font-size: 20px;
 }
 
 .footer-column ul {
@@ -34,9 +35,8 @@
 
 .footer-column ul li {
   margin: 5px 0;
-  font-size: 1vw;
+  font-size: 15px;
   font-weight: normal;
-
 }
 
 .footer-column a {
@@ -45,6 +45,7 @@
 }
 .footer-column p {
   margin: 0px;
+  font-size: 15px;
 }
 
 .footer-column a:hover {
@@ -54,6 +55,7 @@
 
 .footer-logo {
   max-width: 50%;
+  width: 30%;
   height: auto;
   transition: transform 0.5s ease-in-out;
 }
@@ -90,6 +92,7 @@
 
 .footer-bottom p {
   margin: 2px 0;
+  font-size: 1vw;
 }
 
 @media (max-width: 850px) {

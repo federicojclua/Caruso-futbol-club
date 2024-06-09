@@ -9,9 +9,9 @@
   
   .main-login-content {
     max-width: 60% !important;
+    height: 1200px;
     padding: 120px !important; /* Añadir relleno */
     color: #333333; /* Color del texto principal */
-    background-color: rgba(255, 255, 255, 0.4); /* Transparencia del fondo */
   }
   
   .login-form {
