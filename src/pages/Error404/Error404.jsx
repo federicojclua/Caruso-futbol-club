@@ -6,6 +6,7 @@ import { Container } from 'react-bootstrap';
 const Error404 = () => {
   return (
     <div className="Error404-component">
+      
       <Container className="main-content-error">
         <h2 className="animate__animated animate__rotateIn">Error 404</h2>
         <img src="src/assets/img/error404.gif" alt="Error 404" className="error-gif" />
