@@ -12,7 +12,7 @@ const LocationMain = () => {
   
     <div className="main-location-content">
         <h2 className='title-location'>Nuestras Ubicaciones</h2>
-        <p className='subtitle-location'>Contamos con 2 sedes !Visitanos!</p>
+        <p className='subtitle-location'>Contamos con 2 sedes ¡Visitanos!</p>
 
         <div className="maps-container">
         <section className='maps1'>

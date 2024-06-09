@@ -74,34 +74,48 @@
     justify-content: space-between;
 }
 
-
-/* Media query para pantallas menores a 1150px */
-@media (max-width: 1150px) {
+/* Media query para pantallas menores a 1000px */
+@media (max-width: 1000px) {
     .maps-container {
         width: 100%; /* Ajusta el ancho del contenedor principal de los mapas al 100% en pantallas pequeñas */
     }
-    .main-location-content{
-        max-width: 90% !important;
-        padding-left: 60!important;
-        padding-right: 60!important;
 
+    .main-location-content {
+        max-width: 90% !important;
+        padding-left: 60px !important;
+        padding-right: 60px !important;
     }
 
     .location-section {
         max-width: 100% !important; /* Asegura que cada sección ocupe el 100% del ancho del contenedor */
-       
     }
 
     .map-container iframe {
         width: 100%; /* Asegura que el iframe ocupe el 100% del ancho del contenedor */
         height: auto; /* Ajusta la altura automáticamente para mantener la proporción */
     }
+
     .title-location {
-        font-size:4vw  !important;
-        
+        font-size: 4vw !important;
+        padding-bottom: 0px;
     }
-    .title-location {
-        font-size:4vw  !important;
-        
+
+    .subtitle-location {
+        font-size: 3vw !important;
+        padding-bottom: 0px !important;
+        padding-top: 10px !important;
+    }
+
+    .maps1, .maps2 {
+        flex-direction: column; /* Cambia la dirección del flex a columna */
+        align-items: flex-start; /* Alinea los elementos al inicio del contenedor */
+        margin-top: 30px;
+    }
+
+    .text-location {
+        padding-right: 0; /* Elimina el padding a la derecha */
+        padding-bottom: 10px; /* Añade padding abajo para separar el texto del mapa */
+        text-align: left; /* Alinea el texto a la izquierda */
+        font-size: 2.3vw  ;
     }
 }
