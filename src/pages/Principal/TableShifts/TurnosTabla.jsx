@@ -1,16 +1,9 @@
-<<<<<<< HEAD
-import React, { useState, useEffect } from 'react';
-// import './TurnosTabla.css';
-
-
-=======
 
 
 import React, { useState, useEffect } from 'react';
 import './TurnosTabla.css';
 
 
->>>>>>> ee8c70e (Se agrego sistema de reservas, principal.jsx y css, tambien AgregarTurnos, Formulario y TurnosTabla)
 const TurnosTabla = ({ turnos, sucursal, tipoCancha, fecha, agregarTurno }) => {
   const horarios = ['09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21'];
   const [turnosLocales, setTurnosLocales] = useState([]);
