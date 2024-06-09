@@ -30,7 +30,7 @@ const Login = () => {
 
     // Validación de la contraseña
     if (password.length < 4 || password.length > 20) {
-      setPasswordError('Password must be at least 4 characters and less than 20 characters');
+      setPasswordError('La contraseña debe tener al menos 4 caracteres y menos de 20.');
       return;
     } else {
       setPasswordError('');
@@ -49,16 +49,16 @@ const Login = () => {
 
       if (response.ok) {
         // Manejar el inicio de sesión exitoso
-        setSuccessMessage('Login successful. Welcome back!');
+        setSuccessMessage('Sesión iniciada correctamente. ¡Bienvenido!');
         setTimeout(() => {
           navigate('/'); // Redireccionar a la página de inicio después del inicio de sesión exitoso
         }, 2000); // Transición de 2 segundos
       } else {
         // Manejar errores del servidor
-        setServerError(data.message || 'Error logging in. Please try again.');
+        setServerError(data.message || 'Correo o contraseña incorrecta, por favor, intente de nuevo.');
       }
     } catch (error) {
-      setServerError('Error logging in. Please try again.');
+      setServerError('Correo o contraseña incorrecta, por favor, intente de nuevo.');
     }
   };
 
@@ -76,20 +76,20 @@ const Login = () => {
         {successMessage && <p className="text-success">{successMessage}</p>}
         <Form onSubmit={handleSubmit} className="login-form">
           <Form.Group controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
+            <Form.Label>Correo Electrónico</Form.Label>
             <Form.Control
               type="email"
-              placeholder="Enter email"
+              placeholder="Ingresar correo electrónico"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
             />
           </Form.Group>
           <Form.Group controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
+            <Form.Label>Contraseña</Form.Label>
             <Form.Control
               type="password"
-              placeholder="Enter password"
+              placeholder="Ingresar Contraseña"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
@@ -98,7 +98,7 @@ const Login = () => {
           </Form.Group>
           {serverError && <p className="text-danger">{serverError}</p>}
           <Button variant="primary" type="submit">
-            Submit
+            Iniciar Sesión
           </Button>
         </Form>
       </Container>

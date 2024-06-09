@@ -32,9 +32,15 @@
   display: block; /* Mostrar el carrito cuando la clase "show" está presente */
 }
 
+.cart-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
 .floating-cart-button {
   position: fixed;
-  bottom: 20px;
+  top: 120px;
   right: 20px;
   background-color: #007bff;
   color: white;

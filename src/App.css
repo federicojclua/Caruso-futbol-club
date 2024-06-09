@@ -1,7 +1,7 @@
 body {
   font-family: "PT Sans", sans-serif;
-  margin: 0;
-  padding: 0;
+
+  background-color: #f50f0f; 
   background-image: url('/src/assets/img/fondoBody.jpg'); 
   background-size: cover;       
   background-position: center;   
