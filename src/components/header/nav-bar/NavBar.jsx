@@ -24,7 +24,7 @@ const NavBar = () => {
             </Nav>
             <Nav>
               <NavDropdown title="Iniciar Sesión" className="button-inicio">
-                <NavDropdown.Item as={Link} to="/registrarse">¿Ya tienes cuenta? Regístrate</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/registrarse">¿No tienes cuenta? Regístrate</NavDropdown.Item>
                 <NavDropdown.Item as={Link} to="/Login">Inicia Sesión</NavDropdown.Item>
               </NavDropdown>
             </Nav>
