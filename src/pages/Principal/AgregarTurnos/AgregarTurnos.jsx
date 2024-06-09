@@ -54,4 +54,3 @@ const AgregarTurno = ({ agregarTurno, sucursal }) => {
 };
 
 export default AgregarTurno;
-

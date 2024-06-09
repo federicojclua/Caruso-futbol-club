@@ -12,6 +12,7 @@ import Tournament from './components/Tournament/Tournament';
 import NavBar from './components/header/nav-bar/NavBar';
 import WhatsAppButton from './components/WhatsAppButton/WhatsAppButton';
 import LocationMain from './components/LocationMain/LocationMain';
+import Advertising from './components/Advertising/Advertising';
 import Error404 from './pages/Error404/Error404';
 import Contact from './pages/Contact/Contact';
 import AboutUs from './pages/AboutUs/AboutUs';
@@ -19,8 +20,11 @@ import Ecommerce from './pages/Ecommerce/Ecommerce';
 import Location from './pages/Location/Location';
 import Login from './pages/Login/Login';
 import ShoppingCart from './pages/Ecommerce/ShoppingCart';  // Importa el componente ShoppingCart
-import Advertising from './components/Advertising/Advertising';
 import Admin from './pages/Admin/Admin';
+import Record from './pages/record/Record';
+import Principal from './pages/Principal/Principal'
+
+
 
 function App() {
   return (
@@ -40,14 +44,16 @@ function App() {
             <WhatsAppButton />
           </div>
         } />
-        <Route path="/Login" element={<Login />} />
-        <Route path="/Location" element={<Location />} />
-        <Route path="/Ecommerce" element={<Ecommerce />} />
-        <Route path="/AboutUs" element={<AboutUs />} />
-        <Route path="/Contact" element={<Contact />} />
-        <Route path="/Cart" element={<ShoppingCart />} />  {/* Ruta para la página del carrito */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/location" element={<Location />} />
+        <Route path="/ecommerce" element={<Ecommerce />} />
+        <Route path="/aboutUs" element={<AboutUs />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/cart" element={<ShoppingCart />} />  
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/principal" element={<Principal />} />
+        <Route path="/record" element={<Record/>} />
         <Route path="*" element={<Error404 />} />
-        <Route path="/Admin" element={<Admin />} />
       </Routes>
     </BrowserRouter>
   );

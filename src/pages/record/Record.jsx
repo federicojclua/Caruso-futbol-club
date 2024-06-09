@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { Form, Button, Container } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
-// import "./Registro.css";
+// import axios from 'axios';
+import "./Record.css";
 
-const Registro = () => {
+const Record = () => {
   const [nombre, setNombre] = useState('');
   const [apellido, setApellido] = useState('');
   const [dni, setDni] = useState('');
@@ -52,7 +52,7 @@ const Registro = () => {
   };
 
   return (
-    <Container className="mt-5">
+    <Container className="Container-Record mt-5">
       <h2 className="mb-4 text-center">Registro</h2>
       {error && <p className="text-danger">{error}</p>}
       <Form onSubmit={handleSubmit}>
@@ -62,10 +62,7 @@ const Registro = () => {
             type="text"
             placeholder="Ingresa tu nombre"
             value={nombre}
-<<<<<<< HEAD
             maxLength={20}
-=======
->>>>>>> ee8c70e (Se agrego sistema de reservas, principal.jsx y css, tambien AgregarTurnos, Formulario y TurnosTabla)
             onChange={handleTextChange(setNombre)}
           />
         </Form.Group>
@@ -76,10 +73,7 @@ const Registro = () => {
             type="text"
             placeholder="Ingresa tu apellido"
             value={apellido}
-<<<<<<< HEAD
             maxLength={20}
-=======
->>>>>>> ee8c70e (Se agrego sistema de reservas, principal.jsx y css, tambien AgregarTurnos, Formulario y TurnosTabla)
             onChange={handleTextChange(setApellido)}
           />
         </Form.Group>
@@ -90,10 +84,7 @@ const Registro = () => {
             type="text"
             placeholder="Ingresa tu DNI"
             value={dni}
-<<<<<<< HEAD
             maxLength={8}
-=======
->>>>>>> ee8c70e (Se agrego sistema de reservas, principal.jsx y css, tambien AgregarTurnos, Formulario y TurnosTabla)
             onChange={handleDniChange}
           />
         </Form.Group>
@@ -104,10 +95,7 @@ const Registro = () => {
             type="text"
             placeholder="Ingresa tu equipo"
             value={equipo}
-<<<<<<< HEAD
             maxLength={20}
-=======
->>>>>>> ee8c70e (Se agrego sistema de reservas, principal.jsx y css, tambien AgregarTurnos, Formulario y TurnosTabla)
             onChange={handleTextChange(setEquipo)}
           />
         </Form.Group>
@@ -118,10 +106,7 @@ const Registro = () => {
             type="text"
             placeholder="Ingresa tu dirección"
             value={direccion}
-<<<<<<< HEAD
             maxLength={20}
-=======
->>>>>>> ee8c70e (Se agrego sistema de reservas, principal.jsx y css, tambien AgregarTurnos, Formulario y TurnosTabla)
             onChange={handleTextChange(setDireccion)}
           />
         </Form.Group>
@@ -132,10 +117,7 @@ const Registro = () => {
             type="email"
             placeholder="Ingresa tu email"
             value={email}
-<<<<<<< HEAD
             maxLength={20}
-=======
->>>>>>> ee8c70e (Se agrego sistema de reservas, principal.jsx y css, tambien AgregarTurnos, Formulario y TurnosTabla)
             onChange={handleTextChange(setEmail)}
           />
         </Form.Group>
@@ -146,10 +128,7 @@ const Registro = () => {
             type="password"
             placeholder="Ingresa tu contraseña"
             value={password}
-<<<<<<< HEAD
             maxLength={20}
-=======
->>>>>>> ee8c70e (Se agrego sistema de reservas, principal.jsx y css, tambien AgregarTurnos, Formulario y TurnosTabla)
             onChange={handleTextChange(setPassword)}
           />
         </Form.Group>
@@ -162,4 +141,4 @@ const Registro = () => {
   );
 };
 
-export default Registro;
+export default Record;
