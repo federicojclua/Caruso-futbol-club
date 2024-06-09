@@ -1,32 +1,46 @@
-.Sponsors{
-    
-    /* background-image: url('/src/assets/img/fond_sponsors.png'); */
-    background-size: cover;       /* Asegura que la imagen cubra todo el fondo del contenedor */
-    background-position: center;   /*Centra la imagen*/
-    background-repeat: no-repeat; /* Evita que la imagen se repita */ 
-    padding-bottom: 100px;
-
+.Sponsors {
+  background-size: cover;       /* Asegura que la imagen cubra todo el fondo del contenedor */
+  background-position: center;   /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */ 
+  padding-bottom: 100px;
 }
 
 .text-sponsors {
-    color: #014638;
-    font-weight: bold; 
-    font-size: 3vw; /* Tamaño de texto inicial */
-    text-align: center;
-    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8); /* Sombra de texto */
-    padding-bottom: 30px;
+  font-weight: bold; 
+  font-size: 3vw; /* Tamaño de texto inicial */
+  text-align: center;
+  padding-bottom: 30px;
+  color: #022720;
+  text-shadow: 
+    -1px -1px 0 #ffffff,  
+     1px -1px 0 #ffffff,
+    -1px  1px 0 #ffffff,
+     1px  1px 0 #ffffff,  
+    -2px -2px 0 #ffffff,
+     2px -2px 0 #ffffff,
+    -2px  2px 0 #ffffff,
+     2px  2px 0 #ffffff;  
+}
+
+.overflow-hidden {
+  overflow: hidden; /* Asegura que el contenido no cause scroll */
+}
+
+.img-sponsors {
+  display: flex;
+  animation: scroll-left 15s linear infinite; /* Aplica la animación aquí */
+}
+
+.img-sponsors img {
+  max-width: 200px;
+  width: 100%;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100%); /* Inicia el texto fuera de la vista a la derecha */
   }
-  .img-sponsors{
-    text-align: center;
-    margin-right: 0px !important;
-    animation: scroll-left 15s linear infinite; /* Aplica la animación aquí */
-    
+  100% {
+    transform: translateX(-100%); /* Mueve el texto completamente fuera de la vista a la izquierda */
   }
-  @keyframes scroll-left {
-    0% {
-      transform: translateX(0); /* Comienza desde la posición original */
-    }
-    100% {
-      transform: translateX(-100%); /* Se desplaza hacia la izquierda */
-    }
-  }
+}

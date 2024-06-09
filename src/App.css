@@ -3,9 +3,10 @@ body {
 
   background-color: #f50f0f; 
   background-image: url('/src/assets/img/fondoBody.jpg'); 
-    background-size: cover;       
-    background-position: center;   
-    background-repeat: no-repeat; 
+  background-size: cover;       
+  background-position: center;   
+  background-repeat: no-repeat; 
+  background-attachment: fixed; /* Esto evita el scroll */
   
 } 
  /* body {

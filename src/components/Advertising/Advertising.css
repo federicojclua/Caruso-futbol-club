@@ -1,19 +1,28 @@
 .advertising-container {
     width: 100%; 
     overflow: hidden; 
-    background-color: #b8eca086; 
+    background-color: #b8eca086;
+    margin-top: 60px; 
     padding: 20px 0; 
     position: relative;
 }
 
 .advertising-text {
     display: inline-block; 
-    white-space: nowrap; 
-    color: #014638; ; 
+    white-space: nowrap;  
     font-size: 3vw; 
     font-weight: bold; 
     animation: scroll-left 15s linear infinite; /* Animación para desplazar el texto hacia la izquierda */
-    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8); /* Sombra de texto */
+    color: #022720;
+    text-shadow: 
+      -1px -1px 0 #ffffff,  
+       1px -1px 0 #ffffff,
+      -1px  1px 0 #ffffff,
+       1px  1px 0 #ffffff,  
+      -2px -2px 0 #ffffff,
+       2px -2px 0 #ffffff,
+      -2px  2px 0 #ffffff,
+       2px  2px 0 #ffffff;  
 }
 
 @keyframes scroll-left {
