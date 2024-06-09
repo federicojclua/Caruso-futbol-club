@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
-import NavBar from '../../components/header/nav-bar/NavBar';  
+import NavBar from '../../components/header/nav-bar/NavBar';
 import Footer from '../../components/footer/Footer';
 import WhatsAppButton from '../../components/WhatsAppButton/WhatsAppButton';
 import ProductList from './ProductList';
@@ -32,8 +32,18 @@ const EcommercePage = () => {
     setCartItems(newCartItems);
   };
 
-  const calculateTotalPrice = () => {
-    return cartItems.reduce((total, item) => total + (parseFloat(item.price.replace('$', '')) * item.quantity), 0).toFixed(2);
+  const handleReduceQuantity = (index) => {
+    const newCartItems = [...cartItems];
+    if (newCartItems[index].quantity > 1) {
+      newCartItems[index].quantity -= 1;
+      setCartItems(newCartItems);
+    } else {
+      handleRemoveFromCart(index);
+    }
+  };
+
+  const handleClearCart = () => {
+    setCartItems([]);
   };
 
   return (
@@ -53,9 +63,16 @@ const EcommercePage = () => {
       <Footer />
       <WhatsAppButton />
       <button className="floating-cart-button" onClick={handleShowCart}>🛒</button>
-      <ShoppingCart show={showCart} handleClose={handleCloseCart} cartItems={cartItems} handleRemoveItem={handleRemoveFromCart} />
+      <ShoppingCart
+        show={showCart}
+        handleClose={handleCloseCart}
+        cartItems={cartItems}
+        handleRemoveItem={handleRemoveFromCart}
+        handleReduceQuantity={handleReduceQuantity}
+        handleClearCart={handleClearCart}
+      />
     </div>
   );
-}
+};
 
 export default EcommercePage;
