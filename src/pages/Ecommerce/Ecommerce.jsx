@@ -45,6 +45,7 @@ const EcommercePage = () => {
         <meta name="author" content="Caruso Futbol Club" />
         <link rel="canonical" href="https://www.carusofutbolclub.com/tienda" />
       </Helmet>
+      <NavBar />
       <div className="main-ecommerce-content">
         <h1 className='subtitle-ecommerce'>Bienvenidos a Nuestra Tienda</h1>
         <ProductList addToCart={addToCart} />
