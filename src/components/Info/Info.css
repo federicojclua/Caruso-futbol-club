@@ -1,17 +1,18 @@
 /* Estilos generales */
 .Services-container {
-  /* background-image: url('/src/assets/img/2.2.jpg'); */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   align-items: center; /* Centra verticalmente el contenido */
   height: 100vh; /* Ajusta la altura al 100% de la ventana gráfica */
+  padding-top: 70px;
 }
 
 .container-card {
   display: flex;
   flex-direction: column;
   text-align: center;
+  align-items: center;
   width: 60%; /* Contenedor al 60% del contenedor padre */
   margin: 0 auto;
 }
@@ -31,20 +32,23 @@
   justify-content: center;
   padding-bottom: 50px; /* Reduce el padding para evitar desbordamientos */
 }
+
 .card-section .col {
   display: flex;
   justify-content: center;
 }
 
 .box-1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra verticalmente el contenido */
+  justify-content: center; /* Centra horizontalmente el contenido */
   background-color: #258D19;
   max-width: 250px;
   height: 200px; /* Altura de la caja */
   border-radius: 10px; /* Borde redondeado */
-  align-items: center; /* Centrar verticalmente el contenido */
   color: #ececec; /* Color del texto */
   font-weight: bolder;
-  justify-content: center; /* Centrar horizontalmente el contenido */
   margin: 5px; /* Espacio entre las cajas */
   padding: 10px; /* Reduce el padding interno de cada tarjeta */
   border: 1px solid #ddd;
@@ -66,28 +70,29 @@ h3, h4 {
   margin: 10px 0;
 }
 
-/* Media query para pantallas de 768px o menos */
+/* Media query para pantallas de 1083px o menos */
 @media (max-width: 1083px) {
   .container-card {
     width: 90%; /* Ensancha el contenedor para pantallas pequeñas */
     display: flex;
     justify-content: center;
     flex-direction: column;
-    
   }
 
   .box-1 {
-max-width: none;
-
+    max-width: none;
   }
 
   .Services-container {
     height: auto; /* Ajusta la altura automáticamente */
   }
-  .Services-title{
+
+  .Services-title {
     font-size: 4vw;
   }
 }
+
+/* Media query para pantallas de 767px o menos */
 @media (max-width: 767px) {
   .card-section {
     flex-direction: row; /* Mantén las tarjetas en filas */
@@ -98,17 +103,20 @@ max-width: none;
     width: 50%; /* Ajusta el ancho al 50% para dos columnas */
     padding: 10px;
   }
-  .Services-title{
+
+  .Services-title {
     font-size: 6vw;
   }
 }
 
+/* Media query para pantallas de 480px o menos */
 @media (max-width: 480px) {
   .card-section .col {
     width: 100%; /* Ajusta el ancho al 100% para una columna */
     padding: 10px;
   }
-  .Services-title{
+
+  .Services-title {
     font-size: 7.5vw;
   }
 }

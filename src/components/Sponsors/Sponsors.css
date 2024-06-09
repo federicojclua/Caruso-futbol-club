@@ -4,17 +4,29 @@
     background-size: cover;       /* Asegura que la imagen cubra todo el fondo del contenedor */
     background-position: center;   /*Centra la imagen*/
     background-repeat: no-repeat; /* Evita que la imagen se repita */ 
+    padding-bottom: 100px;
 
 }
 
 .text-sponsors {
     color: #014638;
     font-weight: bold; 
-    font-size: 1.5rem; /* Tamaño de texto inicial */
+    font-size: 3vw; /* Tamaño de texto inicial */
     text-align: center;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8); /* Sombra de texto */
+    padding-bottom: 30px;
   }
   .img-sponsors{
     text-align: center;
     margin-right: 0px !important;
+    animation: scroll-left 15s linear infinite; /* Aplica la animación aquí */
     
+  }
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0); /* Comienza desde la posición original */
+    }
+    100% {
+      transform: translateX(-100%); /* Se desplaza hacia la izquierda */
+    }
   }

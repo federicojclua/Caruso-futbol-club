@@ -1,29 +1,55 @@
 .container-tournament {
-    display: flex; /* Utiliza flexbox para alinear los elementos en una fila */
-    flex-direction: row; /* Asegura que los elementos se alineen en una fila */
-    width: 100%; /* Asegura que el contenedor principal ocupe el 100% del ancho */
-    justify-content: space-between; /* Añade espacio entre los elementos */
-    max-width: 80%;
-    height: 900px;
-     
-  }
-  .img-tournament{
-    width: 800px;
-    height: auto;
-    margin-right: 230px;
-    margin-top: 80px;
-  }
-  .tournament-text{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    max-width: 40%;
-    margin-top: 80px;
-    color: #014638;
-    font-size: 4vw; /* Utiliza unidades relativas para el tamaño del texto */
-    font-weight: bold; /* Hace que el texto sea grueso */
-    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8); /* Sombra de texto */
+  display: flex; /* Utiliza flexbox para alinear los elementos en una fila */
+  flex-direction: row; /* Asegura que los elementos se alineen en una fila */
+  max-width: 85%; /* Limita el ancho máximo del contenedor */
+  justify-content: space-between; /* Añade espacio entre los elementos */
+  padding-bottom: 100px;
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+}
 
+.tournament-text, .img-tournament {
+  flex: 1; /* Permite que los elementos hijos ocupen un espacio igual */
+  max-width: 50%; /* Asegura que cada uno ocupe el 50% del contenedor */
+  box-sizing: border-box; /* Incluye padding y border en el ancho total del elemento */
+  padding: 20px; /* Añade padding para separación interna */
+}
 
+.img-tournament img {
+  max-width: 75%; /* Asegura que la imagen ocupe el 100% del contenedor padre */
+  height: auto; /* Mantiene la proporción de la imagen */
+  border-color: aliceblue;
+  border-radius: 8px;
+}
+
+.tournament-title {
+  align-items: center;
+  text-align: center;
+  color: #014638;
+  font-size: 3.5vw; /* Ajusta el tamaño del texto */
+  font-weight: bold; /* Hace que el texto sea grueso */
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8); /* Sombra de texto */
+  
+}
+.tournament-description {
+  text-align: center;
+  color: #014638;
+  font-size: 2vw; /* Ajusta el tamaño del texto */
+  margin-top: 40px; /* Espacio superior para separación */
+}
+
+@media (max-width: 1000px) {
+  .container-tournament {
+      flex-direction: column; /* Cambia a columna para pantallas más pequeñas */
+      align-items: center; /* Centra los elementos hijos verticalmente */
+      width: 100%; /* Asegura que ocupe el 100% del ancho en pantallas pequeñas */
   }
+
+  .tournament-text, .img-tournament {
+      max-width: 100%; /* Asegura que los elementos hijos ocupen el 100% del contenedor padre */
+      padding: 10px; /* Reduce el padding para pantallas más pequeñas */
+  }
+
+  .tournament-title {
+      font-size: 1.5rem; /* Ajusta el tamaño del texto para pantallas más pequeñas */
+  }
+}

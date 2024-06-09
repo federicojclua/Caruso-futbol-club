@@ -5,7 +5,7 @@ import 'animate.css';
 import './App.css';
 import Info from './components/Info/Info';
 import Footer from './components/footer/Footer';
-import Galeria from './components/Galeria-productos/Galeria';
+import Gallery from './components/Gallery/Gallery';
 import Header from './components/header/Header';
 import Sponsors from './components/Sponsors/Sponsors';
 import Tournament from './components/Tournament/Tournament';
@@ -19,6 +19,7 @@ import Ecommerce from './pages/Ecommerce/Ecommerce';
 import Location from './pages/Location/Location';
 import Login from './pages/Login/Login';
 import ShoppingCart from './pages/Ecommerce/ShoppingCart';  // Importa el componente ShoppingCart
+import Advertising from './components/Advertising/Advertising';
 
 function App() {
   return (
@@ -29,8 +30,9 @@ function App() {
             <NavBar />
             <Header />
             <LocationMain />
-            <Galeria />
+            <Gallery />
             <Info />
+            <Advertising />
             <Tournament />
             <Sponsors />
             <Footer />

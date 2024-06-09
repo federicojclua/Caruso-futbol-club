@@ -1,0 +1,32 @@
+.advertising-container {
+    width: 100%; 
+    overflow: hidden; 
+    background-color: #b8eca086; 
+    padding: 20px 0; 
+    position: relative;
+}
+
+.advertising-text {
+    display: inline-block; 
+    white-space: nowrap; 
+    color: #014638; ; 
+    font-size: 3vw; 
+    font-weight: bold; 
+    animation: scroll-left 15s linear infinite; /* Animación para desplazar el texto hacia la izquierda */
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8); /* Sombra de texto */
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(100%); /* Inicia el texto fuera de la vista a la derecha */
+    }
+    100% {
+        transform: translateX(-100%); /* Mueve el texto completamente fuera de la vista a la izquierda */
+    }
+}
+
+@media (max-width: 1000px) {
+    .advertising-text {
+        font-size: 1rem; /* Ajusta el tamaño del texto para pantallas más pequeñas */
+    }
+}
