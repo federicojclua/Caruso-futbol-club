@@ -1,6 +1,6 @@
 .Sponsors{
     
-    background-image: url('/src/assets/img/fond_sponsors.png');
+    /* background-image: url('/src/assets/img/fond_sponsors.png'); */
     background-size: cover;       /* Asegura que la imagen cubra todo el fondo del contenedor */
     background-position: center;   /*Centra la imagen*/
     background-repeat: no-repeat; /* Evita que la imagen se repita */ 

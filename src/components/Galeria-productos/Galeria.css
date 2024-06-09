@@ -7,7 +7,7 @@
   max-width: 80%;
   margin-top: -10px !important;
   
-  background-image: url('/src/assets/img/1.1.jpg');
+  /* background-image: url('/src/assets/img/1.1.jpg'); */
   background-size: cover;       /* Asegura que la imagen cubra todo el fondo del contenedor */
   background-position: center;   /*Centra la imagen*/
   background-repeat: no-repeat; /* Evita que la imagen se repita */ 
@@ -36,15 +36,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
   text-align: center;
-
-  
-  /* background-color: rgba(255, 255, 255, 0.8); Fondo semitransparente para mejorar la legibilidad */
-  
-  
- 
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8); /* Sombra de texto */
 }
+
+
 
 
 

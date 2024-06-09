@@ -5,10 +5,7 @@
     justify-content: space-between; /* Añade espacio entre los elementos */
     max-width: 80%;
     height: 900px;
-    background-image: url('/src/assets/img/3.3.jpg');
-    background-size: cover;       /* Asegura que la imagen cubra todo el fondo del contenedor */
-    background-position: center;   /*Centra la imagen*/
-    background-repeat: no-repeat; /* Evita que la imagen se repita */ 
+     
   }
   .img-tournament{
     width: 800px;
@@ -19,8 +16,14 @@
   .tournament-text{
     display: flex;
     justify-content: center;
+    align-items: center;
+    text-align: center;
     max-width: 40%;
     margin-top: 80px;
+    color: #014638;
+    font-size: 4vw; /* Utiliza unidades relativas para el tamaño del texto */
+    font-weight: bold; /* Hace que el texto sea grueso */
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8); /* Sombra de texto */
 
 
   }

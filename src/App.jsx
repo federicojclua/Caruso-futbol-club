@@ -11,6 +11,7 @@ import Sponsors from './components/Sponsors/Sponsors';
 import Tournament from './components/Tournament/Tournament';
 import NavBar from './components/header/nav-bar/NavBar';
 import WhatsAppButton from './components/WhatsAppButton/WhatsAppButton';
+import LocationMain from './components/LocationMain/LocationMain';
 import Error404 from './pages/Error404/Error404';
 import Contact from './pages/Contact/Contact';
 import AboutUs from './pages/AboutUs/AboutUs';
@@ -27,6 +28,7 @@ function App() {
         <Route path="/" element={
           <div>
             <Header />
+            <LocationMain />
             <Galeria />
             <Info />
             <Tournament />
