@@ -3,119 +3,126 @@
     display: flex; /* Utiliza flexbox para alinear los elementos en una fila */
     flex-direction: column; /* Asegura que los elementos se alineen en una columna por defecto */
     max-width: 100%; /* Asegura que el contenedor principal ocupe el 100% del ancho */
+    max-height: auto;
     justify-content: center; /* Centra los elementos */
     align-items: center; /* Centra los elementos verticalmente */
-    /* background-image: url('/src/assets/img/1.1.jpg'); */
     background-size: cover;       /* Asegura que la imagen cubra todo el fondo del contenedor */
     background-position: center;   /* Centra la imagen */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
     margin-top: -10px !important;
-}
-
-.main-location-content {
+  }
+  
+  .main-location-content {
     background: none  !important; /* Elimina cualquier fondo no deseado */
     width: 100%; /* Asegura que el contenido ocupe el 100% del ancho del contenedor principal */
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 60px;
     padding: 0px !important;
-}
 
-.title-location {
+  }
+  
+  .title-location {
     font-size: 3.5vw;
     font-weight: bolder;
     text-align: center;
     padding-top:40px;
     color: #014638;
-    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8); /* Sombra de texto */
-}
-.subtitle-location {
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8); 
+  }
+  .subtitle-location {
     font-size: 2.5vw;
     font-weight: bolder;
     text-align: center;
     padding: 50px 0;
     color: #014638;
-    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8); /* Sombra de texto */
-}
-.text-location{
-    font-size: 1.8vw;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8); 
+  }
+  .text-location{
+    font-size: 1.3vw;
     color: #014638;
-    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8); /* Sombra de texto */
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8); 
     font-weight: bolder;
     text-align: center;
     padding-right: 10px;
-
-
-}
-
-.maps-container {
+    padding: 40px;
+  
+  
+  }
+  
+  .maps-container {
     width: 80%; /* Define el ancho del contenedor principal de los mapas */
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.location-section {
-    width: 100%; /* Asegura que cada sección ocupe el 100% del ancho del contenedor */
-    margin-bottom: 20px; /* Añade espacio entre las secciones */
-    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Añade una sombra para dar efecto de elevación */
-    border-radius: 10px; /* Bordes redondeados */
-}
-
-.map-container iframe {
-    width: 100%; /* Asegura que el iframe ocupe el 100% del ancho del contenedor */
-    height: auto; /* Ajusta la altura automáticamente para mantener la proporción */
-}
-
-.maps1, .maps2{
+  }
+  
+  .location-section {
+    width: 100%; 
+    margin-bottom: 20px; 
+    background-color: rgba(255, 255, 255, 0.8); 
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
+    border-radius: 10px;
+  }
+  
+  .map-container iframe {
+    width: 100%; 
+    height: auto; 
+  }
+  
+  .maps1, .maps2{
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-
-/* Media query para pantallas menores a 1000px */
-@media (max-width: 1000px) {
+  }
+  
+  /* Media query para pantallas menores a 1000px */
+  @media (max-width: 1000px) {
     .maps-container {
-        width: 100%; /* Ajusta el ancho del contenedor principal de los mapas al 100% en pantallas pequeñas */
+        width: 100%; 
+        max-height: auto;
+        padding-bottom: 100px;
     }
-
+  
     .main-location-content {
         max-width: 90% !important;
         padding-left: 60px !important;
         padding-right: 60px !important;
     }
-
+  
     .location-section {
-        max-width: 100% !important; /* Asegura que cada sección ocupe el 100% del ancho del contenedor */
+        max-width: 100% !important; 
     }
-
+  
     .map-container iframe {
         width: 100%; /* Asegura que el iframe ocupe el 100% del ancho del contenedor */
         height: auto; /* Ajusta la altura automáticamente para mantener la proporción */
     }
-
+  
     .title-location {
-        font-size: 4vw !important;
+        font-size: 4vw ;
         padding-bottom: 0px;
     }
-
+  
     .subtitle-location {
-        font-size: 3vw !important;
+        font-size: 3vw ;
         padding-bottom: 0px !important;
         padding-top: 10px !important;
     }
-
+  
     .maps1, .maps2 {
-        flex-direction: column; /* Cambia la dirección del flex a columna */
-        align-items: flex-start; /* Alinea los elementos al inicio del contenedor */
+        flex-direction: column; 
+        align-items: flex-start; 
         margin-top: 30px;
     }
-
+  
     .text-location {
-        padding-right: 0; /* Elimina el padding a la derecha */
-        padding-bottom: 10px; /* Añade padding abajo para separar el texto del mapa */
-        text-align: left; /* Alinea el texto a la izquierda */
+        padding-left: 0px !important; 
+        padding-top: 0px; 
+        padding-bottom: 20px; 
+        text-align: left; 
         font-size: 2.3vw  ;
     }
-}
+  }
+  

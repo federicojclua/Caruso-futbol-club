@@ -23,10 +23,10 @@ import ShoppingCart from './pages/Ecommerce/ShoppingCart';  // Importa el compon
 function App() {
   return (
     <BrowserRouter>
-      <NavBar />
       <Routes>
         <Route path="/" element={
           <div>
+            <NavBar />
             <Header />
             <LocationMain />
             <Galeria />

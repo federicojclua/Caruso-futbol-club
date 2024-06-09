@@ -1,58 +1,6 @@
-.LocationPage-component {
-    background-image: url('/src/assets/img/Fondo-galeria.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
+.LocationPage-component{
+    height: 1300px;
     
-  }
-  
-  .main-location-content {
-    max-width: 80%;
-    margin: auto;
-    padding: 120px;
-    color: #333333;
-    background-color: rgba(255, 255, 255, 0.4);
-  }
-  
-  .subtitle-location {
-    font-size: 2.5vw;
-    font-weight: bold;
-    text-align: center;
-    padding: 50px 0;
-  }
-  
-  .location-section {
-    background-color: rgba(255, 255, 255, 0.9);
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 20px;
-    max-width: 45%; /* ajusta el tamaño según tu preferencia */
-  }  
-  .location-section h3 {
-    font-size: 1.5vw;
-    margin-bottom: 10px;
-    font-weight: bold;
-    color: #258d19;;
-  }
-  
-  .location-section p {
-    font-size: 1vw;
-    margin: 5px 0;
-    color: #444;
-  }
+    
 
-  .maps-container {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .map-container {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .map-container iframe {
-    border-radius: 10px;
-    border: 1px solid #ddd;
-  }
-  
+}
