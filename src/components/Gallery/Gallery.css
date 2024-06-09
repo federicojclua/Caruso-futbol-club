@@ -27,7 +27,6 @@
 
 .gallery-text {
   flex: 1; /* Permite que el contenedor de texto ocupe el 50% del espacio disponible */
-  color: #014638; 
   margin: 20px; /* Añade margen para el espaciado */
   max-width: 100%;
   border-radius: 10px;
@@ -37,7 +36,16 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8); /* Sombra de texto */
+  color: #022720;
+  text-shadow: 
+    -1px -1px 0 #ffffff,  
+     1px -1px 0 #ffffff,
+    -1px  1px 0 #ffffff,
+     1px  1px 0 #ffffff,  
+    -2px -2px 0 #ffffff,
+     2px -2px 0 #ffffff,
+    -2px  2px 0 #ffffff,
+     2px  2px 0 #ffffff;  
 }
 
 

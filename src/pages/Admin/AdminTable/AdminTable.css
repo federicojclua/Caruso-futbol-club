@@ -1,0 +1,23 @@
+/* AdminTable.css */
+
+.btn-custom {
+    /* Estilos para el botón de editar */
+  }
+  
+  .btn-delete {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+ 
+  }
+
+  .btn-delete-img {
+    width: 40px;  /* Ajusta el tamaño de la imagen según sea necesario */
+    height: 40px; /* Ajusta el tamaño de la imagen según sea necesario */
+  }
+
+  
+  .btn-delete:hover {
+    opacity: 0.7; /* Agrega un efecto de hover si lo deseas */
+  }
+  

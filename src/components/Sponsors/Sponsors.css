@@ -6,12 +6,20 @@
 }
 
 .text-sponsors {
-  color: #014638;
   font-weight: bold; 
   font-size: 3vw; /* Tamaño de texto inicial */
   text-align: center;
-  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8); /* Sombra de texto */
   padding-bottom: 30px;
+  color: #022720;
+  text-shadow: 
+    -1px -1px 0 #ffffff,  
+     1px -1px 0 #ffffff,
+    -1px  1px 0 #ffffff,
+     1px  1px 0 #ffffff,  
+    -2px -2px 0 #ffffff,
+     2px -2px 0 #ffffff,
+    -2px  2px 0 #ffffff,
+     2px  2px 0 #ffffff;  
 }
 
 .overflow-hidden {

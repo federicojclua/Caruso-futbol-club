@@ -20,6 +20,7 @@ import Location from './pages/Location/Location';
 import Login from './pages/Login/Login';
 import ShoppingCart from './pages/Ecommerce/ShoppingCart';  // Importa el componente ShoppingCart
 import Advertising from './components/Advertising/Advertising';
+import Admin from './pages/Admin/Admin';
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
         <Route path="/Contact" element={<Contact />} />
         <Route path="/Cart" element={<ShoppingCart />} />  {/* Ruta para la página del carrito */}
         <Route path="*" element={<Error404 />} />
+        <Route path="/Admin" element={<Admin />} />
       </Routes>
     </BrowserRouter>
   );

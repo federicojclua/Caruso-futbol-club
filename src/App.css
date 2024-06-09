@@ -1,11 +1,12 @@
 body {
   font-family: "PT Sans", sans-serif;
-
-  background-color: #f50f0f; 
+  margin: 0;
+  padding: 0;
   background-image: url('/src/assets/img/fondoBody.jpg'); 
-    background-size: cover;       
-    background-position: center;   
-    background-repeat: no-repeat; 
+  background-size: cover;       
+  background-position: center;   
+  background-repeat: no-repeat; 
+  background-attachment: fixed; /* Esto evita el scroll */
   
 } 
  /* body {

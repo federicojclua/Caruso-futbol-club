@@ -3,6 +3,7 @@
   flex-direction: row; /* Asegura que los elementos se alineen en una fila */
   max-width: 85%; /* Limita el ancho máximo del contenedor */
   justify-content: space-between; /* Añade espacio entre los elementos */
+  padding-top: 70px;
   padding-bottom: 100px;
   margin: 0 auto; /* Centra el contenedor horizontalmente */
 }
@@ -24,10 +25,18 @@
 .tournament-title {
   align-items: center;
   text-align: center;
-  color: #014638;
   font-size: 3.5vw; /* Ajusta el tamaño del texto */
   font-weight: bold; /* Hace que el texto sea grueso */
-  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8); /* Sombra de texto */
+  color: #022720;
+  text-shadow: 
+    -1px -1px 0 #ffffff,  
+     1px -1px 0 #ffffff,
+    -1px  1px 0 #ffffff,
+     1px  1px 0 #ffffff,  
+    -2px -2px 0 #ffffff,
+     2px -2px 0 #ffffff,
+    -2px  2px 0 #ffffff,
+     2px  2px 0 #ffffff;  
   
 }
 .tournament-description {
