@@ -28,8 +28,8 @@
 
 .main-content-about p,
 .main-content-about li {
- font-size: 1vw;
- font-weight: bold;
+  font-size: 1vw;
+  font-weight: bold;
 }
 
 .main-content-about ul {
@@ -64,7 +64,6 @@
   color: #258d19; /* Color de hover */
 }
 
-
 .link {
   color: #1e90ff;
   text-decoration: none;
@@ -75,4 +74,94 @@
 
 .link:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 1400px) {
+  .main-content-about h2 {
+    font-size: 2.3em;
+  }
+
+  .main-content-about p,
+  .main-content-about li {
+    font-size: 1.2vw;
+  }
+
+  .main-content-about ul li a,
+  .main-content-about p a {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .main-content-about h2 {
+    font-size: 2em;
+  }
+
+  .main-content-about p,
+  .main-content-about li {
+    font-size: 1.4vw;
+  }
+
+  .main-content-about ul li a,
+  .main-content-about p a {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 992px) {
+  .main-content-about h2 {
+    font-size: 1.8em;
+  }
+
+  .main-content-about p,
+  .main-content-about li {
+    font-size: 1.6vw;
+  }
+
+  .main-content-about ul li a,
+  .main-content-about p a {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content-about h2 {
+    font-size: 1.6em;
+  }
+
+  .main-content-about p,
+  .main-content-about li {
+    font-size: 1.8vw;
+  }
+
+  .main-content-about ul li a,
+  .main-content-about p a {
+    font-size: 11px;
+  }
+
+  .main-content-about {
+    width: 90%;
+    padding-top: 100px;
+  }
+}
+
+@media (max-width: 576px) {
+  .main-content-about h2 {
+    font-size: 1.4em;
+  }
+
+  .main-content-about p,
+  .main-content-about li {
+    font-size: 2vw;
+  }
+
+  .main-content-about ul li a,
+  .main-content-about p a {
+    font-size: 10px;
+  }
+
+  .main-content-about {
+    width: 95%;
+    padding-top: 80px;
+  }
 }
