@@ -24,6 +24,7 @@
   width: 100%; /* Ajusta el ancho al 100% */
 }
 
+
 .Login-component .colm-form .form-container {
   background-color: #ffffff;
   border: none;
@@ -31,7 +32,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
   margin-bottom: 30px;
   padding: 20px;
-  max-width: 400px;
+  max-width: 600px;
 }
 
 .Login-component .colm-form .form-container input, .Login-component
