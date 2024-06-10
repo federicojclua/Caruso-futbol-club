@@ -6,8 +6,7 @@ import WhatsAppButton from '../../components/WhatsAppButton/WhatsAppButton';
 import ProductList from './ProductList';
 import ShoppingCart from './ShoppingCart';
 import './Ecommerce.css';
-import { Link, Route, Routes, useNavigate } from 'react-router-dom';
-import PaymentForm from './PaymentForm';
+import { useNavigate } from 'react-router-dom';
 
 const EcommercePage = () => {
   const [showCart, setShowCart] = useState(false);
@@ -50,7 +49,7 @@ const EcommercePage = () => {
   };
 
   const handleProceedToPayment = () => {
-    navigate('/payment');
+    navigate('/payment', { state: { cartItems } });
   };
 
   return (
@@ -79,10 +78,6 @@ const EcommercePage = () => {
         handleClearCart={handleClearCart}
         handleProceedToPayment={handleProceedToPayment}
       />
-      <Routes>
-        <Route path="/payment" element={<PaymentForm />} />
-        <Route path="/Error404" element={<div>Page not found</div>} />
-      </Routes>
     </div>
   );
 };

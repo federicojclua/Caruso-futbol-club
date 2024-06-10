@@ -1,41 +1,92 @@
+.payment-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 20px;
+}
+
 .payment-form {
-    padding: 20px;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    max-width: 400px;
-    margin: 50px auto;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .payment-form h2 {
-    margin-bottom: 20px;
-  }
-  
-  .payment-form .form-group {
-    margin-bottom: 15px;
-  }
-  
-  .payment-form .form-group label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  .payment-form .form-group input {
-    width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
-  }
-  
-  .payment-form button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-  }
-  
-  .payment-form button:hover {
-    background-color: #0056b3;
-  }
-  
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  max-width: 400px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.payment-form h2 {
+  margin-bottom: 20px;
+}
+
+.payment-form .form-group {
+  margin-bottom: 15px;
+}
+
+.payment-form .form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.payment-form .form-group input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.payment-form .cvv-group {
+  display: flex;
+  align-items: center;
+}
+
+.payment-form .cvv-group input {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.payment-form .cvv-help-image {
+  width: 200px; /* Ajusta el tamaño según sea necesario */
+}
+
+.payment-form button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.payment-form button:hover {
+  background-color: #0056b3;
+}
+
+.cart-summary {
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  max-width: 400px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart-summary h2 {
+  margin-bottom: 20px;
+}
+
+.cart-summary .cart-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.cart-summary .cart-item img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.total-price {
+  margin-top: 20px;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: right;
+}
