@@ -1,8 +1,5 @@
-
-
 import React, { useState, useEffect } from 'react';
 import './TurnosTabla.css';
-
 
 const TurnosTabla = ({ turnos, sucursal, tipoCancha, fecha, agregarTurno }) => {
   const horarios = ['09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21'];
@@ -11,9 +8,6 @@ const TurnosTabla = ({ turnos, sucursal, tipoCancha, fecha, agregarTurno }) => {
   useEffect(() => {
     setTurnosLocales(turnos.filter(turno => turno.sucursal === sucursal.id && turno.fecha === fecha));
   }, [turnos, sucursal.id, fecha]);
-
- 
-
 
   const estaOcupado = (horario, cancha) => {
     return !!turnosLocales.find((turno) => turno.hora === horario && turno.cancha === cancha);
@@ -75,9 +69,9 @@ const TurnosTabla = ({ turnos, sucursal, tipoCancha, fecha, agregarTurno }) => {
   };
 
   return (
-    <div>
-      <h2>Turnos en {sucursal.nombre} para el {fecha}</h2>
-      <table>
+    <div className="turnos-tabla-container">
+      <h2 className="turnos-tabla-titulo">Turnos en {sucursal.nombre} para el {fecha}</h2>
+      <table className="turnos-tabla">
         <thead>
           <tr>
             <th>Horario</th>
@@ -98,11 +92,7 @@ const TurnosTabla = ({ turnos, sucursal, tipoCancha, fecha, agregarTurno }) => {
                 return (
                   <td
                     key={cancha.id}
-                    style={{
-                      backgroundColor: ocupado || ocupadoFutbol7 || ocupadoFutbol9
-                        ? 'red'
-                        : 'green',
-                    }}
+                    className={ocupado || ocupadoFutbol7 || ocupadoFutbol9 ? 'ocupado' : 'disponible'}
                     onClick={() => handleTurnoClick(horario, cancha.id)}
                   >
                     {ocupado || ocupadoFutbol7 || ocupadoFutbol9 ? 'Ocupado' : 'Disponible'}

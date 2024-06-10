@@ -1,28 +1,21 @@
 body {
   font-family: "PT Sans", sans-serif;
 
+  /* background-color: #f50f0f; 
+  background-image: url('/src/assets/img/fondoBody.jpg'); 
+  background-size: cover;       
+  background-position: center;   
+  background-repeat: no-repeat; 
+  background-attachment: fixed;  */
+  
+} 
+.Container-Main{  
   background-color: #f50f0f; 
   background-image: url('/src/assets/img/fondoBody.jpg'); 
   background-size: cover;       
   background-position: center;   
   background-repeat: no-repeat; 
-  background-attachment: fixed; /* Esto evita el scroll */
+  background-attachment: fixed; 
   
-} 
- /* body {
-  width: 100%;
-  background: url("src/assets/img/body2.jpg") center repeat;
-  background-size: 300%;
-  max-width: 100%px;
- 
-  animation: moveBackground 120s linear infinite; 
-}
 
-@keyframes moveBackground {
-  0% {
-    background-position: 600% 0%;
-  }
-  100% {
-    background-position: 0% 600%;
-  } 
-} */
+}
