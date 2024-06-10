@@ -5,6 +5,7 @@ import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import AdminTable from './AdminTable/AdminTable';
 import AdminEcommerce from './AdminEcommerce/AdminEcommerce';
+import TablePrice from './Table-price/TablePrice'
 
 const Admin = () => {
   // Estado para controlar qué contenido se muestra
@@ -21,6 +22,11 @@ const Admin = () => {
     // Establecer el contenido a mostrar como 'Ecommerce'
     setContentToShow('Ecommerce');
   };
+    // Función para manejar el clic en el botón de Ecommerce
+    const handlePriceClick = () => {
+      // Establecer el contenido a mostrar como 'Ecommerce'
+      setContentToShow('Precios');
+    };
 
   return (
     <div className=" container-admin">
@@ -30,11 +36,13 @@ const Admin = () => {
         <div className='button-container'>
         <Button className='button-admin' variant="primary" onClick={handleReservaTurnosClick}>Reserva de turnos</Button>{' '}
         <Button className='button-admin' variant="secondary" onClick={handleEcommerceClick}>Ecommerce</Button>{' '}
+        <Button className='button-admin' variant="info" onClick={handlePriceClick}>Precios</Button>{' '}
         </div>
         
         {/* Mostrar el contenido correspondiente según lo seleccionado */}
         {contentToShow === 'Reserva de turnos' && <AdminTable />}
         {contentToShow === 'Ecommerce' && <AdminEcommerce />}
+        {contentToShow === 'Precios' && <TablePrice />}
       </Container>
     </div>
   );
