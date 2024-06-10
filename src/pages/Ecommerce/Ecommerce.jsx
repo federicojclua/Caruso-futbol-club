@@ -7,7 +7,7 @@ import ProductList from './ProductList';
 import ShoppingCart from './ShoppingCart';
 import './Ecommerce.css';
 import { Link, Route, Routes, useNavigate } from 'react-router-dom';
-import PaymentForm from './PaymentForm'; // Importar el nuevo componente de formulario de pago
+import PaymentForm from './PaymentForm';
 
 const EcommercePage = () => {
   const [showCart, setShowCart] = useState(false);

@@ -52,7 +52,7 @@ function App() {
         <Route path="/admin" element={<Admin />} />
         <Route path="/principal" element={<Principal />} />
         <Route path="/record" element={<Record />} />
-        <Route path="/payment" element={<PaymentForm />} /> // Añadir ruta de PaymentForm
+        <Route path="/payment" element={<PaymentForm />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
     </BrowserRouter>
