@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
-import ProtectedRoute from './ProtectedRoute'; // Importa tu componente ProtectedRoute
+import ProtectedRoute from '../../ProtectedRoute/ProtectedRoute'; // Importa tu componente ProtectedRoute
 import "./NavBar.css";
 import Container from 'react-bootstrap/Container';
 

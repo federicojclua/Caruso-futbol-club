@@ -17,10 +17,9 @@ const Admin = () => {
  
   
  
-      <Button variant="primary">Pagina principal</Button>{' '}
-      <Button variant="secondary">Escuelita</Button>{' '}
-      <Button variant="success">Torneos</Button>{' '}
-      <Button variant="success">Turnos</Button>{' '}
+      <Button variant="primary">Reserva de turnos</Button>{' '}
+      <Button variant="secondary">Ecommerce</Button>{' '}
+ 
       
     
       <AdminTable/>
