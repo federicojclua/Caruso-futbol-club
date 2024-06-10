@@ -19,12 +19,11 @@ import AboutUs from './pages/AboutUs/AboutUs';
 import Ecommerce from './pages/Ecommerce/Ecommerce';
 import Location from './pages/Location/Location';
 import Login from './pages/Login/Login';
-import ShoppingCart from './pages/Ecommerce/ShoppingCart';  // Importa el componente ShoppingCart
+import ShoppingCart from './pages/Ecommerce/ShoppingCart';
 import Admin from './pages/Admin/Admin';
 import Record from './pages/record/Record';
-import Principal from './pages/Principal/Principal'
-
-
+import Principal from './pages/Principal/Principal';
+import PaymentForm from './pages/Ecommerce/PaymentForm';
 
 function App() {
   return (
@@ -52,7 +51,8 @@ function App() {
         <Route path="/cart" element={<ShoppingCart />} />  
         <Route path="/admin" element={<Admin />} />
         <Route path="/principal" element={<Principal />} />
-        <Route path="/record" element={<Record/>} />
+        <Route path="/record" element={<Record />} />
+        <Route path="/payment" element={<PaymentForm />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
     </BrowserRouter>
