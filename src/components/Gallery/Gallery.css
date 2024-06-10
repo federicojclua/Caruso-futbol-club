@@ -7,10 +7,8 @@
   max-width: 80%;
   margin-top: -10px !important;
   
-  /* background-image: url('/src/assets/img/1.1.jpg'); */
-  background-size: cover;       /* Asegura que la imagen cubra todo el fondo del contenedor */
-  background-position: center;   /*Centra la imagen*/
-  background-repeat: no-repeat; /* Evita que la imagen se repita */ 
+ 
+
 }
 
 .carousel-container {
@@ -27,11 +25,11 @@
 
 .gallery-text {
   flex: 1; /* Permite que el contenedor de texto ocupe el 50% del espacio disponible */
-  margin: 20px; /* Añade margen para el espaciado */
+  margin: 20px; 
   max-width: 100%;
   border-radius: 10px;
-  font-size: 4vw; /* Utiliza unidades relativas para el tamaño del texto */
-  font-weight: bold; /* Hace que el texto sea grueso */
+  font-size: 4vw; 
+  font-weight: bold; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,23 +53,23 @@
 /* Consulta de medios para pantallas más pequeñas */
 @media (max-width: 1500px) {
   .container-gallery  {
-    flex-direction: column; /* Cambia a una columna en pantallas pequeñas */
-    align-items: center; /* Centra los elementos en una columna */
-    height: auto; /* Ajusta la altura automáticamente */
+    flex-direction: column; 
+    align-items: center;
+    height: auto; 
   }
 
   .gallery-text{
    
     padding-bottom: 0px;
-    margin: 10px 0; /* Ajusta los márgenes para el espaciado vertical */
+    margin: 10px 0; 
     flex: none; /* Desactiva el comportamiento flexible */
-    width: 70%; /* Hace que cada contenedor ocupe el 100% del ancho */
+    width: 70%; 
 
   }
   .carousel-container {
     flex: none; /* Desactiva el comportamiento flexible */
-    width: 75%; /* Hace que cada contenedor ocupe el 100% del ancho */
-    margin: 10px 0; /* Ajusta los márgenes para el espaciado vertical */
+    width: 75%; 
+    margin: 10px 0; 
     padding-top:-30px;
     padding-bottom: 0px;
   
@@ -81,24 +79,23 @@
 
 @media (max-width: 440px) {
   .container-gallery  {
-    flex-direction: column; /* Cambia a una columna en pantallas pequeñas */
-    align-items: center; /* Centra los elementos en una columna */
-    height: auto; /* Ajusta la altura automáticamente */
+    flex-direction: column; 
+    align-items: center; 
+    height: auto; 
   }
 
   .gallery-text{
    
     padding-top: 30px;
     padding-bottom: 0px;
-    margin: 10px 0; /* Ajusta los márgenes para el espaciado vertical */
-    flex: none; /* Desactiva el comportamiento flexible */
-    width: 85%; /* Hace que cada contenedor ocupe el 100% del ancho */
+    margin: 10px 0; 
+    width: 85%; 
     font-size: 6.5vw;
   }
   .carousel-container {
     flex: none; /* Desactiva el comportamiento flexible */
-    width: 85%; /* Hace que cada contenedor ocupe el 100% del ancho */
-    margin: 10px 0; /* Ajusta los márgenes para el espaciado vertical */
+    width: 85%; 
+    margin: 10px 0; 
     padding: 0px;
   
   

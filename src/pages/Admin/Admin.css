@@ -1,0 +1,56 @@
+/* Estilos generales */
+.container-admin {
+    background-image: url("/src/assets/img/fondo-admin.jpg");
+    background-size: cover;       /* Asegura que la imagen cubra todo el fondo del contenedor */
+    background-position: center;  /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */ 
+    height: 100vh;   
+}
+
+.title-panel {
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    font-size: 3vw;
+    color: aliceblue;
+}
+
+.button-container {
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto; /* Centra horizontalmente el contenedor */
+  
+}
+
+.button-admin {
+    flex: 1; /* Hace que cada botón ocupe el mismo espacio dentro del contenedor */
+    margin: 0 10px; /* Añade un pequeño margen horizontal entre los botones */
+    font-size: 1.5vw;
+}
+
+/* Media query para pantallas de hasta 450px */
+@media (max-width: 450px) {
+    .title-panel {
+        font-size: 6vw; /* Ajusta el tamaño de fuente */
+        padding-top: 20px; /* Ajusta el padding superior */
+    }
+
+    .button-admin {
+        font-size: 3vw; /* Ajusta el tamaño de fuente del botón */
+        margin: 0 5px; /* Ajusta el margen horizontal */
+    }
+
+    .button-container {
+        flex-direction: column; /* Cambia la dirección del flujo de los botones a columna */
+        height: auto; /* Ajusta la altura automáticamente */
+        margin-top: 20px; /* Añade un margen superior */
+    }
+
+    .button-admin {
+        width: 100%; /* Hace que los botones ocupen el 100% del contenedor en pantallas pequeñas */
+        margin-bottom: 10px; /* Añade un margen inferior entre los botones */
+    }
+}
