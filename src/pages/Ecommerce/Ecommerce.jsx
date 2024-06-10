@@ -6,10 +6,13 @@ import WhatsAppButton from '../../components/WhatsAppButton/WhatsAppButton';
 import ProductList from './ProductList';
 import ShoppingCart from './ShoppingCart';
 import './Ecommerce.css';
+import { Link, Route, Routes, useNavigate } from 'react-router-dom';
+import PaymentForm from './PaymentForm'; // Importar el nuevo componente de formulario de pago
 
 const EcommercePage = () => {
   const [showCart, setShowCart] = useState(false);
   const [cartItems, setCartItems] = useState([]);
+  const navigate = useNavigate();
 
   const handleShowCart = () => setShowCart(true);
   const handleCloseCart = () => setShowCart(false);
@@ -46,6 +49,10 @@ const EcommercePage = () => {
     setCartItems([]);
   };
 
+  const handleProceedToPayment = () => {
+    navigate('/payment');
+  };
+
   return (
     <div className='EcommercePage-component'>
       <Helmet>
@@ -70,7 +77,12 @@ const EcommercePage = () => {
         handleRemoveItem={handleRemoveFromCart}
         handleReduceQuantity={handleReduceQuantity}
         handleClearCart={handleClearCart}
+        handleProceedToPayment={handleProceedToPayment}
       />
+      <Routes>
+        <Route path="/payment" element={<PaymentForm />} />
+        <Route path="/Error404" element={<div>Page not found</div>} />
+      </Routes>
     </div>
   );
 };

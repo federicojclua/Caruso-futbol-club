@@ -1,7 +1,7 @@
 import React from 'react';
 import './ShoppingCart.css';
 
-const ShoppingCart = ({ show, handleClose, cartItems, handleRemoveItem, handleReduceQuantity, handleClearCart }) => {
+const ShoppingCart = ({ show, handleClose, cartItems, handleRemoveItem, handleReduceQuantity, handleClearCart, handleProceedToPayment }) => {
   return (
     <div className={`shopping-cart ${show ? 'show' : ''}`}>
       <div className="cart-header">
@@ -24,7 +24,9 @@ const ShoppingCart = ({ show, handleClose, cartItems, handleRemoveItem, handleRe
       </div>
       <div className="cart-footer">
         <button onClick={handleClearCart}>Eliminar Todos</button>
-        <button onClick={() => window.location.href = '/404'}>Realizar Compra</button>
+        {cartItems.length > 0 && (
+          <button onClick={handleProceedToPayment}>Realizar Compra</button>
+        )}
       </div>
     </div>
   );
