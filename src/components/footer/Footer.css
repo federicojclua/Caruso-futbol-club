@@ -3,8 +3,8 @@
   color: white;
   padding: 0px;
   text-align: center;
+  width: 100%;
   bottom: 0px;
-  position: fixed;
 }
 
 .footer-container {
