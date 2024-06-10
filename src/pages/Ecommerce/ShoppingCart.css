@@ -49,7 +49,7 @@
   padding: 15px;
   font-size: 24px;
   cursor: pointer;
-  z-index: 999; /* Asegurar que el botón esté en la parte superior */
+  z-index: 999;
 }
 
 .floating-cart-button:hover {
