@@ -11,8 +11,8 @@
 
 /* Estilo para el logo */
 .cfc-logo {
-  width: 4vw; /* Ancho relativo del logo */
-  height: auto; /* Altura automática para mantener la proporción */
+  width: 4vw; 
+  height: auto; 
 }
 
 /* Estilo para la barra de navegación */
@@ -37,9 +37,9 @@
   color: #ffffff !important;
   background-color: #258D19;
   margin-right: 100px;
-  transition: background-color 0.3s; /* Transición suave para el cambio de color */
-  padding: 10px 15px; /* Añade padding para que el hover cubra todo el contenedor */
-  border-radius: 5px; /* Añade un borde redondeado */
+  transition: background-color 0.3s; 
+  padding: 10px 15px; 
+  border-radius: 5px; 
 }
 
 /* Estilo para el hover y el focus de los enlaces */
@@ -54,17 +54,17 @@
 
 /* Estilo para los elementos dentro de la lista desplegable */
 .dropdown-item {
-  font-size: 1vw; /* Ajusta el tamaño del texto */
+  font-size: 1vw; 
 }
 
 /* Media query para pantallas hasta 1200 píxeles */
 @media (max-width: 1200px) {
   .navbar {
-    height: auto; /* Ajusta la altura automáticamente */
+    height: auto; 
   }
   
   .cfc-logo {
-    width: 6vw; /* Aumenta el tamaño del logo en pantallas más pequeñas */
+    width: 6vw; 
   }
   
   .nav-link, .item-dropdown, .inicio-btn {
@@ -85,15 +85,15 @@
 /* Media query para pantallas hasta 991 píxeles */
 @media (max-width: 991px) {
   .navbar {
-    height: auto; /* Ajusta la altura automáticamente */
+    height: auto; 
   }
   
   .cfc-logo {
-    width: 6vw; /* Aumenta el tamaño del logo en pantallas más pequeñas */
+    width: 6vw; 
   }
   
   .nav-link, .item-dropdown, .inicio-btn {
-    font-size: 2vw; /* Ajusta el tamaño del texto */
+    font-size: 2vw; 
     margin-right: 0;
     margin-left: 10px;
   }
@@ -103,57 +103,57 @@
   }
   
   .dropdown-item {
-    font-size: 1.5vw; /* Ajusta el tamaño del texto */
+    font-size: 1.5vw; 
   }
 }
 
 /* Media query para pantallas hasta 767 píxeles */
 @media (max-width: 767px) {
   .navbar {
-    flex-direction: column; /* Cambia la dirección del flex a columna */
-    height: auto; /* Ajusta la altura automáticamente */
+    flex-direction: column; 
+    height: auto; 
   }
   
   .cfc-logo {
-    width: 8vw; /* Aumenta el tamaño del logo en pantallas más pequeñas */
+    width: 8vw;
   }
   
   .inicio-btn, .nav-link, .item-dropdown {
-    font-size: 4vw; /* Ajusta el tamaño del texto */
+    font-size: 4vw; 
     margin-right: auto;
   }
   
   .me-auto {
-    width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
+    width: 100%; 
   }
 
   .dropdown-item {
-    font-size: 3vw; /* Ajusta el tamaño del texto */
+    font-size: 3vw; 
   }
 }
 
 /* Media query para pantallas hasta 430 píxeles */
 @media (max-width: 766px) {
   .navbar {
-    flex-direction: column; /* Cambia la dirección del flex a columna */
-    height: auto; /* Ajusta la altura automáticamente */
+    flex-direction: column; 
+    height: auto; 
   }
   
   .cfc-logo {
-    width: 12vw; /* Aumenta el tamaño del logo en pantallas más pequeñas */
+    width: 12vw; 
   }
   
   .nav-link, .item-dropdown, .inicio-btn {
-    font-size: 3vw; /* Ajusta el tamaño del texto */  
+    font-size: 3vw; 
     margin-right: auto;
     margin-left: 10px;
   }
 
   .me-auto {
-    width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
+    width: 100%; 
   }
 
   .dropdown-item {
-    font-size: 3vw; /* Ajusta el tamaño del texto */
+    font-size: 3vw; 
   }
 }
