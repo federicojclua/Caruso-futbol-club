@@ -20,7 +20,7 @@ const Contacto = () => {
       <NavBar />
       <div className="">
         <Container className="main-contact-content">
-          <p className='subtitle-contact'>Ponte en contacto con nosotros para cualquier consulta o duda.</p>
+          <p className='subtitle-contact'>Ponte en contacto con nosotros</p>
 
           {/* Sección de Información de Contacto */}
           <section className="form">
@@ -29,7 +29,8 @@ const Contacto = () => {
                 <p className='animate__animated animate__slideInDown'><a className='caller' href="tel:01122500777">011 2250 0777</a></p>
                 <p><strong>Servicio de Atención al Cliente</strong></p>
                 <i className="line-orange"></i>
-                <p>¡Dale, armá tu equipo y vení! Podes comunicarte por los siguiente medios y en los horarios indicados:</p>
+                <p>Podes comunicarte por los siguientes medios</p>
+                <p> y en los horarios indicados:</p>
               </div>
             </div>
           </section>

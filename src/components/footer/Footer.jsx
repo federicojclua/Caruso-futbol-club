@@ -25,6 +25,7 @@ const Footer = () => {
           <h5>Accesos útiles</h5>
           <ul>
             <li><a href="/Contact">Contacto</a></li>
+            <li><a href="/Login">Iniciar sesión</a></li>
             <li><a href="/AboutUs">Acerca de nosotros</a></li>
             <li><a href="/Location">Donde encontrarnos</a></li>
           </ul>
