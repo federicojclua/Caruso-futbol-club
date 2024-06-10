@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'animate.css';
 import './App.css';
@@ -27,10 +28,11 @@ import PaymentForm from './pages/Ecommerce/PaymentForm';
 
 function App() {
   return (
+
     <BrowserRouter>
       <Routes>
         <Route path="/" element={
-          <div>
+          <Container className="Container-Main">
             <NavBar />
             <Header />
             <LocationMain />
@@ -41,7 +43,7 @@ function App() {
             <Sponsors />
             <Footer />
             <WhatsAppButton />
-          </div>
+          </Container>
         } />
         <Route path="/login" element={<Login />} />
         <Route path="/location" element={<Location />} />

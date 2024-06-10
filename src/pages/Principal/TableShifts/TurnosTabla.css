@@ -1,15 +1,100 @@
-.table {
+.turnos-tabla-container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box;
+  background: rgb(14,101,102);
+  background: linear-gradient(98deg, rgb(227, 238, 238) 0%, rgb(146, 197, 150) 100%);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+}
+
+.turnos-tabla-titulo {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2vw;
+  color: #305e34fa;
+}
+
+.turnos-tabla {
   width: 100%;
-  border-collapse: collapse;
-  margin: 20px;
+  border-collapse: separate; /* Cambia a 'separate' para aplicar bordes redondeados a las celdas */
+  border-spacing: 8px; /* Añade espacio entre las celdas */
+  margin-bottom: 1rem;
+  font-size: 1vw;
+  font-weight: bolder;
 }
 
-th, td {
-  padding: 10px;
+.turnos-tabla th, .turnos-tabla td {
+  padding: 0.75rem;
+  text-align: center;
+  border-radius: 8px; /* Bordes redondeados */
+}
+
+.turnos-tabla th {
+  background-color: #305e34fa;
+  font-weight: bold;
+  font-size: 1vw;
+  color: rgb(2, 2, 2); /* Añade color blanco al texto del encabezado */
+}
+
+.turnos-tabla td {
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.turnos-tabla .ocupado {
+  background-color: #ff4d4d;
+  color: rgb(5, 5, 5);
+}
+
+.turnos-tabla .disponible {
+  background-color: #305e34fa;
+  color: rgb(255, 255, 255);
+
+}
+
+.turnos-tabla td:hover {
+  background-color:#305e34fa;
+  border-radius: 8px; /* Asegura que el borde redondeado se aplique en el hover */
+}
+
+/* Estilos para el selector de fecha */
+.turnos-tabla-container .fecha-selector {
+  font-size: 1rem;
+  padding: 0.5rem;
   border: 1px solid #ccc;
+  border-radius: 8px; /* Bordes redondeados */
+  background: #fff;
+  transition: border-color 0.3s ease;
 }
 
-th {
-  background-color: #007bff; /* Azul para encabezados */
-  color: #fff;
+.turnos-tabla-container .fecha-selector:focus {
+  border-color: #00e3ae;
+}
+
+/* Estilos para el selector de tipo de cancha */
+.turnos-tabla-container .tipo-cancha-selector {
+  font-size: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px; /* Bordes redondeados */
+  background: #c42a2a;
+  transition: border-color 0.3s ease;
+}
+
+.turnos-tabla-container .tipo-cancha-selector:focus {
+  border-color: #00e3ae;
+}
+
+@media (max-width: 600px) {
+  .turnos-tabla-titulo {
+    font-size: 1.2rem;
+  }
+
+  .turnos-tabla th, .turnos-tabla td {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
 }

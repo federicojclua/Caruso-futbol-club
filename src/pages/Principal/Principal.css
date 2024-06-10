@@ -1,22 +1,46 @@
-.container {
-  position: relative;
-  overflow: hidden;
-  background-color: hsl(177, 64%, 55%); /* Establece un fondo blanco para el contenido */
-  padding: 20px; /* Añade espacio alrededor del contenido */
-  border-radius: 10px; /* Añade bordes redondeados */
+
+.container-principal {
+  background-image: url(/src/assets/img/Fondo-galeria.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  
 }
 
 .content {
   position: relative;
   z-index: 1; /* Asegura que el contenido esté por encima del fondo de video */
+  height: auto;
+  margin-bottom: 150px;
+  padding-bottom: 150px;
 }
 
+.title-principal{
+  font-size: 4vw;
+  font-weight: bolder;
+  display:flex;
+  justify-content: center;
+  color:#305e34fa;
+}
 
+.form-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 80%;
+  font-size: 1.5vw;
+  margin: 0 auto; /* Esto centrará el contenedor horizontalmente */
+  margin-top: 100px; /* Puedes ajustar este valor según la posición vertical deseada */
+  padding-left: 20px; /* Relleno interno a la izquierda */
+  padding-right: 20px; /* Relleno interno a la derecha */
+  color: black;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(98deg, rgb(227, 238, 238) 0%, rgb(146, 197, 150) 100%);
+  border-color: rgb(235, 50, 50) ;
+}
 
-body {
-  margin: 0; /* Elimina el margen predeterminado del cuerpo */
-  padding: 0; /* Elimina el relleno predeterminado del cuerpo */
-  background-image: url("/src/assets/img/futbol1.png");
-  background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
-  background-position: center; /* Centra la imagen en el fondo */
+.selector{
+  background-color: rgb(221, 221, 255);
+  font-size: 0.8vw;
+
+  
 }

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './AgregarTurnos.css';
 
 const AgregarTurno = ({ agregarTurno, sucursal }) => {
   const [fecha, setFecha] = useState('');
@@ -16,16 +17,25 @@ const AgregarTurno = ({ agregarTurno, sucursal }) => {
   const horarios = ['09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21'];
 
   return (
-    <div>
+    <div className="agregar-turno-container">
       <h2>Agregar Turno en {sucursal.nombre}</h2>
       <form onSubmit={handleSubmit}>
         <label>
           Fecha:
-          <input type="date" value={fecha} onChange={(e) => setFecha(e.target.value)} />
+          <input 
+            type="date" 
+            value={fecha} 
+            onChange={(e) => setFecha(e.target.value)} 
+            className="fecha-selector" 
+          />
         </label>
         <label>
           Hora:
-          <select value={hora} onChange={(e) => setHora(e.target.value)}>
+          <select 
+            value={hora} 
+            onChange={(e) => setHora(e.target.value)}
+            className="hora-selector"
+          >
             <option value="">Seleccionar hora</option>
             {horarios.map((horario) => (
               <option key={horario} value={`${horario}:00`}>
@@ -36,7 +46,11 @@ const AgregarTurno = ({ agregarTurno, sucursal }) => {
         </label>
         <label>
           Cancha:
-          <select value={canchaSeleccionada} onChange={(e) => setCanchaSeleccionada(e.target.value)}>
+          <select 
+            value={canchaSeleccionada} 
+            onChange={(e) => setCanchaSeleccionada(e.target.value)}
+            className="cancha-selector"
+          >
             <option value="">Seleccionar cancha</option>
             {sucursal.canchas.map((cancha) => (
               <option key={cancha.id} value={cancha.id}>
@@ -54,3 +68,5 @@ const AgregarTurno = ({ agregarTurno, sucursal }) => {
 };
 
 export default AgregarTurno;
+
+
