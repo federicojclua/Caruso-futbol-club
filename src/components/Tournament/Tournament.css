@@ -6,6 +6,7 @@
   padding-top: 70px;
   padding-bottom: 100px;
   margin: 0 auto; /* Centra el contenedor horizontalmente */
+  padding-bottom: 100px;
 }
 
 .tournament-text, .img-tournament {
@@ -13,18 +14,21 @@
   max-width: 50%; /* Asegura que cada uno ocupe el 50% del contenedor */
   box-sizing: border-box; /* Incluye padding y border en el ancho total del elemento */
   padding: 20px; /* Añade padding para separación interna */
+  display: flex; /* Añadir display flex */
+  flex-direction: column; /* Alinea el contenido en columna */
+  justify-content: center; /* Centra verticalmente */
+  align-items: center; /* Centra horizontalmente */
+  text-align: center; /* Centra el texto dentro del elemento */
 }
 
 .img-tournament img {
-  max-width: 75%; /* Asegura que la imagen ocupe el 100% del contenedor padre */
+  max-width: 70%; /* Asegura que la imagen ocupe el 100% del contenedor padre */
   height: auto; /* Mantiene la proporción de la imagen */
   border-color: aliceblue;
   border-radius: 8px;
 }
 
 .tournament-title {
-  align-items: center;
-  text-align: center;
   font-size: 3.5vw; /* Ajusta el tamaño del texto */
   font-weight: bold; /* Hace que el texto sea grueso */
   color: #022720;
@@ -36,22 +40,28 @@
     -2px -2px 0 #ffffff,
      2px -2px 0 #ffffff,
     -2px  2px 0 #ffffff,
-     2px  2px 0 #ffffff;  
-  
-}
-.tournament-description {
-  text-align: center;
-  color: #014638;
-  font-size: 2vw; /* Ajusta el tamaño del texto */
-  margin-top: 40px; /* Espacio superior para separación */
+     2px  2px 0 #ffffff;
 }
 
-@media (max-width: 1000px) {
-  .container-tournament {
-      flex-direction: column; /* Cambia a columna para pantallas más pequeñas */
-      align-items: center; /* Centra los elementos hijos verticalmente */
-      width: 100%; /* Asegura que ocupe el 100% del ancho en pantallas pequeñas */
-  }
+.tournament-description {
+  text-align: center;
+  color: #022720;
+  text-shadow: 
+    -1px -1px 0 #ffffff,  
+     1px -1px 0 #ffffff,
+    -1px  1px 0 #ffffff,
+     1px  1px 0 #ffffff,  
+    -2px -2px 0 #ffffff,
+     2px -2px 0 #ffffff,
+    -2px  2px 0 #ffffff,
+     2px  2px 0 #ffffff;
+  font-size: 2vw; /* Ajusta el tamaño del texto */
+  margin-top: 40px; /* Espacio superior para separación */
+  font-weight: bolder;
+}
+
+@media (max-width: 1300px) {
+
 
   .tournament-text, .img-tournament {
       max-width: 100%; /* Asegura que los elementos hijos ocupen el 100% del contenedor padre */
@@ -59,6 +69,59 @@
   }
 
   .tournament-title {
-      font-size: 1.5rem; /* Ajusta el tamaño del texto para pantallas más pequeñas */
+      font-size: 4vw; /* Ajusta el tamaño del texto para pantallas más pequeñas */
   }
+  .tournament-description {
+    font-size: 2.5vw; /* Ajusta el tamaño del texto para pantallas más pequeñas */
+}
+}
+
+
+@media (max-width: 1000px) {
+  .container-tournament {
+      flex-direction: column; /* Cambia a columna para pantallas más pequeñas */
+      align-items: center; /* Centra los elementos hijos verticalmente */
+      width: 100%; /* Asegura que ocupe el 100% del ancho en pantallas pequeñas */
+  }
+  .img-tournament img {
+    max-width: 50%; /* Asegura que la imagen ocupe el 100% del contenedor padre */
+    height: auto; /* Mantiene la proporción de la imagen */
+ 
+  }
+  .tournament-text, .img-tournament {
+      max-width: 100%; /* Asegura que los elementos hijos ocupen el 100% del contenedor padre */
+      padding: 10px; /* Reduce el padding para pantallas más pequeñas */
+  }
+
+  .tournament-title {
+      font-size: 5vw; /* Ajusta el tamaño del texto para pantallas más pequeñas */
+      font-weight: bolder;
+  }
+  .tournament-description {
+    font-size: 3vw; /* Ajusta el tamaño del texto para pantallas más pequeñas */
+}
+}
+@media (max-width: 600px) {
+  .container-tournament {
+      flex-direction: column; /* Cambia a columna para pantallas más pequeñas */
+      align-items: center; /* Centra los elementos hijos verticalmente */
+      width: 100%; /* Asegura que ocupe el 100% del ancho en pantallas pequeñas */
+  }
+  .img-tournament img {
+    max-width: 50%; /* Asegura que la imagen ocupe el 100% del contenedor padre */
+    height: auto; /* Mantiene la proporción de la imagen */
+ 
+  }
+  .tournament-text, .img-tournament {
+      max-width: 100%; /* Asegura que los elementos hijos ocupen el 100% del contenedor padre */
+      padding: 10px; /* Reduce el padding para pantallas más pequeñas */
+  }
+
+  .tournament-title {
+      font-size: 6vw; /* Ajusta el tamaño del texto para pantallas más pequeñas */
+      font-weight: bolder;
+  }
+  .tournament-description {
+    font-size: 5vw; /* Ajusta el tamaño del texto para pantallas más pequeñas */
+}
 }

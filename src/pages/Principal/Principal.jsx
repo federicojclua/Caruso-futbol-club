@@ -5,6 +5,7 @@ import NavBar from '../../components/header/nav-bar/NavBar';
 import WhatsAppButton from '../../components/WhatsAppButton/WhatsAppButton';
 import './Principal.css';
 import Footer from '../../components/footer/Footer';
+import Precios from './Price/Price';
 
 const Principal = () => {
   const [turnos, setTurnos] = useState([]);
@@ -47,7 +48,8 @@ const Principal = () => {
         Tu navegador no soporta el elemento de video.
       </video>
       <div className="content">
-        <h3 className="title-principal">Gestión de Turnos</h3>
+        <h3 className="title-principal">Hace tu reserva </h3>
+        <Precios />
         <div className="form-container">
           <label className="label-principal">
             Seleccionar Sucursal:

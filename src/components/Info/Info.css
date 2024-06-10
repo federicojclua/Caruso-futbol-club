@@ -98,10 +98,26 @@ h3, h4 {
   }
 
   .Services-title {
-    font-size: 4vw;
+    font-size: 5vw;
   }
 }
 
+/* Media query para pantallas de 767px o menos */
+@media (max-width: 1083px) {
+  .card-section {
+    flex-direction: row; /* Mantén las tarjetas en filas */
+    flex-wrap: wrap;
+  }
+
+  .card-section .col {
+    width: 50%; /* Ajusta el ancho al 50% para dos columnas */
+    padding: 10px;
+  }
+
+  .Services-title {
+    font-size: 6vw;
+  }
+}
 /* Media query para pantallas de 767px o menos */
 @media (max-width: 767px) {
   .card-section {

@@ -2,7 +2,6 @@
     width: 100%; 
     overflow: hidden; 
     background-color: #b8eca086;
-    margin-top: 60px; 
     padding: 20px 0; 
     position: relative;
 }
@@ -36,6 +35,25 @@
 
 @media (max-width: 1000px) {
     .advertising-text {
-        font-size: 1rem; /* Ajusta el tamaño del texto para pantallas más pequeñas */
+        font-size: 3.5vw; /* Ajusta el tamaño del texto para pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 700px) {
+    .advertising-text {
+        font-size: 4.5vw; /* Ajusta el tamaño del texto para pantallas más pequeñas */
+    }
+}
+
+
+@media (max-width: 450px) {
+    .advertising-text {
+        font-size: 5vw; /* Ajusta el tamaño del texto para pantallas más pequeñas */
+    }
+    .advertising-container {
+        margin-top:-30px;
+
+       
+
     }
 }
