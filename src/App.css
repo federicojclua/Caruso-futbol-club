@@ -10,7 +10,6 @@ body {
   
 } 
 .Container-Main{  
-  background-color: #f50f0f; 
   background-image: url('/src/assets/img/fondoBody.jpg'); 
   background-size: cover;       
   background-position: center;   
