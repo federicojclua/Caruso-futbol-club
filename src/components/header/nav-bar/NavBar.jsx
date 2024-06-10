@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import ProtectedRoute from './ProtectedRoute'; // Importa tu componente ProtectedRoute
 import "./NavBar.css";
 import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 
-const NavBar = () => {
+const NavBar = ({ isAuthenticated }) => {
   return (
     <>
       <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
@@ -19,7 +18,8 @@ const NavBar = () => {
               <Nav.Link as={Link} to="/Location">Nuestros Complejos</Nav.Link>
               <NavDropdown title="Reservas">
                 <NavDropdown.Item as={Link} to="/reservar">Reservar</NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/mis-reservas">Mis Reservas</NavDropdown.Item>
+                {/* Aquí utilizamos ProtectedRoute para proteger el enlace "Mis Reservas" */}
+                <ProtectedRoute isAuthenticated={isAuthenticated} element={<NavDropdown.Item as={Link} to="/mis-reservas">Mis Reservas</NavDropdown.Item>} />
               </NavDropdown>
             </Nav>
             <Nav>
