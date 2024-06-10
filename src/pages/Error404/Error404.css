@@ -1,16 +1,15 @@
 .Error404-component {
-  background-color: rgba(255, 255, 255, 1); /* Fondo con transparencia */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center; /* Centra el texto */
+  background-image: url("/src/assets/img/Fondo-galeria.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 1300px;
 }
 
 .main-content-error {
   padding: 20px;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 1); /* Fondo con transparencia */
   border-radius: 10px;  /* Bordes redondeados */
   text-align: center;  /* Centra el texto */
 }

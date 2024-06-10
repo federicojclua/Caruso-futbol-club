@@ -1,43 +1,105 @@
-/* Login.css */
+.Login-component .row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 100px;
+  margin-bottom: 120px;
+}
 
-.Login-container {
-    background-image: url(/src/assets/img/Fondo-galeria.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  
-  .main-login-content {
-    max-width: 60% !important;
-    height: 1200px;
-    padding: 120px !important; /* Añadir relleno */
-    color: #333333; /* Color del texto principal */
-  }
-  
-  .login-form {
-    margin-top: 20px; /* Espacio superior */
-  }
-  
-  .form-label {
-    font-weight: bold; /* Texto en negrita */
-    color: #333333; /* Color del texto */
-  }
-  
-  .text-danger {
-    color: #dc3545; /* Color del mensaje de error */
-  }
-  
-  .text-success {
-    color: #28a745; /* Color del mensaje de éxito */
-  }
-  
-  .btn-primary {
-    background-color: #007bff; /* Color de fondo del botón */
-    border-color: #007bff; /* Color del borde del botón */
-  }
-  
-  .btn-primary:hover {
-    background-color: #0056b3; /* Color de fondo del botón al pasar el ratón */
-    border-color: #0056b3; /* Color del borde del botón al pasar el ratón */
-  }
-  
+.Login-component .form-container {
+  background-color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 400px;
+  width: 100%; /* Ajusta el ancho al 100% */
+}
+
+.Login-component .colm-form {
+  display: flex; /* Agregado para activar el flexbox */
+  justify-content: center; /* Agregado para centrar horizontalmente */
+  text-align: center;
+  width: 100%; /* Ajusta el ancho al 100% */
+}
+
+.Login-component .colm-form .form-container {
+  background-color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  padding: 20px;
+  max-width: 400px;
+}
+
+.Login-component .colm-form .form-container input, .Login-component
+.colm-form .form-container .btn-login {
+  width: 100%;
+  margin: 5px 0;
+  height: 45px;
+  vertical-align: middle;
+  font-size: 16px;
+}
+
+.Login-component .colm-form .form-container input {
+  border: 1px solid #dddfe2;
+  color: #1d2129;
+  padding: 0 8px;
+  outline: none;
+}
+
+.Login-component .colm-form .form-container input:focus {
+  border-color: #1877f2;
+  box-shadow: 0 0 0 2px #e7f3ff;
+}
+
+.Login-component .colm-form .form-container .btn-login {
+  background-color: #1877f2;
+  border: none;
+  border-radius: 6px;
+  font-size: 20px;
+  padding: 0 16px;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.Login-component .colm-form .form-container a {
+  display: block;
+  color: #1877f2;
+  font-size: 14px;
+  text-decoration: none;
+  padding: 10px 0 20px;
+  border-bottom: 1px solid #dadde1;
+}
+
+.Login-component .colm-form .form-container a:hover {
+  text-decoration: underline;
+}
+
+.Login-component .colm-form .form-container .btn-new {
+  background-color: #42b72a;
+  border: none;
+  border-radius: 6px;
+  font-size: 17px;
+  line-height: 48px;
+  padding: 0 16px;
+  color: #ffffff;
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+.Login-component .colm-form p {
+  font-size: 14px;
+}
+
+.Login-component .colm-form p a {
+  text-decoration: none;
+  color: #1c1e21;
+  font-weight: 600;
+}
+
+.Login-component .colm-form p a:hover {
+  text-decoration: underline;
+}

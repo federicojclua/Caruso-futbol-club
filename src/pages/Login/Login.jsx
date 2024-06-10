@@ -11,12 +11,12 @@ import './Login.css'; // Importamos el archivo CSS para los estilos del login
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
   const [serverError, setServerError] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
   const navigate = useNavigate();
 
-  // Utilizamos useEffect para limpiar el mensaje de éxito después de 2 segundos
   useEffect(() => {
     const timer = setTimeout(() => {
       setSuccessMessage('');
@@ -28,7 +28,15 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Validación de la contraseña
+    // Verificar restricciones del correo electrónico
+    if (!email.includes('@') || email.length > 50) {
+      setEmailError('El correo electrónico debe contener "@" y tener menos de 50 caracteres.');
+      return;
+    } else {
+      setEmailError('');
+    }
+
+    // Verificar restricciones de la contraseña
     if (password.length < 4 || password.length > 20) {
       setPasswordError('La contraseña debe tener al menos 4 caracteres y menos de 20.');
       return;
@@ -48,13 +56,11 @@ const Login = () => {
       const data = await response.json();
 
       if (response.ok) {
-        // Manejar el inicio de sesión exitoso
         setSuccessMessage('Sesión iniciada correctamente. ¡Bienvenido!');
         setTimeout(() => {
-          navigate('/'); // Redireccionar a la página de inicio después del inicio de sesión exitoso
-        }, 2000); // Transición de 2 segundos
+          navigate('/');
+        }, 2000);
       } else {
-        // Manejar errores del servidor
         setServerError(data.message || 'Correo o contraseña incorrecta, por favor, intente de nuevo.');
       }
     } catch (error) {
@@ -63,7 +69,7 @@ const Login = () => {
   };
 
   return (
-    <div className="Login-container">
+    <div className="Login-component">
       <Helmet>
         <title>Login - Caruso Futbol Club</title>
         <meta name="description" content="Inicia sesión en Caruso Futbol Club para acceder a tu cuenta y disfrutar de todos los beneficios." />
@@ -72,36 +78,34 @@ const Login = () => {
         <link rel="canonical" href="https://www.carusofutbolclub.com/login" />
       </Helmet>
       <NavBar />
-      <Container className="main-login-content">
-        {successMessage && <p className="text-success">{successMessage}</p>}
-        <Form onSubmit={handleSubmit} className="login-form">
-          <Form.Group controlId="formBasicEmail">
-            <Form.Label>Correo Electrónico</Form.Label>
-            <Form.Control
+      <div className="row">
+
+        <div className="colm-form">
+          <div className="form-container">
+            {successMessage && <p className="text-success">{successMessage}</p>}
+            <input
               type="email"
-              placeholder="Ingresar correo electrónico"
+              placeholder="Correo Electrónico"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
             />
-          </Form.Group>
-          <Form.Group controlId="formBasicPassword">
-            <Form.Label>Contraseña</Form.Label>
-            <Form.Control
+            {emailError && <p className="text-danger">{emailError}</p>}
+            <input
               type="password"
-              placeholder="Ingresar Contraseña"
+              placeholder="Contraseña"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
             />
-            {passwordError && <Form.Text className="text-danger">{passwordError}</Form.Text>}
-          </Form.Group>
-          {serverError && <p className="text-danger">{serverError}</p>}
-          <Button variant="primary" type="submit">
-            Iniciar Sesión
-          </Button>
-        </Form>
-      </Container>
+            {passwordError && <p className="text-danger">{passwordError}</p>}
+            {serverError && <p className="text-danger">{serverError}</p>}
+            <button className="btn-login" onClick={handleSubmit}>Iniciar Sesión</button>
+            <a href="#">¿Contraseña olvidada?</a>
+            <button className="btn-new">Crear Nueva Cuenta</button>
+          </div>
+        </div>
+      </div>
       <Footer />
       <WhatsAppButton />
     </div>
