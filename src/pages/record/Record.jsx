@@ -1,7 +1,10 @@
-import { useState } from 'react';
-import { Form, Button, Container } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Form, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-// import axios from 'axios';
+import { Helmet } from 'react-helmet';
+import NavBar from '../../components/header/nav-bar/NavBar';  
+import Footer from '../../components/footer/Footer';
+import WhatsAppButton from '../../components/WhatsAppButton/WhatsAppButton';
 import "./Record.css";
 
 const Record = () => {
@@ -52,92 +55,94 @@ const Record = () => {
   };
 
   return (
-    <Container className="Container-Record mt-5">
-      <h2 className="mb-4 text-center">Registro</h2>
-      {error && <p className="text-danger">{error}</p>}
-      <Form onSubmit={handleSubmit}>
-        <Form.Group controlId="formNombre">
-          <Form.Label>Nombre</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Ingresa tu nombre"
-            value={nombre}
-            maxLength={20}
-            onChange={handleTextChange(setNombre)}
-          />
-        </Form.Group>
-
-        <Form.Group controlId="formApellido">
-          <Form.Label>Apellido</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Ingresa tu apellido"
-            value={apellido}
-            maxLength={20}
-            onChange={handleTextChange(setApellido)}
-          />
-        </Form.Group>
-
-        <Form.Group controlId="formDNI">
-          <Form.Label>DNI</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Ingresa tu DNI"
-            value={dni}
-            maxLength={8}
-            onChange={handleDniChange}
-          />
-        </Form.Group>
-
-        <Form.Group controlId="formEquipo">
-          <Form.Label>Equipo</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Ingresa tu equipo"
-            value={equipo}
-            maxLength={20}
-            onChange={handleTextChange(setEquipo)}
-          />
-        </Form.Group>
-
-        <Form.Group controlId="formDireccion">
-          <Form.Label>Dirección</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Ingresa tu dirección"
-            value={direccion}
-            maxLength={20}
-            onChange={handleTextChange(setDireccion)}
-          />
-        </Form.Group>
-
-        <Form.Group controlId="formEmail">
-          <Form.Label>Email</Form.Label>
-          <Form.Control
-            type="email"
-            placeholder="Ingresa tu email"
-            value={email}
-            maxLength={20}
-            onChange={handleTextChange(setEmail)}
-          />
-        </Form.Group>
-
-        <Form.Group controlId="formPassword">
-          <Form.Label>Contraseña</Form.Label>
-          <Form.Control
-            type="password"
-            placeholder="Ingresa tu contraseña"
-            value={password}
-            maxLength={20}
-            onChange={handleTextChange(setPassword)}
-          />
-        </Form.Group>
-
-        <Button variant="primary" type="submit">
-          Registrarse
-        </Button>
-      </Form>
-    </Container>
+    <div className="Record-component">
+      <Helmet>
+        <title>Registro - Caruso Futbol Club</title>
+        <meta name="description" content="Regístrate en Caruso Futbol Club para acceder a tu cuenta y disfrutar de todos los beneficios." />
+        <meta name="keywords" content="registro, registrarse, Caruso Futbol Club, cuenta" />
+        <meta name="author" content="Caruso Futbol Club" />
+        <link rel="canonical" href="https://www.carusofutbolclub.com/record" />
+      </Helmet>
+      <NavBar />
+      <div className="row">
+        <div className="colm-form">
+          <div className="form-container">
+            <h2 className="mb-4 text-center">Registro</h2>
+            {error && <p className="text-danger">{error}</p>}
+            <Form onSubmit={handleSubmit}>
+              <Form.Group controlId="formNombre">
+                <Form.Control
+                  type="text"
+                  placeholder="Ingresa tu nombre"
+                  value={nombre}
+                  maxLength={20}
+                  onChange={handleTextChange(setNombre)}
+                />
+              </Form.Group>
+              <Form.Group controlId="formApellido">
+                <Form.Control
+                  type="text"
+                  placeholder="Ingresa tu apellido"
+                  value={apellido}
+                  maxLength={20}
+                  onChange={handleTextChange(setApellido)}
+                />
+              </Form.Group>
+              <Form.Group controlId="formDNI">
+                <Form.Control
+                  type="text"
+                  placeholder="Ingresa tu DNI"
+                  value={dni}
+                  maxLength={8}
+                  onChange={handleDniChange}
+                />
+              </Form.Group>
+              <Form.Group controlId="formEquipo">
+                <Form.Control
+                  type="text"
+                  placeholder="Ingresa tu equipo"
+                  value={equipo}
+                  maxLength={20}
+                  onChange={handleTextChange(setEquipo)}
+                />
+              </Form.Group>
+              <Form.Group controlId="formDireccion">
+                <Form.Control
+                  type="text"
+                  placeholder="Ingresa tu dirección"
+                  value={direccion}
+                  maxLength={20}
+                  onChange={handleTextChange(setDireccion)}
+                />
+              </Form.Group>
+              <Form.Group controlId="formEmail">
+                <Form.Control
+                  type="email"
+                  placeholder="Ingresa tu email"
+                  value={email}
+                  maxLength={20}
+                  onChange={handleTextChange(setEmail)}
+                />
+              </Form.Group>
+              <Form.Group controlId="formPassword">
+                <Form.Control
+                  type="password"
+                  placeholder="Ingresa tu contraseña"
+                  value={password}
+                  maxLength={20}
+                  onChange={handleTextChange(setPassword)}
+                />
+              </Form.Group>
+              <Button className="btn-login" type="submit">
+                Registrarse
+              </Button>
+            </Form>
+          </div>
+        </div>
+      </div>
+      <Footer />
+      <WhatsAppButton />
+    </div>
   );
 };
 

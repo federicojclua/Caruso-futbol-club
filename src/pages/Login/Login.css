@@ -1,3 +1,11 @@
+.Login-component {
+  background-image: url(/src/assets/img/fondoBody.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
 .Login-component .row {
   display: flex;
   justify-content: center;
@@ -8,35 +16,32 @@
 }
 
 .Login-component .form-container {
-  background-color: #ffffff;
   border: none;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
   padding: 20px;
   max-width: 400px;
-  width: 100%; /* Ajusta el ancho al 100% */
+  width: 100%;
 }
 
 .Login-component .colm-form {
-  display: flex; /* Agregado para activar el flexbox */
-  justify-content: center; /* Agregado para centrar horizontalmente */
+  display: flex;
+  justify-content: center;
   text-align: center;
-  width: 100%; /* Ajusta el ancho al 100% */
+  width: 100%;
 }
 
-
 .Login-component .colm-form .form-container {
-  background-color: #ffffff;
   border: none;
   border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6), 0 8px 16px rgba(0, 0, 0, 0.6);
   margin-bottom: 30px;
   padding: 20px;
   max-width: 600px;
 }
 
-.Login-component .colm-form .form-container input, .Login-component
-.colm-form .form-container .btn-login {
+.Login-component .colm-form .form-container input, 
+.Login-component .colm-form .form-container .btn-login {
   width: 100%;
   margin: 5px 0;
   height: 45px;
@@ -52,23 +57,28 @@
 }
 
 .Login-component .colm-form .form-container input:focus {
-  border-color: #1877f2;
+  border-color: #333;
   box-shadow: 0 0 0 2px #e7f3ff;
 }
 
 .Login-component .colm-form .form-container .btn-login {
-  background-color: #1877f2;
+  background-color: #42b72a;
   border: none;
   border-radius: 6px;
   font-size: 20px;
   padding: 0 16px;
   color: #ffffff;
   font-weight: 700;
+  transition: background-color 0.3s ease;
+}
+
+.Login-component .colm-form .form-container .btn-login:hover {
+  background-color: #36a420;
 }
 
 .Login-component .colm-form .form-container a {
   display: block;
-  color: #1877f2;
+  color: #333;
   font-size: 14px;
   text-decoration: none;
   padding: 10px 0 20px;
@@ -80,7 +90,7 @@
 }
 
 .Login-component .colm-form .form-container .btn-new {
-  background-color: #42b72a;
+  background-color: #333;
   border: none;
   border-radius: 6px;
   font-size: 17px;
@@ -88,7 +98,12 @@
   padding: 0 16px;
   color: #ffffff;
   font-weight: 700;
-  margin-top: 20px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.Login-component .colm-form .form-container .btn-new:hover {
+  background-color: #555;
 }
 
 .Login-component .colm-form p {
@@ -97,7 +112,7 @@
 
 .Login-component .colm-form p a {
   text-decoration: none;
-  color: #1c1e21;
+  color: #333;
   font-weight: 600;
 }
 

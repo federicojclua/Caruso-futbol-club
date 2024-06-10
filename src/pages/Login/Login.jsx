@@ -2,11 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import { Container } from 'react-bootstrap';
 import NavBar from '../../components/header/nav-bar/NavBar';  
 import Footer from '../../components/footer/Footer';
 import WhatsAppButton from '../../components/WhatsAppButton/WhatsAppButton';
-import './Login.css'; // Importamos el archivo CSS para los estilos del login
+import './Login.css'; 
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -79,7 +78,6 @@ const Login = () => {
       </Helmet>
       <NavBar />
       <div className="row">
-
         <div className="colm-form">
           <div className="form-container">
             {successMessage && <p className="text-success">{successMessage}</p>}
@@ -88,6 +86,7 @@ const Login = () => {
               placeholder="Correo Electrónico"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              maxLength={50}
               required
             />
             {emailError && <p className="text-danger">{emailError}</p>}
@@ -96,13 +95,18 @@ const Login = () => {
               placeholder="Contraseña"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              maxLength={20}
               required
             />
             {passwordError && <p className="text-danger">{passwordError}</p>}
             {serverError && <p className="text-danger">{serverError}</p>}
             <button className="btn-login" onClick={handleSubmit}>Iniciar Sesión</button>
-            <a href="#">¿Contraseña olvidada?</a>
-            <button className="btn-new">Crear Nueva Cuenta</button>
+            <a href="#">¿Olvidaste tu contraseña?</a>
+            <div className="register-message">
+              <p>¿No tienes cuenta? Registrate haciendo click aquí abajo</p>
+              <button className="btn-new">Registrarme</button>
+            </div>
+            
           </div>
         </div>
       </div>

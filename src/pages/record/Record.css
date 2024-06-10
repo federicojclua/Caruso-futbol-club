@@ -1,25 +1,76 @@
-/* RegistroForm.css */
-.Container-Record {
-    max-width: 600px;
-  }
-  
-  .mt-3 {
-    margin-top: 1rem;
-  }
-  
-  .mt-4 {
-    margin-top: 1.5rem;
-  }
-  
-  .mt-5 {
-    margin-top: 3rem;
-  }
-  
-  .text-center {
-    text-align: center;
-  }
-  
-  .text-danger {
-    color: red;
-  }
-  
+.Record-component {
+  background-image: url(/src/assets/img/fondoBody.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.Record-component .row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 100px;
+  margin-bottom: 120px;
+}
+
+.Record-component .form-container {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.Record-component .colm-form {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.Record-component .colm-form .form-container {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6), 0 8px 16px rgba(0, 0, 0, 0.6);
+  margin-bottom: 30px;
+  padding: 20px;
+  max-width: 800px;
+}
+
+.Record-component .colm-form .form-container input, 
+.Record-component .colm-form .form-container .btn-login {
+  width: 100%;
+  margin: 5px 0;
+  height: 45px;
+  vertical-align: middle;
+  font-size: 16px;
+}
+
+.Record-component .colm-form .form-container input {
+  border: 1px solid #dddfe2;
+  color: #1d2129;
+  padding: 0 8px;
+  outline: none;
+}
+
+.Record-component .colm-form .form-container input:focus {
+  border-color: #333;
+  box-shadow: 0 0 0 2px #e7f3ff;
+}
+
+.Record-component .colm-form .form-container .btn-login {
+  background-color: #42b72a;
+  border: none;
+  border-radius: 6px;
+  font-size: 20px;
+  padding: 0 16px;
+  color: #ffffff;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+}
+
+.Record-component .colm-form .form-container .btn-login:hover {
+  background-color: #36a420;
+}

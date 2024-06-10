@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './PaymentForm.css';
 import { useNavigate } from 'react-router-dom';
+import Footer from '../../components/footer/Footer';
+import WhatsAppButton from '../../components/WhatsAppButton/WhatsAppButton';
 
 const PaymentForm = () => {
   const [formData, setFormData] = useState({
@@ -21,11 +23,12 @@ const PaymentForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Aquí puedes añadir validaciones y procesamiento del pago si fuera necesario
-    navigate('/404'); // Redirigir al Error 404 al confirmar la compra
+    // Aquí se pueden añadir validaciones y procesamiento del pago si fuera necesario
+    navigate('/Error404'); // Redirigir al Error 404 al confirmar la compra
   };
 
   return (
+    <div>
     <div className="payment-form">
       <h2>Formulario de Pago</h2>
       <form onSubmit={handleSubmit}>
@@ -47,6 +50,9 @@ const PaymentForm = () => {
         </div>
         <button type="submit">Confirmar Pago</button>
       </form>
+    </div>
+    <Footer />
+    <WhatsAppButton />
     </div>
   );
 };

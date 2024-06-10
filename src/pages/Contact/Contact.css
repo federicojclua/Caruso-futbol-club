@@ -1,5 +1,5 @@
 .Contact-component {
-  background-image: url(/src/assets/img/Fondo-galeria.jpg);
+  background-image: url(/src/assets/img/fondoBody.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -9,8 +9,9 @@
   max-width: 60% !important;
   padding: 0px !important;
   color: #333333; /* Color del texto principal */
-  background-color: rgba(255, 255, 255, 0.4); /* 0.8 es la transparencia, 1 es opaco y 0 es completamente transparente */
+  text-shadow: 1px 1px 1px rgb(255, 255, 255); /* Añade sombra al texto */
 }
+
 .form {
   margin: 20px 0;
 }
