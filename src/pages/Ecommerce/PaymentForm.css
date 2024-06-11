@@ -3,14 +3,17 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-}.payment-container {
+}
+
+.payment-container {
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
   padding-top: 100px;
 }
 
-.payment-form {
+.payment-form,
+.delivery-form {
   padding: 20px;
   background-color: white;
   border: 1px solid #ccc;
@@ -19,23 +22,37 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.payment-form h2 {
+.payment-form h2,
+.delivery-form h2 {
   margin-bottom: 20px;
+  font-size: 24px;
 }
 
-.payment-form .form-group {
+.payment-form .form-group,
+.delivery-form .form-group {
   margin-bottom: 15px;
 }
 
-.payment-form .form-group label {
+.payment-form .form-group label,
+.delivery-form .form-group label {
   display: block;
   margin-bottom: 5px;
+  font-weight: bold;
 }
 
-.payment-form .form-group input {
+.payment-form .form-group input,
+.delivery-form .form-group input,
+.delivery-form .form-group textarea {
   width: 100%;
   padding: 8px;
   box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.payment-form .form-group input.cvv-input {
+  width: 80px; /* Ajusta el tamaño según sea necesario para 3 dígitos */
 }
 
 .payment-form .cvv-group {
@@ -49,18 +66,30 @@
 }
 
 .payment-form .cvv-help-image {
-  width: 200px; /* Ajusta el tamaño según sea necesario */
+  width: 200px;
+  height: auto;
 }
 
-.payment-form button {
+.payment-form .delivery-options {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.payment-form button,
+.delivery-form button {
   background-color: #007bff;
   color: white;
   border: none;
   padding: 10px 15px;
   cursor: pointer;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 16px;
 }
 
-.payment-form button:hover {
+.payment-form button:hover,
+.delivery-form button:hover {
   background-color: #0056b3;
 }
 
@@ -75,6 +104,7 @@
 
 .cart-summary h2 {
   margin-bottom: 20px;
+  font-size: 24px;
 }
 
 .cart-summary .cart-item {
@@ -89,9 +119,26 @@
   margin-right: 10px;
 }
 
-.total-price {
+.total-price,
+.delivery-cost {
   margin-top: 20px;
-  font-size: 1.2em;
+  font-size: 18px;
   font-weight: bold;
   text-align: right;
+}
+
+.delivery-form .character-count {
+  text-align: right;
+  font-size: 12px;
+  color: #999;
+  margin-top: -10px;
+}
+
+.delivery-form .no-street-number {
+  display: flex;
+  align-items: center;
+}
+
+.delivery-form .no-street-number input {
+  margin-left: 10px;
 }
