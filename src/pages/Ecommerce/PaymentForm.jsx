@@ -53,7 +53,7 @@ const PaymentForm = () => {
   };
 
   return (
-    <div>
+    <div className='PaymentForm-component'>
       <NavBar />
       <div className="payment-container">
         <div className="payment-form">

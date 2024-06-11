@@ -1,4 +1,9 @@
-.payment-container {
+.PaymentForm-component {
+  background-image: url('/src/assets/img/Fondo-galeria.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}.payment-container {
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
