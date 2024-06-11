@@ -1,10 +1,27 @@
 import React from 'react';
-import { Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ProtectedRoute from './ProtectedRoute';
+import Principal from '../../pages/Principal/Principal';
+import LoginPage from '../../pages/Login/Login';
 
-const ProtectedRoute = ({ element, isAuthenticated }) => {
-  // Si el usuario está autenticado, renderiza el componente
-  // Si no, redirige a la página de inicio de sesión
-  return isAuthenticated ? <Route element={element} /> : <Navigate to="/login" />;
+const App = () => {
+  // Supongamos que tienes una función que verifica si el usuario está autenticado
+  const isAuthenticated = checkIfUserIsAuthenticated();
+
+  return (
+    <Router>
+      <Routes>
+        {/* Ruta protegida */}
+        <ProtectedRoute
+          path="/principal"
+          element={<Principal />}
+          isAuthenticated={isAuthenticated}
+        />
+        {/* Ruta de inicio de sesión */}
+        <Route path="/login" element={<LoginPage />} />
+      </Routes>
+    </Router>
+  );
 };
 
-export default ProtectedRoute;
+export default App;

@@ -27,13 +27,17 @@ import Principal from './pages/Principal/Principal';
 import PaymentForm from './pages/Ecommerce/PaymentForm';
 
 function App() {
-  return (
+  // Simular autenticación de usuario admin4@admin4.com
+  const isAuthenticated = true;
+  const userName = 'admin4@admin4.com';
+ 
 
+  return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={
           <Container className="Container-Main">
-            <NavBar />
+            <NavBar isAuthenticated={isAuthenticated} userName={userName} />
             <Header />
             <LocationMain />
             <Gallery />

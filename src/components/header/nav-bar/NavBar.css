@@ -1,3 +1,4 @@
+
 /* Estilo para el contenedor principal */
 .container {
   max-width: 100%;
@@ -67,12 +68,17 @@
     width: 6vw; 
   }
   
-  .nav-link, .item-dropdown, .inicio-btn {
+  .nav-link, .item-dropdown {
     font-size: 1.5vw; /* Ajusta el tamaño del texto */  
-    margin-right: 0;
+    margin-right: 23px;
     margin-left: 10px;
   }
   
+  .inicio-btn{
+    font-size: 1.5vw;
+    margin-right: -10px !important  ;
+
+  }
   .me-auto {
     background-color: #258D19;
   }
@@ -122,6 +128,10 @@
     font-size: 4vw; 
     margin-right: auto;
   }
+  .navbar-nav .nav-link {
+    padding-right: 100px !important; /* Ajuste para los botones del lado izquierdo */
+    text-align: center;
+  }
   
   .me-auto {
     width: 100%; 
@@ -157,3 +167,4 @@
     font-size: 3vw; 
   }
 }
+

@@ -33,10 +33,10 @@ const Footer = () => {
         <div className="footer-column">
           <h5>Síguenos</h5>
           <div className="social-icons">
-            <a className="social-button facebook" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+            <a className="social-button facebook" href="https://www.facebook.com/carusofutbolclub" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faFacebook} size="2x" />
             </a>
-            <a className="social-button instagram" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+            <a className="social-button instagram" href="https://www.instagram.com/carusofutbolclub" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faInstagram} size="2x" />
             </a>
           </div>
