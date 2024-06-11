@@ -1,130 +1,106 @@
 .EcommercePage-component {
-    background-image: url('/src/assets/img/Fondo-galeria.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  .floating-cart-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    padding: 15px;
-    font-size: 24px;
-    cursor: pointer;
-  }
-  
-  .cart-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  .cart-item img {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
-  }
-  
-  
-  .main-ecommerce-content {
-    max-width: 80%;
-    margin: auto;
-    padding: 100px;
-    color: #333333;
-    background-color: rgba(255, 255, 255, 0.4);
-  }
-  
-  .subtitle-ecommerce {
-    font-size: 2.5vw;
-    font-weight: bold;
-    text-align: center;
-    padding: 50px 0;
-  }
-  
-  
-  .product-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-  
-  .product-item {
-    background-color: rgba(255, 255, 255, 0.9);
-    border: 5px solid #ddd;
-    border-radius: 10px;
-    margin: 20px;
-    padding: 20px;
-    max-width: 300px;
-    text-align: center;
-    animation: changeColor 3s infinite;
-  }
-  @keyframes changeColor {
-    0% {
-      border-color: rgb(0, 0, 0);
-    }
-    25% {
-      border-color: rgb(114, 9, 9);
-    }
-    50% {
-      border-color: rgb(59, 55, 55);
-    }
-    75% {
-      border-color: #236b0d;
-    }
-    100% {
-      border-color: rgb(37, 13, 37);
-    }
-  }
-  
-  .product-item img {
-    max-width: 100%;
-    border-radius: 10px;
-  }
-  
-  .product-item h2 {
-    font-size: 1.8vw;
-    margin: 10px 0;
-  }
-  
-  .product-item p {
-    font-size: 1.5vw;
-    color: #666;
-  }
-  
-  .product-item a {
-    font-size: 1.5vw;
-    font-weight: bold;
-    color: #258d19;
-    text-decoration: none;
-  }
-  
-  .product-item a:hover {
-    color: #e55812;
-  }
-  .floating-cart-button {
-    position: fixed;
-    top: 150px; 
-    right: 20px; 
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    padding: 15px;
-    font-size: 24px;
-    cursor: pointer;
-    width: 60px; 
-    height: 60px; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000; 
-  }
-  
-  .floating-cart-button:hover {
-    background-color: #0056b3;
-  }
-  
+  background-image: url('/src/assets/img/Fondo-galeria.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #333;
+}
+
+.floating-cart-button {
+  position: fixed;
+  top: 120px; /* Posición original */
+  right: 20px; 
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.floating-cart-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.1);
+}
+
+.main-ecommerce-content {
+  max-width: 80%;
+  margin: auto;
+  padding: 100px;
+  color: #333;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.subtitle-ecommerce {
+  font-size: 2.5vw;
+  font-weight: bold;
+  text-align: center;
+  padding: 50px 0;
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.product-item {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 5px solid #ddd;
+  border-radius: 10px;
+  margin: 20px;
+  padding: 20px;
+  max-width: 300px;
+  text-align: center;
+  transition: transform 0.3s, border-color 0.3s;
+  cursor: pointer;
+}
+
+.product-item:hover {
+  transform: scale(1.05);
+  border-color: #007bff;
+}
+
+.product-item img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.product-item h2 {
+  font-size: 1.8vw;
+  margin: 10px 0;
+}
+
+.product-item p {
+  font-size: 1.5vw;
+  color: #666;
+}
+
+.product-item input {
+  width: 60px;
+  padding: 5px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.product-item button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.product-item button:hover {
+  background-color: #0056b3;
+}
