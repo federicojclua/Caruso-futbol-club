@@ -18,6 +18,7 @@ import Error404 from './pages/Error404/Error404';
 import Contact from './pages/Contact/Contact';
 import AboutUs from './pages/AboutUs/AboutUs';
 import Ecommerce from './pages/Ecommerce/Ecommerce';
+import PaymentForm from './pages/Ecommerce/PaymentForm';
 import Location from './pages/Location/Location';
 import Login from './pages/Login/Login';
 import Admin from './pages/Admin/Admin';
@@ -51,6 +52,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/location" element={<Location />} />
         <Route path="/ecommerce" element={<Ecommerce />} />
+        <Route path="/payment" element={<PaymentForm />} />
         <Route path="/aboutUs" element={<AboutUs />} />
         <Route path="/contact" element={<Contact />} />       
         <Route path="/admin" element={<Admin />} />
