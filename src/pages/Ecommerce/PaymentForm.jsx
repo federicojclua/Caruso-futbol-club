@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./PaymentForm.css";
 import { useLocation, useNavigate } from "react-router-dom";
+import NavBar from '../../components/header/nav-bar/NavBar';
 import Footer from "../../components/footer/Footer";
 import WhatsAppButton from "../../components/WhatsAppButton/WhatsAppButton";
 
@@ -53,6 +54,7 @@ const PaymentForm = () => {
 
   return (
     <div>
+      <NavBar />
       <div className="payment-container">
         <div className="payment-form">
           <h2>Formulario de Pago</h2>

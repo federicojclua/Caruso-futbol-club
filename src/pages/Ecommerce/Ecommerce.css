@@ -45,6 +45,7 @@
     padding: 50px 0;
   }
   
+  
   .product-list {
     display: flex;
     flex-wrap: wrap;
@@ -53,12 +54,30 @@
   
   .product-item {
     background-color: rgba(255, 255, 255, 0.9);
-    border: 1px solid #ddd;
+    border: 5px solid #ddd;
     border-radius: 10px;
     margin: 20px;
     padding: 20px;
     max-width: 300px;
     text-align: center;
+    animation: changeColor 3s infinite;
+  }
+  @keyframes changeColor {
+    0% {
+      border-color: rgb(0, 0, 0);
+    }
+    25% {
+      border-color: rgb(114, 9, 9);
+    }
+    50% {
+      border-color: rgb(59, 55, 55);
+    }
+    75% {
+      border-color: #236b0d;
+    }
+    100% {
+      border-color: rgb(37, 13, 37);
+    }
   }
   
   .product-item img {
@@ -88,8 +107,8 @@
   }
   .floating-cart-button {
     position: fixed;
-    top: 150px; /* Posición desde la parte superior */
-    right: 20px; /* Posición desde la parte derecha */
+    top: 150px; 
+    right: 20px; 
     background-color: #007bff;
     color: white;
     border: none;
@@ -97,12 +116,12 @@
     padding: 15px;
     font-size: 24px;
     cursor: pointer;
-    width: 60px; /* Ancho del botón */
-    height: 60px; /* Altura del botón */
+    width: 60px; 
+    height: 60px; 
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1000; /* Asegurarse de que esté por encima de otros elementos pero no el navbar */
+    z-index: 1000; 
   }
   
   .floating-cart-button:hover {

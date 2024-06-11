@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
-  padding: 20px;
+  padding-top: 100px;
 }
 
 .payment-form {
