@@ -3,15 +3,13 @@ import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
 import ModalEcommerce from './ModalEcommerce/ModalEcommerce';
-import './AdminEcommerce.css'; 
+import ProductData from './ProductData'; // Importa ProductData
+import './AdminEcommerce.css';
 
 const AdminEcommerce = () => {
-  const [rows, setRows] = useState([
-    { id: 1, image: 'IMAGEN', title: 'Foto 1 del carrousel', quantity: 5, price: 10, active: false },
-    { id: 2, image: 'IMAGEN', title: 'Foto 2 del carrousel', quantity: 3, price: 20, active: false },
-    { id: 3, image: 'IMAGEN', title: 'Foto 3 del carrousel', quantity: 4, price: 15, active: false },
-  ]);
-
+  // Usa los datos de ProductData
+  const products = ProductData();
+  
   const [showModal, setShowModal] = useState(false);
   const [selectedRow, setSelectedRow] = useState(null);
 
@@ -22,19 +20,20 @@ const AdminEcommerce = () => {
   };
 
   const handleSaveModal = (updatedRow) => {
-    const newRows = rows.map(row => row.id === updatedRow.id ? updatedRow : row);
-    setRows(newRows);
+    const newRows = products.map(row => row.id === updatedRow.id ? updatedRow : row); // Actualiza los productos en lugar de rows
+    // No hay necesidad de cambiar setRows, ya que estás actualizando products directamente
     handleCloseModal();
   };
 
   const handleDeleteRow = (row) => {
-    const newRows = rows.filter(r => r.id !== row.id);
-    setRows(newRows);
+    const newRows = products.filter(r => r.id !== row.id); // Filtra los productos
+    // No hay necesidad de cambiar setRows, ya que estás actualizando products directamente
   };
 
   const addRow = () => {
-    const newRow = { id: rows.length + 1, image: 'IMAGEN', title: `Foto ${rows.length + 1} del carrousel`, quantity: 0, price: 0, active: false };
-    setRows([...rows, newRow]);
+    const newRow = { id: products.length + 1, image: 'IMAGEN', title: `Foto ${products.length + 1} del carrousel`, quantity: 0, price: 0, active: false };
+    // Agrega un nuevo producto al array de productos
+    // No hay necesidad de cambiar setRows, ya que estás actualizando products directamente
   };
 
   return (
@@ -51,45 +50,48 @@ const AdminEcommerce = () => {
         <thead>
           <tr>
             <th>Selección</th>
+            <th>ID</th>
+            <th>Nombre del Producto</th>
             <th>Cantidad</th>
-            <th>Imagen</th>
-            <th>Producto</th>
             <th>Precio</th>
+            <th>Imagen</th>
+            <th>Descripción del Producto</th>
             <th>Editar</th>
             <th>Eliminar</th>
           </tr>
         </thead>
         <tbody>
-          {rows.map((row) => (
-            <tr key={row.id}>
+          {products.map((product) => ( // Itera sobre los productos
+            <tr key={product.id}>
               <td>
                 <input 
                   type="checkbox" 
-                  checked={row.active} 
-                  onChange={() => handleCheckboxChange(row)} 
+                  checked={product.active} 
+                  onChange={() => handleCheckboxChange(product)} 
                 />
               </td>
-              <td>{row.quantity}</td> {/* Mostrar la cantidad del producto */}
+              <td>{product.id}</td> {/* Muestra el ID del producto */}
+              <td>{product.title}</td>
+              <td>{product.quantity}</td> {/* Muestra la cantidad del producto */}
+              <td>{product.price}</td>
               <td>
-                {row.image.startsWith('blob:') ? (
-                  <img src={row.image} alt={`Imagen ${row.id}`} style={{ width: '100px', height: '100px' }} />
+                {product.image.startsWith('blob:') ? (
+                  <img src={product.image} alt={`Imagen ${product.id}`} style={{ width: '100px', height: '100px' }} />
                 ) : (
-                  <img src={row.image} alt={`Imagen ${row.id}`} style={{ width: '100px', height: '100px' }} />
+                  <img src={product.image} alt={`Imagen ${product.id}`} style={{ width: '100px', height: '100px' }} />
                 )}
               </td>
-              <td>{row.title}</td>
-              <td>{row.price}</td>
+              <td>{product.description}</td> {/* Muestra la descripción */}
               <td>
-                <Button className="btn-custom" onClick={() => handleShowModal(row)}>
+                <Button className="btn-custom" onClick={() => handleShowModal(product)}>
                   Editar
                 </Button>
               </td>
               <td>
-                <Button className="btn-delete" onClick={() => handleDeleteRow(row)}>
-                  <img className="img-eliminar" src="src/assets/img/Basurero.png" alt="Eliminar" style={{ width: '30px', height: '50px' }} />
-                 </Button>
+                <Button className="btn-delete" onClick={() => handleDeleteRow(product)}>
+                  Eliminar
+                </Button>
               </td>
-
             </tr>
           ))}
         </tbody>
@@ -98,4 +100,5 @@ const AdminEcommerce = () => {
   );
 };
 
-export default AdminEcommerce; 
+export default AdminEcommerce;
+
