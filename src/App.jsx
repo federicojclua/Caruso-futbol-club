@@ -20,11 +20,10 @@ import AboutUs from './pages/AboutUs/AboutUs';
 import Ecommerce from './pages/Ecommerce/Ecommerce';
 import Location from './pages/Location/Location';
 import Login from './pages/Login/Login';
-import ShoppingCart from './pages/Ecommerce/ShoppingCart';
 import Admin from './pages/Admin/Admin';
 import Record from './pages/record/Record';
 import Principal from './pages/Principal/Principal';
-import PaymentForm from './pages/Ecommerce/PaymentForm';
+
 
 function App() {
   // Simular autenticación de usuario admin4@admin4.com
@@ -53,12 +52,10 @@ function App() {
         <Route path="/location" element={<Location />} />
         <Route path="/ecommerce" element={<Ecommerce />} />
         <Route path="/aboutUs" element={<AboutUs />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/cart" element={<ShoppingCart />} />  
+        <Route path="/contact" element={<Contact />} />       
         <Route path="/admin" element={<Admin />} />
         <Route path="/principal" element={<Principal />} />
         <Route path="/record" element={<Record />} />
-        <Route path="/payment" element={<PaymentForm />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
     </BrowserRouter>
