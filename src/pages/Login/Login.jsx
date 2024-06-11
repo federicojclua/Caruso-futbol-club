@@ -15,6 +15,9 @@ const Login = () => {
   const [serverError, setServerError] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
   const navigate = useNavigate();
+  const handleRegister = () => {
+    navigate('/record');
+  };
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -65,6 +68,7 @@ const Login = () => {
     } catch (error) {
       setServerError('Correo o contraseña incorrecta, por favor, intente de nuevo.');
     }
+
   };
 
   return (
@@ -101,10 +105,10 @@ const Login = () => {
             {passwordError && <p className="text-danger">{passwordError}</p>}
             {serverError && <p className="text-danger">{serverError}</p>}
             <button className="btn-login" onClick={handleSubmit}>Iniciar Sesión</button>
-            <a href="#">¿Olvidaste tu contraseña?</a>
+            <a href="/Error404">¿Olvidaste tu contraseña?</a>
             <div className="register-message">
               <p>¿No tienes cuenta? Registrate haciendo click aquí abajo</p>
-              <button className="btn-new">Registrarme</button>
+              <button className="btn-new" onClick={handleRegister}>Registrarme</button>
             </div>
             
           </div>
