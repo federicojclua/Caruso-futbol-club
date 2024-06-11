@@ -52,7 +52,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/location" element={<Location />} />
         <Route path="/ecommerce" element={<Ecommerce />} />
-        <Route path="/payment" element={<PaymentForm />} />
+        <Route path="/payment" element={<PaymentForm />} /> 
         <Route path="/aboutUs" element={<AboutUs />} />
         <Route path="/contact" element={<Contact />} />       
         <Route path="/admin" element={<Admin />} />
