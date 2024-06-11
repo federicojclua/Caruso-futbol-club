@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./PaymentForm.css";
 import { useLocation, useNavigate } from "react-router-dom";
+import NavBar from '../../components/header/nav-bar/NavBar';
 import Footer from "../../components/footer/Footer";
 import WhatsAppButton from "../../components/WhatsAppButton/WhatsAppButton";
 
@@ -14,33 +15,82 @@ const PaymentForm = () => {
     expiryYear: "",
     cvv: "",
     dni: "",
+    deliveryOption: "pickup",
   });
 
   const [totalPrice, setTotalPrice] = useState(0);
+  const [showDeliveryForm, setShowDeliveryForm] = useState(false);
+  const [deliveryCost, setDeliveryCost] = useState(0);
+  const [deliveryData, setDeliveryData] = useState({
+    fullName: "",
+    postalCode: "",
+    province: "",
+    locality: "",
+    street: "",
+    streetNumber: "",
+    noStreetNumber: false,
+    floorApartment: "",
+    phoneNumber: "",
+    additionalInstructions: "",
+    instructionsLength: 0,
+  });
 
   useEffect(() => {
     const total = cartItems.reduce(
       (sum, item) => sum + item.price * item.quantity,
       0
     );
-    setTotalPrice(total);
-  }, [cartItems]);
+    setTotalPrice(total + deliveryCost);
+  }, [cartItems, deliveryCost]);
 
   const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    // Validar si el campo es "nombre en la tarjeta" para permitir solo letras
     if (name === "name") {
       setFormData({
         ...formData,
         [name]: value.replace(/[^a-zA-Z\s]/g, ""), // Solo permite letras y espacios en blanco
       });
+    } else if (name === "deliveryOption") {
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+      setShowDeliveryForm(value === "delivery");
+      setDeliveryCost(value === "delivery" ? 500 : 0);
     } else {
       setFormData({
         ...formData,
         [name]: value.replace(/\D/g, ""), // Elimina todos los caracteres que no sean dígitos
+      });
+    }
+  };
+
+  const handleDeliveryChange = (e) => {
+    const { name, value, checked, type } = e.target;
+    if (type === "checkbox") {
+      setDeliveryData({
+        ...deliveryData,
+        [name]: checked,
+        streetNumber: checked ? "" : deliveryData.streetNumber,
+      });
+    } else if (name === "additionalInstructions") {
+      setDeliveryData({
+        ...deliveryData,
+        [name]: value,
+        instructionsLength: value.length,
+      });
+    } else if (name === "fullName" || name === "province" || name === "locality" || name === "street") {
+      setDeliveryData({
+        ...deliveryData,
+        [name]: value.replace(/[^a-zA-Z\s]/g, ""), // Solo permite letras y espacios en blanco
+      });
+    } else {
+      setDeliveryData({
+        ...deliveryData,
+        [name]: value.replace(/\D/g, ""), // Solo permite números
       });
     }
   };
@@ -52,7 +102,8 @@ const PaymentForm = () => {
   };
 
   return (
-    <div>
+    <div className='PaymentForm-component'>
+      <NavBar />
       <div className="payment-container">
         <div className="payment-form">
           <h2>Formulario de Pago</h2>
@@ -102,7 +153,7 @@ const PaymentForm = () => {
                 style={{ width: "50px" }}
               />
             </div>
-            <div className="form-group">
+            <div className="form-group cvv-group">
               <label>CVV</label>
               <input
                 type="text"
@@ -111,6 +162,7 @@ const PaymentForm = () => {
                 onChange={handleChange}
                 required
                 maxLength="3"
+                className="cvv-input"
               />
               <img
                 src="https://images.contentstack.io/v3/assets/bltd488044897c9abc0/blta94cfceb401ac8c6/637c1807a32209106e8b5077/CVV_graphic_2.png"
@@ -127,26 +179,170 @@ const PaymentForm = () => {
                 onChange={handleChange}
                 required
                 maxLength="8"
-                placeholder="Ingresa el número sin puntos"
               />
             </div>
-            <button type="submit">Confirmar Pago</button>
+            <div className="form-group">
+              <label>Opciones de Entrega</label>
+              <div className="delivery-options">
+                <label>
+                  <input
+                    type="radio"
+                    name="deliveryOption"
+                    value="pickup"
+                    checked={formData.deliveryOption === "pickup"}
+                    onChange={handleChange}
+                  />
+                  Retirar de las instalaciones
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="deliveryOption"
+                    value="delivery"
+                    checked={formData.deliveryOption === "delivery"}
+                    onChange={handleChange}
+                  />
+                  Enviar a domicilio (Se aplicarán cargos por envío)
+                </label>
+              </div>
+            </div>
+            {showDeliveryForm && (
+              <div className="delivery-form">
+                <h2>Formulario de Entrega</h2>
+                <div className="form-group">
+                  <label>Nombre Completo</label>
+                  <input
+                    type="text"
+                    name="fullName"
+                    value={deliveryData.fullName}
+                    onChange={handleDeliveryChange}
+                    required
+                    maxLength="50"
+                  />
+                </div>
+                <div className="form-group">
+                  <label>Código Postal</label>
+                  <input
+                    type="text"
+                    name="postalCode"
+                    value={deliveryData.postalCode}
+                    onChange={handleDeliveryChange}
+                    required
+                    maxLength="4"
+                  />
+                </div>
+                <div className="form-group">
+                  <label>Provincia</label>
+                  <input
+                    type="text"
+                    name="province"
+                    value={deliveryData.province}
+                    onChange={handleDeliveryChange}
+                    required
+                    maxLength="50"
+                  />
+                </div>
+                <div className="form-group">
+                  <label>Localidad</label>
+                  <input
+                    type="text"
+                    name="locality"
+                    value={deliveryData.locality}
+                    onChange={handleDeliveryChange}
+                    required
+                    maxLength="50"
+                  />
+                </div>
+                <div className="form-group">
+                  <label>Calle</label>
+                  <input
+                    type="text"
+                    name="street"
+                    value={deliveryData.street}
+                    onChange={handleDeliveryChange}
+                    required
+                    maxLength="50"
+                  />
+                </div>
+                <div className="form-group no-street-number">
+                  <label>
+                    <input
+                      type="checkbox"
+                      name="noStreetNumber"
+                      checked={deliveryData.noStreetNumber}
+                      onChange={handleDeliveryChange}
+                    />
+                    Sin Número
+                  </label>
+                </div>
+                {!deliveryData.noStreetNumber && (
+                  <div className="form-group">
+                    <label>Número</label>
+                    <input
+                      type="text"
+                      name="streetNumber"
+                      value={deliveryData.streetNumber}
+                      onChange={handleDeliveryChange}
+                      required
+                      maxLength="5"
+                    />
+                  </div>
+                )}
+                <div className="form-group">
+                  <label>Piso/Departamento</label>
+                  <input
+                    type="text"
+                    name="floorApartment"
+                    value={deliveryData.floorApartment}
+                    onChange={handleDeliveryChange}
+                    maxLength="5"
+                  />
+                </div>
+                <div className="form-group">
+                  <label>Teléfono</label>
+                  <input
+                    type="text"
+                    name="phoneNumber"
+                    value={deliveryData.phoneNumber}
+                    onChange={handleDeliveryChange}
+                    required
+                    maxLength="10"
+                  />
+                </div>
+                <div className="form-group">
+                  <label>Instrucciones adicionales</label>
+                  <textarea
+                    name="additionalInstructions"
+                    value={deliveryData.additionalInstructions}
+                    onChange={handleDeliveryChange}
+                    maxLength="128"
+                  ></textarea>
+                  <div className="character-count">
+                    {deliveryData.instructionsLength}/128 caracteres
+                  </div>
+                </div>
+                <button type="submit">Confirmar Envío y Compra</button>
+              </div>
+            )}
+            {!showDeliveryForm && <button type="submit">Confirmar Compra</button>}
           </form>
         </div>
         <div className="cart-summary">
-          <h2>Resumen del Pedido</h2>
+          <h2>Resumen del Carrito</h2>
           {cartItems.map((item, index) => (
-            <div key={index} className="cart-item">
+            <div className="cart-item" key={index}>
               <img src={item.image} alt={item.name} />
               <div>
-                <h3>{item.name}</h3>
-                <p>Cantidad: {item.quantity}</p>
-                <p>Precio: ${(item.price * item.quantity).toFixed(2)}</p>
+                <p>{item.name}</p>
+                <p>{item.price} x {item.quantity}</p>
               </div>
             </div>
           ))}
+          <div className="delivery-cost">
+            Costo de Envío: {deliveryCost ? `$${deliveryCost}` : "$0"}
+          </div>
           <div className="total-price">
-            <h3>Total: ${totalPrice.toFixed(2)}</h3>
+            Total: ${totalPrice}
           </div>
         </div>
       </div>

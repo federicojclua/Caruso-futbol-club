@@ -17,7 +17,8 @@ const ProductItem = ({ product, addToCart }) => {
     <div className='product-item'>
       <img src={product.image} alt={product.name} />
       <h2>{product.name}</h2>
-      <p>{product.price}</p>
+      <p>{`$${product.price}`}</p> {/* Agregar el signo "$" al precio */}
+      <p>{product.description}</p> {/* Agregar la descripción */}
       <input type="number" value={quantity} min="0" onChange={handleQuantityChange} />
       <button onClick={handleAddToCart}>Añadir al Carrito</button> {/* Utilizar la función handleAddToCart */}
     </div>
