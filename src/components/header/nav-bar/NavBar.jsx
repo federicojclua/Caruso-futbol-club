@@ -3,7 +3,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import "./NavBar.css";
 import Container from 'react-bootstrap/Container';
-import imgLogonav from './src/assets/img/cfc-logo.png';
+import imgLogonav from '../../../assets/img/carpeta/cfc-logo.png';
+import logoincio from '../../../assets/img/carpeta/cfc-logo.png';
 
 const NavBar = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
