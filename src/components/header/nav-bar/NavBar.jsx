@@ -1,11 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import "./NavBar.css";
 import Container from 'react-bootstrap/Container';
 
-const NavBar = ({ isAuthenticated, userName, userImage }) => {
+const NavBar = () => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [userName, setUserName] = useState('');
+  const [userImage, setUserImage] = useState('');
   const navigate = useNavigate();
+
+  const simulateLogin = () => {
+    // Aquí simulas el proceso de inicio de sesión exitoso
+    setIsAuthenticated(true);
+    setUserName('Nombre de Usuario');
+    setUserImage('URL de la imagen del usuario');
+  };
+
+  const simulateLogout = () => {
+    // Aquí simulas el proceso de cierre de sesión
+    setIsAuthenticated(false);
+    setUserName('');
+    setUserImage('');
+  };
 
   const handleProtectedClick = (path) => {
     if (isAuthenticated) {
@@ -15,17 +32,13 @@ const NavBar = ({ isAuthenticated, userName, userImage }) => {
     }
   };
 
-  const simulateLogout = () => {
-    // Implementa la lógica para cerrar sesión aquí
-  };
-
   return (
     <>
       <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
         <Container>
-        <Link to="/">
-        <img className='cfc-logo' src="./src/assets/img/cfc-logo.png" alt="logo-caruso" />
-      </Link>
+          <Link to="/">
+            <img className='cfc-logo' src="./src/assets/img/cfc-logo.png" alt="logo-caruso" />
+          </Link>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
@@ -37,7 +50,7 @@ const NavBar = ({ isAuthenticated, userName, userImage }) => {
                   <NavDropdown.Item as={Link} to="/mis-reservas">Mis Reservas</NavDropdown.Item>
                 )}
               </NavDropdown>
-              {isAuthenticated && userName === 'admin4@admin4.com' && ( // Agregar condición para mostrar el botón de Administrador
+              {isAuthenticated && userName === 'admin4@admin4.com' && (
                 <Nav.Link as={Link} to="/admin">Administrador</Nav.Link>
               )}
             </Nav>
