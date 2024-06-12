@@ -3,44 +3,52 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.Record-component .row {
+.Record-component .record-form-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  padding-top: 100px;
-  margin-bottom: 120px;
+  flex-grow: 1;
+  padding: 100px;
 }
 
-.Record-component .form-container {
+@media (max-width: 992px) {
+  .Record-component .record-form-container {
+    padding: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .Record-component .record-form-container {
+    padding-top: 90px;
+    padding-bottom: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .Record-component .record-form-container {
+    padding-top: 70px;
+    padding-bottom: 30px;
+  }
+}
+
+.Record-component .form-wrapper {
   border: none;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
   padding: 20px;
   max-width: 600px;
   width: 100%;
+  margin: 0 20px;
+  background-color: white; /* Add background color for better visibility */
 }
 
-.Record-component .colm-form {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  width: 100%;
-}
-
-.Record-component .colm-form .form-container {
-  border: none;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6), 0 8px 16px rgba(0, 0, 0, 0.6);
-  margin-bottom: 30px;
-  padding: 20px;
-  max-width: 800px;
-}
-
-.Record-component .colm-form .form-container input, 
-.Record-component .colm-form .form-container .btn-login {
+.Record-component .form-wrapper input, 
+.Record-component .form-wrapper .btn-login {
   width: 100%;
   margin: 5px 0;
   height: 45px;
@@ -48,19 +56,19 @@
   font-size: 16px;
 }
 
-.Record-component .colm-form .form-container input {
+.Record-component .form-wrapper input {
   border: 1px solid #dddfe2;
   color: #1d2129;
   padding: 0 8px;
   outline: none;
 }
 
-.Record-component .colm-form .form-container input:focus {
+.Record-component .form-wrapper input:focus {
   border-color: #333;
   box-shadow: 0 0 0 2px #e7f3ff;
 }
 
-.Record-component .colm-form .form-container .btn-login {
+.Record-component .form-wrapper .btn-login {
   background-color: #42b72a;
   border: none;
   border-radius: 6px;
@@ -71,6 +79,32 @@
   transition: background-color 0.3s ease;
 }
 
-.Record-component .colm-form .form-container .btn-login:hover {
+.Record-component .form-wrapper .btn-login:hover {
   background-color: #36a420;
+}
+
+.Record-component h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  background-color: rgba(51, 51, 51, 0.1); /* Color #333333 con 20% de opacidad */
+  padding: 10px;
+  border-radius: 4px;
+}
+
+@media (max-width: 992px) {
+  .Record-component h2 {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .Record-component h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .Record-component h2 {
+    font-size: 1.25rem;
+  }
 }

@@ -89,6 +89,10 @@
   text-decoration: underline;
 }
 
+.register-message {
+  margin-top: 10px;
+}
+
 .Login-component .colm-form .form-container .btn-new {
   background-color: #333;
   border: none;
@@ -98,7 +102,7 @@
   padding: 0 16px;
   color: #ffffff;
   font-weight: 700;
-  margin-top: 10px;
+  margin-top: 0px;
   transition: background-color 0.3s ease;
 }
 

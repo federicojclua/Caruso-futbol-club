@@ -105,7 +105,6 @@ const Login = () => {
             {passwordError && <p className="text-danger">{passwordError}</p>}
             {serverError && <p className="text-danger">{serverError}</p>}
             <button className="btn-login" onClick={handleSubmit}>Iniciar Sesión</button>
-            <a href="/Error404">¿Olvidaste tu contraseña?</a>
             <div className="register-message">
               <p>¿No tienes cuenta? Registrate haciendo click aquí abajo</p>
               <button className="btn-new" onClick={handleRegister}>Registrarme</button>
