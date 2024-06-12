@@ -30,7 +30,7 @@
 }
 
 .main-ecommerce-content {
-  max-width: 80%;
+  max-width: 90%;
   margin: auto;
   padding: 100px;
   color: #333;
@@ -56,7 +56,7 @@
   border-radius: 10px;
   margin: 20px;
   padding: 20px;
-  max-width: 300px;
+  max-width: 400px;
   text-align: center;
   transition: transform 0.3s, border-color 0.3s;
   cursor: pointer;
@@ -123,7 +123,7 @@
   }
 
   .main-ecommerce-content {
-    padding: 50px;
+    padding-top: 60px;
   }
 
   .product-item h2 {
@@ -138,10 +138,6 @@
 @media (max-width: 576px) {
   .subtitle-ecommerce {
     font-size: 4vw; /* Tamaño para pantallas extra pequeñas */
-  }
-
-  .product-list {
-    flex-direction: column; /* Colocamos las tarjetas en una columna */
   }
 
   .product-item {
