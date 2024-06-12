@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Carousel, Container } from 'react-bootstrap';
 import './Header.css';
 
+
 import NavBar from './nav-bar/NavBar';
 
 const Header = () => {
