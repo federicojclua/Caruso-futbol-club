@@ -15,8 +15,8 @@ const Header = () => {
         </video>
         </Container>
 
-    </header>
-  );
+    </header> 
+  );  
 }
 
 export default Header;
