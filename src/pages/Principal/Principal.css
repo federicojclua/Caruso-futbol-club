@@ -11,8 +11,8 @@
   position: relative;
   z-index: 1; /* Asegura que el contenido esté por encima del fondo de video */
   height: auto;
-  margin-bottom: 150px;
-  padding-bottom: 150px;
+  /* margin-bottom: 150px;
+  padding-bottom: 150px; */
 }
 
 .title-principal{
@@ -21,6 +21,7 @@
   display:flex;
   justify-content: center;
   color:#305e34fa;
+  padding-bottom: 170px;
 }
 
 .form-container {
@@ -44,4 +45,41 @@
   font-size: 0.8vw;
 
   
+}
+
+
+@media (max-width: 1200px) {
+  .title-principal {
+    font-size: 6vw; /* Reducimos el tamaño del título en pantallas pequeñas y medianas */
+  }
+
+  .form-container {
+    max-width: 90%; /* Reducimos el ancho del contenedor del formulario */
+    font-size: 3vw; /* Reducimos el tamaño del texto del formulario */
+    margin-top: 50px; /* Ajustamos el margen superior del formulario */
+    padding-left: 10px; /* Reducimos el relleno izquierdo */
+    padding-right: 10px; /* Reducimos el relleno derecho */
+  }
+
+  .selector {
+    font-size: 1.5vw; /* Reducimos el tamaño del texto del selector */
+  }
+}
+
+@media (max-width: 768px) {
+  .title-principal {
+    font-size: 6vw; /* Reducimos el tamaño del título en pantallas pequeñas y medianas */
+  }
+
+  .form-container {
+    max-width: 90%; /* Reducimos el ancho del contenedor del formulario */
+    font-size: 3vw; /* Reducimos el tamaño del texto del formulario */
+    margin-top: 50px; /* Ajustamos el margen superior del formulario */
+    padding-left: 10px; /* Reducimos el relleno izquierdo */
+    padding-right: 10px; /* Reducimos el relleno derecho */
+  }
+
+  .selector {
+    font-size: 1.5vw; /* Reducimos el tamaño del texto del selector */
+  }
 }

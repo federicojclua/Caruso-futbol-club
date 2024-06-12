@@ -11,7 +11,7 @@
   
   .table-price h2 {
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom:3vw;
     font-size: 2vw;
     color: #305e34fa;
   }
@@ -45,4 +45,41 @@
     transition: background-color 0.3s ease;
     border: 1px solid #ddd;
   }
+  @media (max-width: 1200px) {
+    .table-price h2 {
+      font-size: 2rem; /* Tamaño de fuente normal para h2 en pantallas grandes */
+    }
   
+    .table-price th,
+    .table-price td {
+      font-size: 1rem; /* Tamaño de fuente normal para th y td en pantallas grandes */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    
+    .table-price {
+      width: 90%; /* Reducimos el ancho de la tabla al 95% del contenedor en pantallas medianas */
+      margin: auto; /* Centramos horizontalmente la tabla */
+    }
+  
+    .table-price h2 {
+      font-size: 3vw; /* Tamaño de fuente reducido para h2 en pantallas medianas */
+    }
+  
+    .table-price th,
+    .table-price td {
+      font-size: 2vw; /* Tamaño de fuente reducido para th y td en pantallas medianas */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .table-price h2 {
+      font-size: 4vw; /* Tamaño de fuente reducido para h2 en pantallas pequeñas */
+    }
+  
+    .table-price th,
+    .table-price td {
+      font-size: 3vw; /* Tamaño de fuente reducido para th y td en pantallas pequeñas */
+    }
+  }

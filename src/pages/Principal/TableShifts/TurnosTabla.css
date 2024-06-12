@@ -1,6 +1,8 @@
+/* Estilos existentes */
+
 .turnos-tabla-container {
   width: 50%;
-  margin: 0 auto;
+  margin: auto;
   padding: 1rem;
   box-sizing: border-box;
   background: rgb(14,101,102);
@@ -26,7 +28,6 @@
 }
 
 .turnos-tabla th, .turnos-tabla td {
-  padding: 0.75rem;
   text-align: center;
   border-radius: 8px; /* Bordes redondeados */
 }
@@ -87,7 +88,15 @@
   border-color: #00e3ae;
 }
 
-@media (max-width: 600px) {
+
+/* Media query para ajustar la tabla en pantallas pequeñas */
+@media (max-width: 1200px) {
+  .turnos-tabla-container {
+    width: 90%; /* Cambiamos el ancho de la tabla al 95% del contenedor */
+    margin: 0 auto !important; /* Centramos la tabla horizontalmente */
+   
+  }
+
   .turnos-tabla-titulo {
     font-size: 1.2rem;
   }
@@ -95,5 +104,52 @@
   .turnos-tabla th, .turnos-tabla td {
     padding: 0.5rem;
     font-size: 0.8rem;
+  
+    
+  }
+}
+
+
+/* Media query para ajustar la tabla en pantallas pequeñas */
+@media (max-width: 768px) {
+  .turnos-tabla-container {
+    width: 90%; /* Cambiamos el ancho de la tabla al 95% del contenedor */
+    
+   
+  }
+
+  .turnos-tabla-titulo {
+    font-size: 1.2rem;
+  }
+
+  .turnos-tabla{
+    padding-left: 40px;
+  }
+  .turnos-tabla th, .turnos-tabla td {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    margin:0 auto;
+    
+  
+    
+  }
+}
+@media (max-width: 450px) {
+  .turnos-tabla-container {
+    width: 90%; /* Cambiamos el ancho de la tabla al 95% del contenedor */
+    
+  }
+  .turnos-tabla{
+    padding-left: 0px;
+  }
+  .turnos-tabla-titulo {
+    font-size: 1rem;
+  }
+
+  .turnos-tabla th, .turnos-tabla td {
+    padding: 0.5rem;
+    font-size: 0.5rem;
+  
+    
   }
 }

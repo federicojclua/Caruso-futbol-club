@@ -5,7 +5,7 @@ const Price = () => {
   const precios = [
     { tipo: 'Fútbol 5', precio: '12,000' },
     { tipo: 'Fútbol 7', precio: '16,800' },
-    { tipo: 'Fútbol 8', precio: '24,000' }
+    { tipo: 'Fútbol 9', precio: '24,000' }
   ];
 
   return (

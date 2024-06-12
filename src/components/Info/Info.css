@@ -35,7 +35,6 @@
   font-weight: bolder;
 }
 
-
 .card-section {
   display: flex;
   flex-wrap: wrap;
@@ -95,29 +94,15 @@ h3, h4 {
 
   .Services-container {
     height: auto; /* Ajusta la altura automáticamente */
+    padding-top: 50px; /* Ajusta el padding-top para pantallas medianas */
   }
 
   .Services-title {
     font-size: 5vw;
+    padding-bottom: 80px; /* Ajusta el padding-bottom para pantallas medianas */
   }
 }
 
-/* Media query para pantallas de 767px o menos */
-@media (max-width: 1083px) {
-  .card-section {
-    flex-direction: row; /* Mantén las tarjetas en filas */
-    flex-wrap: wrap;
-  }
-
-  .card-section .col {
-    width: 50%; /* Ajusta el ancho al 50% para dos columnas */
-    padding: 10px;
-  }
-
-  .Services-title {
-    font-size: 6vw;
-  }
-}
 /* Media query para pantallas de 767px o menos */
 @media (max-width: 767px) {
   .card-section {
@@ -130,8 +115,13 @@ h3, h4 {
     padding: 10px;
   }
 
+  .Services-container {
+    padding-top: 30px; /* Ajusta el padding-top para pantallas pequeñas */
+  }
+
   .Services-title {
     font-size: 6vw;
+    padding-bottom: 60px; /* Ajusta el padding-bottom para pantallas pequeñas */
   }
 }
 
@@ -142,7 +132,12 @@ h3, h4 {
     padding: 10px;
   }
 
+  .Services-container {
+    padding-top: 20px; /* Ajusta el padding-top para pantallas muy pequeñas */
+  }
+
   .Services-title {
     font-size: 7.5vw;
+    padding-bottom: 40px; /* Ajusta el padding-bottom para pantallas muy pequeñas */
   }
 }
