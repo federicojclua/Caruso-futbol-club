@@ -7,30 +7,33 @@
 
 .payment-container {
   display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  padding-top: 100px;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px; /* Ajusta el padding para celus */
+  margin: 0; 
 }
 
 .payment-form,
 .delivery-form {
-  padding: 20px;
+  width: 100%;
+  max-width: 400px;
+  padding: 15px; /* Reduce el padding para celus */
   background-color: white;
   border: 1px solid #ccc;
   border-radius: 5px;
-  max-width: 400px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
 }
 
 .payment-form h2,
 .delivery-form h2 {
-  margin-bottom: 20px;
-  font-size: 24px;
+  margin-bottom: 15px;
+  font-size: 20px; 
 }
 
 .payment-form .form-group,
 .delivery-form .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 10px; /* Reduce el margen inferior */
 }
 
 .payment-form .form-group label,
@@ -52,27 +55,23 @@
 }
 
 .payment-form .form-group input.cvv-input {
-  width: 80px; /* Ajusta el tamaño según sea necesario para 3 dígitos */
+  width: 15%; /* Ajusta el tamaño para 3 dígitos en celus */
 }
 
 .payment-form .cvv-group {
   display: flex;
-  align-items: center;
-}
-
-.payment-form .cvv-group input {
-  flex: 1;
-  margin-right: 10px;
+  flex-direction: column;
 }
 
 .payment-form .cvv-help-image {
-  width: 200px;
+  width: 100%;
   height: auto;
+  margin-top: 10px;
 }
 
 .payment-form .delivery-options {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   margin-bottom: 15px;
 }
 
@@ -94,23 +93,24 @@
 }
 
 .cart-summary {
-  padding: 20px;
+  width: 100%;
+  max-width: 400px;
+  padding: 15px; /* Reduce el padding para celus */
   background-color: white;
   border: 1px solid #ccc;
   border-radius: 5px;
-  max-width: 400px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .cart-summary h2 {
-  margin-bottom: 20px;
-  font-size: 24px;
+  margin-bottom: 15px;
+  font-size: 20px; /* Reduce el tamaño de fuente para celus */
 }
 
 .cart-summary .cart-item {
   display: flex;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 10px; /* Reduce el margen inferior */
 }
 
 .cart-summary .cart-item img {
@@ -121,8 +121,8 @@
 
 .total-price,
 .delivery-cost {
-  margin-top: 20px;
-  font-size: 18px;
+  margin-top: 10px; /* Reduce el margen superior */
+  font-size: 16px; /* Reduce el tamaño de fuente */
   font-weight: bold;
   text-align: right;
 }
@@ -141,4 +141,57 @@
 
 .delivery-form .no-street-number input {
   margin-left: 10px;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+  .payment-container {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding-top: 100px;
+  }
+
+  .payment-form,
+  .delivery-form {
+    margin-bottom: 0;
+    padding: 20px; /* Restablece el padding para pantallas más grandes */
+  }
+
+  .payment-form h2,
+  .delivery-form h2 {
+    font-size: 24px; /* Restablece el tamaño de fuente para pantallas más grandes */
+  }
+
+  .payment-form .cvv-group {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .payment-form .cvv-help-image {
+    margin-top: 0;
+    width: 200px;
+  }
+
+  .payment-form .delivery-options {
+    flex-direction: row;
+  }
+
+  .cart-summary {
+    padding: 20px; /* Restablece el padding para pantallas más grandes */
+  }
+
+  .cart-summary h2 {
+    font-size: 24px; /* Restablece el tamaño de fuente para pantallas más grandes */
+  }
+
+  .cart-summary .cart-item {
+    margin-bottom: 15px; /* Restablece el margen inferior para pantallas más grandes */
+  }
+
+  .total-price,
+  .delivery-cost {
+    margin-top: 20px; /* Restablece el margen superior */
+    font-size: 18px; /* Restablece el tamaño de fuente */
+  }
 }

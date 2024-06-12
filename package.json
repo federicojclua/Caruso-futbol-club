@@ -4,7 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+<<<<<<< HEAD
     "start": "node src/start.js",
+=======
+    "start": "serve -s dist",
+>>>>>>> 2e4a4909e67cc5fc4b032658fd0469cd188d4361
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",

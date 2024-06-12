@@ -23,7 +23,9 @@ const NavBar = ({ isAuthenticated, userName, userImage }) => {
     <>
       <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
         <Container>
-          <img className='cfc-logo' src="src/assets/img/cfc-logo.png" alt="logo-caruso" />
+        <Link to="/">
+        <img className='cfc-logo' src="src/assets/img/cfc-logo.png" alt="logo-caruso" />
+      </Link>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
