@@ -1,11 +1,14 @@
 import React from 'react';
-import { render } from 'react-dom'; // Importa render desde 'react-dom'
+import { createRoot } from 'react-dom/client'; //modificado para compatibilidad React 18
 import App from './App.jsx';
 import './App.css';
 
-render(
+const rootElement = document.getElementById('root');
+
+const root = createRoot(rootElement);
+
+root.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );
