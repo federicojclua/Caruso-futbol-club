@@ -1,6 +1,7 @@
 import React from 'react';
 import "./Tournament.css";
 import { Container } from 'react-bootstrap';
+import Tournament1 from '../../assets/img/caruso-torneo2';
 
 const Tournament = () => {
   return (
@@ -14,7 +15,7 @@ const Tournament = () => {
       
       <div className="img-tournament">
         <img
-          src="/src/assets/img/caruso-torneo2.gif"
+          src={Tournament1}
           alt="First slide"
         />
       </div>

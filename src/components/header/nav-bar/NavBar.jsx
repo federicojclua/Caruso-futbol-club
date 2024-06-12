@@ -5,6 +5,7 @@ import "./NavBar.css";
 import Container from 'react-bootstrap/Container';
 import imgLogonav from '../../../assets/img/carpeta/cfc-logo.png';
 import logoincio from '../../../assets/img/carpeta/cfc-logo.png';
+import userImage from '../../../assets/img/carpeta/IMAGEN-LOGO.PNG';
 
 const NavBar = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -37,7 +38,7 @@ const NavBar = () => {
         <Container>
           <Link to="/">
             
-            <img className='cfc-logo'src={imgLogonav} alt="logo-caruso" />
+            <img className='cfc-logo' src={imgLogonav} alt="logo-caruso" />
           </Link>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
@@ -57,10 +58,10 @@ const NavBar = () => {
             <Nav>
               {isAuthenticated ? (
                 <NavDropdown title={userName} className="button-inicio">
-                  {/* Aquí puedes agregar la imagen de usuario si la tienes */}
-                  {/* <img src={userImage} alt="User Avatar" className="user-avatar" /> */}
+                  
+              <img src={userImage} alt="User Avatar" className="user-avatar" /> *
                   <span className="user-name">{userName}</span>
-                  <NavDropdown.Item as={Link} to="/perfil">Mi Perfil</NavDropdown.Item>
+                  
                   <NavDropdown.Item onClick={simulateLogout}>Cerrar Sesión</NavDropdown.Item>
                 </NavDropdown>
               ) : (
