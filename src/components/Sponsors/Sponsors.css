@@ -44,3 +44,25 @@
     transform: translateX(-100%); /* Mueve el texto completamente fuera de la vista a la izquierda */
   }
 }
+
+/* Media Queries para pantallas medianas */
+@media (max-width: 992px) {
+  .text-sponsors {
+    font-size: 5vw; /* Aumenta el tamaño del texto */
+  }
+
+  .img-sponsors img {
+    max-width: 250px; /* Aumenta el tamaño máximo de las imágenes */
+  }
+}
+
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 576px) {
+  .text-sponsors {
+    font-size: 7vw; /* Aumenta aún más el tamaño del texto */
+  }
+
+  .img-sponsors img {
+    max-width: 300px; /* Aumenta aún más el tamaño máximo de las imágenes */
+  }
+}

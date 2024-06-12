@@ -63,7 +63,7 @@ const EcommercePage = () => {
       </Helmet>
       <NavBar />
       <div className="main-ecommerce-content">
-        <h1 className='subtitle-ecommerce'>⚽️ Bienvenidos a Nuestra Tienda ⚽️</h1>
+        <h2 className='subtitle-ecommerce'>⚽️ Bienvenidos a Nuestra Tienda ⚽️</h2>
         <ProductList addToCart={addToCart} />
       </div>
       <Footer />
