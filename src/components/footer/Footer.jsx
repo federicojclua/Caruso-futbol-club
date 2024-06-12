@@ -9,7 +9,11 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
+<<<<<<< HEAD
         <div className="footer-column animate__animated animate__rollIn">
+=======
+        <div className="footer-column animate_animated animate_rollIn">
+>>>>>>> 48fc77ac774893e97003ef080f5075acea97d39f
         <img className='logo_sin_fondo_bw'src={logosinfondogris} alt="logo blanco y negro" />
         </div>
         <div className="footer-column">
@@ -49,4 +53,4 @@ const Footer = () => {
   );
 }
 
-export default Footer;
+export default Footer;

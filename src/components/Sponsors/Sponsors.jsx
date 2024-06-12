@@ -30,4 +30,4 @@ const Sponsors = () => {
   );
 }
 
-export default Sponsors;
+export default Sponsors;
