@@ -123,7 +123,7 @@
   }
 
   .main-ecommerce-content {
-    padding: 50px;
+    padding-top: 60px;
   }
 
   .product-item h2 {
@@ -138,9 +138,6 @@
 @media (max-width: 576px) {
   .subtitle-ecommerce {
     font-size: 4vw; /* Tamaño para pantallas extra pequeñas */
-  }
-
-  .product-list {
   }
 
   .product-item {
