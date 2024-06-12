@@ -108,14 +108,8 @@ const ModalEcommerce = ({ show, handleClose, handleSave, currentRow, isNewProduc
           </Form.Group>
           <Form.Group controlId="formProductImage">
           <Form.Label>Foto (300 x 200 px)</Form.Label>
-          <Form.Control 
-              type="text" 
-              name="image" 
-              value={product?.image || ''} 
-              onChange={handleChange} 
-              placeholder="Ingrese la URL de la imagen del producto" 
-            />
-            <Form.Control type="file" accept="image/*" onChange={handleImageChange} />
+          <Form.Control type="file" accept="image/*" onChange={handleImageChange} />
+            {imageUrl && <img src={imageUrl} alt="Vista previa" style={{ width: '100px', height: '100px', marginTop: '10px' }} />}
           </Form.Group>
         </Form>
       </Modal.Body>
