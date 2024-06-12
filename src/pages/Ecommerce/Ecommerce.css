@@ -15,7 +15,7 @@
   border: none;
   border-radius: 50%;
   padding: 15px;
-  font-size: 24px;
+  font-size: 0.5vw;
   cursor: pointer;
   z-index: 1000;
   display: flex;
@@ -73,12 +73,12 @@
 }
 
 .product-item h2 {
-  font-size: 1.8vw;
+  font-size: 1.3vw;
   margin: 10px 0;
 }
 
 .product-item p {
-  font-size: 1.5vw;
+  font-size: 1vw;
   color: #666;
 }
 
@@ -103,4 +103,74 @@
 
 .product-item button:hover {
   background-color: #0056b3;
+}
+/* Media Queries para ajustar el tamaño del título en diferentes pantallas */
+@media (max-width: 1200px) {
+  .subtitle-ecommerce {
+    font-size: 2.5vw; /* Tamaño base para pantallas grandes */
+  }
+}
+
+@media (max-width: 992px) {
+  .subtitle-ecommerce {
+    font-size: 3vw; /* Tamaño para pantallas medianas */
+  }
+}
+
+@media (max-width: 768px) {
+  .subtitle-ecommerce {
+    font-size: 3.5vw; /* Tamaño para pantallas pequeñas */
+  }
+
+  .main-ecommerce-content {
+    padding: 50px;
+  }
+
+  .product-item h2 {
+    font-size: 2.5vw;
+  }
+
+  .product-item p {
+    font-size: 2vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .subtitle-ecommerce {
+    font-size: 4vw; /* Tamaño para pantallas extra pequeñas */
+  }
+
+  .product-list {
+    flex-direction: column; /* Colocamos las tarjetas en una columna */
+  }
+
+  .product-item {
+    width: 100%; /* Ocupan todo el ancho disponible */
+  }
+
+  .product-item h2 {
+    font-size: 3vw;
+  }
+
+  .product-item p {
+    font-size: 2.5vw;
+  }
+}
+
+@media (max-width: 400px) {
+  .subtitle-ecommerce {
+    font-size: 4.5vw; /* Tamaño para pantallas muy pequeñas */
+  }
+
+  .product-item {
+    margin: 10px 0;
+  }
+
+  .product-item h2 {
+    font-size: 3.5vw;
+  }
+
+  .product-item p {
+    font-size: 3vw;
+  }
 }
