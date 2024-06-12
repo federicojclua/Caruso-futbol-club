@@ -1,0 +1,34 @@
+name: Deploy to Render
+
+on:
+  push:
+    branches:
+      - front  # Se activará cuando hagas push a la rama front
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20.x'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the project
+        run: npm run build
+
+      - name: Deploy to Render
+        run: |
+          curl -X POST -H "Authorization: Bearer ${{ secrets.RENDER_API_KEY }}" \
+          -H "Content-Type: application/json" \
+          -d '{"serviceId": "srv-cpkph820si5c73cvdep0?key=jsNmwTxkj1Eom", "branch": "front"}' \
+          https://api.render.com/v1/services/https://caruso-futbol-club.onrender.https://api.render.com/deploy/srv-cpkph820si5c73cvdep0?key=jsNmwTxkj1Eom
+        env:
+          RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
