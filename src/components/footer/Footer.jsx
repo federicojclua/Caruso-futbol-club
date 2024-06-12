@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="footer-column animate__animated animate__rollIn">
         <a href="/" className=''>
           
-          <img src="./src/assets/img/logo_sin_fondo_bw.png" alt="Logo Caruso" className="footer-logo" /></a>
+          <img src=".\src\assets\img\logo_sin_fondo_bw.png" alt="Logo Caruso" className="footer-logo" /></a>
         </div>
         <div className="footer-column">
           <h5>Información</h5>

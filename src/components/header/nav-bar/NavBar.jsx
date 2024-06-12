@@ -37,7 +37,7 @@ const NavBar = () => {
       <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
         <Container>
           <Link to="/">
-            <img className='cfc-logo' src="./src/assets/img/cfc-logo.png" alt="logo-caruso" />
+            <img className='cfc-logo' src="/src/assets/img/cfc-logo.png" alt="logo-caruso" />
           </Link>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
