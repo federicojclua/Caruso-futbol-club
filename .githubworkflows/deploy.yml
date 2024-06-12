@@ -29,6 +29,6 @@ jobs:
           curl -X POST -H "Authorization: Bearer ${{ secrets.RENDER_API_KEY }}" \
           -H "Content-Type: application/json" \
           -d '{"serviceId": "srv-cpkph820si5c73cvdep0?key=jsNmwTxkj1Eom", "branch": "front"}' \
-          https://api.render.com/v1/services/https://caruso-futbol-club.onrender.https://api.render.com/deploy/srv-cpkph820si5c73cvdep0?key=jsNmwTxkj1Eom
+          https://api.render.com/v1/services/cpkph820si5c73cvdep0/deploys
         env:
           RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
