@@ -14,13 +14,13 @@ const Header = () => {
           <source src="src/assets/video/header-video2.mp4" type="video/mp4" />
         </video>
         <div className="wrapper">
-          <button>
+          <a href='/Principal'><button className='button-record'>
             <span></span>
             <span></span>
             <span></span>
             <span></span>
             Reservar
-          </button>
+          </button></a>
         </div>
       </Container>
     </header>
