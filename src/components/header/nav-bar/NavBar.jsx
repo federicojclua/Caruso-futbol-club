@@ -14,7 +14,7 @@ const NavBar = () => {
     // Aquí simulas el proceso de inicio de sesión exitoso
     setIsAuthenticated(true);
     setUserName('Nombre de Usuario');
-    setUserImage('URL de la imagen del usuario');
+    
   };
 
   const simulateLogout = () => {
@@ -32,9 +32,7 @@ const NavBar = () => {
     }
   };
 
-  return (
-    <>
-      <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+<Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
         <Container>
           <Link to="/">
             <img className='cfc-logo' src="/src/assets/img/cfc-logo.png" alt="logo-caruso" />
@@ -58,7 +56,8 @@ const NavBar = () => {
               {isAuthenticated ? (
                 <NavDropdown title={userName} className="button-inicio">
                   <div className="user-info">
-                    <img src={userImage} alt="User Avatar" className="user-avatar" />
+                    {/* Si tienes una imagen de usuario */}
+                    {/* <img src={userImage} alt="User Avatar" className="user-avatar" /> */}
                     <span className="user-name">{userName}</span>
                   </div>
                   <NavDropdown.Item as={Link} to="/perfil">Mi Perfil</NavDropdown.Item>
