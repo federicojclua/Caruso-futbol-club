@@ -22,7 +22,7 @@ const Gallery = () => {
       <div className="carousel-container">
         <Carousel>
           <Carousel.Item interval={1000}>
-            <img className="d-block w-100" src={carouselimg1} alt="One Slide" />
+            <img className="d-block w-100 entrada" src={carouselimg1} alt="One Slide" />
           </Carousel.Item>
           <Carousel.Item interval={500}>
             <img
