@@ -7,21 +7,18 @@ import Container from 'react-bootstrap/Container';
 const NavBar = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [userName, setUserName] = useState('');
-  const [userImage, setUserImage] = useState('');
   const navigate = useNavigate();
 
   const simulateLogin = () => {
-    // Aquí simulas el proceso de inicio de sesión exitoso
+    // Simular inicio de sesión exitoso
     setIsAuthenticated(true);
     setUserName('Nombre de Usuario');
-    
   };
 
   const simulateLogout = () => {
-    // Aquí simulas el proceso de cierre de sesión
+    // Simular cierre de sesión
     setIsAuthenticated(false);
     setUserName('');
-    setUserImage('');
   };
 
   const handleProtectedClick = (path) => {
@@ -32,7 +29,9 @@ const NavBar = () => {
     }
   };
 
-<Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+  return (
+    <>
+      <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
         <Container>
           <Link to="/">
             <img className='cfc-logo' src="/src/assets/img/cfc-logo.png" alt="logo-caruso" />
@@ -55,11 +54,9 @@ const NavBar = () => {
             <Nav>
               {isAuthenticated ? (
                 <NavDropdown title={userName} className="button-inicio">
-                  <div className="user-info">
-                    {/* Si tienes una imagen de usuario */}
-                    {/* <img src={userImage} alt="User Avatar" className="user-avatar" /> */}
-                    <span className="user-name">{userName}</span>
-                  </div>
+                  {/* Aquí puedes agregar la imagen de usuario si la tienes */}
+                  {/* <img src={userImage} alt="User Avatar" className="user-avatar" /> */}
+                  <span className="user-name">{userName}</span>
                   <NavDropdown.Item as={Link} to="/perfil">Mi Perfil</NavDropdown.Item>
                   <NavDropdown.Item onClick={simulateLogout}>Cerrar Sesión</NavDropdown.Item>
                 </NavDropdown>
