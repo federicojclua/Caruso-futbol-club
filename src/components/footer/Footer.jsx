@@ -2,16 +2,15 @@ import React from 'react';
 import "./Footer.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import logosinfondogris from '../../assets/img/carpeta/logo_sin_fondo_bw.png';
 
 
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
-        <div className="footer-column animate__animated animate__rollIn">
-        <a href="/" className=''>
-          
-          <img src="./src/assets/img/logo_sin_fondo_bw.png" alt="Logo Caruso" className="footer-logo" /></a>
+        <div className="footer-column animate_animated animate_rollIn">
+        <img className='logo_sin_fondo_bw'src={logosinfondogris} alt="logo blanco y negro" />
         </div>
         <div className="footer-column">
           <h5>Información</h5>
@@ -50,4 +49,4 @@ const Footer = () => {
   );
 }
 
-export default Footer;
+export default Footer;

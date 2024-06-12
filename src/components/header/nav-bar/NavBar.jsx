@@ -3,26 +3,24 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import "./NavBar.css";
 import Container from 'react-bootstrap/Container';
-import imgLogonav from './src/assets/img/cfc-logo.png';
+import imgLogonav from '../../../assets/img/carpeta/cfc-logo.png';
+import userImage from '../../../assets/img/carpeta/logo.png';
 
 const NavBar = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [userName, setUserName] = useState('');
-  const [userImage, setUserImage] = useState('');
   const navigate = useNavigate();
 
   const simulateLogin = () => {
-    // Aquí simulas el proceso de inicio de sesión exitoso
+    // Simular inicio de sesión exitoso
     setIsAuthenticated(true);
     setUserName('Nombre de Usuario');
-    setUserImage('URL de la imagen del usuario');
   };
 
   const simulateLogout = () => {
-    // Aquí simulas el proceso de cierre de sesión
+    // Simular cierre de sesión
     setIsAuthenticated(false);
     setUserName('');
-    setUserImage('');
   };
 
   const handleProtectedClick = (path) => {
@@ -38,6 +36,7 @@ const NavBar = () => {
       <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
         <Container>
           <Link to="/">
+            
             <img className='cfc-logo'src={imgLogonav} alt="logo-caruso" />
           </Link>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -58,10 +57,9 @@ const NavBar = () => {
             <Nav>
               {isAuthenticated ? (
                 <NavDropdown title={userName} className="button-inicio">
-                  <div className="user-info">
-                    <img src={userImage} alt="User Avatar" className="user-avatar" />
-                    <span className="user-name">{userName}</span>
-                  </div>
+                
+                   <img src={userImage} alt="User Avatar" className="user-avatar" />
+                  <span className="user-name">{userName}</span>
                   <NavDropdown.Item as={Link} to="/perfil">Mi Perfil</NavDropdown.Item>
                   <NavDropdown.Item onClick={simulateLogout}>Cerrar Sesión</NavDropdown.Item>
                 </NavDropdown>
@@ -79,4 +77,4 @@ const NavBar = () => {
   );
 }
 
-export default NavBar;
+export default NavBar;
