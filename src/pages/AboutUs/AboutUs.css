@@ -100,12 +100,12 @@
 
   .main-content-about p,
   .main-content-about li {
-    font-size: 14px; /* 1.4vw aproximadamente */
+    font-size: 16px; /* Aumentado */
   }
 
   .main-content-about ul li a,
   .main-content-about p a {
-    font-size: 14px;
+    font-size: 16px; /* Aumentado */
   }
 }
 
@@ -116,12 +116,12 @@
 
   .main-content-about p,
   .main-content-about li {
-    font-size: 13px; /* 1.6vw aproximadamente */
+    font-size: 18px; /* Aumentado */
   }
 
   .main-content-about ul li a,
   .main-content-about p a {
-    font-size: 12px;
+    font-size: 18px; /* Aumentado */
   }
 }
 
@@ -132,12 +132,12 @@
 
   .main-content-about p,
   .main-content-about li {
-    font-size: 12px; /* 1.8vw aproximadamente */
+    font-size: 17px; /* Aumentado */
   }
 
   .main-content-about ul li a,
   .main-content-about p a {
-    font-size: 11px;
+    font-size: 16px; /* Aumentado */
   }
 
   .main-content-about {
@@ -153,12 +153,12 @@
 
   .main-content-about p,
   .main-content-about li {
-    font-size: 12px; /* 2vw aproximadamente */
+    font-size: 16px; /* Aumentado */
   }
 
   .main-content-about ul li a,
   .main-content-about p a {
-    font-size: 11px;
+    font-size: 15px; /* Aumentado */
   }
 
   .main-content-about {

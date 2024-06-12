@@ -39,7 +39,13 @@
 
 .location-section-page h3 {
   font-size: 2vw;
+  font-weight: bold;
+  background-color: rgba(51, 51, 51, 0.2); /* Color #333333 con 20% de opacidad */
+  padding: 10px;
+  border: 1px solid black; /* Agrega un borde de 2px con color negro */
+  border-radius: 4px;
 }
+
 
 .location-section-page p {
   font-size: 1.5vw;

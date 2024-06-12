@@ -31,7 +31,7 @@ const AboutUs = () => {
           Contamos con canchas de fútbol de diferentes tamaños para adaptarnos a tus necesidades:
         </p>
         <ul>
-          <li><strong>F5, F6, F7 y F8</strong>: Canchas diseñadas para todos los formatos de juego, desde partidos rápidos de cinco jugadores hasta encuentros más amplios de ocho.</li>
+          <li><strong>F5 hasta F11</strong>: Canchas diseñadas para todos los formatos de juego, desde partidos rápidos de cinco jugadores hasta encuentros más amplios.</li>
           <li><strong>La Mejor Iluminación</strong>: Juega de día o de noche con nuestra excelente iluminación que asegura una visibilidad perfecta en cualquier momento.</li>
           <li><strong>Parrilla y Quinchos</strong>: Disfruta de un buen asado con amigos o colegas después del partido. Nuestras áreas de quincho están equipadas para que pases un momento inolvidable.</li>
           <li><strong>Baños Amplios</strong>: Instalaciones cómodas y limpias para tu conveniencia.</li>
