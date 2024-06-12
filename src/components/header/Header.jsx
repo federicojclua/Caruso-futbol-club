@@ -9,12 +9,20 @@ const Header = () => {
   return (
     <header className="header">
       <NavBar />
-      <Container className="Container-video" >
+      <Container className="Container-video">
         <video autoPlay loop muted className="background-video">
           <source src="src/assets/video/header-video2.mp4" type="video/mp4" />
         </video>
-        </Container>
-
+        <div className="wrapper">
+          <button>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Reservar
+          </button>
+        </div>
+      </Container>
     </header>
   );
 }

@@ -10,6 +10,7 @@
   padding: 0px !important;
   color: #333333; /* Color del texto principal */
   text-shadow: 1px 1px 1px rgb(255, 255, 255); /* Añade sombra al texto */
+  margin-bottom: 50px;
 }
 
 .form {
@@ -25,11 +26,12 @@
 }
 
 .subtitle-contact {
-  font-size: 1.5vw;
+  font-size: 24px; /* tamaño base */
   font-weight: bold;
   text-align: center;
   padding-top: 150px;
 }
+
 .info {
   margin-bottom: 20px;
   right:  0%;
@@ -37,20 +39,20 @@
   padding-left: 0px;
 }
 
-.info  a {
+.info a {
   color: #333333; /* Color de los enlaces */
   text-decoration: none;
-  font-size: 2vw;
+  font-size: 32px; /* tamaño base */
   font-weight: bold;
   transition: color 0.3s ease-in-out;
 }
 
-.info  a:hover {
+.info a:hover {
   color: #258d19; /* Color de hover */
 }
 
 .info p {
-  font-size: 1.5vw;
+  font-size: 24px; /* tamaño base */
   font-weight: bold;
 }
 
@@ -59,14 +61,15 @@
 }
 
 .contact-list li p a {
-  font-size: 1.5vw;
+  font-size: 24px; /* tamaño base */
   font-weight: bold;
 }
 
 .contact-list li p {
-  font-size: 1.5vw;
+  font-size: 24px; /* tamaño base */
   font-weight: bold;
 }
+
 .contact-list li p strong {
   color: #258d19;
 }
@@ -91,8 +94,9 @@ li {
 .contact-list {
   display: flex;
   justify-content: center;
-  font-size: 1.5vw;
+  font-size: 24px; /* tamaño base */
 }
+
 a {
   color: #333333; /* Color de los enlaces */
   text-decoration: none;
@@ -101,4 +105,75 @@ a {
 
 a:hover {
   color: #258d19; /* Color de hover */
+}
+
+/* Breakpoints */
+@media (max-width: 1200px) {
+  .subtitle-contact {
+    font-size: 22px;
+  }
+
+  .info a {
+    font-size: 30px;
+  }
+
+  .info p, .contact-list li p, .contact-list {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 992px) {
+  .subtitle-contact {
+    font-size: 20px;
+  }
+
+  .info a {
+    font-size: 28px;
+  }
+
+  .info p, .contact-list li p, .contact-list {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .subtitle-contact {
+    font-size: 18px;
+  }
+
+  .info a {
+    font-size: 26px;
+  }
+
+  .info p, .contact-list li p, .contact-list {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 576px) {
+  .subtitle-contact {
+    font-size: 16px;
+  }
+
+  .info a {
+    font-size: 24px;
+  }
+
+  .info p, .contact-list li p, .contact-list {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  .subtitle-contact {
+    font-size: 14px;
+  }
+
+  .info a {
+    font-size: 22px;
+  }
+
+  .info p, .contact-list li p, .contact-list {
+    font-size: 14px;
+  }
 }

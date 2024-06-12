@@ -45,7 +45,7 @@ const AboutUs = () => {
           En Caruso Fútbol Club, nos aseguramos de que cada visita sea especial. Ya sea que vengas a practicar con tu equipo, celebrar un evento o simplemente a pasar un buen rato, tenemos todo lo que necesitas.
         </p>
         <ul>
-          <li><strong>Reservas Fáciles</strong>: Puedes reservar tu cancha fácilmente haciendo click <a href="/">aquí</a>.</li>
+          <li><strong>Reservas Fáciles</strong>: Puedes reservar tu cancha fácilmente haciendo click <a href="/Principal">aquí</a>.</li>
           <li><strong>Notificaciones de Horarios Libres</strong>: Activa las notificaciones en nuestras redes sociales para estar al tanto de todas nuestras novedades y no perderte la oportunidad de jugar cuando más te convenga.</li>
         </ul>
         <p>
@@ -60,8 +60,10 @@ const AboutUs = () => {
           <div className='animate__animated animate__rotateIn'><strong>Ubicación</strong></div>
         </p>
         <p>
-          Te esperamos en nuestros predios de <a href="/">Merlo</a> y <a href="/">Paso del Rey</a>. Ven y descubre por qué somos el lugar preferido para jugar al fútbol y disfrutar de buenos momentos con amigos y familia.
-        </p>
+  Te esperamos en nuestros predios de <a href="https://maps.app.goo.gl/j8XjDLnM7HCJbxGeA" target="_blank">Merlo </a>y<a href="https://maps.app.goo.gl/7rKCYXNMrAf26gA28" target="_blank"> Paso del Rey</a>. 
+  Ven y descubre por qué somos el lugar preferido para jugar al fútbol y disfrutar de buenos momentos con amigos y familia.
+</p>
+
       </Container>
       <footer>
         <Footer />

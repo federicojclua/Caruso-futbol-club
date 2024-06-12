@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
 import ModalEcommerce from './ModalEcommerce/ModalEcommerce';
 import fetchProductData from './ProductData';
-import axios from 'axios';
+import axios from 'axios'; 
 import './AdminEcommerce.css';
 
 const AdminEcommerce = () => {

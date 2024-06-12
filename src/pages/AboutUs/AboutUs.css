@@ -14,7 +14,7 @@
 
 .main-content-about h2 {
   margin-bottom: 20px;
-  font-size: 2.5em;
+  font-size: 40px; /* 2.5em */
   color: #333;
   text-align: center;
 }
@@ -28,7 +28,7 @@
 
 .main-content-about p,
 .main-content-about li {
-  font-size: 1vw;
+  font-size: 16px; /* 1vw aproximadamente */
   font-weight: bold;
 }
 
@@ -76,14 +76,15 @@
   text-decoration: underline;
 }
 
+/* Breakpoints */
 @media (max-width: 1400px) {
   .main-content-about h2 {
-    font-size: 2.3em;
+    font-size: 37px; /* 2.3em */
   }
 
   .main-content-about p,
   .main-content-about li {
-    font-size: 1.2vw;
+    font-size: 15px; /* 1.2vw aproximadamente */
   }
 
   .main-content-about ul li a,
@@ -94,12 +95,12 @@
 
 @media (max-width: 1200px) {
   .main-content-about h2 {
-    font-size: 2em;
+    font-size: 32px; /* 2em */
   }
 
   .main-content-about p,
   .main-content-about li {
-    font-size: 1.4vw;
+    font-size: 14px; /* 1.4vw aproximadamente */
   }
 
   .main-content-about ul li a,
@@ -110,12 +111,12 @@
 
 @media (max-width: 992px) {
   .main-content-about h2 {
-    font-size: 1.8em;
+    font-size: 29px; /* 1.8em */
   }
 
   .main-content-about p,
   .main-content-about li {
-    font-size: 1.6vw;
+    font-size: 13px; /* 1.6vw aproximadamente */
   }
 
   .main-content-about ul li a,
@@ -126,12 +127,12 @@
 
 @media (max-width: 768px) {
   .main-content-about h2 {
-    font-size: 1.6em;
+    font-size: 26px; /* 1.6em */
   }
 
   .main-content-about p,
   .main-content-about li {
-    font-size: 1.8vw;
+    font-size: 12px; /* 1.8vw aproximadamente */
   }
 
   .main-content-about ul li a,
@@ -147,17 +148,17 @@
 
 @media (max-width: 576px) {
   .main-content-about h2 {
-    font-size: 1.4em;
+    font-size: 24px; /* 1.4em */
   }
 
   .main-content-about p,
   .main-content-about li {
-    font-size: 2vw;
+    font-size: 12px; /* 2vw aproximadamente */
   }
 
   .main-content-about ul li a,
   .main-content-about p a {
-    font-size: 10px;
+    font-size: 11px;
   }
 
   .main-content-about {
