@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import "./NavBar.css";
 import Container from 'react-bootstrap/Container';
+import imgLogonav from './src/assets/img/cfc-logo.png';
 
 const NavBar = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -37,7 +38,7 @@ const NavBar = () => {
       <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
         <Container>
           <Link to="/">
-            <img className='cfc-logo' src="./src/assets/img/cfc-logo.png" alt="logo-caruso" />
+            <img className='cfc-logo'src={imgLogonav} alt="logo-caruso" />
           </Link>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
