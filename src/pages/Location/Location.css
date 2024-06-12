@@ -1,54 +1,60 @@
-.LocationPage-component {
-    background-image: url('/src/assets/img/fondoBody.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  
-  .main-location-content {
-    max-width: 80%;
-    margin: auto;
-    padding: 100px;
-    color: #333333;
-    background-color: rgba(255, 255, 255, 0.4);
-  }
-  
-  .subtitle-location {
-    font-size: 2.5vw;
-    font-weight: bold;
-    text-align: center;
-    padding: 50px 0;
-  }
-  
-  .location-section {
-    background-color: rgba(255, 255, 255, 0.9);
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    margin: 20px 0;
-    padding: 20px;
-    max-width: 600px;
-    margin: 20px auto;
-    text-align: center;
-  }
-  
-  .location-section h2 {
-    font-size: 2vw;
-    margin-bottom: 10px;
-  }
-  
-  .location-section p {
-    font-size: 1.5vw;
-    margin: 5px 0;
-    color: #666;
-  }
-  
-  .map-container {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .map-container iframe {
-    border-radius: 10px;
-    border: 1px solid #ddd;
-  }
+.LocationPage-component-page {
+  background-image: url('/src/assets/img/fondoBody.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.main-location-content-page {
+  max-width: 100%;
+  margin: auto;
+  padding: 80px;
+  color: #333333;
+}
+
+.subtitle-location-page {
+  font-size: 2.5vw;
+  font-weight: bold;
+  text-align: center;
+  padding: 30px 0;
+  margin-bottom: 10px;
+}
+
+.maps-container-page {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.location-section-page {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px #333333;
+  padding: 20px;
+  max-width: 500px;
+  text-align: center;
+}
+
+.location-section-page h3 {
+  font-size: 2vw;
+}
+
+.location-section-page p {
+  font-size: 1.5vw;
+  margin: 5px 0;
+  color: #666;
+}
+
+.map-container-page {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.map-container-page iframe {
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px #333333;
+  border: 5px solid #ddd;
+}

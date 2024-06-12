@@ -16,7 +16,7 @@ const Footer = () => {
         <div className="footer-column">
           <h5>Información</h5>
           <p>Caruso Fútbol Club</p>
-<p>⚽️ Alquiler de canchas de fútbol 5, 6, 7 y 8</p>
+<p>Alquiler de canchas de fútbol 5, 6, 7 y 8</p>
 <p>Excelente iluminación por la noche</p>
 <p>Contamos con Parrilla, Buffet, Bebidas y más</p>
 

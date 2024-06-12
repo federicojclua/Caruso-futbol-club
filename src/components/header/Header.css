@@ -1,21 +1,15 @@
-/* Header.css */
-
 .header {
   position: relative;
   width: 100%;
   height: auto;
   overflow: hidden; /* Oculta cualquier contenido desbordante */
-  
 }
-.container{
+
+.container {
   padding-left: 0px !important;
-  padding-right: 0px !important ;
+  padding-right: 0px !important;
   position: relative; /* Cambiado a relative */
-  
 }
-
-
-
 
 .background-video {
   width: 100%; /* Ajustado al 100% del contenedor */
@@ -24,4 +18,80 @@
   object-fit: cover; /* Escala el video para cubrir todo el contenedor manteniendo la relación de aspecto */
 }
 
+.wrapper {
+  position: absolute;
+  bottom: 30%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  width: fit-content;
+  height: auto;
+}
 
+.button-record {
+  width: 12vw; /* Usando unidades relativas */
+  height: 5vw; /* Usando unidades relativas */
+  background: linear-gradient(to left top, #333333 30%, #258d19 70%);
+  border-style: none;
+  color: #fff;
+  font-size: 2vw; /* Ajustando el tamaño de la fuente según breakpoints */
+  letter-spacing: 3px;
+  font-weight: 600;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  padding: 0px;
+  overflow: hidden;
+  transition: all .5s;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, .1); /* Añadida sombra */
+  border-radius: 10px; /* Esquinas ligeramente redondeadas */
+}
+
+.button-record:hover {
+  transition: all .5s;
+  transform: rotate(-3deg) scale(1.1);
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, .2); /* Sombra más pronunciada al hacer hover */
+}
+
+.button-record:hover span {
+  animation-play-state: paused;
+}
+
+@media (max-width: 1400px) {
+  .button-record {
+    font-size: 2.3vw;
+  }
+}
+
+@media (max-width: 1200px) {
+  .button-record {
+    font-size: 2vw;
+  }
+}
+
+@media (max-width: 992px) {
+  .wrapper {
+    left: 50%;
+    bottom: 10%;
+    transform: translate(-50%, -50%);
+  }
+
+  .button-record {
+    width: 20vw;
+    height: 7vw;
+    font-size: 2.5vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .button-record {
+    width: 35vw;
+    height: 7vw;
+    font-size: 2.5vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .button-record {
+    font-size: 2.5vw;
+  }
+}

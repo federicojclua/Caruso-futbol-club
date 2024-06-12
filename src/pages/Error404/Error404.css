@@ -3,11 +3,11 @@ background-color: #fff;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: 1300px;
+  height: 100vh;
 }
 
 .main-content-error {
-  padding-top: 80px;
+  padding: 100px;
   width: 100%;
   height: 100%;
   border-radius: 10px;  /* Bordes redondeados */
@@ -22,8 +22,8 @@ background-color: #fff;
 }
 
 .error-gif {
-  width: 70%;
-  max-width: 400px;  /* Ajusta el tamaño máximo del GIF */
+  width: 60%;
+  max-width: 300px;  /* Ajusta el tamaño máximo del GIF */
   height: auto;
   margin: 20px 0;
 }
