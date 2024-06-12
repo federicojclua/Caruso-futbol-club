@@ -108,7 +108,11 @@ const Login = () => {
             <a href="/Error404">¿Olvidaste tu contraseña?</a>
             <div className="register-message">
               <p>¿No tienes cuenta? Registrate haciendo click aquí abajo</p>
-              <button className="btn-new" onClick={handleRegister}>Registrarme</button>
+              <Link to="/record">
+                <button className="btn-new" onClick={handleRegister}>
+                Registrarme
+                </button>
+              </Link>
             </div>
             
           </div>
