@@ -5,6 +5,8 @@ import "./NavBar.css";
 import Container from 'react-bootstrap/Container';
 import { useContext } from 'react';
 import AuthContext from '../../context/AuthProvider';
+import navLogo from '../../../assets/img/carpeta/cfc-logo.png';
+import userImage from '../../../assets/img/carpeta/IMAGEN-LOGO.PNG';
 
 const NavBar = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -38,7 +40,7 @@ const NavBar = () => {
       <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
         <Container>
           <Link to="/">
-            <img className='cfc-logo' src="/src/assets/img/cfc-logo.png" alt="logo-caruso" />
+            <img className='cfc-logo' src={navLogo} alt="logo-caruso" />
           </Link>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
@@ -71,7 +73,7 @@ const NavBar = () => {
               ) : (
                 <NavDropdown title="Iniciar Sesión" className="button-inicio">
                   <NavDropdown.Item as={Link} to="/record">¿No tienes cuenta? Regístrate</NavDropdown.Item>
-                  <NavDropdown.Item as={Link} to="/login">Inicia Sesión</NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to="/Login">Inicia Sesión</NavDropdown.Item>
                 </NavDropdown>
               )}
 

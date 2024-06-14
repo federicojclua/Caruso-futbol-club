@@ -7,6 +7,8 @@ import WhatsAppButton from '../../components/WhatsAppButton/WhatsAppButton';
 import './Login.css';
 import { useContext } from 'react';
 import AuthContext from '../../components/context/AuthProvider';
+import { Link } from 'react-router-dom';
+
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -110,7 +112,9 @@ const Login = () => {
             <a href="#">¿Olvidaste tu contraseña?</a>
             <div className="register-message">
               <p>¿No tienes cuenta? Registrate haciendo click aquí abajo</p>
-              <button className="btn-new">Registrarme</button>
+              <Link to="/record">
+               <button className="btn-new">Registrarme</button>
+              </Link>
             </div>
           </div>
         </div>
