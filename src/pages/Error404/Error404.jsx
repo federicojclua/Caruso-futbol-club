@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../Error404/Error404.css';
 import { Container } from 'react-bootstrap';
 import NavBar from '../../components/header/nav-bar/NavBar';  
-import error404gif from '../../assets/img/error404.gif';
+import error404gif from '../../assets/img/carpeta/error404.gif';
 
 const Error404 = () => {
   return (

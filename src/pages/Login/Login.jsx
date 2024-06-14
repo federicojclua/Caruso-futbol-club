@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Form, Button } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'; // Importar useNavigate
 import { Helmet } from 'react-helmet';
-import NavBar from '../../components/header/nav-bar/NavBar';  
+import NavBar from '../../components/header/nav-bar/NavBar';
 import Footer from '../../components/footer/Footer';
 import WhatsAppButton from '../../components/WhatsAppButton/WhatsAppButton';
-import { Link } from 'react-router-dom';
-import './Login.css'; 
+import './Login.css';
+import { useContext } from 'react';
+import AuthContext from '../../components/context/AuthProvider';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -15,10 +15,8 @@ const Login = () => {
   const [passwordError, setPasswordError] = useState('');
   const [serverError, setServerError] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
-  const navigate = useNavigate();
-  const handleRegister = () => {
-    navigate('/record');
-  };
+  const navigate = useNavigate(); // Usar useNavigate
+  const { login, user } = useContext(AuthContext); // Usa useContext para obtener la función de login
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -47,8 +45,10 @@ const Login = () => {
       setPasswordError('');
     }
 
+    const apiUrl = 'http://localhost:5004/api/auth/login';
+
     try {
-      const response = await fetch('http://localhost:5004/api/auth/login', {
+      const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -60,18 +60,19 @@ const Login = () => {
 
       if (response.ok) {
         setSuccessMessage('Sesión iniciada correctamente. ¡Bienvenido!');
-        setTimeout(() => {
-          navigate('/');
-        }, 2000);
+
+        login(data.token, data.user); // Llama a la función de login del contexto de autenticación
+
+        navigate('/Principal'); // Redirigir al usuario a la página principal
       } else {
         setServerError(data.message || 'Correo o contraseña incorrecta, por favor, intente de nuevo.');
       }
     } catch (error) {
       setServerError('Correo o contraseña incorrecta, por favor, intente de nuevo.');
     }
-
   };
 
+  console.log(user);
   return (
     <div className="Login-component">
       <Helmet>
@@ -106,15 +107,11 @@ const Login = () => {
             {passwordError && <p className="text-danger">{passwordError}</p>}
             {serverError && <p className="text-danger">{serverError}</p>}
             <button className="btn-login" onClick={handleSubmit}>Iniciar Sesión</button>
+            <a href="#">¿Olvidaste tu contraseña?</a>
             <div className="register-message">
               <p>¿No tienes cuenta? Registrate haciendo click aquí abajo</p>
-              <Link to="/record">
-                <button className="btn-new" onClick={handleRegister}>
-                Registrarme
-                </button>
-              </Link>
+              <button className="btn-new">Registrarme</button>
             </div>
-            
           </div>
         </div>
       </div>
@@ -125,3 +122,4 @@ const Login = () => {
 };
 
 export default Login;
+
