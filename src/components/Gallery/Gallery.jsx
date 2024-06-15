@@ -10,7 +10,7 @@ import quincho2 from '../../assets/img/carrousel/quincho2.jpg';
 import quincho from '../../assets/img/carrousel/quincho.jpg';
 import canchas2 from '../../assets/img/carrousel/canchas2.jpeg';
 import cancha1 from '../../assets/img/carrousel/cancha1.jpg';
-import canchaNocturna from '../../../assets/img/carrousel/cancha_nocturna.jpg';
+import canchaNocturna from '../../assets/img/carrousel/cancha_nocturna.jpg';
 
 const Gallery = () => {
   return (
