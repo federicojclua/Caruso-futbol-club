@@ -4,8 +4,12 @@ import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import "./NavBar.css";
 import Container from 'react-bootstrap/Container';
 import imgLogonav from '../../../assets/img/carpeta/cfc-logo.png';
+<<<<<<< HEAD
 import logoincio from '../../../assets/img/carpeta/cfc-logo.png';
 import userImage from '../../../assets/img/carpeta/IMAGEN-LOGO.PNG';
+=======
+import userImage from '../../../assets/img/carpeta/logo.png';
+>>>>>>> 1c65f5d5a854d40303d64d1c81c3dc530e990719
 
 const NavBar = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -38,7 +42,11 @@ const NavBar = () => {
         <Container>
           <Link to="/">
             
+<<<<<<< HEAD
             <img className='cfc-logo' src={imgLogonav} alt="logo-caruso" />
+=======
+            <img className='cfc-logo'src={imgLogonav} alt="logo-caruso" />
+>>>>>>> 1c65f5d5a854d40303d64d1c81c3dc530e990719
           </Link>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
@@ -58,10 +66,17 @@ const NavBar = () => {
             <Nav>
               {isAuthenticated ? (
                 <NavDropdown title={userName} className="button-inicio">
+<<<<<<< HEAD
                   
               <img src={userImage} alt="User Avatar" className="user-avatar" /> *
                   <span className="user-name">{userName}</span>
                   
+=======
+                
+                   <img src={userImage} alt="User Avatar" className="user-avatar" />
+                  <span className="user-name">{userName}</span>
+                  <NavDropdown.Item as={Link} to="/perfil">Mi Perfil</NavDropdown.Item>
+>>>>>>> 1c65f5d5a854d40303d64d1c81c3dc530e990719
                   <NavDropdown.Item onClick={simulateLogout}>Cerrar Sesión</NavDropdown.Item>
                 </NavDropdown>
               ) : (
@@ -78,4 +93,8 @@ const NavBar = () => {
   );
 }
 
+<<<<<<< HEAD
 export default NavBar;
+=======
+export default NavBar;
+>>>>>>> 1c65f5d5a854d40303d64d1c81c3dc530e990719

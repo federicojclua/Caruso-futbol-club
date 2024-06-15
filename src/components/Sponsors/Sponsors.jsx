@@ -4,7 +4,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import sponsor1 from '../../assets/img/sponsors/1.png';
 import sponsor2 from '../../assets/img/sponsors/2.png';
 import sponsor3 from '../../assets/img/sponsors/3.png';
-import sponsor3 from '../../assets/img/sponsors/4.png';
+import sponsor4 from '../../assets/img/sponsors/4.png';
 
 const Sponsors = () => {
   return (
