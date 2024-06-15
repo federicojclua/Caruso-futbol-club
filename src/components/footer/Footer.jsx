@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
-        <div className="footer-column animate_animated animate_rollIn">
+        <div className="footer-column animate__animated animate__rollIn">
         <img className='logo_sin_fondo_bw'src={logosinfondogris} alt="logo blanco y negro" />
         </div>
         <div className="footer-column">

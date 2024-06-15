@@ -1,7 +1,7 @@
 import React from 'react';
 import "./Tournament.css";
 import { Container } from 'react-bootstrap';
-import Tournament1 from '../../assets/img/caruso-torneo2';
+import Tournament1 from '../../assets/img/caruso-torneo2.gif';
 
 const Tournament = () => {
   return (
