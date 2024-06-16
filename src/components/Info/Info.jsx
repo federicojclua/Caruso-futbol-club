@@ -3,12 +3,12 @@ import "./Info.css";
 import { Container, Row, Col } from 'react-bootstrap';
 import info1 from '../../assets/img/logo_info/Logo-canchas.png';
 import info2 from '../../assets/img/logo_info/logo-iluminacion.png';
-import info3 from '../../assets/img/logo_info/logo-parrilla.PNG';
-import info4 from '../../assets/img/logo_info/logo_baños.PNG';
-import info5 from '../../assets/img/logo_info/Logo-venta.PNG';
-import info6 from '../../assets/img/logo_info/logo-torneos.PNG';
-import info8 from '../../assets/img/logo_info/logo-escuela.PNG';
-import info7 from '../../assets/img/logo_info/logo-esculafem.PNG';
+import info3 from '../../assets/img/logo_info/logo-parrilla.png';
+import info4 from '../../assets/img/logo_info/logo_baños.png';
+import info5 from '../../assets/img/logo_info/Logo-venta.png';
+import info6 from '../../assets/img/logo_info/logo-torneos.png';
+import info8 from '../../assets/img/logo_info/logo-escuela.png';
+import info7 from '../../assets/img/logo_info/logo-esculafem.png';
 
 const Info = () => {
   return (
