@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import "./NavBar.css";
 import Container from 'react-bootstrap/Container';
-import { useContext } from 'react';
 import AuthContext from '../../context/AuthProvider';
 import navLogo from '../../../assets/img/carpeta/cfc-logo.png';
-import userImage from '../../../assets/img/carpeta/IMAGEN-LOGO.PNG';
+import userImagePlaceholder from '../../../assets/img/carpeta/IMAGEN-LOGO.PNG';
 
 const NavBar = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -61,10 +60,8 @@ const NavBar = () => {
             <Nav>
               {user ? (
                 <NavDropdown title={userName} className="button-inicio">
-
                   <div className="user-info">
-
-                    <img src={userImage} alt="User Avatar" className="user-avatar" />
+                    <img src={userImage || userImagePlaceholder} alt="User Avatar" className="user-avatar" />
                     <span className="user-name">{userName}</span>
                   </div>
                   <NavDropdown.Item as={Link} to="/perfil">Mi Perfil</NavDropdown.Item>
@@ -76,7 +73,6 @@ const NavBar = () => {
                   <NavDropdown.Item as={Link} to="/Login">Inicia Sesión</NavDropdown.Item>
                 </NavDropdown>
               )}
-
             </Nav>
           </Navbar.Collapse>
         </Container>
