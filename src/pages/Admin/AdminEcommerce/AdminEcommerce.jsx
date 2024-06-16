@@ -7,9 +7,8 @@ import ProductData from './ProductData'; // Importa ProductData
 import './AdminEcommerce.css';
 
 const AdminEcommerce = () => {
-  // Usa los datos de ProductData
-  const products = ProductData();
   
+  const [products, setProducts] = useState(ProductData);
   const [showModal, setShowModal] = useState(false);
   const [selectedRow, setSelectedRow] = useState(null);
 
@@ -20,20 +19,33 @@ const AdminEcommerce = () => {
   };
 
   const handleSaveModal = (updatedRow) => {
-    const newRows = products.map(row => row.id === updatedRow.id ? updatedRow : row); // Actualiza los productos en lugar de rows
-    // No hay necesidad de cambiar setRows, ya que estás actualizando products directamente
+    const newProducts = products.map(row => row.id === updatedRow.id ? updatedRow : row);
+    setProducts(newProducts); 
     handleCloseModal();
   };
 
   const handleDeleteRow = (row) => {
-    const newRows = products.filter(r => r.id !== row.id); // Filtra los productos
-    // No hay necesidad de cambiar setRows, ya que estás actualizando products directamente
+    const newProducts = products.filter(r => r.id !== row.id); // Filtra los productos
+    setProducts(newProducts);
   };
 
   const addRow = () => {
-    const newRow = { id: products.length + 1, image: 'IMAGEN', title: `Foto ${products.length + 1} del carrousel`, quantity: 0, price: 0, active: false };
+    const newRow = { 
+      id: products.length + 1,
+      image: 'IMAGEN', 
+      name: `Foto ${products.length + 1} del carrousel`,
+      quantity: 0, 
+      price: 0,
+      description: '', 
+      active: false };
     // Agrega un nuevo producto al array de productos
-    // No hay necesidad de cambiar setRows, ya que estás actualizando products directamente
+    };
+
+  const handleCheckboxChange = (product) => {
+    const newProducts = products.map(p =>
+      p.id === product.id ? { ...p, active: !p.active } : p
+    );
+    setProducts(newProducts);
   };
 
   return (
@@ -45,7 +57,7 @@ const AdminEcommerce = () => {
         currentRow={selectedRow}
       />
       <h3 className='admin-ecommerce'>Panel Administrador Ecommerce</h3>
-      <Button onClick={addRow}>Agregar Imagen</Button>
+      <Button onClick={() => handleShowModal()}>Agregar Producto</Button>
       <Table responsive>
         <thead>
           <tr>
@@ -70,9 +82,9 @@ const AdminEcommerce = () => {
                   onChange={() => handleCheckboxChange(product)} 
                 />
               </td>
-              <td>{product.id}</td> {/* Muestra el ID del producto */}
-              <td>{product.title}</td>
-              <td>{product.quantity}</td> {/* Muestra la cantidad del producto */}
+              <td>{product.id}</td>
+              <td>{product.name}</td>
+              <td>{product.quantity}</td>
               <td>{product.price}</td>
               <td>
                 {product.image.startsWith('blob:') ? (
@@ -81,7 +93,7 @@ const AdminEcommerce = () => {
                   <img src={product.image} alt={`Imagen ${product.id}`} style={{ width: '100px', height: '100px' }} />
                 )}
               </td>
-              <td>{product.description}</td> {/* Muestra la descripción */}
+              <td>{product.description}</td>
               <td>
                 <Button className="btn-custom" onClick={() => handleShowModal(product)}>
                   Editar

@@ -5,16 +5,18 @@ import Modal from 'react-bootstrap/Modal';
 
 function ModalEcommerce({ show, handleClose, handleSave, currentRow }) {
   const [imageUrl, setImageUrl] = useState('');
-  const [title, setTitle] = useState('');
+  const [name, setName] = useState('');
   const [quantity, setQuantity] = useState('');
   const [price, setPrice] = useState('');
+  const [description, setDescription] = useState('');
 
   useEffect(() => {
     if (currentRow) {
       setImageUrl(currentRow.image);
-      setTitle(currentRow.title);
+      setName(currentRow.name);
       setQuantity(currentRow.quantity ?? '');
       setPrice(currentRow.price ?? '');
+      setDescription(currentRow.description);
     }
   }, [currentRow]);
 
@@ -37,7 +39,7 @@ function ModalEcommerce({ show, handleClose, handleSave, currentRow }) {
     const priceValue = parseFloat(price);
 
     if (!isNaN(quantityValue) && !isNaN(priceValue)) {
-      handleSave({ ...currentRow, image: imageUrl, title, quantity: quantityValue, price: priceValue });
+      handleSave({ ...currentRow, image: imageUrl, name, quantity: quantityValue, price: priceValue, description });
       handleClose();
     } else {
       alert('Por favor, ingrese números válidos para cantidad y precio.');
@@ -52,11 +54,11 @@ function ModalEcommerce({ show, handleClose, handleSave, currentRow }) {
       <Modal.Body>
         <Form>
           <Form.Group className="mb-3" controlId="formTitle">
-            <Form.Label>Titulo de la Imágen</Form.Label>
+            <Form.Label>Nombre del producto</Form.Label>
             <Form.Control
               type="text"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               autoFocus
             />
           </Form.Group>
@@ -97,6 +99,15 @@ function ModalEcommerce({ show, handleClose, handleSave, currentRow }) {
               </div>
             )}
             <Form.Control type="file" accept="image/*" onChange={handleImageChange} />
+          </Form.Group>
+
+          <Form.Group className="mb-3" controlId="formPrice">
+            <Form.Label>Descripción</Form.Label>
+            <Form.Control
+              type="text"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+            />
           </Form.Group>
         </Form>
       </Modal.Body>
