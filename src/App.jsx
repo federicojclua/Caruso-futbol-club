@@ -1,4 +1,3 @@
-
 import React, { useContext } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
@@ -25,25 +24,9 @@ import Login from './pages/Login/Login';
 import Admin from './pages/Admin/Admin';
 import Record from './pages/record/Record';
 import Principal from './pages/Principal/Principal';
-<<<<<<< HEAD
-
-const backendUrl = 'https://caruso-prueba-back-1.onrender.com'; // Reemplaza con la URL pública de tu backend
-
-const App = () => {
-  return (
-    <div>
-      <MyComponent backendUrl={backendUrl} />
-    </div>
-  );
-};
-
-export default App;
-
-=======
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 import { AuthProvider } from './components/context/AuthProvider';
 import AdminRoute from './components/ProtectedRoute/AdminRoute';
->>>>>>> beaeedbf9e81f3d13475ed151d211b872cd5f242
 
 function App() {
 
@@ -90,8 +73,7 @@ function App() {
     </AuthProvider>
   );
 }
-
-  const backendUrl = 'https://caruso-prueba-back-1.onrender.com'; // Reemplaza con la URL pública de tu backend
+const backendUrl = 'https://caruso-prueba-back-1.onrender.com'; // Reemplaza con la URL pública de tu backend
 
 const App = () => {
   return (
@@ -100,4 +82,5 @@ const App = () => {
     </div>
   );
 };
+
 export default App;
