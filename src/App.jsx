@@ -91,4 +91,13 @@ function App() {
   );
 }
 
+  const backendUrl = 'https://caruso-prueba-back-1.onrender.com'; // Reemplaza con la URL pública de tu backend
+
+const App = () => {
+  return (
+    <div>
+      <MyComponent backendUrl={backendUrl} />
+    </div>
+  );
+};
 export default App;
