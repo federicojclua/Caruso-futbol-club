@@ -1,4 +1,5 @@
-import React from 'react';
+
+import React, { useContext } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -24,6 +25,7 @@ import Login from './pages/Login/Login';
 import Admin from './pages/Admin/Admin';
 import Record from './pages/record/Record';
 import Principal from './pages/Principal/Principal';
+<<<<<<< HEAD
 
 const backendUrl = 'https://caruso-prueba-back-1.onrender.com'; // Reemplaza con la URL pública de tu backend
 
@@ -37,42 +39,55 @@ const App = () => {
 
 export default App;
 
+=======
+import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
+import { AuthProvider } from './components/context/AuthProvider';
+import AdminRoute from './components/ProtectedRoute/AdminRoute';
+>>>>>>> beaeedbf9e81f3d13475ed151d211b872cd5f242
 
 function App() {
-  // Simular autenticación de usuario admin4@admin4.com
-  const isAuthenticated = true;
-  const userName = 'admin4@admin4.com';
- 
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={
-          <Container className="Container-Main">
-            <NavBar isAuthenticated={isAuthenticated} userName={userName} />
-            <Header />
-            <LocationMain />
-            <Gallery />
-            <Info />
-            <Advertising />
-            <Tournament />
-            <Sponsors />
-            <Footer />
-            <WhatsAppButton />
-          </Container>
-        } />
-        <Route path="/login" element={<Login />} />
-        <Route path="/location" element={<Location />} />
-        <Route path="/ecommerce" element={<Ecommerce />} />
-        <Route path="/payment" element={<PaymentForm />} /> 
-        <Route path="/aboutUs" element={<AboutUs />} />
-        <Route path="/contact" element={<Contact />} />       
-        <Route path="/admin" element={<Admin />} />
-        <Route path="/principal" element={<Principal />} />
-        <Route path="/record" element={<Record />} />
-        <Route path="*" element={<Error404 />} />
-      </Routes>
-    </BrowserRouter>
+    <AuthProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={
+            <Container className="Container-Main">
+              <NavBar />
+              <Header />
+              <LocationMain />
+              <Gallery />
+              <Info />
+              <Advertising />
+              <Tournament />
+              <Sponsors />
+              <Footer />
+              <WhatsAppButton />
+            </Container>
+          } />
+          <Route path="/login" element={<Login />} />
+          <Route path="/location" element={<Location />} />
+          <Route path="/ecommerce" element={<Ecommerce />} />
+          <Route path="/payment" element={<PaymentForm />} />
+          <Route path="/aboutUs" element={<AboutUs />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/Record" element={<Record />} />
+
+          <Route path="/admin" element={
+            <AdminRoute>
+              <Admin />
+            </AdminRoute>
+          } />
+
+          <Route path="/principal" element={
+            <ProtectedRoute>
+              <Principal />
+            </ProtectedRoute>
+          } />
+          <Route path="*" element={<Error404 />} />
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
   );
 }
 
