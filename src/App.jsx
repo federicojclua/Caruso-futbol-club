@@ -25,6 +25,18 @@ import Admin from './pages/Admin/Admin';
 import Record from './pages/record/Record';
 import Principal from './pages/Principal/Principal';
 
+const backendUrl = 'https://caruso-prueba-back-1.onrender.com'; // Reemplaza con la URL pública de tu backend
+
+const App = () => {
+  return (
+    <div>
+      <MyComponent backendUrl={backendUrl} />
+    </div>
+  );
+};
+
+export default App;
+
 
 function App() {
   // Simular autenticación de usuario admin4@admin4.com
