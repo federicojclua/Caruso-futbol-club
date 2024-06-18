@@ -131,6 +131,11 @@
 }
 
 @media (max-width: 768px) {
+  .title-aboutus {
+    font-size: 5vw; /* Ajuste del tamaño del título para pantallas más pequeñas */
+    padding-top: 100px; /* Ajuste del padding superior */
+  }
+
   .main-content-about h2 {
     font-size: 26px;
   }
@@ -154,6 +159,10 @@
 }
 
 @media (max-width: 576px) {
+  .title-aboutus {
+    font-size: 6vw; /* Ajuste del tamaño del título para pantallas móviles más pequeñas */
+    padding-top: 80px; /* Ajuste del padding superior */
+  }
   .main-content-about h2 {
     font-size: 24px;
   }

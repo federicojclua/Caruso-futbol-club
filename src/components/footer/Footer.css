@@ -4,6 +4,7 @@ html, body {
 }
 
 .footer {
+  margin-top: 10px;
   background-color: #333;
   color: white;
   padding: 0px;

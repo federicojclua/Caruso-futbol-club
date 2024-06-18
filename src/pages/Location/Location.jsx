@@ -19,7 +19,15 @@ const LocationPage = () => {
       </Helmet>
       <NavBar />
       <div className="main-location-content-page">
-        <h2 className='subtitle-location-page'>Nuestras Ubicaciones</h2>
+      <h2 className='subtitle-location-page'>
+  <div className='ball-icons-container'>
+    <div className='ball-icons animate__animated animate__rollIn'>⚽️</div>
+    <div>Nuestras Ubicaciones</div>
+    <div className='ball-icons animate__animated animate__rollIn'>⚽️</div>
+  </div>
+</h2>
+
+
         <div className="maps-container-page">
           <section className="location-section-page paso-del-rey">
             <h3>Paso del Rey</h3>

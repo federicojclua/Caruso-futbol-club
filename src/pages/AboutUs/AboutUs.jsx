@@ -18,7 +18,14 @@ const AboutUs = () => {
         <link rel="canonical" href="https://www.carusofutbolclub.com/acerca-de-nosotros" />
       </Helmet>
       <NavBar />
-      <h2 className='title-aboutus'>Acerca de Nosotros</h2>
+      <h2 className='title-aboutus'>
+  <div className='ball-icons-container'>
+    <div className='ball-icons animate__animated animate__rollIn'>⚽️</div>
+    <div>Acerca de Nosotros</div>
+    <div className='ball-icons animate__animated animate__rollIn'>⚽️</div>
+  </div>
+</h2>
+
       <Container className="main-content-about">
         <section>
           <p>

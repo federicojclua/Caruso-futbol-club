@@ -54,7 +54,7 @@ const Principal = () => {
           <label className="label-principal">
             Seleccionar Sucursal:
             <select
-              className="selector"  
+              className="selector"
               value={sucursalSeleccionada}
               onChange={(e) => setSucursalSeleccionada(e.target.value)}
             >
@@ -66,17 +66,19 @@ const Principal = () => {
               ))}
             </select>
           </label>
-          <label >
+          <label>
             Fecha:
-            <input className="selector"
+            <input
+              className="input-date"
               type="date"
               value={fecha}
               onChange={(e) => setFecha(e.target.value)}
             />
           </label>
-          <label >
+          <label>
             Seleccionar tipo de cancha:
-            <select className="selector"
+            <select
+              className="selector"
               value={tipoCancha}
               onChange={(e) => setTipoCancha(e.target.value)}
             >
@@ -87,6 +89,12 @@ const Principal = () => {
             </select>
           </label>
         </div>
+        <button
+          className="btn-como-reservar"
+          onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })}
+        >
+          ¿Cómo reservar?
+        </button>
         {sucursalSeleccionada && (
           <TurnosTabla
             turnos={turnos}
@@ -96,6 +104,19 @@ const Principal = () => {
             agregarTurno={agregarTurno}
           />
         )}
+      </div>
+      <div id="como-reservar" className="como-reservar-section">
+        <h3 className="como-reservar-title">¿Cómo reservar?</h3>
+        <div className="como-reservar-content">
+          <p>Para reservar tu turno, sigue estos simples pasos:</p>
+          <ol>
+            <li>Selecciona la sucursal donde deseas jugar.</li>
+            <li>Elige la fecha en la que quieres reservar.</li>
+            <li>Escoge el tipo de cancha que prefieras.</li>
+            <li>Haz clic en el botón de reservar.</li>
+          </ol>
+          <p>¡Listo! Tu turno será registrado y podrás disfrutar de tu juego.</p>
+        </div>
       </div>
       <WhatsAppButton />
       <Footer />
