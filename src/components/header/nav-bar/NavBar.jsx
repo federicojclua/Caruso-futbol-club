@@ -5,7 +5,7 @@ import "./NavBar.css";
 import Container from 'react-bootstrap/Container';
 import AuthContext from '../../context/AuthProvider';
 import navLogo from '../../../assets/img/carpeta/cfc-logo.png';
-import userImagePlaceholder from '../../../assets/img/carpeta/IMAGEN-LOGO.PNG';
+import userImagePlaceholder from '../../../assets/img/carpeta/IMAGEN-LOGO.png';
 
 const NavBar = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
