@@ -22,12 +22,21 @@
   margin-bottom: 30px; /* Espacio inferior */
 }
 
-.form-container {
+.content-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 30px auto;
+  max-width: 90%;
+}
+.side-container-principal {
+  width: 50%;
+}
+
+.form-container-principal {
   display: flex;
   flex-direction: column;
-  max-width: 50%;
-  margin: 0 auto; /* Centra el formulario horizontalmente */
-  margin-top: 50px;
+  width: 100%;
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
   border-radius: 10px; /* Borde redondeado */
@@ -44,65 +53,80 @@
   margin-bottom: 10px; /* Espacio inferior entre elementos */
 }
 
-.btn-como-reservar {
-  position: absolute;
-  top: 20px;
-  left: 20px;
+.btn-how-register {
   background-color: #305e34fa; /* Color de fondo del botón */
   color: white; /* Color de texto */
   padding: 10px 20px; /* Espaciado interno */
   border: none; /* Quita el borde por defecto */
   border-radius: 5px; /* Borde redondeado */
   cursor: pointer; /* Cambia el cursor al pasar por encima */
+  margin-top: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
 }
 
-.btn-como-reservar:hover {
+.btn-how-register:hover {
   background-color: #1e451fff; /* Color de fondo al pasar el cursor */
 }
 
-.como-reservar-section {
-  background-color: #f2f2f2; /* Color de fondo */
+.how-register-section {
+  background-color: #f2f2f2;
   width: 50%;
-  padding: 20px; /* Espaciado interno */
-  text-align: center; /* Alineación centrada */
-  margin-top: 50px; /* Espacio superior */
-  border-radius: 10px; /* Borde redondeado */
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  padding: 20px;
+  text-align: center;
+  margin: 50px auto; /* Centra la sección horizontalmente */
+  border-radius: 10px;
+  box-shadow: 0 0 20px #000; /* Sombra */
 }
 
-.como-reservar-title {
+.how-register-title {
   font-size: 2.5vw; /* Tamaño de fuente del título */
   font-weight: bold; /* Negrita */
   color: #305e34fa; /* Color del texto */
 }
 
-.como-reservar-content {
+.how-register-content {
   font-size: 1.2vw; /* Tamaño de fuente del contenido */
   line-height: 1.6; /* Altura de línea */
   color: #333; /* Color del texto */
   max-width: 800px; /* Ancho máximo del contenido */
   margin: 0 auto; /* Centra el contenido horizontalmente */
 }
-
 @media (max-width: 768px) {
   .title-principal {
-    font-size: 6vw; /* Reducimos el tamaño del título en pantallas pequeñas y medianas */
+    font-size: 6vw;
   }
 
-  .form-container {
-    max-width: 90%; /* Reducimos el ancho del contenedor del formulario */
+  .content-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-container-principal,
+  .price-container {
+    width: 90%;
+    margin: auto;
+    margin-top: 10px;
+  }
+
+  .side-container-principal {
+    width: 90%;
+    text-align: center; /* Centra el contenido del lado en pantallas pequeñas */
   }
 
   .selector,
   .input-date {
-    font-size: 1.5vw; /* Reducimos el tamaño del texto del selector y del input de fecha */
+    font-size: 1.5vw;
   }
 
-  .como-reservar-title {
-    font-size: 4vw; /* Reducimos el tamaño del título "¿Cómo reservar?" en pantallas pequeñas y medianas */
+  .btn-how-register {
+    margin: 20px auto; /* Centro el botón horizontalmente y le agrego margen superior */
   }
 
-  .como-reservar-content {
-    font-size: 1.5vw; /* Reducimos el tamaño del contenido en pantallas pequeñas y medianas */
+  .how-register-title {
+    font-size: 4vw;
+  }
+
+  .how-register-content {
+    font-size: 1.5vw;
   }
 }

@@ -1,85 +1,85 @@
 .table-price {
-    width: 50%;
-    margin: 0 auto;
-    padding: 1rem;
-    box-sizing: border-box;
-    background: rgb(14, 101, 102);
-    background: linear-gradient(98deg, rgb(227, 238, 238) 0%, rgb(146, 197, 150) 100%);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow-x: auto;
-  }
-  
+  width: 30%;
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box;
+  background: rgb(14, 101, 102);
+  background: linear-gradient(98deg, rgb(227, 238, 238) 0%, rgb(146, 197, 150) 100%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+  border-radius: 10px;
+}
+
+.table-price h2 {
+  text-align: center;
+  margin-bottom: 3vw;
+  font-size: 2vw;
+  color: #305e34fa;
+}
+
+.table-price table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 8px;
+  margin-bottom: 1rem;
+  font-size: 1vw;
+  font-weight: bolder;
+}
+
+.table-price th,
+.table-price td {
+  padding: 0.75rem;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 1.3vw;
+}
+
+.table-price th,
+.table-price td {
+  background-color: #305e34fa;
+  font-weight: bold;
+  color: rgb(2, 2, 2);
+}
+
+.table-price td {
+  transition: background-color 0.3s ease;
+  border: 1px solid #ddd;
+}
+
+@media (max-width: 1200px) {
   .table-price h2 {
-    text-align: center;
-    margin-bottom:3vw;
-    font-size: 2vw;
-    color: #305e34fa;
+    font-size: 2rem;
   }
-  
-  .table-price table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 8px;
-    margin-bottom: 1rem;
-    font-size: 1vw;
-    font-weight: bolder;
-  }
-  
+
   .table-price th,
   .table-price td {
-    padding: 0.75rem;
-    text-align: center;
-    border-radius: 8px;
-    font-size: 1.3vw;
+    font-size: 1rem;
   }
-  
-  .table-price th , td {
-    background-color: #305e34fa;
-    font-weight: bold;
-    
-    color: rgb(2, 2, 2);
+}
+
+@media (max-width: 768px) {
+  .table-price {
+    width: 90%;
+    margin: auto;
   }
-  
+
+  .table-price h2 {
+    font-size: 3vw;
+  }
+
+  .table-price th,
   .table-price td {
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    border: 1px solid #ddd;
+    font-size: 2vw;
   }
-  @media (max-width: 1200px) {
-    .table-price h2 {
-      font-size: 2rem; /* Tamaño de fuente normal para h2 en pantallas grandes */
-    }
-  
-    .table-price th,
-    .table-price td {
-      font-size: 1rem; /* Tamaño de fuente normal para th y td en pantallas grandes */
-    }
+}
+
+@media (max-width: 480px) {
+  .table-price h2 {
+    font-size: 4vw;
   }
-  
-  @media (max-width: 768px) {
-    
-    .table-price {
-      width: 90%; /* Reducimos el ancho de la tabla al 95% del contenedor en pantallas medianas */
-      margin: auto; /* Centramos horizontalmente la tabla */
-    }
-  
-    .table-price h2 {
-      font-size: 3vw; /* Tamaño de fuente reducido para h2 en pantallas medianas */
-    }
-  
-    .table-price th,
-    .table-price td {
-      font-size: 2vw; /* Tamaño de fuente reducido para th y td en pantallas medianas */
-    }
+
+  .table-price th,
+  .table-price td {
+    font-size: 3vw;
   }
-  
-  @media (max-width: 480px) {
-    .table-price h2 {
-      font-size: 4vw; /* Tamaño de fuente reducido para h2 en pantallas pequeñas */
-    }
-  
-    .table-price th,
-    .table-price td {
-      font-size: 3vw; /* Tamaño de fuente reducido para th y td en pantallas pequeñas */
-    }
-  }
+}
