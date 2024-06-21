@@ -28,7 +28,7 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 import { AuthProvider } from './components/context/AuthProvider';
 import AdminRoute from './components/ProtectedRoute/AdminRoute';
 
-const backendUrl = 'https://caruso-prueba-back-1.onrender.com'; // Reemplaza con la URL pública de tu backend
+const backendUrl = 'https://caruso-prueba-back-1.onrender.com'; 
 
 function App() {
   return (
