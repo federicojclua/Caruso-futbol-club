@@ -6,6 +6,7 @@ import NavBar from '../../components/header/nav-bar/NavBar';
 import Footer from '../../components/footer/Footer';
 import { Container } from 'react-bootstrap';
 import WhatsAppButton from '../../components/WhatsAppButton/WhatsAppButton';
+import pngBall from '../../assets/img/pngball.png';
 
 const LocationPage = () => {
   return (
@@ -20,12 +21,16 @@ const LocationPage = () => {
       <NavBar />
       <div className="main-location-content-page">
       <h2 className='subtitle-location-page'>
-  <div className='ball-icons-container'>
-    <div className='ball-icons animate__animated animate__rollIn'>⚽️</div>
-    <div>Nuestras Ubicaciones</div>
-    <div className='ball-icons animate__animated animate__rollIn'>⚽️</div>
-  </div>
-</h2>
+      <div className="ball-icons-container">
+            <div className="ball-icons animate__animated animate__rollIn">
+              <img src={pngBall} alt="Ball icon" />
+            </div>
+            <div>Complejos</div>
+            <div className="ball-icons rollInRight">
+              <img src={pngBall} alt="Ball icon" />
+            </div>
+          </div>
+        </h2>
 
 
         <div className="maps-container-page">

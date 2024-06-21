@@ -13,13 +13,29 @@
 }
 
 .title-principal {
-  font-size: 4vw;
+  font-size: 3vw; /* tamaño base */
   font-weight: bolder;
   display: flex;
   justify-content: center;
-  color: #305e34fa;
   padding-top: 100px; /* Ajuste del padding superior */
   margin-bottom: 30px; /* Espacio inferior */
+}
+
+.ball-icons-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ball-icons {
+  margin: 0 10px;
+  font-size: 3vw; /* Asegúrate de que este tamaño coincida con el texto */
+}
+
+.ball-icons img {
+  width: 1em; /* Ajusta el tamaño de la imagen para que coincida con el tamaño del texto */
+  height: auto; /* Mantiene la proporción de la imagen */
+  display: inline-block; /* Asegura que la imagen se alinee correctamente con el texto */
 }
 
 .content-section {
@@ -91,9 +107,14 @@
   max-width: 800px; /* Ancho máximo del contenido */
   margin: 0 auto; /* Centra el contenido horizontalmente */
 }
+
 @media (max-width: 768px) {
   .title-principal {
     font-size: 6vw;
+  }
+
+  .ball-icons img {
+    width: 2em; 
   }
 
   .content-section {
@@ -129,4 +150,40 @@
   .how-register-content {
     font-size: 1.5vw;
   }
+}
+@-webkit-keyframes rollInRight {
+  0% {
+      opacity: 0;
+      -webkit-transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
+      transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
+  }
+
+  100% {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg);
+      transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg);
+  }
+}
+
+@keyframes rollInRight {
+  0% {
+      opacity: 0;
+      -webkit-transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
+      transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
+  }
+
+  100% {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg);
+      transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg);
+  }
+}
+
+.rollInRight {
+  -webkit-animation-name: rollInRight;
+  animation-name: rollInRight;
+  -webkit-animation-duration: 1s; /* Duración de la animación */
+  animation-duration: 1s; /* Duración de la animación */
+  -webkit-animation-fill-mode: both; /* Mantiene los estilos de la animación */
+  animation-fill-mode: both; /* Mantiene los estilos de la animación */
 }

@@ -6,6 +6,7 @@ import WhatsAppButton from '../../components/WhatsAppButton/WhatsAppButton';
 import './Principal.css';
 import Footer from '../../components/footer/Footer';
 import Precios from './Price/Price';
+import pngBall from '../../assets/img/pngball.png';
 
 const Principal = () => {
   const [turnos, setTurnos] = useState([]);
@@ -45,7 +46,18 @@ const Principal = () => {
       <NavBar />
 
       <div className="content">
-        <h3 className="title-principal">Hace tu reserva </h3>
+      <h2 className="title-principal">
+          <div className="ball-icons-container">
+            <div className="ball-icons animate__animated animate__rollIn">
+              <img src={pngBall} alt="Ball icon" />
+            </div>
+            <div>Hace tu reserva</div>
+            <div className="ball-icons rollInRight">
+              <img src={pngBall} alt="Ball icon" />
+            </div>
+          </div>
+        </h2>
+
         <div className="content-section">
           <Precios />
           <div className="side-container-principal">
