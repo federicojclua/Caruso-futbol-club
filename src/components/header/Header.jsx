@@ -20,7 +20,7 @@ const Header = () => {
             <span></span>
             <span></span>
             <span></span>
-            prueba
+            Reserva
           </button></a>
         </div>
       </Container>
