@@ -2,12 +2,10 @@ import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import moment from 'moment';
-<<<<<<< HEAD
-// import './Formulario.css';
-=======
-import './Formulario.css';
->>>>>>> ee8c70e (Se agrego sistema de reservas, principal.jsx y css, tambien AgregarTurnos, Formulario y TurnosTabla)
 
+// import './Formulario.css';
+
+import './Formulario.css';
 
 
 const Formulario = () => {

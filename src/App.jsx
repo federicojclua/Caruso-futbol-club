@@ -28,7 +28,14 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 import { AuthProvider } from './components/context/AuthProvider';
 import AdminRoute from './components/ProtectedRoute/AdminRoute';
 
-const backendUrl = 'https://caruso-prueba-back-1.onrender.com'; // Reemplaza con la URL pública de tu backend
+//conexión con el back
+import CanchasComponent from './components/apiComponents/CanchasComponent';
+import AuthComponent from './components/apiComponents/AuthComponent';
+import UserComponent from './components/apiComponents/UserComponent';
+import ReservaComponent from './components/apiComponents/ReserverComponent';
+import ProductsComponent from './components/apiComponents/ProductsComponent';
+
+const backendUrl = 'https://caruso-prueba-back-1.onrender.com'; 
 
 function App() {
   return (
@@ -68,6 +75,13 @@ function App() {
               <Principal />
             </ProtectedRoute>
           } />
+          {/* Nuevas rutas */}
+            <Route path="/canchas" element={<CanchasComponent />} />
+            <Route path="/auth" element={<AuthComponent />} />
+            <Route path="/users" element={<UserComponent />} />
+            <Route path="/reservas" element={<ReservaComponent />} />
+            <Route path="/reservas" element={<ProductsComponent />} />
+
           <Route path="*" element={<Error404 />} />
         </Routes>
       </BrowserRouter>
