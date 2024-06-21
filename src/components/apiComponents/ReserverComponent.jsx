@@ -1,8 +1,7 @@
-// src/components/ReservasComponent.jsx
 import React, { useEffect, useState } from 'react';
-import { obtenerReservas, crearReserva, actualizarReserva, eliminarReserva } from '../apiComponentes/reservasAPI';
+import { obtenerReservas, crearReserva, actualizarReserva, eliminarReserva } from '../../api/reservasApi';
 
-const ReservasComponent = () => {
+const ReserverComponent = () => {
   const [reservas, setReservas] = useState([]);
   const [newReserva, setNewReserva] = useState({
     userId: '',
@@ -37,6 +36,12 @@ const ReservasComponent = () => {
     try {
       const createdReserva = await crearReserva(newReserva);
       setReservas([...reservas, createdReserva]);
+      setNewReserva({
+        userId: '',
+        fieldId: '',
+        fecha: '',
+        hora: ''
+      });
     } catch (error) {
       console.error('Error creating reserva:', error);
     }
@@ -68,4 +73,55 @@ const ReservasComponent = () => {
           type="text"
           name="userId"
           value={newReserva.userId}
-          
+          onChange={handleChange}
+          placeholder="User ID"
+          required
+        />
+        <input
+          type="text"
+          name="fieldId"
+          value={newReserva.fieldId}
+          onChange={handleChange}
+          placeholder="Field ID"
+          required
+        />
+        <input
+          type="text"
+          name="fecha"
+          value={newReserva.fecha}
+          onChange={handleChange}
+          placeholder="Fecha"
+          required
+        />
+        <input
+          type="text"
+          name="hora"
+          value={newReserva.hora}
+          onChange={handleChange}
+          placeholder="Hora"
+          required
+        />
+        <button type="submit">Crear Reserva</button>
+      </form>
+
+      <ul>
+        {reservas.map(reserva => (
+          <li key={reserva._id}>
+            <div>
+              <span>User ID: {reserva.userId}</span>
+              <span>Field ID: {reserva.fieldId}</span>
+              <span>Fecha: {reserva.fecha}</span>
+              <span>Hora: {reserva.hora}</span>
+            </div>
+            <div>
+              <button onClick={() => handleUpdateReserva(reserva._id, { ...reserva, fecha: 'nueva fecha' })}>Actualizar</button>
+              <button onClick={() => handleDeleteReserva(reserva._id)}>Eliminar</button>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default ReserverComponent;

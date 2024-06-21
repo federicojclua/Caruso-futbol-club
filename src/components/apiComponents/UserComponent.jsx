@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { getUserById } from '../apiComponentes/api'; // Ajusta la ruta según tu estructura
+import { getUserById } from '../../api/userApi'; // Ajusta la ruta según tu estructura
 
-const Users = () => {
+const UserComponent = () => {
   const [usuarios, setUsuarios] = useState([]);
 
   useEffect(() => {
@@ -29,4 +29,4 @@ const Users = () => {
   );
 };
 
-export default Usuarios;
+export default UserComponent;

@@ -32,7 +32,7 @@ import AdminRoute from './components/ProtectedRoute/AdminRoute';
 import CanchasComponent from './components/apiComponents/CanchasComponent';
 import AuthComponent from './components/apiComponents/AuthComponent';
 import UserComponent from './components/apiComponents/UserComponent';
-import ReservaComponent from './components/apiComponents/ReservaComponent';
+import ReservaComponent from './components/apiComponents/ReserverComponent';
 import ProductsComponent from './components/apiComponents/ProductsComponent';
 
 const backendUrl = 'https://caruso-prueba-back-1.onrender.com'; 
