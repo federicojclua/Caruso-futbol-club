@@ -120,7 +120,7 @@ const Record = () => {
                   type="email"
                   placeholder="Ingresa tu email"
                   value={email}
-                  maxLength={20}
+                  maxLength={30}
                   onChange={handleTextChange(setEmail)}
                 />
               </Form.Group>
