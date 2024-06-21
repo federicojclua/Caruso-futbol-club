@@ -1,5 +1,9 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import dotenv from 'dotenv';
+
+// Cargar las variables de entorno desde el archivo .env
+dotenv.config();
 
 export default defineConfig({
   plugins: [react()],
@@ -10,7 +14,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: import.meta.env.REACT_APP_API_URL,
+        target: process.env.REACT_APP_API_URL, // Utiliza process.env en lugar de import.meta.env
         changeOrigin: true,
       },
     },

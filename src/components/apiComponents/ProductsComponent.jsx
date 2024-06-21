@@ -1,6 +1,6 @@
 // src/components/ProductsComponent.jsx
 import React, { useEffect, useState } from 'react';
-import { createProduct, getAllProducts, getProductById, updateProductById, deleteProductById, uploadImage } from '../apiComponentes/productsAPI';
+import { createProduct, getAllProducts, getProductById, updateProductById, deleteProductById, uploadImage } from '../../api/productsApi';
 
 const ProductsComponent = () => {
   const [products, setProducts] = useState([]);

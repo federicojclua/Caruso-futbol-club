@@ -1,7 +1,7 @@
 // src/components/AuthComponent.jsx
 
 import React, { useState } from 'react';
-import { register, registerAdmin, login, logout } from '../apiComponentes/authAPI';
+import { register, registerAdmin, login, logout } from '../../api/authApi';
 
 const AuthComponent = () => {
   const [userData, setUserData] = useState({
