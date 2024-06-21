@@ -111,7 +111,7 @@ const Record = () => {
                   type="text"
                   placeholder="Ingresa tu dirección"
                   value={direccion}
-                  maxLength={20}
+                  maxLength={30}
                   onChange={handleTextChange(setDireccion)}
                 />
               </Form.Group>
