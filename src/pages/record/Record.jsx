@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { Form, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import NavBar from '../../components/header/nav-bar/NavBar';  
+import NavBar from '../../components/header/nav-bar/NavBar';
 import Footer from '../../components/footer/Footer';
 import WhatsAppButton from '../../components/WhatsAppButton/WhatsAppButton';
 import "./Record.css";
@@ -67,76 +66,67 @@ const Record = () => {
       <div className="row">
         <div className="colm-form">
           <div className="form-container">
-            <h2 className="mb-4 text-center">Registro</h2>
+            <h2 className="mb-4 text-center">Completa el formulario</h2>
             {error && <p className="text-danger">{error}</p>}
-            <Form onSubmit={handleSubmit}>
-              <Form.Group controlId="formNombre">
-                <Form.Control
-                  type="text"
-                  placeholder="Ingresa tu nombre"
-                  value={nombre}
-                  maxLength={20}
-                  onChange={handleTextChange(setNombre)}
-                />
-              </Form.Group>
-              <Form.Group controlId="formApellido">
-                <Form.Control
-                  type="text"
-                  placeholder="Ingresa tu apellido"
-                  value={apellido}
-                  maxLength={20}
-                  onChange={handleTextChange(setApellido)}
-                />
-              </Form.Group>
-              <Form.Group controlId="formDNI">
-                <Form.Control
-                  type="text"
-                  placeholder="Ingresa tu DNI"
-                  value={dni}
-                  maxLength={8}
-                  onChange={handleDniChange}
-                />
-              </Form.Group>
-              <Form.Group controlId="formEquipo">
-                <Form.Control
-                  type="text"
-                  placeholder="Ingresa tu equipo"
-                  value={equipo}
-                  maxLength={20}
-                  onChange={handleTextChange(setEquipo)}
-                />
-              </Form.Group>
-              <Form.Group controlId="formDireccion">
-                <Form.Control
-                  type="text"
-                  placeholder="Ingresa tu dirección"
-                  value={direccion}
-                  maxLength={20}
-                  onChange={handleTextChange(setDireccion)}
-                />
-              </Form.Group>
-              <Form.Group controlId="formEmail">
-                <Form.Control
-                  type="email"
-                  placeholder="Ingresa tu email"
-                  value={email}
-                  maxLength={20}
-                  onChange={handleTextChange(setEmail)}
-                />
-              </Form.Group>
-              <Form.Group controlId="formPassword">
-                <Form.Control
-                  type="password"
-                  placeholder="Ingresa tu contraseña"
-                  value={password}
-                  maxLength={20}
-                  onChange={handleTextChange(setPassword)}
-                />
-              </Form.Group>
-              <Button className="btn-login" type="submit">
-                Registrarse
-              </Button>
-            </Form>
+            <form onSubmit={handleSubmit}>
+              <input
+                type="text"
+                placeholder="Ingresa tu nombre"
+                value={nombre}
+                maxLength={20}
+                onChange={handleTextChange(setNombre)}
+                required
+              />
+              <input
+                type="text"
+                placeholder="Ingresa tu apellido"
+                value={apellido}
+                maxLength={20}
+                onChange={handleTextChange(setApellido)}
+                required
+              />
+              <input
+                type="text"
+                placeholder="Ingresa tu DNI"
+                value={dni}
+                maxLength={8}
+                onChange={handleDniChange}
+                required
+              />
+              <input
+                type="text"
+                placeholder="Ingresa tu equipo"
+                value={equipo}
+                maxLength={20}
+                onChange={handleTextChange(setEquipo)}
+                required
+              />
+              <input
+                type="text"
+                placeholder="Ingresa tu dirección"
+                value={direccion}
+                maxLength={20}
+                onChange={handleTextChange(setDireccion)}
+                required
+              />
+              <input
+                type="email"
+                placeholder="Ingresa tu email"
+                value={email}
+                maxLength={50}
+                onChange={handleTextChange(setEmail)}
+                required
+              />
+              <input
+                type="password"
+                placeholder="Ingresa tu contraseña"
+                value={password}
+                maxLength={20}
+                onChange={handleTextChange(setPassword)}
+                required
+              />
+              <button className="btn-login" type="submit">Registrarse</button>
+            </form>
           </div>
         </div>
       </div>
