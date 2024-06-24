@@ -35,7 +35,8 @@ const Record = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5004/api/auth/register', { 
+      const apiUrl = `${import.meta.env.VITE_APP_API_URL}/api/auth/register`; 
+      const response = await axios.post(apiUrl, { 
         nombre, 
         apellido, 
         dni, 
