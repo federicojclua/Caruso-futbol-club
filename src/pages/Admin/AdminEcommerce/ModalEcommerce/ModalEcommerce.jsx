@@ -1,10 +1,11 @@
+// ModalEcommerce.jsx
 import React, { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 
 function ModalEcommerce({ show, handleClose, handleSave, currentRow }) {
-  const [imageUrl, setImageUrl] = useState('');
+  const [image, setImageUrl] = useState('');
   const [name, setName] = useState('');
   const [quantity, setQuantity] = useState('');
   const [price, setPrice] = useState('');
@@ -21,15 +22,11 @@ function ModalEcommerce({ show, handleClose, handleSave, currentRow }) {
   }, [currentRow]);
 
   const handleImageChange = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      const imageUrl = URL.createObjectURL(file);
-      setImageUrl(imageUrl);
-    }
+    const image = URL.createObjectURL(event.target.files[0]);
+    setImageUrl(image);
   };
 
   const handleSaveChanges = () => {
-    // Validar la longitud máxima de los valores
     if (quantity.length > 3 || price.length > 5) {
       alert('La cantidad debe tener como máximo 3 caracteres y el precio como máximo 5 caracteres.');
       return;
@@ -39,7 +36,7 @@ function ModalEcommerce({ show, handleClose, handleSave, currentRow }) {
     const priceValue = parseFloat(price);
 
     if (!isNaN(quantityValue) && !isNaN(priceValue)) {
-      handleSave({ ...currentRow, image: imageUrl, name, quantity: quantityValue, price: priceValue, description });
+      handleSave({ ...currentRow, image, name, quantity: quantityValue, price: priceValue, description });
       handleClose();
     } else {
       alert('Por favor, ingrese números válidos para cantidad y precio.');
@@ -53,7 +50,7 @@ function ModalEcommerce({ show, handleClose, handleSave, currentRow }) {
       </Modal.Header>
       <Modal.Body>
         <Form>
-          <Form.Group className="mb-3" controlId="formTitle">
+          <Form.Group className="mb-3" controlId="formName">
             <Form.Label>Nombre del producto</Form.Label>
             <Form.Control
               type="text"
@@ -93,15 +90,15 @@ function ModalEcommerce({ show, handleClose, handleSave, currentRow }) {
 
           <Form.Group className="mb-3">
             <Form.Label>Foto (300 x 200 px)</Form.Label>
-            {imageUrl && (
+            {image && (
               <div style={{ marginBottom: '10px' }}>
-                <img src={imageUrl} alt="Preview" style={{ width: '100%', maxHeight: '200px' }} />
+                <img src={image} alt="Preview" style={{ width: '100%', maxHeight: '200px' }} />
               </div>
             )}
             <Form.Control type="file" accept="image/*" onChange={handleImageChange} />
           </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formPrice">
+          <Form.Group className="mb-3" controlId="formDescription">
             <Form.Label>Descripción</Form.Label>
             <Form.Control
               type="text"
