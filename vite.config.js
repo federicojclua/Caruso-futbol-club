@@ -14,7 +14,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: process.env.VITE_APP_API_URL, // Utiliza process.env en lugar de import.meta.env
+        target: process.env.VITE_APP_API_URL, 
         changeOrigin: true,
       },
     },
