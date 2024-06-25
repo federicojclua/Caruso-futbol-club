@@ -125,12 +125,12 @@ const AdminEcommerce = () => {
               </td>
               <td>{product.id}</td>
               <td>{product.name}</td>
+              <td>{product.description}</td>
               <td>{product.quantity}</td>
               <td>{product.price}</td>
               <td>
                 <img src={product.image} alt={`Imagen ${product.id}`} style={{ width: '100px', height: '100px' }} />
               </td>
-              <td>{product.description}</td>
               <td>
                 <Button className="btn-custom" onClick={() => handleShowModal(product)}>
                   Editar

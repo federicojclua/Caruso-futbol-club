@@ -46,7 +46,7 @@ function ModalEcommerce({ show, handleClose, handleSave, currentRow }) {
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
-        <Modal.Title>Editar Producto</Modal.Title>
+        <Modal.Title>Agregar Producto</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form>
@@ -59,7 +59,14 @@ function ModalEcommerce({ show, handleClose, handleSave, currentRow }) {
               autoFocus
             />
           </Form.Group>
-
+          <Form.Group className="mb-3" controlId="formDescription">
+            <Form.Label>Descripción</Form.Label>
+            <Form.Control
+              type="text"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+            />
+          </Form.Group>
           <Form.Group className="mb-3" controlId="formQuantity">
             <Form.Label>Cantidad</Form.Label>
             <Form.Control
@@ -96,15 +103,6 @@ function ModalEcommerce({ show, handleClose, handleSave, currentRow }) {
               </div>
             )}
             <Form.Control type="file" accept="image/*" onChange={handleImageChange} />
-          </Form.Group>
-
-          <Form.Group className="mb-3" controlId="formDescription">
-            <Form.Label>Descripción</Form.Label>
-            <Form.Control
-              type="text"
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-            />
           </Form.Group>
         </Form>
       </Modal.Body>
