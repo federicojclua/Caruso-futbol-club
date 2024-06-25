@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -24,9 +24,12 @@ import Login from './pages/Login/Login';
 import Admin from './pages/Admin/Admin';
 import Record from './pages/record/Record';
 import Principal from './pages/Principal/Principal';
+import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 import { AuthProvider } from './components/context/AuthProvider';
+import AdminRoute from './components/ProtectedRoute/AdminRoute';
 
 function App() {
+
   return (
     <AuthProvider>
       <BrowserRouter>
@@ -53,9 +56,17 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/Record" element={<Record />} />
 
-          <Route path="/admin" element={<Admin />} />
+          <Route path="/admin" element={
+            <AdminRoute>
+              <Admin />
+            </AdminRoute>
+          } />
 
-          <Route path="/principal" element={<Principal />} />
+          <Route path="/principal" element={
+            <ProtectedRoute>
+              <Principal />
+            </ProtectedRoute>
+          } />
           <Route path="*" element={<Error404 />} />
         </Routes>
       </BrowserRouter>
@@ -63,4 +74,4 @@ function App() {
   );
 }
 
-export default App;
+export default App;
