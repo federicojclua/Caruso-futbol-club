@@ -1,6 +1,6 @@
 // src/components/CanchasComponent.jsx
 import React, { useEffect, useState } from 'react';
-import { obtenerCanchasDisponibles, crearCancha, actualizarCancha, eliminarCancha } from '../apiComponentes/canchasApi';
+import { obtenerCanchasDisponibles, crearCancha, actualizarCancha, eliminarCancha } from '../../api/canchasApi';
 
 const CanchasComponent = () => {
   const [canchas, setCanchas] = useState([]);
