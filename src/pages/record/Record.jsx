@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Form, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import NavBar from '../../components/header/nav-bar/NavBar';
@@ -68,67 +69,6 @@ const Record = () => {
           <div className="form-container">
             <h2 className="mb-4 text-center">Completa el formulario</h2>
             {error && <p className="text-danger">{error}</p>}
-<<<<<<< HEAD
-            <form onSubmit={handleSubmit}>
-              <input
-                type="text"
-                placeholder="Ingresa tu nombre"
-                value={nombre}
-                maxLength={20}
-                onChange={handleTextChange(setNombre)}
-                required
-              />
-              <input
-                type="text"
-                placeholder="Ingresa tu apellido"
-                value={apellido}
-                maxLength={20}
-                onChange={handleTextChange(setApellido)}
-                required
-              />
-              <input
-                type="text"
-                placeholder="Ingresa tu DNI"
-                value={dni}
-                maxLength={8}
-                onChange={handleDniChange}
-                required
-              />
-              <input
-                type="text"
-                placeholder="Ingresa tu equipo"
-                value={equipo}
-                maxLength={20}
-                onChange={handleTextChange(setEquipo)}
-                required
-              />
-              <input
-                type="text"
-                placeholder="Ingresa tu dirección"
-                value={direccion}
-                maxLength={20}
-                onChange={handleTextChange(setDireccion)}
-                required
-              />
-              <input
-                type="email"
-                placeholder="Ingresa tu email"
-                value={email}
-                maxLength={50}
-                onChange={handleTextChange(setEmail)}
-                required
-              />
-              <input
-                type="password"
-                placeholder="Ingresa tu contraseña"
-                value={password}
-                maxLength={20}
-                onChange={handleTextChange(setPassword)}
-                required
-              />
-              <button className="btn-login" type="submit">Registrarse</button>
-            </form>
-=======
             <Form onSubmit={handleSubmit}>
               <Form.Group controlId="formNombre">
                 <Form.Control
@@ -197,7 +137,6 @@ const Record = () => {
                 Registrarse
               </Button>
             </Form>
->>>>>>> 322229e1914969292fd82f1cc6fe6d48fef6884c
           </div>
         </div>
       </div>
