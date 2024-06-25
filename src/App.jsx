@@ -27,7 +27,6 @@ import Principal from './pages/Principal/Principal';
 import { AuthProvider } from './components/context/AuthProvider';
 
 function App() {
-
   return (
     <AuthProvider>
       <BrowserRouter>

@@ -68,6 +68,7 @@ const Record = () => {
           <div className="form-container">
             <h2 className="mb-4 text-center">Completa el formulario</h2>
             {error && <p className="text-danger">{error}</p>}
+<<<<<<< HEAD
             <form onSubmit={handleSubmit}>
               <input
                 type="text"
@@ -127,6 +128,76 @@ const Record = () => {
               />
               <button className="btn-login" type="submit">Registrarse</button>
             </form>
+=======
+            <Form onSubmit={handleSubmit}>
+              <Form.Group controlId="formNombre">
+                <Form.Control
+                  type="text"
+                  placeholder="Ingresa tu nombre"
+                  value={nombre}
+                  maxLength={20}
+                  onChange={handleTextChange(setNombre)}
+                />
+              </Form.Group>
+              <Form.Group controlId="formApellido">
+                <Form.Control
+                  type="text"
+                  placeholder="Ingresa tu apellido"
+                  value={apellido}
+                  maxLength={20}
+                  onChange={handleTextChange(setApellido)}
+                />
+              </Form.Group>
+              <Form.Group controlId="formDNI">
+                <Form.Control
+                  type="text"
+                  placeholder="Ingresa tu DNI"
+                  value={dni}
+                  maxLength={8}
+                  onChange={handleDniChange}
+                />
+              </Form.Group>
+              <Form.Group controlId="formEquipo">
+                <Form.Control
+                  type="text"
+                  placeholder="Ingresa tu equipo"
+                  value={equipo}
+                  maxLength={20}
+                  onChange={handleTextChange(setEquipo)}
+                />
+              </Form.Group>
+              <Form.Group controlId="formDireccion">
+                <Form.Control
+                  type="text"
+                  placeholder="Ingresa tu dirección"
+                  value={direccion}
+                  maxLength={30}
+                  onChange={handleTextChange(setDireccion)}
+                />
+              </Form.Group>
+              <Form.Group controlId="formEmail">
+                <Form.Control
+                  type="email"
+                  placeholder="Ingresa tu email"
+                  value={email}
+                  maxLength={30}
+                  onChange={handleTextChange(setEmail)}
+                />
+              </Form.Group>
+              <Form.Group controlId="formPassword">
+                <Form.Control
+                  type="password"
+                  placeholder="Ingresa tu contraseña"
+                  value={password}
+                  maxLength={20}
+                  onChange={handleTextChange(setPassword)}
+                />
+              </Form.Group>
+              <Button className="btn-login" type="submit">
+                Registrarse
+              </Button>
+            </Form>
+>>>>>>> 322229e1914969292fd82f1cc6fe6d48fef6884c
           </div>
         </div>
       </div>
