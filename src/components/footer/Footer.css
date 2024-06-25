@@ -4,6 +4,7 @@ html, body {
 }
 
 .footer {
+  margin-top: 10px;
   background-color: #333;
   color: white;
   padding: 0px;
@@ -59,14 +60,14 @@ html, body {
   transform: rotate(360deg);
 }
 
-.footer-logo {
+.logo_sin_fondo_bw {
   max-width: 50%;
   width: 30%;
   height: auto;
   transition: transform 0.5s ease-in-out;
 }
 
-.footer-logo:hover {
+.logo_sin_fondo_bw:hover {
   transform: rotate(360deg);
 }
 

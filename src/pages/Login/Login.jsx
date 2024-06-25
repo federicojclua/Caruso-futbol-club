@@ -78,7 +78,7 @@ const Login = () => {
   return (
     <div className="Login-component">
       <Helmet>
-        <title>Login - Caruso Futbol Club</title>
+        <title>Iniciar sesión - Caruso Futbol Club</title>
         <meta name="description" content="Inicia sesión en Caruso Futbol Club para acceder a tu cuenta y disfrutar de todos los beneficios." />
         <meta name="keywords" content="login, iniciar sesión, Caruso Futbol Club, cuenta" />
         <meta name="author" content="Caruso Futbol Club" />

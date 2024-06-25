@@ -1,47 +1,57 @@
 .Sponsors {
-  background-size: cover;       /* Asegura que la imagen cubra todo el fondo del contenedor */
-  background-position: center;   /* Centra la imagen */
-  background-repeat: no-repeat; /* Evita que la imagen se repita */ 
+  background-size: cover; /* Asegura que la imagen cubra todo el fondo del contenedor */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
   padding-bottom: 100px;
 }
 
 .text-sponsors {
-  font-weight: bold; 
+  font-weight: bold;
   font-size: 3vw; /* Tamaño de texto inicial */
   text-align: center;
   padding-bottom: 30px;
   color: #022720;
-  text-shadow: 
-    -1px -1px 0 #ffffff,  
+  text-shadow:
+    -1px -1px 0 #ffffff,
      1px -1px 0 #ffffff,
     -1px  1px 0 #ffffff,
-     1px  1px 0 #ffffff,  
+     1px  1px 0 #ffffff,
     -2px -2px 0 #ffffff,
      2px -2px 0 #ffffff,
     -2px  2px 0 #ffffff,
-     2px  2px 0 #ffffff;  
+     2px  2px 0 #ffffff;
 }
 
 .overflow-hidden {
   overflow: hidden; /* Asegura que el contenido no cause scroll */
 }
 
+.img-sponsors-wrapper {
+  display: flex;
+  width: 300%; /* Asegura que haya suficientes imágenes en la cinta */
+}
+
 .img-sponsors {
   display: flex;
-  animation: scroll-left 15s linear infinite; /* Aplica la animación aquí */
+  width: 100%;
+  animation: scroll-horizontal 10s linear infinite; /* Aplica la animación aquí */
+  padding: 10px 0; /* Agrega padding arriba y abajo */
 }
 
 .img-sponsors img {
   max-width: 200px;
-  width: 100%;
+  width: 50%; /* Ajusta el ancho de las imágenes en relación a la pantalla */
+  margin: 0 5px; /* Agrega margen entre las imágenes */
+  border-radius: 5px;
+  box-shadow: 0 0 10px #333; /* Sombra alrededor de la imagen */
 }
 
-@keyframes scroll-left {
+@keyframes scroll-horizontal {
   0% {
-    transform: translateX(100%); /* Inicia el texto fuera de la vista a la derecha */
+    transform: translateX(0); /* Comienza visible en la pantalla */
   }
   100% {
-    transform: translateX(-100%); /* Mueve el texto completamente fuera de la vista a la izquierda */
+    transform: translateX(-33.333%); /* Mueve el contenido a la izquierda */
   }
 }
 
@@ -52,7 +62,8 @@
   }
 
   .img-sponsors img {
-    max-width: 250px; /* Aumenta el tamaño máximo de las imágenes */
+    max-width: none; /* Elimina el max-width para que sea solo un porcentaje */
+    width: 40%; /* Ajusta el tamaño de las imágenes */
   }
 }
 
@@ -63,6 +74,15 @@
   }
 
   .img-sponsors img {
-    max-width: 300px; /* Aumenta aún más el tamaño máximo de las imágenes */
+    max-width: none; /* Elimina el max-width para que sea solo un porcentaje */
+    width: 50%; /* Ajusta el tamaño de las imágenes */
+  }
+}
+
+/* Media Queries para pantallas muy pequeñas */
+@media (max-width: 520px) {
+  .img-sponsors img {
+    max-width: none; /* Elimina el max-width para que sea solo un porcentaje */
+    width: 30%; /* Ajusta el tamaño de las imágenes */
   }
 }

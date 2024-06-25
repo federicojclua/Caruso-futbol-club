@@ -20,7 +20,14 @@ const Contacto = () => {
       <NavBar />
       <div className="">
         <Container className="main-contact-content">
-          <p className='subtitle-contact'>Ponte en contacto con nosotros</p>
+        <p className='subtitle-contact'>
+  <div className='ball-icons-container'>
+    <div className='ball-icons animate__animated animate__rollIn'>⚽️</div>
+    <div>Ponte en contacto con nosotros</div>
+    <div className='ball-icons animate__animated animate__rollIn'>⚽️</div>
+  </div>
+</p>
+
 
           {/* Sección de Información de Contacto */}
           <section className="form">

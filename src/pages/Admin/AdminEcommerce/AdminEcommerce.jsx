@@ -91,8 +91,8 @@ const AdminEcommerce = () => {
         isNewProduct={isNewProduct}
       />
       <h3 className='admin-ecommerce'>Panel Administrador Ecommerce</h3>
-      <Button onClick={addProduct}>Agregar Producto</Button>
-      <Table responsive>
+      <Button onClick={addProduct} className="btn-add">Agregar Producto</Button>
+      <Table responsive className="ecommerce-table">
         <thead>
           <tr>
             <th>Selección</th>
@@ -119,11 +119,11 @@ const AdminEcommerce = () => {
               <td>{product.quantity}</td>
               <td>{product.price}</td>
               <td>
-                <img src={product.image} alt={`Imagen ${product._id}`} style={{ width: '100px', height: '100px' }} />
+                <img src={product.image} alt={`Imagen ${product._id}`} className="product-image" />
               </td>
               <td>{product.description}</td>
               <td>
-                <Button className="btn-custom" onClick={() => handleShowModal(product)}>
+                <Button className="btn-action" onClick={() => handleShowModal(product)}>
                   Editar
                 </Button>
               </td>

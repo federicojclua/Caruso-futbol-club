@@ -9,20 +9,20 @@ const Price = () => {
   ];
 
   return (
-    <div className='table-price' style={{ padding: '20px', maxWidth: '600px', margin: '0 auto' }}>
-      <h2 style={{ textAlign: 'center' }}>Nuestros precios</h2>
-      <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+    <div className='table-price'>
+      <h2>Nuestros precios</h2>
+      <table>
         <thead>
           <tr>
-            <th style={{ border: '1px solid #ddd', padding: '8px' }}>Tipo de Fútbol</th>
-            <th style={{ border: '1px solid #ddd', padding: '8px' }}>Precio</th>
+            <th>Tipo de Fútbol</th>
+            <th>Precio</th>
           </tr>
         </thead>
         <tbody>
           {precios.map((item, index) => (
             <tr key={index}>
-              <td style={{ border: '1px solid #ddd', padding: '8px' }}>{item.tipo}</td>
-              <td style={{ border: '1px solid #ddd', padding: '8px' }}>{item.precio}</td>
+              <td>{item.tipo}</td>
+              <td>{item.precio}</td>
             </tr>
           ))}
         </tbody>
