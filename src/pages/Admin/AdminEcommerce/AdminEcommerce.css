@@ -1,7 +1,100 @@
-.admin-ecommerce{
+.admin-ecommerce {
     color: aliceblue;
     font-size: 2.5vw;
     text-align: center;
     padding: 50px;
-
-}
+  }
+  
+  .btn-add {
+    margin-bottom: 20px;
+  }
+  
+  .ecommerce-table {
+    background-color: #f8f9fa;
+    border-collapse: separate;
+    border-spacing: 0;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 1);
+    margin: 20px 0;
+  }
+  
+  .ecommerce-table th, .ecommerce-table td {
+    border: 1px solid #dee2e6;
+    padding: 12px;
+    text-align: center;
+    border-right: 5px solid #ced4da;
+    border-bottom: 5px solid #ced4da;
+  }
+  
+  .ecommerce-table th {
+    border-top: 5px solid #ced4da;
+    border-bottom: 5px solid #ced4da;
+  }
+  
+  .ecommerce-table thead th {
+    background-color: #e9ecef;
+    font-weight: bold;
+  }
+  
+  .ecommerce-table tbody tr:nth-child(even) {
+    background-color: #f1f1f1;
+  }
+  
+  .ecommerce-table tbody tr {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .ecommerce-table tbody tr:hover {
+    background-color: #e2e6ea;
+    transform: scale(1.05);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .ecommerce-table .btn-action, .ecommerce-table .btn-delete {
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+  
+  .product-image {
+    width: 100px;
+    height: 100px;
+  }
+  
+  /* Breakpoints */
+  @media (max-width: 768px) {
+    .admin-ecommerce {
+      font-size: 18px;
+    }
+  
+    .ecommerce-table th, .ecommerce-table td {
+      padding: 10px;
+      font-size: 14px;
+    }
+  
+    .ecommerce-table .btn-action, .ecommerce-table .btn-delete {
+      padding: 4px 8px;
+      font-size: 12px;
+    }
+  
+    .product-image {
+      width: 75px;
+      height: 75px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .ecommerce-table th, .ecommerce-table td {
+      font-size: 12px;
+      padding: 8px;
+    }
+  
+    .ecommerce-table .btn-action, .ecommerce-table .btn-delete {
+      padding: 3px 6px;
+      font-size: 10px;
+    }
+  
+    .product-image {
+      width: 50px;
+      height: 50px;
+    }
+  }
+  

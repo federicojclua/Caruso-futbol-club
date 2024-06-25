@@ -9,7 +9,6 @@ import { useContext } from 'react';
 import AuthContext from '../../components/context/AuthProvider';
 import { Link } from 'react-router-dom';
 
-
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -78,7 +77,7 @@ const Login = () => {
   return (
     <div className="Login-component">
       <Helmet>
-        <title>Login - Caruso Futbol Club</title>
+        <title>Iniciar sesión - Caruso Futbol Club</title>
         <meta name="description" content="Inicia sesión en Caruso Futbol Club para acceder a tu cuenta y disfrutar de todos los beneficios." />
         <meta name="keywords" content="login, iniciar sesión, Caruso Futbol Club, cuenta" />
         <meta name="author" content="Caruso Futbol Club" />
@@ -109,11 +108,11 @@ const Login = () => {
             {passwordError && <p className="text-danger">{passwordError}</p>}
             {serverError && <p className="text-danger">{serverError}</p>}
             <button className="btn-login" onClick={handleSubmit}>Iniciar Sesión</button>
-            <a href="#">¿Olvidaste tu contraseña?</a>
+            <a href="/error404">¿Olvidaste tu contraseña?</a>
             <div className="register-message">
-              <p>¿No tienes cuenta? Registrate haciendo click aquí abajo</p>
+              <p>¿No tienes cuenta? Regístrate haciendo click aquí abajo</p>
               <Link to="/record">
-               <button className="btn-new">Registrarme</button>
+                <button className="btn-new">Registrarme</button>
               </Link>
             </div>
           </div>
@@ -126,4 +125,3 @@ const Login = () => {
 };
 
 export default Login;
-

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -24,18 +24,7 @@ import Login from './pages/Login/Login';
 import Admin from './pages/Admin/Admin';
 import Record from './pages/record/Record';
 import Principal from './pages/Principal/Principal';
-import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 import { AuthProvider } from './components/context/AuthProvider';
-import AdminRoute from './components/ProtectedRoute/AdminRoute';
-
-//conexión con el back
-import CanchasComponent from './components/apiComponents/CanchasComponent';
-import AuthComponent from './components/apiComponents/AuthComponent';
-import UserComponent from './components/apiComponents/UserComponent';
-import ReservaComponent from './components/apiComponents/ReserverComponent';
-import ProductsComponent from './components/apiComponents/ProductsComponent';
-
-const backendUrl = 'https://caruso-prueba-back-1.onrender.com'; 
 
 function App() {
   return (
@@ -64,24 +53,9 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/Record" element={<Record />} />
 
-          <Route path="/admin" element={
-            <AdminRoute>
-              <Admin />
-            </AdminRoute>
-          } />
+          <Route path="/admin" element={<Admin />} />
 
-          <Route path="/principal" element={
-            <ProtectedRoute>
-              <Principal />
-            </ProtectedRoute>
-          } />
-          {/* Nuevas rutas */}
-            <Route path="/canchas" element={<CanchasComponent />} />
-            <Route path="/auth" element={<AuthComponent />} />
-            <Route path="/users" element={<UserComponent />} />
-            <Route path="/reservas" element={<ReservaComponent />} />
-            <Route path="/reservas" element={<ProductsComponent />} />
-
+          <Route path="/principal" element={<Principal />} />
           <Route path="*" element={<Error404 />} />
         </Routes>
       </BrowserRouter>

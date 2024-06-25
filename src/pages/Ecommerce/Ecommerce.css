@@ -41,7 +41,19 @@
   font-size: 2.5vw;
   font-weight: bold;
   text-align: center;
-  padding: 50px 0;
+  padding-top: 100px;
+  margin-bottom: 10px; /* Elimina el margen predeterminado */
+}
+
+.ball-icons-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ball-icons {
+  margin: 0 10px;
+  /* Otros estilos para las bolas de íconos */
 }
 
 .product-list {
@@ -169,4 +181,40 @@
   .product-item p {
     font-size: 3vw;
   }
+}
+@-webkit-keyframes rollInRight {
+  0% {
+      opacity: 0;
+      -webkit-transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
+      transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
+  }
+
+  100% {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg);
+      transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg);
+  }
+}
+
+@keyframes rollInRight {
+  0% {
+      opacity: 0;
+      -webkit-transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
+      transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
+  }
+
+  100% {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg);
+      transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg);
+  }
+}
+
+.rollInRight {
+  -webkit-animation-name: rollInRight;
+  animation-name: rollInRight;
+  -webkit-animation-duration: 1s; /* Duración de la animación */
+  animation-duration: 1s; /* Duración de la animación */
+  -webkit-animation-fill-mode: both; /* Mantiene los estilos de la animación */
+  animation-fill-mode: both; /* Mantiene los estilos de la animación */
 }

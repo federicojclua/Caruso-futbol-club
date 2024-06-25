@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import NavBar from '../../components/header/nav-bar/NavBar';  
+import NavBar from '../../components/header/nav-bar/NavBar';
 import Footer from '../../components/footer/Footer';
 import WhatsAppButton from '../../components/WhatsAppButton/WhatsAppButton';
 import "./Record.css";
@@ -27,7 +27,7 @@ const Record = () => {
 
   const handleTextChange = (setter) => (e) => {
     const value = e.target.value;
-    if (value.length <= 20) {
+    if (value.length <= 40) {
       setter(value);
     }
   };
@@ -67,7 +67,7 @@ const Record = () => {
       <div className="row">
         <div className="colm-form">
           <div className="form-container">
-            <h2 className="mb-4 text-center">Registro</h2>
+            <h2 className="mb-4 text-center">Completa el formulario</h2>
             {error && <p className="text-danger">{error}</p>}
             <Form onSubmit={handleSubmit}>
               <Form.Group controlId="formNombre">
@@ -75,7 +75,7 @@ const Record = () => {
                   type="text"
                   placeholder="Ingresa tu nombre"
                   value={nombre}
-                  maxLength={20}
+                  maxLength={30}
                   onChange={handleTextChange(setNombre)}
                 />
               </Form.Group>
@@ -84,7 +84,7 @@ const Record = () => {
                   type="text"
                   placeholder="Ingresa tu apellido"
                   value={apellido}
-                  maxLength={20}
+                  maxLength={30}
                   onChange={handleTextChange(setApellido)}
                 />
               </Form.Group>
@@ -120,7 +120,7 @@ const Record = () => {
                   type="email"
                   placeholder="Ingresa tu email"
                   value={email}
-                  maxLength={30}
+                  maxLength={40}
                   onChange={handleTextChange(setEmail)}
                 />
               </Form.Group>

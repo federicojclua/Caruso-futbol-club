@@ -6,6 +6,7 @@ import NavBar from '../../components/header/nav-bar/NavBar';
 import Footer from '../../components/footer/Footer';
 import { Container } from 'react-bootstrap';
 import WhatsAppButton from '../../components/WhatsAppButton/WhatsAppButton';
+import pngBall from '../../assets/img/pngball.png';
 
 const Contacto = () => {
   return (
@@ -20,7 +21,18 @@ const Contacto = () => {
       <NavBar />
       <div className="">
         <Container className="main-contact-content">
-          <p className='subtitle-contact'>Ponte en contacto con nosotros</p>
+        <h2 className='subtitle-contact'>
+        <div className="ball-icons-container">
+            <div className="ball-icons animate__animated animate__rollIn">
+              <img src={pngBall} alt="Ball icon" />
+            </div>
+            <div>Ponte en contacto con nosotros</div>
+            <div className="ball-icons rollInRight">
+              <img src={pngBall} alt="Ball icon" />
+            </div>
+          </div>
+        </h2>
+
 
           {/* Sección de Información de Contacto */}
           <section className="form">

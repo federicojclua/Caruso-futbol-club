@@ -1,33 +1,34 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // Importa Link si estás usando react-router para manejar las rutas
+
 import "./Footer.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import logosinfondogris from '../../assets/img/logo_sin_fondo_bw.png';
-
 
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-column animate__animated animate__rollIn">
-        <img className='logo_sin_fondo_bw'src={logosinfondogris} alt="logo blanco y negro" />
-        </div>
-        <div className="footer-column">
-          <h5>Información</h5>
-          <p>Caruso Fútbol Club</p>
-<p>Alquiler de canchas de fútbol 5, 6, 7 y 8</p>
-<p>Excelente iluminación por la noche</p>
-<p>Contamos con Parrilla, Buffet, Bebidas y más</p>
-
+          <Link to="/">
+            <img className='logo_sin_fondo_bw' src={logosinfondogris} alt="logo blanco y negro" />
+          </Link>
         </div>
         <div className="footer-column">
           <h5>Accesos útiles</h5>
-          <ul>
-            <li><a href="/Contact">Contacto</a></li>
-            <li><a href="/Login">Iniciar sesión</a></li>
-            <li><a href="/AboutUs">Acerca de nosotros</a></li>
-            <li><a href="/Location">Donde encontrarnos</a></li>
-          </ul>
+          <div className="footer-links">
+            <ul>
+              <li><Link to="/Login">Iniciar sesión</Link></li>
+              <li><Link to="/Record">Registro</Link></li>
+              <li><Link to="/Ecommerce">Tienda</Link></li>
+            </ul>
+            <ul>
+              <li><Link to="/Contact">Contacto</Link></li>
+              <li><Link to="/Location">Complejos</Link></li>
+              <li><Link to="/AboutUs">Nosotros</Link></li>
+            </ul>
+          </div>
         </div>
         <div className="footer-column">
           <h5>Síguenos</h5>
@@ -49,4 +50,4 @@ const Footer = () => {
   );
 }
 
-export default Footer;
+export default Footer;
