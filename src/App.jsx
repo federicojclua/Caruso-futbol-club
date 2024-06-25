@@ -54,7 +54,7 @@ function App() {
           <Route path="/payment" element={<PaymentForm />} />
           <Route path="/aboutUs" element={<AboutUs />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/Record" element={<Record />} />
+          <Route path="/record" element={<Record />} />
 
           <Route path="/admin" element={
             <AdminRoute>
