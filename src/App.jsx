@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -28,7 +28,32 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 import { AuthProvider } from './components/context/AuthProvider';
 import AdminRoute from './components/ProtectedRoute/AdminRoute';
 
+// Conexión con el back
+import CanchasComponent from './components/apiComponents/CanchasComponent';
+import AuthComponent from './components/apiComponents/AuthComponent';
+import UserComponent from './components/apiComponents/UserComponent';
+import ProductsComponent from './components/apiComponents/ProductsComponent';
+import ReserverComponent from './components/apiComponents/ReserverComponent';
+
+const backendUrl = 'https://caruso-prueba-back-1.onrender.com'; 
+
 function App() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('https://caruso-prueba-back-1.onrender.com/api/data');
+        const data = await response.json();
+        setData(data);
+        console.log(data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <AuthProvider>
@@ -54,7 +79,12 @@ function App() {
           <Route path="/payment" element={<PaymentForm />} />
           <Route path="/aboutUs" element={<AboutUs />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/record" element={<Record />} />
+          <Route path="/Record" element={<Record />} />
+          <Route path="/canchas" element={<CanchasComponent />} />
+          <Route path="/auth" element={<AuthComponent />} />
+          <Route path="/users" element={<UserComponent />} />
+          <Route path="/reservas" element={<ReserverComponent />} />
+          <Route path="/products" element={<ProductsComponent />} />
 
           <Route path="/admin" element={
             <AdminRoute>

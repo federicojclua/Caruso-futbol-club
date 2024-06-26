@@ -8,4 +8,12 @@ export default defineConfig({
   build: {
     manifest: false,
   },
+  server: {
+    proxy: {
+      '/api': {
+        target: process.env.VITE_APP_API_URL, 
+        changeOrigin: true,
+      },
+    },
+  },
 });
