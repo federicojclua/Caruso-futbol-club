@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet';
 import NavBar from '../../components/header/nav-bar/NavBar';
 import Footer from '../../components/footer/Footer';
 import WhatsAppButton from '../../components/WhatsAppButton/WhatsAppButton';
+import { register } from '../../api/authApi';
 import "./Record.css";
 
 const Record = () => {
@@ -35,7 +36,7 @@ const Record = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5004/api/auth/register', { 
+      const response = await register({ 
         nombre, 
         apellido, 
         dni, 
@@ -44,10 +45,10 @@ const Record = () => {
         email, 
         password 
       });
-      if (response.data.message === 'Usuario registrado exitosamente') {
+      if (response.message === 'Usuario registrado exitosamente') {
         navigate('/login');
       } else {
-        setError(response.data.message);
+        setError(response.message);
       }
     } catch (error) {
       setError('Error al registrarse. Intenta nuevamente.');
@@ -61,7 +62,7 @@ const Record = () => {
         <meta name="description" content="Regístrate en Caruso Futbol Club para acceder a tu cuenta y disfrutar de todos los beneficios." />
         <meta name="keywords" content="registro, registrarse, Caruso Futbol Club, cuenta" />
         <meta name="author" content="Caruso Futbol Club" />
-        <link rel="canonical" href="https://www.carusofutbolclub.com/record" />
+        <link rel="canonical" href="https://caruso-futbol-club-1.onrender.com" />
       </Helmet>
       <NavBar />
       <div className="row">

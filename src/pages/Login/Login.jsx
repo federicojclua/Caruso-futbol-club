@@ -46,8 +46,7 @@ const Login = () => {
       setPasswordError('');
     }
 
-    const apiUrl = 'http://localhost:5004/api/auth/login';
-
+    const apiUrl = `${import.meta.env.VITE_APP_API_URL}/api/auth/login`;
     try {
       const response = await fetch(apiUrl, {
         method: 'POST',
