@@ -9,7 +9,7 @@ const Tournament = () => {
     
       <div className="tournament-text">
         <h2 className="tournament-title">¡Animate! Inscribí tu equipo al Próximo Torneo</h2>
-        <p className="tournament-description">Participa con tu equipo y demostrá tus habilidades en nuestras canchas. ¡Te esperamos!</p>
+        <p className="tournament-description">Participá con tu equipo y demostrá tus habilidades en nuestras canchas. ¡Te esperamos!</p>
       
       </div>
       
