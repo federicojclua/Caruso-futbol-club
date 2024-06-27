@@ -12,8 +12,8 @@ const Contacto = () => {
   return (
     <div className='Contact-component'>
       <Helmet>
-        <title>Contacto - Caruso Futbol Club</title>
-        <meta name="description" content="Ponte en contacto con nosotros para cualquier consulta o duda. Estamos disponibles a través de teléfono, email y WhatsApp." />
+        <title>Contacto - Caruso Fútbol Club</title>
+        <meta name="description" content="Ponete en contacto con nosotros para cualquier consulta o duda. Estamos disponibles a través de teléfono, email y WhatsApp." />
         <meta name="keywords" content="contacto, atención al cliente, Caruso Futbol Club, WhatsApp, email, teléfono" />
         <meta name="author" content="Caruso Futbol Club" />
         <link rel="canonical" href="https://www.carusofutbolclub.com/contacto" />
@@ -26,7 +26,7 @@ const Contacto = () => {
             <div className="ball-icons animate__animated animate__rollIn">
               <img src={pngBall} alt="Ball icon" />
             </div>
-            <div>Ponte en contacto con nosotros</div>
+            <div>Ponete en contacto con nosotros</div>
             <div className="ball-icons rollInRight">
               <img src={pngBall} alt="Ball icon" />
             </div>

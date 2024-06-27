@@ -37,7 +37,7 @@ const Info = () => {
               <div className="content-container">
                 <img src={info3}alt="Parrilla" />
               </div>
-              <h4>Parilla y Quincho</h4>
+              <h4>Parrilla y Quincho</h4>
             </div>
           </Col>
           <Col xs={12} sm={6} md={3} className="mb-2">
@@ -69,7 +69,7 @@ const Info = () => {
               <div className="content-container">
                 <img src={info7} alt="Futbol Femenino" />
               </div>
-              <h4>Futbol Femenino</h4>
+              <h4>Fútbol Femenino</h4>
             </div>
           </Col>
           <Col xs={12} sm={6} md={3} className="mb-2">

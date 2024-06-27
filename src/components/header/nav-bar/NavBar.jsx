@@ -69,7 +69,7 @@ const NavBar = () => {
                 </NavDropdown>
               ) : (
                 <NavDropdown title="Iniciar Sesión" className="button-inicio">
-                  <NavDropdown.Item as={Link} to="/record">¿No tienes cuenta? Regístrate</NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to="/record">¿No tenés cuenta? Registrate</NavDropdown.Item>
                   <NavDropdown.Item as={Link} to="/Login">Inicia Sesión</NavDropdown.Item>
                 </NavDropdown>
               )}

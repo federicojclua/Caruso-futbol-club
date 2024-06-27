@@ -105,10 +105,10 @@ const PaymentForm = () => {
   return (
     <div className='PaymentForm-component'>
       <Helmet>
-  <title>Finalizar Compra - Caruso Futbol Club</title>
-  <meta name="description" content="Completa tu compra en Caruso Futbol Club. Revisa tus productos seleccionados y procede al pago de manera segura." />
-  <meta name="keywords" content="finalizar compra, e-commerce, Caruso Futbol Club, carrito de compras, pago seguro" />
-  <meta name="author" content="Caruso Futbol Club" />
+  <title>Finalizar Compra - Caruso Fútbol Club</title>
+  <meta name="description" content="Completa tu compra en Caruso Fútbol Club. Revisá tus productos seleccionados y procedé al pago de manera segura." />
+  <meta name="keywords" content="finalizar compra, e-commerce, Caruso Fútbol Club, carrito de compras, pago seguro" />
+  <meta name="author" content="Caruso Fútbol Club" />
   <link rel="canonical" href="https://www.carusofutbolclub.com/finalizar-compra" />
 </Helmet>
 

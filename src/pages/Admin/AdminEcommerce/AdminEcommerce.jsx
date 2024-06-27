@@ -90,7 +90,7 @@ const AdminEcommerce = () => {
         currentRow={selectedRow}
         isNewProduct={isNewProduct}
       />
-      <h3 className='admin-ecommerce'>Panel Administrador Ecommerce</h3>
+      <h3 className='admin-ecommerce'>Panel Administrador de Tienda</h3>
       <Button onClick={addProduct} className="btn-add">Agregar Producto</Button>
       <Table responsive className="ecommerce-table">
         <thead>

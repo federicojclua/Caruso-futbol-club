@@ -17,7 +17,7 @@ const Principal = () => {
   const sucursales = [
     {
       id: 'sucursal1',
-      nombre: 'Sucursal 1',
+      nombre: 'Sucursal Paso del Rey',
       canchas: [
         { id: 'cancha1', nombre: 'Cancha 1' },
         { id: 'cancha2', nombre: 'Cancha 2' },
@@ -26,7 +26,7 @@ const Principal = () => {
     },
     {
       id: 'sucursal2',
-      nombre: 'Sucursal 2',
+      nombre: 'Sucursal Merlo',
       canchas: [
         { id: 'cancha1', nombre: 'Cancha 1' },
         { id: 'cancha2', nombre: 'Cancha 2' },
@@ -38,7 +38,7 @@ const Principal = () => {
 
   const agregarTurno = (nuevoTurno) => {
     setTurnos([...turnos, nuevoTurno]);
-    alert('Su turno fue registrado con éxito. Por cualquier cambio consulte con el administrador.');
+    alert('¡Tu Turno fue registrado con éxito! Por cualquier cambio, consultá con el Administrador.');
   };
 
   return (
@@ -51,7 +51,7 @@ const Principal = () => {
             <div className="ball-icons animate__animated animate__rollIn">
               <img src={pngBall} alt="Ball icon" />
             </div>
-            <div>Hace tu reserva</div>
+            <div>Hacé tu Reserva</div>
             <div className="ball-icons rollInRight">
               <img src={pngBall} alt="Ball icon" />
             </div>
@@ -69,7 +69,7 @@ const Principal = () => {
                 value={sucursalSeleccionada}
                 onChange={(e) => setSucursalSeleccionada(e.target.value)}
               >
-                <option value="">Seleccionar sucursal</option>
+                <option value="">Seleccionar Sucursal</option>
                 {sucursales.map((sucursal) => (
                   <option key={sucursal.id} value={sucursal.id}>
                     {sucursal.nombre}
@@ -94,9 +94,9 @@ const Principal = () => {
                 onChange={(e) => setTipoCancha(e.target.value)}
               >
                 <option value="">Seleccionar tipo de cancha</option>
-                <option value="futbol5">Futbol 5</option>
-                <option value="futbol7">Futbol 7</option>
-                <option value="futbol9">Futbol 9</option>
+                <option value="futbol5">Fútbol 5</option>
+                <option value="futbol7">Fútbol 7</option>
+                <option value="futbol9">Fútbol 9</option>
               </select>
             </label>
             </div>
@@ -122,14 +122,14 @@ const Principal = () => {
       <div id="how-register" className="how-register-section">
         <h3 className="how-register-title">¿Cómo reservar?</h3>
         <div className="how-register-content">
-          <p>Para reservar tu turno, sigue estos simples pasos:</p>
+          <p>Para reservar tu turno, seguí estos simples pasos:</p>
           <ol>
-            <li>Selecciona la sucursal donde deseas jugar.</li>
-            <li>Elige la fecha en la que quieres reservar.</li>
-            <li>Escoge el tipo de cancha que prefieras.</li>
-            <li>Luego haz click en el horario que prefieras</li>
-            <li>Asegurate que se haya seleccionado bien, según el tipo de cancha (f5 1 cancha, f7 2 canchas, f9 3 canchas)</li>
-            <li>Para confirmar recibiras un correo, luego abonas la seña</li>
+            <li>Seleccioná la sucursal donde deseas jugar.</li>
+            <li>Elegí la fecha en la que querés reservar.</li>
+            <li>Escogé el tipo de cancha que prefieras.</li>
+            <li>Luego, hacé click en el horario deseado</li>
+            <li>Asegurate de que se haya seleccionado bien, según el tipo de cancha (f5 1 cancha, f7 2 canchas, f9 3 canchas)</li>
+            <li>Para confirmar recibirás un correo, luego abonás la seña</li>
           </ol>
           <p>¡Y Listo! Tu turno será registrado y podrás disfrutar de tu juego.</p>
         </div>

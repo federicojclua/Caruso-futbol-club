@@ -12,8 +12,8 @@ const AboutUs = () => {
   return (
     <div className="AboutUs-component">
       <Helmet>
-        <title>Acerca de Nosotros - Caruso Futbol Club</title>
-        <meta name="description" content="Conoce más sobre Caruso Futbol Club. Descubre nuestras instalaciones, filosofía y ubicaciones en Merlo y Paso del Rey." />
+        <title>Acerca de Nosotros - Caruso Fútbol Club</title>
+        <meta name="description" content="Conocé más sobre Caruso Fútbol Club. Descubrí nuestras instalaciones, filosofía y ubicaciones en Merlo y Paso del Rey." />
         <meta name="keywords" content="Acerca de nosotros, Caruso Futbol Club, instalaciones, filosofía, ubicaciones" />
         <meta name="author" content="Caruso Futbol Club" />
         <link rel="canonical" href="https://www.carusofutbolclub.com/acerca-de-nosotros" />
@@ -52,8 +52,8 @@ const AboutUs = () => {
           <i className="line-orange animate__animated animate__lightSpeedInLeft"></i>
           <div className='animate__animated animate__rotateIn'><strong>Eventos y Reservas</strong></div>
           <ul>
-            <li><strong>Reservas Fáciles</strong>: Reserva tu cancha fácilmente <a href="/Principal">aquí</a>.</li>
-            <li><strong>Notificaciones de Horarios Libres</strong>: Activa notificaciones en nuestras redes sociales.</li>
+            <li><strong>Reservas Fáciles</strong>: Reservá tu cancha fácilmente <a href="/Principal">aquí</a>.</li>
+            <li><strong>Notificaciones de Horarios Libres</strong>: Activá las notificaciones en nuestras redes sociales.</li>
           </ul>
         </section>
         <section>
@@ -64,7 +64,7 @@ const AboutUs = () => {
         <section>
           <i className="line-orange animate__animated animate__lightSpeedInLeft"></i>
           <div className='animate__animated animate__rotateIn'><strong>Ubicación</strong></div>
-          <p>Visítanos en nuestros predios de <a href="https://maps.app.goo.gl/j8XjDLnM7HCJbxGeA" target="_blank">Merlo</a> y <a href="https://maps.app.goo.gl/7rKCYXNMrAf26gA28" target="_blank">Paso del Rey</a>.</p>
+          <p>Visitanos en nuestros predios de <a href="https://maps.app.goo.gl/j8XjDLnM7HCJbxGeA" target="_blank">Merlo</a> y <a href="https://maps.app.goo.gl/7rKCYXNMrAf26gA28" target="_blank">Paso del Rey</a>.</p>
         </section>
       </Container>
       <footer>

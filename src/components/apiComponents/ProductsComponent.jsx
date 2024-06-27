@@ -78,7 +78,7 @@ const ProductsComponent = () => {
 
   return (
     <div>
-      <h1>Products</h1>
+      <h1>Productos</h1>
       <form onSubmit={handleCreateProduct}>
         <input
           type="text"
@@ -101,7 +101,7 @@ const ProductsComponent = () => {
           onChange={handleChange}
           placeholder="Price"
         />
-        <button type="submit">Create Product</button>
+        <button type="submit">Crear Producto</button>
       </form>
 
       <form onSubmit={handleUploadImage}>
@@ -110,14 +110,14 @@ const ProductsComponent = () => {
           name="image"
           onChange={handleImageChange}
         />
-        <button type="submit">Upload Image</button>
+        <button type="submit">Subir Imagen</button>
       </form>
 
       <ul>
         {products.map(product => (
           <li key={product._id}>
             {product.name} - {product.description} - ${product.price}
-            <button onClick={() => handleUpdateProduct(product._id, { ...product, name: 'Updated Name' })}>Update</button>
+            <button onClick={() => handleUpdateProduct(product._id, { ...product, name: 'Updated Name' })}>Actualizar</button>
             <button onClick={() => handleDeleteProduct(product._id)}>Delete</button>
           </li>
         ))}

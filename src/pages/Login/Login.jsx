@@ -66,10 +66,10 @@ const Login = () => {
 
         navigate('/Principal'); // Redirigir al usuario a la página principal
       } else {
-        setServerError(data.message || 'Correo o contraseña incorrecta, por favor, intente de nuevo.');
+        setServerError(data.message || 'Correo o contraseña incorrecta, por favor, intentá de nuevo.');
       }
     } catch (error) {
-      setServerError('Correo o contraseña incorrecta, por favor, intente de nuevo.');
+      setServerError('Correo o contraseña incorrecta, por favor, intentá de nuevo.');
     }
   };
 
@@ -78,9 +78,9 @@ const Login = () => {
     <div className="Login-component">
       <Helmet>
         <title>Iniciar sesión - Caruso Futbol Club</title>
-        <meta name="description" content="Inicia sesión en Caruso Futbol Club para acceder a tu cuenta y disfrutar de todos los beneficios." />
+        <meta name="description" content="Inicia sesión en Caruso Fútbol Club para acceder a tu cuenta y disfrutar de todos los beneficios." />
         <meta name="keywords" content="login, iniciar sesión, Caruso Futbol Club, cuenta" />
-        <meta name="author" content="Caruso Futbol Club" />
+        <meta name="author" content="Caruso Fútbol Club" />
         <link rel="canonical" href="https://www.carusofutbolclub.com/login" />
       </Helmet>
       <NavBar />
@@ -110,7 +110,7 @@ const Login = () => {
             <button className="btn-login" onClick={handleSubmit}>Iniciar Sesión</button>
             <a href="/error404">¿Olvidaste tu contraseña?</a>
             <div className="register-message">
-              <p>¿No tienes cuenta? Regístrate haciendo click aquí abajo</p>
+              <p>¿No tenés cuenta? Registrate haciendo click aquí abajo</p>
               <Link to="/record">
                 <button className="btn-new">Registrarme</button>
               </Link>

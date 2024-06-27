@@ -57,7 +57,7 @@ const Record = () => {
   return (
     <div className="Record-component">
       <Helmet>
-        <title>Registro - Caruso Futbol Club</title>
+        <title>Registro - Caruso Fútbol Club</title>
         <meta name="description" content="Regístrate en Caruso Futbol Club para acceder a tu cuenta y disfrutar de todos los beneficios." />
         <meta name="keywords" content="registro, registrarse, Caruso Futbol Club, cuenta" />
         <meta name="author" content="Caruso Futbol Club" />
@@ -67,7 +67,7 @@ const Record = () => {
       <div className="row">
         <div className="colm-form">
           <div className="form-container">
-            <h2 className="mb-4 text-center">Completa el formulario</h2>
+            <h2 className="mb-4 text-center">Completá el Formulario</h2>
             {error && <p className="text-danger">{error}</p>}
             <Form onSubmit={handleSubmit}>
               <Form.Group controlId="formNombre">

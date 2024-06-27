@@ -12,8 +12,8 @@ const LocationPage = () => {
   return (
     <div className='LocationPage-component-page'>
       <Helmet>
-        <title>Ubicaciones - Caruso Futbol Club</title>
-        <meta name="description" content="Descubre las ubicaciones de Caruso Futbol Club. Encuentra nuestras sedes en Paso del Rey y Merlo. Ven a visitarnos en cualquiera de nuestras ubicaciones." />
+        <title>Ubicaciones - Caruso Fútbol Club</title>
+        <meta name="description" content="Descubrí las ubicaciones de Caruso Fútbol Club. Encontrá nuestras sedes en Paso del Rey y Merlo. Vení a visitarnos en cualquiera de nuestras ubicaciones." />
         <meta name="keywords" content="ubicaciones, Caruso Futbol Club, Paso del Rey, Merlo, dirección, teléfono, horario" />
         <meta name="author" content="Caruso Futbol Club" />
         <link rel="canonical" href="https://www.carusofutbolclub.com/ubicaciones" />

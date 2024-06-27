@@ -5,7 +5,7 @@ const Advertising = () => {
   return (
     <div className="advertising-container">
       <div className="advertising-text">
-        ¡Festeja tu cumple en nuestros quinchos con un partido de por medio!
+        ¡Festejá tu cumple en nuestros quinchos con un partido de por medio!
       </div>
     </div>
   );

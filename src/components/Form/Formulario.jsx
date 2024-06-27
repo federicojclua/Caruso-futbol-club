@@ -38,7 +38,7 @@ const Formulario = () => {
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label>Selecciona una fecha:</label>
+        <label>Seleccioná una fecha:</label>
         <DatePicker
           selected={selectedDate}
           onChange={handleDateChange}
@@ -46,9 +46,9 @@ const Formulario = () => {
         />
       </div>
       <div>
-        <label>Selecciona una hora:</label>
+        <label>Seleccioná un horario:</label>
         <select value={selectedTime} onChange={handleTimeChange}>
-          <option value="">Selecciona una hora</option>
+          <option value="">Seleccioná un horario</option>
           {generateTimeSlots().map((time) => (
             <option key={time} value={time}>{time}</option>
           ))}

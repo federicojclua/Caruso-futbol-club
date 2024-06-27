@@ -31,7 +31,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="footer-column">
-          <h5>Síguenos</h5>
+          <h5>¡Seguinos!</h5>
           <div className="social-icons">
             <a className="social-button facebook" href="https://www.facebook.com/carusofutbolclub" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faFacebook} size="2x" />
@@ -43,7 +43,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>Diseñado por Equipo 2</p>
+        <p>Diseñado por Equipo 2 - Comisión 77i - RollingCode School</p>
         <p>Todos los derechos reservados © 2024</p>
       </div>
     </footer>

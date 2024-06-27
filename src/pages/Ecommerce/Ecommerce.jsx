@@ -57,7 +57,7 @@ const EcommercePage = () => {
     <div className='EcommercePage-component'>
       <Helmet>
         <title>Tienda - Caruso Futbol Club</title>
-        <meta name="description" content="Bienvenidos a nuestra tienda en línea. Descubre nuestros productos exclusivos y aprovecha nuestras ofertas especiales." />
+        <meta name="description" content="Bienvenidos a nuestra tienda en línea. Descubrí nuestros productos exclusivos y aprovecha nuestras ofertas especiales." />
         <meta name="keywords" content="tienda, e-commerce, Caruso Futbol Club, productos, ofertas" />
         <meta name="author" content="Caruso Futbol Club" />
         <link rel="canonical" href="https://www.carusofutbolclub.com/tienda" />

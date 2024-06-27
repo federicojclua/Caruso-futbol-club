@@ -25,10 +25,10 @@ const Admin = () => {
   return (
     <div className="container-admin">
       <Container>
-        <h2 className='title-panel'>Bienvenidos al panel Administrador</h2>
+        <h2 className='title-panel'>Bienvenido al panel Administrador</h2>
         <div className='button-container'>
-          <Button className='button-admin' variant="primary" onClick={handleReservaTurnosClick}>Reserva de turnos</Button>{' '}
-          <Button className='button-admin' variant="secondary" onClick={handleEcommerceClick}>Ecommerce</Button>{' '}
+          <Button className='button-admin' variant="primary" onClick={handleReservaTurnosClick}>Reservas de turnos</Button>{' '}
+          <Button className='button-admin' variant="secondary" onClick={handleEcommerceClick}>Tienda</Button>{' '}
           <Button className='button-admin' variant="info" onClick={handlePriceClick}>Precios</Button>{' '}
         </div>
         

@@ -4,7 +4,7 @@ import React from 'react';
 const Programa = () => {
   return (
     
-   <p>programa</p>
+   <p>Programa</p>
   );
 }
 
