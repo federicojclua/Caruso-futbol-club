@@ -41,6 +41,15 @@ const Principal = () => {
     alert('Su turno fue registrado con éxito. Por cualquier cambio consulte con el administrador.');
   };
 
+  // Obtener la fecha de hoy en formato adecuado
+  const getTodayDate = () => {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, '0'); // Meses empiezan desde 0
+    const day = String(today.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  };
+
   return (
     <div className="container-principal">
       <NavBar />
@@ -84,6 +93,7 @@ const Principal = () => {
                 type="date"
                 value={fecha}
                 onChange={(e) => setFecha(e.target.value)}
+                min={getTodayDate()} // Establecer la fecha mínima
               />
             </label>
             <label>
