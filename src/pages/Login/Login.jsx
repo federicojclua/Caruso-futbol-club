@@ -81,7 +81,7 @@ const Login = () => {
         <meta name="description" content="Inicia sesión en Caruso Futbol Club para acceder a tu cuenta y disfrutar de todos los beneficios." />
         <meta name="keywords" content="login, iniciar sesión, Caruso Futbol Club, cuenta" />
         <meta name="author" content="Caruso Futbol Club" />
-        <link rel="canonical" href="https://www.carusofutbolclub.com/login" />
+        <link rel="canonical" href="https://caruso-futbol-club-1.onrender.com" />
       </Helmet>
       <NavBar />
       <div className="row">

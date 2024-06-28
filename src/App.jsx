@@ -92,7 +92,7 @@ function App() {
             </AdminRoute>
           } />
 
-          <Route path="/principal" element={
+          <Route path="/admin" element={
             <ProtectedRoute>
               <Principal />
             </ProtectedRoute>

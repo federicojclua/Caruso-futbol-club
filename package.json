@@ -36,10 +36,5 @@
     "rimraf": "^5.0.7",
     "serve": "^14.2.3",
     "vite": "^5.2.0"
-  },
-  "description": "Proyecto de una plataforma web para la reserva de canchas de fútbol 5 y un ecommerce para la venta de productos relacionados. Desarrollado por **Equipo 2 - Rolling Code** utilizando tecnologías como React, Bootstrap, Node.js, Express y MongoDB.",
-  "main": "vite.config.js",
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  }
 }

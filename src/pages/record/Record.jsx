@@ -48,7 +48,7 @@ const Record = () => {
       if (response.message === 'Usuario registrado exitosamente') {
         navigate('/login');
       } else {
-        setError(response.message);
+        setError(response.data.message); // 28-06
       }
     } catch (error) {
       setError('Error al registrarse. Intenta nuevamente.');
