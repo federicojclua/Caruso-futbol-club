@@ -1,18 +1,15 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import * as dotenv from 'dotenv';
 
-// Cargar las variables de entorno desde el archivo .env
-dotenv.config();
-
+// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/', // Ajusta esta ruta según sea necesario
+  base: '/',  // Ajusta esta ruta según sea necesario
   build: {
-    manifest: false,
-    rollupOptions: {
+      rollupOptions: {
       external: ['sweetalert2']
-    }
+    },
+    manifest: false,
   },
   server: {
     proxy: {
