@@ -115,17 +115,18 @@
 /* Controles de producto (input y botón) */
 
 .product-item .product-controls {
-  position: relative; /* Asegura que los controles estén posicionados relativamente */
+  position: absolute; /* Asegura que los controles estén posicionados relativamente */
+  bottom: 20px; /* Posición al final de la tarjeta */
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-direction: column; /* Apila los elementos verticalmente */
 }
 
 .product-item input[type="number"] {
   width: 60px;
   padding: 5px;
-  margin-bottom: 10px; /* Espacio bajo el input */
+  margin-right: 10px; /* Espacio a la derecha del input */
   border: 1px solid #ccc;
   border-radius: 5px;
   text-align: center;
@@ -140,8 +141,6 @@
   color: white;
   cursor: pointer;
   transition: background-color 0.3s;
-  position: relative;
-  top: 20px; /* Espacio arriba en pantallas grandes y medianas */
 }
 
 .product-item button:hover {
@@ -172,7 +171,7 @@
   }
 
   .product-item input[type="number"] {
-    margin-bottom: 0; /* Elimina el margen inferior en pantallas medianas */
+    margin-right: 0; /* Elimina el margen derecho en pantallas medianas */
   }
 
   .product-item button {
@@ -211,6 +210,8 @@
   .product-item input[type="number"] {
     width: 50px; /* Ancho del input en pantallas pequeñas */
     font-size: 0.7em; /* Tamaño del texto del input en pantallas pequeñas */
+    margin-right: 0; /* Elimina el margen derecho en pantallas pequeñas */
+    margin-bottom: 10px; /* Espacio bajo el input en pantallas pequeñas */
   }
 
   .product-item button {
@@ -244,6 +245,8 @@
   .product-item input[type="number"] {
     width: 60px; /* Ancho del input en pantallas extra pequeñas */
     font-size: 0.7em; /* Tamaño del texto del input en pantallas extra pequeñas */
+    margin-right: 0; /* Elimina el margen derecho en pantallas extra pequeñas */
+    margin-bottom: 10px; /* Espacio bajo el input en pantallas extra pequeñas */
   }
 
   .product-item button {
@@ -277,6 +280,8 @@
   .product-item input[type="number"] {
     width: 60px; /* Ancho del input en pantallas muy pequeñas */
     font-size: 0.7em; /* Tamaño del texto del input en pantallas muy pequeñas */
+    margin-right: 0; /* Elimina el margen derecho en pantallas muy pequeñas */
+    margin-bottom: 10px; /* Espacio bajo el input en pantallas muy pequeñas */
   }
 
   .product-item button {
@@ -285,33 +290,31 @@
   }
 }
 
-/* Animación de entrada */
+/* Animación rollInRight */
 
 @-webkit-keyframes rollInRight {
   0% {
-      opacity: 0;
-      -webkit-transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
-      transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
+    transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
   }
-
   100% {
-      opacity: 1;
-      -webkit-transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg);
-      transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg);
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg);
+    transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg);
   }
 }
 
 @keyframes rollInRight {
   0% {
-      opacity: 0;
-      -webkit-transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
-      transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
+    transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
   }
-
   100% {
-      opacity: 1;
-      -webkit-transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg);
-      transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg);
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg);
+    transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg);
   }
 }
 
