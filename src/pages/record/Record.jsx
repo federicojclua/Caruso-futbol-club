@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import Swal from 'sweetalert2';
 import NavBar from '../../components/header/nav-bar/NavBar';
 import Footer from '../../components/footer/Footer';
 import WhatsAppButton from '../../components/WhatsAppButton/WhatsAppButton';
@@ -46,9 +47,16 @@ const Record = () => {
         password 
       });
       if (response.message === 'Usuario registrado exitosamente') {
-        navigate('/login');
+        Swal.fire({
+          icon: 'success',
+          title: 'Registro exitoso',
+          text: 'Te has registrado correctamente. Ahora puedes iniciar sesión.',
+          confirmButtonText: 'OK'
+        }).then(() => {
+          navigate('/login');
+        });
       } else {
-        setError(response.data.message); // 28-06
+        setError(response.data.message); //28-06
       }
     } catch (error) {
       setError('Error al registrarse. Intenta nuevamente.');
