@@ -11,7 +11,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: process.env.VITE_APP_API_URL, 
+        target: 'https://caruso-prueba-back-1.onrender.com', // 28-06 
         changeOrigin: true,
       },
     },
