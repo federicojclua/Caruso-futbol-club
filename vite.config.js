@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import * as dotenv from 'dotenv';
+import dotenv from 'dotenv';
+
 
 // Cargar las variables de entorno desde el archivo .env
 dotenv.config();
