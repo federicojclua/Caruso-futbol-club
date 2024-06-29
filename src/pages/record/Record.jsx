@@ -46,10 +46,9 @@ const Record = () => {
         password 
       });
       if (response.message === 'Usuario registrado exitosamente') {
-        // En lugar de mostrar una alerta, redirigir directamente a la página de login
         navigate('/login');
       } else {
-        setError(response.data.message);
+        setError(response.data.message); // 28-06
       }
     } catch (error) {
       setError('Error al registrarse. Intenta nuevamente.');
