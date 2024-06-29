@@ -24,9 +24,9 @@ import Login from './pages/Login/Login';
 import Admin from './pages/Admin/Admin';
 import Record from './pages/record/Record';
 import Principal from './pages/Principal/Principal';
-import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
+// import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 import { AuthProvider } from './components/context/AuthProvider';
-import AdminRoute from './components/ProtectedRoute/AdminRoute';
+// import AdminRoute from './components/ProtectedRoute/AdminRoute';
 
 // Conexión con el back
 import CanchasComponent from './components/apiComponents/CanchasComponent';
@@ -85,18 +85,21 @@ function App() {
           <Route path="/users" element={<UserComponent />} />
           <Route path="/reservas" element={<ReserverComponent />} />
           <Route path="/products" element={<ProductsComponent />} />
-
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/principal" element={<Principal />} />
+{/* 
           <Route path="/admin" element={
             <AdminRoute>
               <Admin />
             </AdminRoute>
-          } />
+          } /> */}
 
-          <Route path="/principal" element={
+          {/* <Route path="/principal" element={
             <ProtectedRoute>
               <Principal />
             </ProtectedRoute>
-          } />
+          } /> */}
+          
           <Route path="*" element={<Error404 />} />
         </Routes>
       </BrowserRouter>

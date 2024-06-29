@@ -1,3 +1,5 @@
+/* Estilos generales de la página de Ecommerce */
+
 .EcommercePage-component {
   background-image: url('/src/assets/img/Fondo-galeria.jpg');
   background-size: cover;
@@ -5,6 +7,8 @@
   background-position: center;
   color: #333;
 }
+
+/* Botón flotante de carrito */
 
 .floating-cart-button {
   position: fixed;
@@ -29,6 +33,8 @@
   transform: scale(1.1);
 }
 
+/* Contenido principal del Ecommerce */
+
 .main-ecommerce-content {
   max-width: 90%;
   margin: auto;
@@ -36,6 +42,8 @@
   color: #333;
   background-color: rgba(255, 255, 255, 0.4);
 }
+
+/* Título principal */
 
 .subtitle-ecommerce {
   font-size: 2.5vw;
@@ -45,16 +53,22 @@
   margin-bottom: 10px; /* Elimina el margen predeterminado */
 }
 
+/* Contenedor de iconos de bolas (si aplica) */
+
 .ball-icons-container {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+/* Iconos de bolas (si aplica) */
+
 .ball-icons {
   margin: 0 10px;
   /* Otros estilos para las bolas de íconos */
 }
+
+/* Lista de productos */
 
 .product-list {
   display: flex;
@@ -62,13 +76,16 @@
   justify-content: space-around;
 }
 
+/* Item de producto */
+
 .product-item {
+  position: relative; /* Añadir posición relativa para el contenedor */
   background-color: rgba(255, 255, 255, 0.9);
   border: 5px solid #ddd;
   border-radius: 10px;
   margin: 20px;
   padding: 20px;
-  max-width: 22%;
+  width: 22%; /* Ajuste para que las tarjetas sean del mismo tamaño */
   text-align: center;
   transition: transform 0.3s, border-color 0.3s;
   cursor: pointer;
@@ -80,7 +97,8 @@
 }
 
 .product-item img {
-  max-width: 70%;
+  max-width: 100%;
+  height: auto; /* Para evitar deformaciones */
   border-radius: 10px;
 }
 
@@ -94,29 +112,44 @@
   color: #666;
 }
 
-.product-item input {
+/* Controles de producto (input y botón) */
+
+.product-item .product-controls {
+  position: relative; /* Asegura que los controles estén posicionados relativamente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Apila los elementos verticalmente */
+}
+
+.product-item input[type="number"] {
   width: 60px;
   padding: 5px;
-  margin: 10px 0;
+  margin-bottom: 10px; /* Espacio bajo el input */
   border: 1px solid #ccc;
   border-radius: 5px;
   text-align: center;
 }
 
 .product-item button {
-  padding: 10px 20px;
+  padding: 8px 16px;
+  font-size: 0.8rem;
   border: none;
   border-radius: 5px;
   background-color: #007bff;
   color: white;
   cursor: pointer;
   transition: background-color 0.3s;
+  position: relative;
+  top: 20px; /* Espacio arriba en pantallas grandes y medianas */
 }
 
 .product-item button:hover {
   background-color: #0056b3;
 }
+
 /* Media Queries para ajustar el tamaño del título en diferentes pantallas */
+
 @media (max-width: 1200px) {
   .subtitle-ecommerce {
     font-size: 2.5vw; /* Tamaño base para pantallas grandes */
@@ -126,6 +159,26 @@
 @media (max-width: 992px) {
   .subtitle-ecommerce {
     font-size: 3vw; /* Tamaño para pantallas medianas */
+  }
+
+  .product-item {
+    width: 45%; /* Ajuste para pantallas medianas */
+  }
+
+  .product-item .product-controls {
+    flex-direction: row; /* Cambia a fila en pantallas medianas */
+    justify-content: space-between; /* Espacio entre el input y el botón */
+    align-items: center; /* Centrar verticalmente */
+  }
+
+  .product-item input[type="number"] {
+    margin-bottom: 0; /* Elimina el margen inferior en pantallas medianas */
+  }
+
+  .product-item button {
+    position: static; /* Cambia a posición estática en pantallas medianas */
+    top: auto;
+    transform: none;
   }
 }
 
@@ -138,12 +191,31 @@
     padding-top: 60px;
   }
 
+  .product-item {
+    width: 45%; /* Ajuste para pantallas pequeñas */
+  }
+
   .product-item h2 {
     font-size: 2.5vw;
   }
 
   .product-item p {
     font-size: 2vw;
+  }
+
+  .product-item .product-controls {
+    flex-direction: column; /* Apila de nuevo en pantallas pequeñas */
+    align-items: center; /* Centra verticalmente */
+  }
+
+  .product-item input[type="number"] {
+    width: 50px; /* Ancho del input en pantallas pequeñas */
+    font-size: 0.7em; /* Tamaño del texto del input en pantallas pequeñas */
+  }
+
+  .product-item button {
+    padding: 5px 10px; /* Ajuste de padding para pantallas pequeñas */
+    font-size: 0.7em; /* Reducir el tamaño del texto del botón en pantallas pequeñas */
   }
 }
 
@@ -163,6 +235,21 @@
   .product-item p {
     font-size: 2.5vw;
   }
+
+  .product-item .product-controls {
+    flex-direction: column; /* Apila de nuevo en pantallas extra pequeñas */
+    align-items: center; /* Centra verticalmente */
+  }
+
+  .product-item input[type="number"] {
+    width: 60px; /* Ancho del input en pantallas extra pequeñas */
+    font-size: 0.7em; /* Tamaño del texto del input en pantallas extra pequeñas */
+  }
+
+  .product-item button {
+    padding: 5px 10px; /* Ajuste de padding para pantallas extra pequeñas */
+    font-size: 0.7em; /* Reducir el tamaño del texto del botón en pantallas extra pequeñas */
+  }
 }
 
 @media (max-width: 400px) {
@@ -181,7 +268,25 @@
   .product-item p {
     font-size: 3vw;
   }
+
+  .product-item .product-controls {
+    flex-direction: column; /* Apila de nuevo en pantallas muy pequeñas */
+    align-items: center; /* Centra verticalmente */
+  }
+
+  .product-item input[type="number"] {
+    width: 60px; /* Ancho del input en pantallas muy pequeñas */
+    font-size: 0.7em; /* Tamaño del texto del input en pantallas muy pequeñas */
+  }
+
+  .product-item button {
+    padding: 5px 8px; /* Ajuste de padding para pantallas muy pequeñas */
+    font-size: 0.7em; /* Reducir el tamaño del texto del botón en pantallas muy pequeñas */
+  }
 }
+
+/* Animación de entrada */
+
 @-webkit-keyframes rollInRight {
   0% {
       opacity: 0;
