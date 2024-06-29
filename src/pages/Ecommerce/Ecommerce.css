@@ -10,7 +10,7 @@
   position: fixed;
   top: 120px; /* Posición original */
   right: 20px; 
-  background-color: #007bff;
+  background-color: #b81111;
   color: white;
   border: none;
   border-radius: 50%;
@@ -25,7 +25,7 @@
 }
 
 .floating-cart-button:hover {
-  background-color: #0056b3;
+  background-color: #00b327;
   transform: scale(1.1);
 }
 
@@ -68,7 +68,7 @@
   border-radius: 10px;
   margin: 20px;
   padding: 20px;
-  max-width: 400px;
+  max-width: 22%;
   text-align: center;
   transition: transform 0.3s, border-color 0.3s;
   cursor: pointer;
@@ -76,11 +76,11 @@
 
 .product-item:hover {
   transform: scale(1.05);
-  border-color: #007bff;
+  border-color: #ff6f00;
 }
 
 .product-item img {
-  max-width: 100%;
+  max-width: 70%;
   border-radius: 10px;
 }
 
