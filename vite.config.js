@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-//import dayjs from 'dayjs';
 import 'dayjs/locale/es';
 
 // Intentar cargar dotenv solo si está disponible
@@ -16,6 +15,7 @@ export default defineConfig({
   build: {
     manifest: false,
     rollupOptions: {
+      // Indica a Rollup que no debe incluir dayjs en el paquete final y lo tratará como externo
       external: ['dayjs']
     }
   },
