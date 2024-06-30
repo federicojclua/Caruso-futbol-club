@@ -1,5 +1,6 @@
+// src/pages/Principal/AgregarTurnos/AgregarTurnos.jsx
 import React, { useState } from 'react';
-import dayjs from 'dayjs';
+import { isBeforeCurrentDateTime } from '../TableShifts/dayjs';
 import './AgregarTurnos.css';
 
 const AgregarTurno = ({ agregarTurno, sucursal }) => {
@@ -10,10 +11,8 @@ const AgregarTurno = ({ agregarTurno, sucursal }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const fechaHoraSeleccionada = dayjs(`${fecha} ${hora}`, 'YYYY-MM-DD HH:mm');
-    const fechaHoraActual = dayjs();
-
-    if (fechaHoraSeleccionada.isBefore(fechaHoraActual)) {
+    
+    if (isBeforeCurrentDateTime(fecha, hora)) {
       setError('No se puede reservar en una fecha y hora pasadas.');
       return;
     }

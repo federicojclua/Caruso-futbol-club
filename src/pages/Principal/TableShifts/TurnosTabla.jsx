@@ -1,5 +1,6 @@
+// src/pages/Principal/TurnosTabla/TurnosTabla.jsx
 import React, { useState, useEffect } from 'react';
-import dayjs from 'dayjs';
+import { isBeforeCurrentDateTime } from './dayjs';
 import './TurnosTabla.css';
 
 const TurnosTabla = ({ turnos, sucursal, tipoCancha, fecha, agregarTurno }) => {
@@ -41,10 +42,8 @@ const TurnosTabla = ({ turnos, sucursal, tipoCancha, fecha, agregarTurno }) => {
 
   const handleTurnoClick = (horario, cancha) => {
     const index = sucursal.canchas.findIndex(c => c.id === cancha);
-    const fechaHoraSeleccionada = dayjs(`${fecha} ${horario}`, 'YYYY-MM-DD HH:mm');
-    const fechaHoraActual = dayjs();
 
-    if (fechaHoraSeleccionada.isBefore(fechaHoraActual)) {
+    if (isBeforeCurrentDateTime(fecha, horario)) {
       setMostrarAlerta(true);
       return;
     }
@@ -103,22 +102,23 @@ const TurnosTabla = ({ turnos, sucursal, tipoCancha, fecha, agregarTurno }) => {
         <tbody>
           {horarios.map((horario) => (
             <tr key={horario}>
-              <td>{`${horario}:00`}</td>
-              {sucursal.canchas.map((cancha) => {
-                const ocupado = estaOcupado(horario, cancha.id);
-                const ocupadoFutbol7 = tipoCancha === 'futbol7' && estaOcupadoParaFutbol7(horario, cancha.id);
-                const ocupadoFutbol9 = tipoCancha === 'futbol9' && estaOcupadoParaFutbol9(horario, cancha.id);
-
-                return (
-                  <td
-                    key={cancha.id}
-                    className={ocupado || ocupadoFutbol7 || ocupadoFutbol9 ? 'ocupado' : 'disponible'}
-                    onClick={() => handleTurnoClick(horario, cancha.id)}
-                  >
-                    {ocupado || ocupadoFutbol7 || ocupadoFutbol9 ? 'Ocupado' : 'Disponible'}
-                  </td>
-                );
-              })}
+              <td>{horario}:00</td>
+              {sucursal.canchas.map((cancha) => (
+                <td
+                  key={cancha.id}
+                  className={`
+                    turno-cell
+                    ${tipoCancha === 'futbol5' && estaOcupado(horario, cancha.id) ? 'ocupado' : ''}
+                    ${tipoCancha === 'futbol7' && estaOcupadoParaFutbol7(horario, cancha.id) ? 'ocupado' : ''}
+                    ${tipoCancha === 'futbol9' && estaOcupadoParaFutbol9(horario, cancha.id) ? 'ocupado' : ''}
+                  `}
+                  onClick={() => handleTurnoClick(horario, cancha.id)}
+                >
+                  {tipoCancha === 'futbol5' && estaOcupado(horario, cancha.id) && 'Ocupado'}
+                  {tipoCancha === 'futbol7' && estaOcupadoParaFutbol7(horario, cancha.id) && 'Ocupado'}
+                  {tipoCancha === 'futbol9' && estaOcupadoParaFutbol9(horario, cancha.id) && 'Ocupado'}
+                </td>
+              ))}
             </tr>
           ))}
         </tbody>
