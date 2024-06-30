@@ -1,16 +1,25 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import dotenv from 'dotenv';
-import path from 'path';
 
-// Cargar las variables de entorno desde el archivo .env
-dotenv.config();
+// Intentar cargar dotenv solo si está disponible
+try {
+  require('dotenv').config();
+} catch (e) {
+  console.log('dotenv no encontrado, continuando sin cargar variables de entorno.');
+}
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/',  // Ajusta esta ruta según sea necesario
+  base: '/', // Ajusta esta ruta según sea necesario
   build: {
     manifest: false,
+  },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'https://caruso-prueba-back-1.onrender.com',
+        changeOrigin: true,
+      },
+    },
   },
 });
