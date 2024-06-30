@@ -42,11 +42,6 @@ const TurnosTabla = ({ turnos, sucursal, tipoCancha, fecha, agregarTurno }) => {
 
   const handleTurnoClick = (horario, cancha) => {
     const index = sucursal.canchas.findIndex(c => c.id === cancha);
-<<<<<<< HEAD
-=======
-    const fechaHoraSeleccionada = dayjs(`${fecha} ${horario}`, 'YYYY-MM-DD HH:mm'); // Usa dayjs para manejar la fecha y hora
-    const fechaHoraActual = dayjs();
->>>>>>> 0cc032b712f9b237af1c479337fae8bd574f7a46
 
     if (isBeforeCurrentDateTime(fecha, horario)) {
       setMostrarAlerta(true);
