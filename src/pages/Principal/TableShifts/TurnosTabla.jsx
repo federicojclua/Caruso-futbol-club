@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import './TurnosTabla.css';
-import Moment from './moment';  // Importando el componente Moment
 
 const TurnosTabla = ({ turnos, sucursal, tipoCancha, fecha, agregarTurno }) => {
   const horarios = ['09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24'];
@@ -42,8 +41,8 @@ const TurnosTabla = ({ turnos, sucursal, tipoCancha, fecha, agregarTurno }) => {
 
   const handleTurnoClick = (horario, cancha) => {
     const index = sucursal.canchas.findIndex(c => c.id === cancha);
-    const fechaHoraSeleccionada = moment(`${fecha} ${horario}`, 'YYYY-MM-DD HH:mm');
-    const fechaHoraActual = moment();
+    const fechaHoraSeleccionada = dayjs(`${fecha} ${horario}`);
+    const fechaHoraActual = dayjs();
 
     if (fechaHoraSeleccionada.isBefore(fechaHoraActual)) {
       setMostrarAlerta(true);
@@ -91,8 +90,7 @@ const TurnosTabla = ({ turnos, sucursal, tipoCancha, fecha, agregarTurno }) => {
 
   return (
     <div className="turnos-tabla-container">
-      <h2 className="turnos-tabla-titulo">Turnos en {sucursal.nombre} para el {moment(fecha).format('DD/MM/YYYY')}</h2>
-      <Moment /> {/* Renderizando el componente Moment */}
+      <h2 className="turnos-tabla-titulo">Turnos en {sucursal.nombre} para el {dayjs(fecha).format('DD/MM/YYYY')}</h2>
       <table className="turnos-tabla">
         <thead>
           <tr>
