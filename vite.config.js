@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-//import dayjs from 'dayjs';
-import 'dayjs/locale/es';
+
 
 // Intentar cargar dotenv solo si está disponible
 try {
@@ -15,9 +14,8 @@ export default defineConfig({
   base: '/', // Ajusta esta ruta según sea necesario
   build: {
     manifest: false,
-    rollupOptions: {
-      external: ['dayjs']
-    }
+   
+    
   },
   server: {
     proxy: {
