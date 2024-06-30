@@ -1,50 +1,46 @@
 {
-  "name": "rc-project",
-  "version": "1.0.0",
-  "description": "una practica con nodejs",
-  "main": "index.js",
+  "name": "caruso-futbol-club",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "start": "node ./src/index.js",
-    "dev": "nodemon ./src/index.js",
+    "start": "npm install -g serve && serve -s dist",
+    "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-brands-svg-icons": "^6.5.2",
-    "@fortawesome/free-solid-svg-icons": "^6.5.2",
-    "@fortawesome/react-fontawesome": "^0.2.2",
+    "@fortawesome/react-fontawesome": "^0.2.1",
     "animate.css": "^4.1.1",
     "axios": "^1.7.2",
-    "bcrypt": "^5.1.1",
     "bootstrap": "^5.3.3",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
-<<<<<<< HEAD
-    "express": "^4.19.2",
-    "jsonwebtoken": "^9.0.2",
-    "mongodb": "^6.6.2",
-    "mongoose": "^8.4.0",
-    "multer": "^1.4.5-lts.1",
-    "react": "^18.2.0",
-    "react-bootstrap": "^2.7.4",
-    "react-dom": "^18.2.0",
-=======
     "esbuild": "^0.21.5",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.2",
     "react-dom": "^18.3.1",
->>>>>>> 5195e87d6b0dad7bc35ed15ac09bdea5e5c280cb
     "react-helmet": "^6.1.0",
-    "react-router-dom": "^6.14.1"
+    "react-icons": "^5.2.1",
+    "react-router-dom": "^6.23.1"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^3.1.0",
-    "morgan": "^1.10.0",
-    "nodemon": "^3.1.0",
-    "vite": "^4.0.0"
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.6",
+    "rimraf": "^5.0.7",
+    "serve": "^14.2.3",
+    "vite": "^5.2.0"
   },
-  "proxy": "https://caruso-prueba-back-1.onrender.com"
+  "description": "Proyecto de una plataforma web para la reserva de canchas de fútbol 5 y un ecommerce para la venta de productos relacionados. Desarrollado por *Equipo 2 - Rolling Code* utilizando tecnologías como React, Bootstrap, Node.js, Express y MongoDB.",
+  "main": "vite.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
