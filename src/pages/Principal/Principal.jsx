@@ -7,6 +7,7 @@ import './Principal.css';
 import Footer from '../../components/footer/Footer';
 import Precios from './Price/Price';
 import pngBall from '../../assets/img/pngball.png';
+import { obtenerTurnos, guardarTurno, eliminarTurno } from '../../context/turnosProvider'; // Ajusta la ruta de importación aquí
 
 const Principal = () => {
   const [turnos, setTurnos] = useState([]);
@@ -36,10 +37,12 @@ const Principal = () => {
     },
   ];
 
-  const agregarTurno = (nuevoTurno) => {
-    setTurnos([...turnos, nuevoTurno]);
-    alert('Su turno fue registrado con éxito. Por cualquier cambio consulte con el administrador.');
-  };
+    // Función para agregar un nuevo turno
+    const agregarTurno = (nuevoTurno) => {
+      guardarTurno(nuevoTurno); // Guarda el turno en localStorage
+      setTurnos([...turnos, nuevoTurno]); // Actualiza el estado de turnos
+      alert('Su turno fue registrado con éxito. Por cualquier cambio consulte con el administrador.');
+    };
 
   // Obtener la fecha de hoy en formato adecuado
   const getTodayDate = () => {
@@ -129,6 +132,7 @@ const Principal = () => {
           />
         )}
       </div>
+
       <div id="how-register" className="how-register-section">
         <h3 className="how-register-title">¿Cómo reservar?</h3>
         <div className="how-register-content">
@@ -144,6 +148,7 @@ const Principal = () => {
           <p>¡Y Listo! Tu turno será registrado y podrás disfrutar de tu juego.</p>
         </div>
       </div>
+      
       <WhatsAppButton />
       <Footer />
     </div>

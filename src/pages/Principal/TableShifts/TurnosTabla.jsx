@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from 'react';
+import moment from 'moment';
 import './TurnosTabla.css';
 
 const TurnosTabla = ({ turnos, sucursal, tipoCancha, fecha, agregarTurno }) => {
-  const horarios = ['09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21'];
+  const horarios = ['09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24'];
   const [turnosLocales, setTurnosLocales] = useState([]);
+  const [mostrarAlerta, setMostrarAlerta] = useState(false);
 
   useEffect(() => {
     setTurnosLocales(turnos.filter(turno => turno.sucursal === sucursal.id && turno.fecha === fecha));
   }, [turnos, sucursal.id, fecha]);
 
   const estaOcupado = (horario, cancha) => {
-    return !!turnosLocales.find((turno) => turno.hora === horario && turno.cancha === cancha);
+    return !!turnosLocales.find(turno => turno.hora === horario && turno.cancha === cancha);
   };
 
   const estaOcupadoParaFutbol7 = (horario, cancha) => {
@@ -24,7 +26,7 @@ const TurnosTabla = ({ turnos, sucursal, tipoCancha, fecha, agregarTurno }) => {
 
   const estaOcupadoParaFutbol9 = (horario, cancha) => {
     const index = sucursal.canchas.findIndex(c => c.id === cancha);
-    if (index !== -1 && index + 1 < sucursal.canchas.length) {
+    if (index !== -1 && index + 2 < sucursal.canchas.length) {
       const cancha1 = sucursal.canchas[index]?.id;
       const cancha2 = sucursal.canchas[index + 1]?.id;
       const cancha3 = sucursal.canchas[index + 2]?.id;
@@ -39,11 +41,20 @@ const TurnosTabla = ({ turnos, sucursal, tipoCancha, fecha, agregarTurno }) => {
 
   const handleTurnoClick = (horario, cancha) => {
     const index = sucursal.canchas.findIndex(c => c.id === cancha);
+    const fechaHoraSeleccionada = moment(`${fecha} ${horario}`, 'YYYY-MM-DD HH:mm');
+    const fechaHoraActual = moment();
+
+    if (fechaHoraSeleccionada.isBefore(fechaHoraActual)) {
+      setMostrarAlerta(true);
+      return;
+    }
+
+    let nuevosTurnos = [];
 
     if (tipoCancha === 'futbol5' && !estaOcupado(horario, cancha)) {
       const nuevoTurno = { fecha, hora: horario, sucursal: sucursal.id, cancha };
       agregarTurno(nuevoTurno);
-      setTurnosLocales([...turnosLocales, nuevoTurno]);
+      nuevosTurnos = [...turnosLocales, nuevoTurno];
     } else if (tipoCancha === 'futbol7' && !estaOcupadoParaFutbol7(horario, cancha)) {
       if (index + 1 < sucursal.canchas.length) {
         const canchaPar = sucursal.canchas[index + 1]?.id;
@@ -51,7 +62,7 @@ const TurnosTabla = ({ turnos, sucursal, tipoCancha, fecha, agregarTurno }) => {
         const nuevoTurno2 = { fecha, hora: horario, sucursal: sucursal.id, cancha: canchaPar };
         agregarTurno(nuevoTurno1);
         agregarTurno(nuevoTurno2);
-        setTurnosLocales([...turnosLocales, nuevoTurno1, nuevoTurno2]);
+        nuevosTurnos = [...turnosLocales, nuevoTurno1, nuevoTurno2];
       }
     } else if (tipoCancha === 'futbol9' && !estaOcupadoParaFutbol9(horario, cancha)) {
       if (index + 2 < sucursal.canchas.length) {
@@ -63,14 +74,23 @@ const TurnosTabla = ({ turnos, sucursal, tipoCancha, fecha, agregarTurno }) => {
         agregarTurno(nuevoTurno1);
         agregarTurno(nuevoTurno2);
         agregarTurno(nuevoTurno3);
-        setTurnosLocales([...turnosLocales, nuevoTurno1, nuevoTurno2, nuevoTurno3]);
+        nuevosTurnos = [...turnosLocales, nuevoTurno1, nuevoTurno2, nuevoTurno3];
       }
     }
+
+    setTurnosLocales(nuevosTurnos);
   };
+
+  useEffect(() => {
+    if (mostrarAlerta) {
+      alert('No se puede reservar en una fecha y hora pasadas.');
+      setMostrarAlerta(false);
+    }
+  }, [mostrarAlerta]);
 
   return (
     <div className="turnos-tabla-container">
-      <h2 className="turnos-tabla-titulo">Turnos en {sucursal.nombre} para el {fecha}</h2>
+      <h2 className="turnos-tabla-titulo">Turnos en {sucursal.nombre} para el {moment(fecha).format('DD/MM/YYYY')}</h2>
       <table className="turnos-tabla">
         <thead>
           <tr>
