@@ -1,5 +1,5 @@
 // src/utils/dayjs.jsx
-import dayjs from 'dayjs';
+import dayjs from "https://cdn.skypack.dev/dayjs";
 
 export const isBeforeCurrentDateTime = (fecha, hora) => {
   const fechaHoraSeleccionada = dayjs(`${fecha} ${hora}`, 'YYYY-MM-DD HH:mm');
