@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import dayjs from 'dayjs'; // Importa dayjs
+import dayjs from './dayjs.vue'; // Importa dayjs
 import 'dayjs/locale/es'; // Importa el idioma español si lo necesitas
 import './TurnosTabla.css';
 

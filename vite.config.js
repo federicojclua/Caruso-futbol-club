@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import 'dayjs/locale/es';
+
 
 // Intentar cargar dotenv solo si está disponible
 try {
