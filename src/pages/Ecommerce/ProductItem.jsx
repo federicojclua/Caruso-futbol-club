@@ -18,12 +18,20 @@ const ProductItem = ({ product, addToCart }) => {
     <div className='product-item'>
       <img src={product.image} alt={product.name} className='product-image' />
       <h2>{product.name}</h2>
-      <p>{`$${product.price}`}</p>
+      <p>${product.price}</p>
       <p>{product.description}</p>
-      <input type="number" value={quantity} min="0" onChange={handleQuantityChange} />
-      <button onClick={handleAddToCart}>Añadir al Carrito</button>
+      <div className='product-controls'>
+        <input
+          type="number"
+          value={quantity}
+          min="0"
+          onChange={handleQuantityChange}
+          className="quantity-input"
+        />
+        <button onClick={handleAddToCart} className="add-to-cart-button">Añadir al Carrito</button>
+      </div>
     </div>
   );
 }
 
-export default ProductItem;
+export default ProductItem
