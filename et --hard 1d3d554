@@ -1,0 +1,19 @@
+[33mcommit 660bdb24c65d1e14797b252a1366eabe61961766[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Merge: 1d3d554 5e5df24
+Author: caro3221 <86697084+caro3221@users.noreply.github.com>
+Date:   Sun Jun 30 18:22:51 2024 -0300
+
+    "Updated import path for canchasApi"
+
+[33mcommit 1d3d5540c5ff2b62911e7612e0009faa1a2e53e3[m
+Merge: 36e69a6 a927fbe
+Author: caro3221 <86697084+caro3221@users.noreply.github.com>
+Date:   Sun Jun 30 18:20:32 2024 -0300
+
+    record
+
+[33mcommit 36e69a630e8ddc23da7715626d68c1bad6caf292[m
+Author: caro3221 <86697084+caro3221@users.noreply.github.com>
+Date:   Mon Jun 24 02:41:52 2024 -0300
+
+    se modif conexión

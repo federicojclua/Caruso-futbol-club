@@ -71,7 +71,7 @@ const NavBar = () => {
                     <img src={userImage || userImagePlaceholder} alt="User Avatar" className="user-avatar" />
                     <span className="user-name">{userName}</span>
                   </div>
-                  <NavDropdown.Item as={Link} to="/perfil">Mi Perfil</NavDropdown.Item>
+                  {/* <NavDropdown.Item as={Link} to="/perfil">Mi Perfil</NavDropdown.Item> */}
                   <NavDropdown.Item onClick={handleLogout}>Cerrar Sesión</NavDropdown.Item>
                 </NavDropdown>
               ) : (
