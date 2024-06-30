@@ -1,9 +1,12 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import dotenv from 'dotenv';
 
-// Cargar las variables de entorno desde el archivo .env
-dotenv.config();
+// Intentar cargar dotenv solo si está disponible
+try {
+  require('dotenv').config();
+} catch (e) {
+  console.log('dotenv no encontrado, continuando sin cargar variables de entorno.');
+}
 
 export default defineConfig({
   plugins: [react()],
