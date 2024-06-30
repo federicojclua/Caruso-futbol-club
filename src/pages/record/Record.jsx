@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Form, Button, Modal } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import Swal from 'sweetalert2';
 import NavBar from '../../components/header/nav-bar/NavBar';
 import Footer from '../../components/footer/Footer';
 import WhatsAppButton from '../../components/WhatsAppButton/WhatsAppButton';
@@ -47,9 +48,9 @@ const Record = () => {
         password 
       });
       if (response.message === 'Usuario registrado exitosamente') {
-        setShowModal(true);
+        navigate('/login');
       } else {
-        setError(response.message || 'Error desconocido al registrarse.');
+        setError(response.data.message); // 28-06
       }
     } catch (error) {
       setError(error.response ? error.response.data.message : 'Error al registrarse. Intenta nuevamente.');
