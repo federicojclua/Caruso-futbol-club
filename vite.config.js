@@ -13,6 +13,9 @@ export default defineConfig({
   base: '/', // Ajusta esta ruta según sea necesario
   build: {
     manifest: false,
+    rollupOptions: {
+      external: ['dayjs']
+    }
   },
   server: {
     proxy: {
