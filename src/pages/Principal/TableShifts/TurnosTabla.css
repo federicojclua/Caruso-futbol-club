@@ -7,8 +7,9 @@
   box-sizing: border-box;
   background: rgb(14,101,102);
   background: linear-gradient(98deg, rgb(227, 238, 238) 0%, rgb(146, 197, 150) 100%);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0);
   overflow-x: auto;
+  border-radius: 10px;
 }
 
 .turnos-tabla-titulo {

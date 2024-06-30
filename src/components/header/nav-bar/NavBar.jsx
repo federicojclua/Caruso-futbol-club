@@ -36,18 +36,17 @@ const NavBar = () => {
 
   return (
     <>
-      <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+      <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary" variant="dark">
         <Container>
           <Link to="/">
             <img className='cfc-logo' src={navLogo} alt="logo-caruso" />
           </Link>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            {user && user.nombre}
             <Nav className="me-auto">
               <Nav.Link as={Link} to="/Ecommerce">Nuestra Tienda</Nav.Link>
               <Nav.Link as={Link} to="/Location">Nuestros Complejos</Nav.Link>
-              <NavDropdown title="Reservas">
+              <NavDropdown title="Reservas" id="collasible-nav-dropdown">
                 <NavDropdown.Item onClick={() => handleProtectedClick('/principal')}>Reservar</NavDropdown.Item>
                 {isAuthenticated && (
                   <NavDropdown.Item as={Link} to="/mis-reservas">Mis Reservas</NavDropdown.Item>
@@ -59,18 +58,19 @@ const NavBar = () => {
             </Nav>
             <Nav>
               {user ? (
-                <NavDropdown title={userName} className="button-inicio">
+                <NavDropdown title={userName} id="collasible-nav-dropdown">
                   <div className="user-info">
                     <img src={userImage || userImagePlaceholder} alt="User Avatar" className="user-avatar" />
                     <span className="user-name">{userName}</span>
                   </div>
-                  <NavDropdown.Item as={Link} to="/perfil">Mi Perfil</NavDropdown.Item>
+                  {/* <NavDropdown.Item as={Link} to="/perfil">Mi Perfil</NavDropdown.Item> */}
                   <NavDropdown.Item onClick={handleLogout}>Cerrar Sesión</NavDropdown.Item>
                 </NavDropdown>
               ) : (
-                <NavDropdown title="Iniciar Sesión" className="button-inicio">
-                  <NavDropdown.Item as={Link} to="/record">¿No tienes cuenta? Regístrate</NavDropdown.Item>
+                <NavDropdown title="Iniciar Sesión" id="collasible-nav-dropdown">
                   <NavDropdown.Item as={Link} to="/Login">Inicia Sesión</NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to="/record">Regístrate</NavDropdown.Item>
+                  
                 </NavDropdown>
               )}
             </Nav>

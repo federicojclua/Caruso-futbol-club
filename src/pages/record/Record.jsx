@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, Modal } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import NavBar from '../../components/header/nav-bar/NavBar';  
+import NavBar from '../../components/header/nav-bar/NavBar';
 import Footer from '../../components/footer/Footer';
 import WhatsAppButton from '../../components/WhatsAppButton/WhatsAppButton';
+import { register } from '../../api/authApi';
 import "./Record.css";
 
 const Record = () => {
@@ -16,6 +17,7 @@ const Record = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
+  const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
 
   const handleDniChange = (e) => {
@@ -35,8 +37,12 @@ const Record = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+<<<<<<< HEAD
       const apiUrl = `${import.meta.env.VITE_APP_API_URL}/api/auth/register`; 
       const response = await axios.post(apiUrl, { 
+=======
+      const response = await register({ 
+>>>>>>> a927fbefba2b7faf154e987871b857a1a2940c55
         nombre, 
         apellido, 
         dni, 
@@ -45,14 +51,19 @@ const Record = () => {
         email, 
         password 
       });
-      if (response.data.message === 'Usuario registrado exitosamente') {
-        navigate('/login');
+      if (response.message === 'Usuario registrado exitosamente') {
+        setShowModal(true);
       } else {
-        setError(response.data.message);
+        setError(response.message || 'Error desconocido al registrarse.');
       }
     } catch (error) {
-      setError('Error al registrarse. Intenta nuevamente.');
+      setError(error.response ? error.response.data.message : 'Error al registrarse. Intenta nuevamente.');
     }
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+    navigate('/login');
   };
 
   return (
@@ -62,7 +73,7 @@ const Record = () => {
         <meta name="description" content="Regístrate en Caruso Futbol Club para acceder a tu cuenta y disfrutar de todos los beneficios." />
         <meta name="keywords" content="registro, registrarse, Caruso Futbol Club, cuenta" />
         <meta name="author" content="Caruso Futbol Club" />
-        <link rel="canonical" href="https://www.carusofutbolclub.com/record" />
+        <link rel="canonical" href="https://caruso-futbol-club-1.onrender.com" />
       </Helmet>
       <NavBar />
       <div className="row">
@@ -112,7 +123,7 @@ const Record = () => {
                   type="text"
                   placeholder="Ingresa tu dirección"
                   value={direccion}
-                  maxLength={30}
+                  maxLength={20}
                   onChange={handleTextChange(setDireccion)}
                 />
               </Form.Group>
@@ -121,7 +132,7 @@ const Record = () => {
                   type="email"
                   placeholder="Ingresa tu email"
                   value={email}
-                  maxLength={30}
+                  maxLength={20}
                   onChange={handleTextChange(setEmail)}
                 />
               </Form.Group>
@@ -143,6 +154,20 @@ const Record = () => {
       </div>
       <Footer />
       <WhatsAppButton />
+
+      <Modal show={showModal} onHide={handleCloseModal}>
+        <Modal.Header closeButton>
+          <Modal.Title>Registro Exitoso</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          Usuario registrado exitosamente. Serás redirigido al inicio de sesión.
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="primary" onClick={handleCloseModal}>
+            Aceptar
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 };

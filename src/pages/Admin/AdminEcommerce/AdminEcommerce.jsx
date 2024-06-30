@@ -33,32 +33,36 @@ const AdminEcommerce = () => {
     setShowModal(true);
   };
 
-  const handleSaveModal = async (product) => {
+  const handleSaveModal = async (formData) => {
     if (isNewProduct) {
       try {
-        const response = await axios.post('http://localhost:5004/api/products', product);
-        
-        setProducts([...products, response.data]); 
+        const response = await axios.post('http://localhost:5004/api/products/new', formData, {
+          headers: { 'Content-Type': 'multipart/form-data' }
+        });
+        setProducts([...products, response.data.product]); 
       } catch (error) {
-        console.error('Error adding product:', error);
+        console.error('Error creando producto:', error);
       }
     } else {
       try {
-        await axios.put(`http://localhost:5004/api/products/${product._id}`, product);
+        const response = await axios.put(`http://localhost:5004/api/products/${selectedRow._id}`, formData, {
+          headers: { 'Content-Type': 'multipart/form-data' }
+        });
+        const updatedProduct = response.data.product;
+        setProducts(products.map(product => product._id === updatedProduct._id ? updatedProduct : product));
       } catch (error) {
-        console.error('Error updating product:', error);
+        console.error('Error actualizando producto:', error);
       }
     }
-    fetchProducts(); 
     handleCloseModal();
   };
 
   const handleDeleteRow = async (product) => {
     try {
       await axios.delete(`http://localhost:5004/api/products/${product._id}`);
-      fetchProducts();
+      setProducts(products.filter(p => p._id !== product._id));
     } catch (error) {
-      console.error('Error deleting product:', error);
+      console.error('Error eliminando producto:', error);
     }
   };
 
@@ -69,7 +73,6 @@ const AdminEcommerce = () => {
       price: 0,
       quantity: 0,
       image: '',
-      active: false
     };
     setSelectedRow(newProduct);
     setIsNewProduct(true);
@@ -91,8 +94,8 @@ const AdminEcommerce = () => {
         isNewProduct={isNewProduct}
       />
       <h3 className='admin-ecommerce'>Panel Administrador Ecommerce</h3>
-      <Button onClick={addProduct}>Agregar Producto</Button>
-      <Table responsive>
+      <Button onClick={addProduct} className="btn-add">Agregar Producto</Button>
+      <Table responsive className="ecommerce-table">
         <thead>
           <tr>
             <th>Selección</th>
@@ -119,11 +122,11 @@ const AdminEcommerce = () => {
               <td>{product.quantity}</td>
               <td>{product.price}</td>
               <td>
-                <img src={product.image} alt={`Imagen ${product._id}`} style={{ width: '100px', height: '100px' }} />
+                <img src={product.image} alt={`Imagen ${product._id}`} className="product-image" />
               </td>
               <td>{product.description}</td>
               <td>
-                <Button className="btn-custom" onClick={() => handleShowModal(product)}>
+                <Button className="btn-action" onClick={() => handleShowModal(product)}>
                   Editar
                 </Button>
               </td>

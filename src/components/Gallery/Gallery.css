@@ -12,7 +12,11 @@
   flex: 1;
   margin: 20px;
   padding: 60px;
-  border-radius: 6%;
+  border-radius:10% !important;
+}
+.carousel-iner {
+
+  border-radius:10% !important;
 }
 
 .img-carousel {

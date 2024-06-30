@@ -197,18 +197,18 @@
 }
   
   
-    /* Media query para pantallas menores a 1000px */
+    /* Media query para pantallas menores a 600px */
     @media (max-width: 600px) {
       .maps-container {
           width: 100%; 
           max-height: auto;
-          padding-bottom: 100px;
+          padding-bottom: 30px;
       }
     
       .main-location-content {
           max-width: 90% !important;
-          padding-left: 60px !important;
-          padding-right: 60px !important;
+          padding-left: 25px !important;
+          padding-right: 25px !important;
       }
     
       .location-section {
@@ -237,8 +237,50 @@
           padding-left: 0px !important; 
           padding-top: 0px; 
           padding-bottom: 20px; 
+          padding-right: 0px;
           text-align: center; 
           font-size: 4vw  ;
       }
     }
     
+        /* Media query para pantallas menores a 400px */
+        @media (max-width: 400px) {
+         
+        
+          .main-location-content {
+              max-width: 100% !important;
+              padding-left: 25px !important;
+              padding-right: 25px !important;
+          }
+        
+          .location-section {
+              max-width: 100% !important; 
+          }
+        
+          .map-container iframe {
+              width: 100%; 
+              height: auto; 
+          }
+        
+          .title-location {
+              font-size: 6vw ;
+              padding-bottom: 0px;
+          }
+        
+          .subtitle-location {
+              font-size: 5vw !important ;
+              padding-bottom: 0px !important;
+              padding-top: 10px !important;
+          }
+        
+         
+        
+          .text-location {
+              padding-left: 0px !important; 
+              padding-top: 0px; 
+              padding-bottom: 20px; 
+              text-align: center; 
+              font-size: 4vw  ;
+          }
+        }
+        

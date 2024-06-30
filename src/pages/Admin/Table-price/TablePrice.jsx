@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import ModalPrice from './ModalPrice/Modalprice'; 
+import './TablePrice.css'; 
 
 const TablePrice = () => {
   const [precios, setPrecios] = useState([
@@ -32,9 +33,9 @@ const TablePrice = () => {
   };
 
   return (
-    <div>
-      <h2>Nuestros precios</h2>
-      <Table striped bordered hover>
+    <div className="price-table-container">
+      <h3 className="price-table-title">Nuestros precios</h3>
+      <Table className="price-table" striped bordered hover responsive>
         <thead>
           <tr>
             <th>Tipo de Fútbol</th>

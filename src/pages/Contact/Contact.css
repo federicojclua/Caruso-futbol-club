@@ -26,10 +26,29 @@
 }
 
 .subtitle-contact {
-  font-size: 24px; /* tamaño base */
-  font-weight: bold;
-  text-align: center;
-  padding-top: 150px;
+  font-size: 3vw; /* tamaño base */
+  font-weight: bolder;
+  display: flex;
+  justify-content: center;
+  padding-top: 100px; /* Ajuste del padding superior */
+  margin-bottom: 30px; /* Espacio inferior */
+}
+
+.ball-icons-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ball-icons {
+  margin: 0 10px;
+  font-size: 3vw; /* Asegúrate de que este tamaño coincida con el texto */
+}
+
+.ball-icons img {
+  width: 1em; /* Ajusta el tamaño de la imagen para que coincida con el tamaño del texto */
+  height: auto; /* Mantiene la proporción de la imagen */
+  display: inline-block; /* Asegura que la imagen se alinee correctamente con el texto */
 }
 
 .info {
