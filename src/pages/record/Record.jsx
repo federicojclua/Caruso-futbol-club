@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import Swal from 'sweetalert2';
 import NavBar from '../../components/header/nav-bar/NavBar';
 import Footer from '../../components/footer/Footer';
 import WhatsAppButton from '../../components/WhatsAppButton/WhatsAppButton';
@@ -29,7 +28,7 @@ const Record = () => {
 
   const handleTextChange = (setter) => (e) => {
     const value = e.target.value;
-    if (value.length <= 40) {
+    if (value.length <= 20) {
       setter(value);
     }
   };
@@ -47,16 +46,9 @@ const Record = () => {
         password 
       });
       if (response.message === 'Usuario registrado exitosamente') {
-        Swal.fire({
-          icon: 'success',
-          title: 'Registro exitoso',
-          text: 'Te has registrado correctamente. Ahora puedes iniciar sesión.',
-          confirmButtonText: 'OK'
-        }).then(() => {
-          navigate('/login');
-        });
+        navigate('/login');
       } else {
-        setError(response.data.message); //28-06
+        setError(response.data.message); // 28-06
       }
     } catch (error) {
       setError('Error al registrarse. Intenta nuevamente.');
@@ -76,7 +68,7 @@ const Record = () => {
       <div className="row">
         <div className="colm-form">
           <div className="form-container">
-            <h2 className="mb-4 text-center">Completa el formulario</h2>
+            <h2 className="mb-4 text-center">Registro</h2>
             {error && <p className="text-danger">{error}</p>}
             <Form onSubmit={handleSubmit}>
               <Form.Group controlId="formNombre">
@@ -84,7 +76,7 @@ const Record = () => {
                   type="text"
                   placeholder="Ingresa tu nombre"
                   value={nombre}
-                  maxLength={30}
+                  maxLength={20}
                   onChange={handleTextChange(setNombre)}
                 />
               </Form.Group>
@@ -93,7 +85,7 @@ const Record = () => {
                   type="text"
                   placeholder="Ingresa tu apellido"
                   value={apellido}
-                  maxLength={30}
+                  maxLength={20}
                   onChange={handleTextChange(setApellido)}
                 />
               </Form.Group>
@@ -120,7 +112,7 @@ const Record = () => {
                   type="text"
                   placeholder="Ingresa tu dirección"
                   value={direccion}
-                  maxLength={30}
+                  maxLength={20}
                   onChange={handleTextChange(setDireccion)}
                 />
               </Form.Group>
@@ -129,7 +121,7 @@ const Record = () => {
                   type="email"
                   placeholder="Ingresa tu email"
                   value={email}
-                  maxLength={40}
+                  maxLength={20}
                   onChange={handleTextChange(setEmail)}
                 />
               </Form.Group>

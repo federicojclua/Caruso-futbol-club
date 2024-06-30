@@ -1,20 +1,20 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+const { defineConfig } = require('vite');
+const react = require('@vitejs/plugin-react');
+const dotenv = require('dotenv');
 
-// https://vitejs.dev/config/
-export default defineConfig({
+// Cargar las variables de entorno desde el archivo .env
+dotenv.config();
+
+module.exports = defineConfig({
   plugins: [react()],
-  base: '/',  // Ajusta esta ruta según sea necesario
+  base: '/', // Ajusta esta ruta según sea necesario
   build: {
-      rollupOptions: {
-      external: ['sweetalert2']
-    },
     manifest: false,
   },
   server: {
     proxy: {
       '/api': {
-        target: 'https://caruso-prueba-back-1.onrender.com', // 28-06 
+        target: 'https://caruso-prueba-back-1.onrender.com',
         changeOrigin: true,
       },
     },
