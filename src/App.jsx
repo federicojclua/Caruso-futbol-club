@@ -35,7 +35,7 @@ import UserComponent from './components/apiComponents/UserComponent';
 import ProductsComponent from './components/apiComponents/ProductsComponent';
 import ReserverComponent from './components/apiComponents/ReserverComponent';
 
-const backendUrl = 'https://caruso-prueba-back-1.onrender.com'; 
+const backendUrl = 'https://caruso-prueba-back-1.onrender.com';
 
 function App() {
   const [data, setData] = useState(null);
