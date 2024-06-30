@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import dayjs from 'dayjs';
+import dayjs from 'dayjs'; // Importa dayjs
+import 'dayjs/locale/es'; // Importa el idioma español si lo necesitas
 import './AgregarTurnos.css';
 
 const AgregarTurno = ({ agregarTurno, sucursal }) => {
@@ -10,7 +11,7 @@ const AgregarTurno = ({ agregarTurno, sucursal }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const fechaHoraSeleccionada = dayjs(`${fecha} ${hora}`, 'YYYY-MM-DD HH:mm');
+    const fechaHoraSeleccionada = dayjs(`${fecha} ${hora}`, 'YYYY-MM-DD HH:mm'); // Usa dayjs con fecha y hora
     const fechaHoraActual = dayjs();
 
     if (fechaHoraSeleccionada.isBefore(fechaHoraActual)) {

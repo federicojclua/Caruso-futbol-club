@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import dayjs from 'dayjs';
+import dayjs from 'dayjs'; // Importa dayjs
+import 'dayjs/locale/es'; // Importa el idioma español si lo necesitas
 import './TurnosTabla.css';
 
 const TurnosTabla = ({ turnos, sucursal, tipoCancha, fecha, agregarTurno }) => {
@@ -41,7 +42,7 @@ const TurnosTabla = ({ turnos, sucursal, tipoCancha, fecha, agregarTurno }) => {
 
   const handleTurnoClick = (horario, cancha) => {
     const index = sucursal.canchas.findIndex(c => c.id === cancha);
-    const fechaHoraSeleccionada = dayjs(`${fecha} ${horario}`, 'YYYY-MM-DD HH:mm');
+    const fechaHoraSeleccionada = dayjs(`${fecha} ${horario}`, 'YYYY-MM-DD HH:mm'); // Usa dayjs para manejar la fecha y hora
     const fechaHoraActual = dayjs();
 
     if (fechaHoraSeleccionada.isBefore(fechaHoraActual)) {
@@ -128,3 +129,4 @@ const TurnosTabla = ({ turnos, sucursal, tipoCancha, fecha, agregarTurno }) => {
 };
 
 export default TurnosTabla;
+
