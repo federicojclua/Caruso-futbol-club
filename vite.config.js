@@ -14,10 +14,20 @@ export default defineConfig({
   base: '/', // Ajusta esta ruta según sea necesario
   build: {
     manifest: false,
-    rollupOptions: {
-      // Indica a Rollup que no debe incluir dayjs en el paquete final y lo tratará como externo
-      external: ['dayjs']
+   
+      rollupOptions: {
+      // Asegúrate de externalizar las dependencias que no deberían estar empaquetadas
+      // en tu librería
+      external: ['vue'],
+      output: {
+        // Proporciona variables globales para usar en la compilación UMD
+        // para dependencias externalizadas
+        globals: {
+        
+          vue: 'Vue',
+     
     }
+  }}
   },
   server: {
     proxy: {
