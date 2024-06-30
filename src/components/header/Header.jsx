@@ -20,7 +20,7 @@ const Header = () => {
             <span></span>
             <span></span>
             <span></span>
-            jejejejej
+            Reservá
           </button></a>
         </div>
       </Container>
