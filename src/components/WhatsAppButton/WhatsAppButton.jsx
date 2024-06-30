@@ -1,7 +1,6 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import './WhatsAppButton.css';
+import whatsappIcon from '../../assets/img/whatsapp-transparent.png'; // Importa la imagen de WhatsApp
 
 const WhatsAppButton = () => {
   return (
@@ -11,7 +10,7 @@ const WhatsAppButton = () => {
       target="_blank"
       rel="noopener noreferrer"
     >
-      <FontAwesomeIcon icon={faWhatsapp} size="3x" />
+      <img src={whatsappIcon} alt="WhatsApp Icon" className="whatsapp-icon" />
     </a>
   );
 }

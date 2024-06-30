@@ -1,10 +1,12 @@
+/* Estilos para la sección de Sponsors */
 .Sponsors {
   background-size: cover; /* Asegura que la imagen cubra todo el fondo del contenedor */
   background-position: center; /* Centra la imagen */
   background-repeat: no-repeat; /* Evita que la imagen se repita */
-  padding-bottom: 100px;
+  padding-bottom: 50px;
 }
 
+/* Estilos para el texto de Sponsors */
 .text-sponsors {
   font-weight: bold;
   font-size: 3vw; /* Tamaño de texto inicial */
@@ -22,48 +24,42 @@
      2px  2px 0 #ffffff;
 }
 
+/* Clase para ocultar el desbordamiento */
 .overflow-hidden {
   overflow: hidden; /* Asegura que el contenido no cause scroll */
 }
 
+/* Contenedor de imágenes de sponsors */
 .img-sponsors-wrapper {
   display: flex;
   width: 300%; /* Asegura que haya suficientes imágenes en la cinta */
+  overflow: hidden; /* Oculta las imágenes adicionales fuera del contenedor */
 }
 
+/* Imágenes de sponsors individual */
 .img-sponsors {
   display: flex;
   width: 100%;
-  animation: scroll-horizontal 10s linear infinite; /* Aplica la animación aquí */
-  padding: 10px 0; /* Agrega padding arriba y abajo */
+  animation: scroll-horizontal 10s linear infinite; /* Aplica la animación de desplazamiento */
+  padding: 10px 0; /* Agrega relleno arriba y abajo */
 }
 
+/* Estilo para las imágenes de sponsors */
 .img-sponsors img {
-  max-width: 200px;
-  width: 50%; /* Ajusta el ancho de las imágenes en relación a la pantalla */
-  margin: 0 5px; /* Agrega margen entre las imágenes */
+  max-width: none; /* Elimina el máximo para que las imágenes puedan expandirse */
+  width: 70%; /* Ajusta el tamaño de las imágenes al 70% del contenedor */
+  margin: 0 10px; /* Añade margen entre las imágenes */
   border-radius: 5px;
   box-shadow: 0 0 10px #333; /* Sombra alrededor de la imagen */
 }
 
+/* Animación de desplazamiento horizontal */
 @keyframes scroll-horizontal {
   0% {
     transform: translateX(0); /* Comienza visible en la pantalla */
   }
   100% {
     transform: translateX(-33.333%); /* Mueve el contenido a la izquierda */
-  }
-}
-
-/* Media Queries para pantallas medianas */
-@media (max-width: 992px) {
-  .text-sponsors {
-    font-size: 5vw; /* Aumenta el tamaño del texto */
-  }
-
-  .img-sponsors img {
-    max-width: none; /* Elimina el max-width para que sea solo un porcentaje */
-    width: 40%; /* Ajusta el tamaño de las imágenes */
   }
 }
 
@@ -74,15 +70,20 @@
   }
 
   .img-sponsors img {
-    max-width: none; /* Elimina el max-width para que sea solo un porcentaje */
-    width: 50%; /* Ajusta el tamaño de las imágenes */
+    height: 80px;
+    width: 100%; /* Aumenta el ancho de las imágenes en pantallas pequeñas */
   }
 }
 
-/* Media Queries para pantallas muy pequeñas */
-@media (max-width: 520px) {
-  .img-sponsors img {
-    max-width: none; /* Elimina el max-width para que sea solo un porcentaje */
-    width: 30%; /* Ajusta el tamaño de las imágenes */
+/* Media Queries para pantallas medianas */
+@media (min-width: 769px) and (max-width: 991px) {
+  .text-sponsors {
+    font-size: 4vw; /* Aumenta el tamaño del texto */
   }
+
+}
+
+/* Media Queries para pantallas grandes */
+@media (min-width: 992px) {
+
 }
