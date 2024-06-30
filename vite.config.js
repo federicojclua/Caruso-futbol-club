@@ -12,9 +12,7 @@ export default defineConfig({
   plugins: [react()],
   base: '/', // Ajusta esta ruta según sea necesario
   resolve: {
-    alias: {
-      moment: 'moment/min/moment.min.js' // Configuración de alias para moment
-    }
+
   },
   build: {
     manifest: false,
