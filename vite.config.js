@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import dotenv from 'dotenv';
+g
 
 // Cargar las variables de entorno desde el archivo .env
 dotenv.config();
@@ -17,7 +17,7 @@ export default defineConfig({
       '/api': {
         target: 'https://caruso-prueba-back-1.onrender.com', 
         changeOrigin: true,
-       
+        
       },
     },
   },
