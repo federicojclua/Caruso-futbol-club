@@ -1,85 +1,189 @@
-
 .container-principal {
   background-image: url(/src/assets/img/fondoBody.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  
+  min-height: 100vh; /* Asegura que el contenedor ocupe al menos toda la altura de la pantalla */
 }
 
 .content {
   position: relative;
   z-index: 1; /* Asegura que el contenido esté por encima del fondo de video */
-  height: auto;
-  /* margin-bottom: 150px;
-  padding-bottom: 150px; */
+  padding-bottom: 100px; /* Añade espacio en la parte inferior para el botón de "Cómo reservar?" */
 }
 
-.title-principal{
-  font-size: 4vw;
+.title-principal {
+  font-size: 3vw; /* tamaño base */
   font-weight: bolder;
-  display:flex;
+  display: flex;
   justify-content: center;
-  color:#305e34fa;
-  padding-bottom: 170px;
+  padding-top: 100px; /* Ajuste del padding superior */
+  margin-bottom: 30px; /* Espacio inferior */
 }
 
-.form-container {
+.ball-icons-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ball-icons {
+  margin: 0 10px;
+  font-size: 3vw; /* Asegúrate de que este tamaño coincida con el texto */
+}
+
+.ball-icons img {
+  width: 1em; /* Ajusta el tamaño de la imagen para que coincida con el tamaño del texto */
+  height: auto; /* Mantiene la proporción de la imagen */
+  display: inline-block; /* Asegura que la imagen se alinee correctamente con el texto */
+}
+
+.content-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 30px auto;
+  max-width: 90%;
+}
+.side-container-principal {
+  width: 50%;
+}
+
+.form-container-principal {
   display: flex;
   flex-direction: column;
-  max-width: 50%;
-  font-size: 1.5vw;
-  margin: 0 auto; /* Esto centrará el contenedor horizontalmente */
-  margin-top: 100px; /* Puedes ajustar este valor según la posición vertical deseada */
-  padding-left: 20px; /* Relleno interno a la izquierda */
-  padding-right: 20px; /* Relleno interno a la derecha */
-  color: black;
-  background: rgb(255, 255, 255);
-  background: linear-gradient(98deg, rgb(227, 238, 238) 0%, rgb(146, 197, 150) 100%);
- 
-  
+  width: 100%;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+  border-radius: 10px; /* Borde redondeado */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
-.selector{
-  background-color: rgb(221, 221, 255);
-  font-size: 0.8vw;
-
-  
+.selector,
+.input-date {
+  background-color: #dde5ff; /* Color de fondo */
+  font-size: 16px; /* Tamaño de fuente */
+  padding: 10px; /* Espaciado interno */
+  border: none; /* Quita el borde por defecto */
+  border-radius: 5px; /* Borde redondeado */
+  margin-bottom: 10px; /* Espacio inferior entre elementos */
 }
 
+.btn-how-register {
+  background-color: #305e34fa; /* Color de fondo del botón */
+  color: white; /* Color de texto */
+  padding: 10px 20px; /* Espaciado interno */
+  border: none; /* Quita el borde por defecto */
+  border-radius: 5px; /* Borde redondeado */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+  margin-top: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+}
 
-@media (max-width: 1200px) {
-  .title-principal {
-    font-size: 6vw; /* Reducimos el tamaño del título en pantallas pequeñas y medianas */
-  }
+.btn-how-register:hover {
+  background-color: #1e451fff; /* Color de fondo al pasar el cursor */
+}
 
-  .form-container {
-    max-width: 90%; /* Reducimos el ancho del contenedor del formulario */
-    font-size: 3vw; /* Reducimos el tamaño del texto del formulario */
-    margin-top: 50px; /* Ajustamos el margen superior del formulario */
-    padding-left: 10px; /* Reducimos el relleno izquierdo */
-    padding-right: 10px; /* Reducimos el relleno derecho */
-  }
+.how-register-section {
+  background-color: #f2f2f2;
+  width: 50%;
+  padding: 20px;
+  text-align: center;
+  margin: 50px auto; /* Centra la sección horizontalmente */
+  border-radius: 10px;
+  box-shadow: 0 0 20px #000; /* Sombra */
+}
 
-  .selector {
-    font-size: 1.5vw; /* Reducimos el tamaño del texto del selector */
-  }
+.how-register-title {
+  font-size: 2.5vw; /* Tamaño de fuente del título */
+  font-weight: bold; /* Negrita */
+  color: #305e34fa; /* Color del texto */
+}
+
+.how-register-content {
+  font-size: 1.2vw; /* Tamaño de fuente del contenido */
+  line-height: 1.6; /* Altura de línea */
+  color: #333; /* Color del texto */
+  max-width: 800px; /* Ancho máximo del contenido */
+  margin: 0 auto; /* Centra el contenido horizontalmente */
 }
 
 @media (max-width: 768px) {
   .title-principal {
-    font-size: 6vw; /* Reducimos el tamaño del título en pantallas pequeñas y medianas */
+    font-size: 6vw;
   }
 
-  .form-container {
-    max-width: 90%; /* Reducimos el ancho del contenedor del formulario */
-    font-size: 3vw; /* Reducimos el tamaño del texto del formulario */
-    margin-top: 50px; /* Ajustamos el margen superior del formulario */
-    padding-left: 10px; /* Reducimos el relleno izquierdo */
-    padding-right: 10px; /* Reducimos el relleno derecho */
+  .ball-icons img {
+    width: 2em; 
   }
 
-  .selector {
-    font-size: 1.5vw; /* Reducimos el tamaño del texto del selector */
+  .content-section {
+    flex-direction: column;
+    align-items: center;
   }
+
+  .form-container-principal,
+  .price-container {
+    width: 90%;
+    margin: auto;
+    margin-top: 10px;
+  }
+
+  .side-container-principal {
+    width: 90%;
+    text-align: center; /* Centra el contenido del lado en pantallas pequeñas */
+  }
+
+  .selector,
+  .input-date {
+    font-size: 1.5vw;
+  }
+
+  .btn-how-register {
+    margin: 20px auto; /* Centro el botón horizontalmente y le agrego margen superior */
+  }
+
+  .how-register-title {
+    font-size: 4vw;
+  }
+
+  .how-register-content {
+    font-size: 1.5vw;
+  }
+}
+@-webkit-keyframes rollInRight {
+  0% {
+      opacity: 0;
+      -webkit-transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
+      transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
+  }
+
+  100% {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg);
+      transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg);
+  }
+}
+
+@keyframes rollInRight {
+  0% {
+      opacity: 0;
+      -webkit-transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
+      transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
+  }
+
+  100% {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg);
+      transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg);
+  }
+}
+
+.rollInRight {
+  -webkit-animation-name: rollInRight;
+  animation-name: rollInRight;
+  -webkit-animation-duration: 1s; /* Duración de la animación */
+  animation-duration: 1s; /* Duración de la animación */
+  -webkit-animation-fill-mode: both; /* Mantiene los estilos de la animación */
+  animation-fill-mode: both; /* Mantiene los estilos de la animación */
 }

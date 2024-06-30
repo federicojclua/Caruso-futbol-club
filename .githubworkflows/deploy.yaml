@@ -2,33 +2,36 @@ name: Deploy to Render
 
 on:
   push:
-    branches:
-      - main  # Se activará cuando hagas push a la rama main
+    branches: [ main ]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '20.x'
+    - name: Update submodules (if using a submodule)
+      run: git submodule update --init --recursive
 
-      - name: Install dependencies
-        run: npm install
+    - name: Install Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'
 
-      - name: Build the project
-        run: npm run build
+    - name: Install dependencies
+      run: npm install
 
-      - name: Deploy to Render
-        run: |
-          curl -X POST -H "Authorization: Bearer ${{ secrets.RENDER_API_KEY }}" \
-          -H "Content-Type: application/json" \
-          -d '{"serviceId": "rnd_5UnsHRbLM387j47PFeJh5IEjHJXT", "branch": "main"}' \
-          https://api.render.com/v1/services/rnd_5UnsHRbLM387j47PFeJh5IEjHJXT/deploys
-        env:
-          RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
+    - name: Install dotenv package (for environment variables)
+      run: npm install dotenv  # Add this line to install dotenv
+
+    - name: Build
+      run: npm run build  # Or your build command
+
+    - name: Deploy to Render
+      uses: render/deploy-action@master
+      with:
+        api-key: ${{ secrets.RENDER_API_KEY }}
+        service-id: ${{ secrets.RENDER_SERVICE_ID }}
+        wait-for-success: true

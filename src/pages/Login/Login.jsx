@@ -8,7 +8,10 @@ import './Login.css';
 import { useContext } from 'react';
 import AuthContext from '../../components/context/AuthProvider';
 import { Link } from 'react-router-dom';
+<<<<<<< HEAD
 
+=======
+>>>>>>> 57692c22443fefac9dca157ba3f37a61c6fcc40c
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -47,7 +50,12 @@ const Login = () => {
       setPasswordError('');
     }
 
+<<<<<<< HEAD
     const apiUrl = 'http://localhost:5004/api/auth/login';
+=======
+    
+    const apiUrl = `${import.meta.env.VITE_APP_API_URL}/api/auth/login`;
+>>>>>>> 57692c22443fefac9dca157ba3f37a61c6fcc40c
 
     try {
       const response = await fetch(apiUrl, {
@@ -78,11 +86,11 @@ const Login = () => {
   return (
     <div className="Login-component">
       <Helmet>
-        <title>Login - Caruso Futbol Club</title>
+        <title>Iniciar sesión - Caruso Futbol Club</title>
         <meta name="description" content="Inicia sesión en Caruso Futbol Club para acceder a tu cuenta y disfrutar de todos los beneficios." />
         <meta name="keywords" content="login, iniciar sesión, Caruso Futbol Club, cuenta" />
         <meta name="author" content="Caruso Futbol Club" />
-        <link rel="canonical" href="https://www.carusofutbolclub.com/login" />
+        <link rel="canonical" href="https://caruso-futbol-club-1.onrender.com" />
       </Helmet>
       <NavBar />
       <div className="row">
@@ -109,11 +117,19 @@ const Login = () => {
             {passwordError && <p className="text-danger">{passwordError}</p>}
             {serverError && <p className="text-danger">{serverError}</p>}
             <button className="btn-login" onClick={handleSubmit}>Iniciar Sesión</button>
+<<<<<<< HEAD
             <a href="#">¿Olvidaste tu contraseña?</a>
+=======
+            <a href="/error404">¿Olvidaste tu contraseña?</a>
+>>>>>>> 57692c22443fefac9dca157ba3f37a61c6fcc40c
             <div className="register-message">
-              <p>¿No tienes cuenta? Registrate haciendo click aquí abajo</p>
+              <p>¿No tienes cuenta? Regístrate haciendo click aquí abajo</p>
               <Link to="/record">
+<<<<<<< HEAD
                <button className="btn-new">Registrarme</button>
+=======
+                <button className="btn-new">Registrarme</button>
+>>>>>>> 57692c22443fefac9dca157ba3f37a61c6fcc40c
               </Link>
             </div>
           </div>

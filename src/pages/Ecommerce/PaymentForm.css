@@ -7,10 +7,11 @@
 
 .payment-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: center;
-  padding-top: 50px; /* Ajusta el padding para celus */
-  margin: 0; 
+  padding-top: 70px;
+  margin: 0;
+  margin-bottom: 15px;
 }
 
 .payment-form,
@@ -18,10 +19,10 @@
   width: 100%;
   max-width: 400px;
   padding: 15px; /* Reduce el padding para celus */
-  background-color: white;
+  background-color: rgba(146, 197, 150, 0.8); /* Fondo con transparencia */
   border: 1px solid #ccc;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.9); /* Sombra más pronunciada */
   margin-bottom: 20px;
 }
 
@@ -33,7 +34,7 @@
 
 .payment-form .form-group,
 .delivery-form .form-group {
-  margin-bottom: 10px; /* Reduce el margen inferior */
+  margin-bottom: 8px; /* Reduce el margen inferior */
 }
 
 .payment-form .form-group label,
@@ -65,9 +66,40 @@
 
 .payment-form .cvv-help-image {
   width: 100%;
+  padding: 10px;
   height: auto;
   margin-top: 10px;
 }
+
+.form-group.inline-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.inline-item {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.inline-item:last-child {
+  margin-right: 0;
+}
+
+.inline-item label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.inline-item input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
 
 .payment-form .delivery-options {
   display: flex;
@@ -92,14 +124,18 @@
   background-color: #0056b3;
 }
 
+.cart-item p {
+    font-weight: bold;
+    margin: 5px 0
+}
 .cart-summary {
   width: 100%;
   max-width: 400px;
   padding: 15px; /* Reduce el padding para celus */
-  background-color: white;
+  background-color: rgba(146, 197, 150, 0.8); /* Fondo con transparencia */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.9); /* Sombra más pronunciada */
   border: 1px solid #ccc;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .cart-summary h2 {
@@ -119,8 +155,26 @@
   margin-right: 10px;
 }
 
-.total-price,
-.delivery-cost {
+.cart-summary table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.cart-summary th,
+.cart-summary td {
+  padding: 8px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.cart-summary th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.cart-summary .total-price,
+.cart-summary .delivery-cost {
   margin-top: 10px; /* Reduce el margen superior */
   font-size: 16px; /* Reduce el tamaño de fuente */
   font-weight: bold;
@@ -139,8 +193,14 @@
   align-items: center;
 }
 
-.delivery-form .no-street-number input {
-  margin-left: 10px;
+/* Estilo para el input "Sin Número" */
+.no-street-number {
+  display: flex;
+  align-items: center;
+}
+
+.no-street-number input[type="checkbox"] {
+  margin-left: 10px; /* Agrega margen derecho al checkbox */
 }
 
 /* Media Queries */
@@ -153,16 +213,28 @@
   }
 
   .payment-form,
-  .delivery-form {
+  .delivery-form,
+  .cart-summary {
     margin-bottom: 0;
-    padding: 20px; /* Restablece el padding para pantallas más grandes */
+    padding: 20px;
+    flex: 1;  
   }
 
   .payment-form h2,
   .delivery-form h2 {
     font-size: 24px; /* Restablece el tamaño de fuente para pantallas más grandes */
   }
+  .payment-form {
+    order: 2; /* Mantiene el formulario de pago en el medio */
+  }
 
+  .cart-summary {
+    order: 1; /* Coloca el resumen del carrito primero */
+  }
+
+  .delivery-form {
+    order: 3; 
+  }
   .payment-form .cvv-group {
     flex-direction: row;
     align-items: center;
@@ -189,8 +261,8 @@
     margin-bottom: 15px; /* Restablece el margen inferior para pantallas más grandes */
   }
 
-  .total-price,
-  .delivery-cost {
+  .cart-summary .total-price,
+  .cart-summary .delivery-cost {
     margin-top: 20px; /* Restablece el margen superior */
     font-size: 18px; /* Restablece el tamaño de fuente */
   }

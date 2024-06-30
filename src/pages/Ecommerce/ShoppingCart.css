@@ -15,16 +15,21 @@
   margin-bottom: 10px;
   padding: 10px;
   border-bottom: 1px solid #ccc;
+  background-color: #f9f9f9;
+  border-radius: 5px;
 }
 
 .cart-item img {
-  width: 50px;
-  height: 50px;
-  margin-right: 10px;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 20px;
 }
 
 .cart-item div {
   flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .cart-item h3 {
@@ -38,17 +43,20 @@
 
 .cart-item button {
   margin-right: 10px;
-  padding: 5px 10px;
+  padding: 5px;
+  margin: 5px;
   border: none;
   border-radius: 5px;
-  background-color: #f44336;
+  background-color: #007bff;
   color: white;
   cursor: pointer;
   transition: background-color 0.3s;
+  align-items: center;
+  width:auto; /* Asegura que los botones no ocupen todo el ancho */
 }
 
 .cart-item button:hover {
-  background-color: #d32f2f;
+  background-color: #0056b3;
 }
 
 .shopping-cart {
@@ -63,6 +71,9 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   z-index: 999;
   display: none; /* Ocultar el carrito por defecto */
+  width: 90%;
+  max-width: 800px;
+  overflow-y: auto; /* Para manejar el desbordamiento vertical */
 }
 
 .shopping-cart.show {
@@ -76,13 +87,16 @@
 }
 
 .cart-footer button {
-  padding: 10px 20px;
+  padding: 5px 10px; /* Reduce el padding para hacer los botones más pequeños */
   border: none;
   border-radius: 5px;
   background-color: #007bff;
   color: white;
   cursor: pointer;
   transition: background-color 0.3s;
+  width: 30%; /* Botones ocupan el 30% del ancho */
+  margin: 10px auto; /* Centramos los botones horizontalmente y agregamos un margen vertical */
+  display: block; /* Asegura que el margen auto funcione correctamente */
 }
 
 .cart-footer button:hover {
@@ -90,12 +104,13 @@
 }
 
 .close-cart {
-  background-color: #f44336;
+  background-color: #007bff;
   color: white;
   border: none;
-  border-radius: 50%;
-  width: 52px;
-  height: 45px;
+  border-radius: 5px; /* Cambia la forma a rectangular */
+  width: auto;
+  height: auto;
+  padding: 10px 20px;
   cursor: pointer;
   font-size: 18px;
   display: flex;
@@ -106,7 +121,7 @@
 }
 
 .close-cart:hover {
-  background-color: #d32f2f;
+  background-color: #0056b3;
 }
 
 .floating-cart-button {
@@ -130,4 +145,28 @@
 .floating-cart-button:hover {
   background-color: #0056b3;
   transform: scale(1.1);
+}
+
+/* Responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cart-item img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  .cart-footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .cart-footer button {
+    width: 100%;
+  }
 }

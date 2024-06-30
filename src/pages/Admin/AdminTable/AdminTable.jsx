@@ -63,8 +63,8 @@ const AdminTable = () => {
   return (
     <Container>
       <h3 className='title-admin'>Tabla de Reserva de Turnos</h3>
-      <Button onClick={addRow}>Agregar Fila</Button>
-      <Table responsive>
+      <Button onClick={addRow} className="btn-add">Agregar Fila</Button>
+      <Table responsive className="admin-table">
         <thead>
           <tr>
             <th>ID Reserva</th>
@@ -95,6 +95,7 @@ const AdminTable = () => {
                   variant={row.aceptado ? "success" : "primary"} 
                   onClick={() => handleAcceptClick(index)} 
                   disabled={row.aceptado}
+                  className="btn-action"
                 >
                   {row.aceptado ? "Aceptado" : "Aceptar"}
                 </Button>{' '}
@@ -102,13 +103,14 @@ const AdminTable = () => {
                   variant="danger" 
                   onClick={() => handleCancelClick(index)}
                   disabled={!row.aceptado}
+                  className="btn-action"
                 >
                   {row.aceptado ? "Cancelar" : "Cancelado"}
                 </Button>{' '}
-                <Button variant="warning" onClick={() => handleEditClick(index)}>Editar</Button>
+                <Button variant="warning" onClick={() => handleEditClick(index)} className="btn-action">Editar</Button>
               </td>
               <td>
-                <Button variant="danger" onClick={() => handleDeleteClick(row.idReserva)}>Eliminar</Button>
+                <Button variant="danger" onClick={() => handleDeleteClick(row.idReserva)} className="btn-action">Eliminar</Button>
               </td>
             </tr>
           ))}

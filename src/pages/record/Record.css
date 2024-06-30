@@ -1,54 +1,51 @@
 .Record-component {
-  background-image: url(/src/assets/img/fondoBody.jpg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url(/assets/fondoBody.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
 
-.Record-component .record-form-container {
+.Record-component .row {
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-grow: 1;
-  padding: 100px;
+  width: 100%;
+  max-width: 1200px; /* Ajusta el ancho máximo deseado */
+  padding: 100px 20px; /* Margen izquierdo y derecho ajustable */
 }
 
-@media (max-width: 992px) {
-  .Record-component .record-form-container {
-    padding: 50px;
-  }
+.Record-component .form-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 15px; /* Reduce el padding para celus */
+  background-color: rgba(146, 197, 150, 0.8); /* Fondo con transparencia */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.9); /* Sombra más pronunciada */
+  margin-bottom: 20px;
 }
 
-@media (max-width: 768px) {
-  .Record-component .record-form-container {
-    padding-top: 90px;
-    padding-bottom: 30px;
-  }
+.Record-component .colm-form {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
 }
 
-@media (max-width: 576px) {
-  .Record-component .record-form-container {
-    padding-top: 70px;
-    padding-bottom: 30px;
-  }
-}
-
-.Record-component .form-wrapper {
+.Record-component .colm-form .form-container {
   border: none;
   border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6), 0 8px 16px rgba(0, 0, 0, 0.6);
+  margin-bottom: 30px;
   padding: 20px;
   max-width: 600px;
-  width: 100%;
-  margin: 0 20px;
-  background-color: white; /* Add background color for better visibility */
 }
 
-.Record-component .form-wrapper input, 
-.Record-component .form-wrapper .btn-login {
+.Record-component .colm-form .form-container input,
+.Record-component .colm-form .form-container .btn-login {
   width: 100%;
   margin: 5px 0;
   height: 45px;
@@ -56,19 +53,19 @@
   font-size: 16px;
 }
 
-.Record-component .form-wrapper input {
+.Record-component .colm-form .form-container input {
   border: 1px solid #dddfe2;
   color: #1d2129;
   padding: 0 8px;
   outline: none;
 }
 
-.Record-component .form-wrapper input:focus {
+.Record-component .colm-form .form-container input:focus {
   border-color: #333;
   box-shadow: 0 0 0 2px #e7f3ff;
 }
 
-.Record-component .form-wrapper .btn-login {
+.Record-component .colm-form .form-container .btn-login {
   background-color: #42b72a;
   border: none;
   border-radius: 6px;
@@ -79,14 +76,27 @@
   transition: background-color 0.3s ease;
 }
 
-.Record-component .form-wrapper .btn-login:hover {
+.Record-component .colm-form .form-container .btn-login:hover {
   background-color: #36a420;
+}
+
+.Record-component .colm-form .form-container a {
+  display: block;
+  color: #333;
+  font-size: 14px;
+  text-decoration: none;
+  padding: 10px 0 20px;
+  border-bottom: 1px solid #dadde1;
+}
+
+.Record-component .colm-form .form-container a:hover {
+  text-decoration: underline;
 }
 
 .Record-component h2 {
   font-size: 2rem;
   font-weight: bold;
-  background-color: rgba(51, 51, 51, 0.1); /* Color #333333 con 20% de opacidad */
+  background-color: rgba(51, 51, 51, 0.3); /* Color #333333 con 20% de opacidad */
   padding: 10px;
   border-radius: 4px;
 }
@@ -107,4 +117,39 @@
   .Record-component h2 {
     font-size: 1.25rem;
   }
+}
+/* Agregar animación de borde en el input */
+@keyframes borderAnimation {
+  0% {
+    border-color: #42b72a;
+    box-shadow: -2px 0 0 0 #42b72a;
+    border-radius: 10px;
+  }
+  25% {
+    border-color: #42b72a;
+    box-shadow: 0 2px 0 0 #42b72a;
+    border-radius: 10px;
+  }
+  50% {
+    border-color: #42b72a;
+    box-shadow: 2px 0 0 0 #42b72a;
+    border-radius: 10px;
+  }
+  75% {
+    border-color: #42b72a;
+    box-shadow: 0 -2px 0 0 #42b72a;
+    border-radius: 10px;
+  }
+  100% {
+    border-color: #42b72a;
+    box-shadow: -2px 0 0 0 #42b72a;
+    border-radius: 10px;
+  }
+}
+
+.Record-component .form-container input:focus {
+  border-color: #42b72a;
+  box-shadow: 0 0 5px #42b72a;
+  animation: borderAnimation 1s infinite;
+  border-radius: 10px; /* Bordes redondeados */
 }

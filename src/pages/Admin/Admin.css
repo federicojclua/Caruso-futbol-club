@@ -1,9 +1,8 @@
-/* Estilos generales */
 .container-admin {
     background-image: url("/src/assets/img/fondo-admin.jpg");
-    background-size: cover;       /* Asegura que la imagen cubra todo el fondo del contenedor */
-    background-position: center;  /* Centra la imagen */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */ 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     height: 100vh;   
 }
 
@@ -21,36 +20,82 @@
     justify-content: center;
     align-items: center;
     width: 80%;
-    margin: 0 auto; /* Centra horizontalmente el contenedor */
-  
+    margin: 0 auto;
 }
 
 .button-admin {
-    flex: 1; /* Hace que cada botón ocupe el mismo espacio dentro del contenedor */
-    margin: 0 10px; /* Añade un pequeño margen horizontal entre los botones */
+    flex: 1 1 0;
+    margin: 0 10px;
     font-size: 1.5vw;
+    padding: 10px 20px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    text-align: center;
 }
 
-/* Media query para pantallas de hasta 450px */
-@media (max-width: 450px) {
-    .title-panel {
-        font-size: 6vw; /* Ajusta el tamaño de fuente */
-        padding-top: 20px; /* Ajusta el padding superior */
-    }
+.button-admin:hover {
+    transform: scale(1.05);
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.5);
+}
 
+/* Breakpoints */
+@media (max-width: 1200px) {
     .button-admin {
-        font-size: 3vw; /* Ajusta el tamaño de fuente del botón */
-        margin: 0 5px; /* Ajusta el margen horizontal */
+        font-size: 2vw;
+    }
+}
+
+@media (max-width: 992px) {
+    .button-admin {
+        font-size: 2.5vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .button-admin {
+        font-size: 3vw;
+    }
+}
+
+@media (max-width: 576px) {
+    .title-panel {
+        font-size: 5vw;
+        padding-top: 30px;
     }
 
     .button-container {
-        flex-direction: column; /* Cambia la dirección del flujo de los botones a columna */
-        height: auto; /* Ajusta la altura automáticamente */
-        margin-top: 20px; /* Añade un margen superior */
+        flex-direction: column;
+        height: auto;
+        margin-top: 20px;
     }
 
     .button-admin {
-        width: 100%; /* Hace que los botones ocupen el 100% del contenedor en pantallas pequeñas */
-        margin-bottom: 10px; /* Añade un margen inferior entre los botones */
+        width: 100%;
+        margin-bottom: 10px;
+        font-size: 4vw;
+        padding: 15px 30px;
+    }
+}
+
+@media (max-width: 450px) {
+    .title-panel {
+        font-size: 6vw;
+        padding-top: 20px;
+    }
+
+    .button-admin {
+        font-size: 5vw;
+        margin: 0 5px;
+    }
+
+    .button-container {
+        margin-top: 20px;
+    }
+
+    .button-admin {
+        width: 100%;
+        margin-bottom: 10px;
+        font-size: 6vw;
+        padding: 20px 40px;
     }
 }

@@ -4,51 +4,27 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 const ModalEcommerce = ({ show, handleClose, handleSave, currentRow, isNewProduct }) => {
-  const [product, setProduct] = useState(currentRow);
+  const [product, setProduct] = useState(currentRow || {});
+  const [imageFile, setImageFile] = useState(null);
   const [imageUrl, setImageUrl] = useState('');
-
-  const [title, setTitle] = useState('');
-  const [quantity, setQuantity] = useState('');
-  const [price, setPrice] = useState('');
 
   useEffect(() => {
     if (currentRow) {
+      setProduct(currentRow);
       setImageUrl(currentRow.image);
-      setTitle(currentRow.title);
-      setQuantity(currentRow.quantity ?? '');
-      setPrice(currentRow.price ?? '');
+    } else {
+      setProduct({ name: '', description: '', price: 0, quantity: 0 });
     }
   }, [currentRow]);
 
   const handleImageChange = (event) => {
     const file = event.target.files[0];
     if (file) {
+      setImageFile(file);
       const imageUrl = URL.createObjectURL(file);
       setImageUrl(imageUrl);
     }
   };
-
-  const handleSaveChanges = () => {
-    // Validar la longitud máxima de los valores
-    if (quantity.length > 3 || price.length > 5) {
-      alert('La cantidad debe tener como máximo 3 caracteres y el precio como máximo 5 caracteres.');
-      return;
-    }
-
-    const quantityValue = parseFloat(quantity);
-    const priceValue = parseFloat(price);
-
-    if (!isNaN(quantityValue) && !isNaN(priceValue)) {
-      handleSave({ ...currentRow, image: imageUrl, title, quantity: quantityValue, price: priceValue });
-      handleClose();
-    } else {
-      alert('Por favor, ingrese números válidos para cantidad y precio.');
-    }
-  }
-
-  useEffect(() => {
-    setProduct(currentRow);
-  }, [currentRow]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -56,7 +32,15 @@ const ModalEcommerce = ({ show, handleClose, handleSave, currentRow, isNewProduc
   };
 
   const handleSubmit = () => {
-    handleSave(product);
+    const formData = new FormData();
+    formData.append('name', product.name);
+    formData.append('description', product.description);
+    formData.append('price', product.price);
+    formData.append('quantity', product.quantity);
+    if (imageFile) {
+      formData.append('image', imageFile);
+    }
+    handleSave(formData);
   };
 
   return (
@@ -71,7 +55,7 @@ const ModalEcommerce = ({ show, handleClose, handleSave, currentRow, isNewProduc
             <Form.Control 
               type="text" 
               name="name" 
-              value={product?.name || ''} 
+              value={product.name || ''} 
               onChange={handleChange} 
               placeholder="Ingrese el nombre del producto" 
             />
@@ -81,7 +65,7 @@ const ModalEcommerce = ({ show, handleClose, handleSave, currentRow, isNewProduc
             <Form.Control 
               type="text" 
               name="description" 
-              value={product?.description || ''} 
+              value={product.description || ''} 
               onChange={handleChange} 
               placeholder="Ingrese la descripción del producto" 
             />
@@ -91,7 +75,7 @@ const ModalEcommerce = ({ show, handleClose, handleSave, currentRow, isNewProduc
             <Form.Control 
               type="number" 
               name="price" 
-              value={product?.price || 0} 
+              value={product.price || 0} 
               onChange={handleChange} 
               placeholder="Ingrese el precio del producto" 
             />
@@ -101,14 +85,14 @@ const ModalEcommerce = ({ show, handleClose, handleSave, currentRow, isNewProduc
             <Form.Control 
               type="number" 
               name="quantity" 
-              value={product?.quantity || 0} 
+              value={product.quantity || 0} 
               onChange={handleChange} 
               placeholder="Ingrese la cantidad del producto" 
             />
           </Form.Group>
           <Form.Group controlId="formProductImage">
-          <Form.Label>Foto (300 x 200 px)</Form.Label>
-          <Form.Control type="file" accept="image/*" onChange={handleImageChange} />
+            <Form.Label>Foto (300 x 200 px)</Form.Label>
+            <Form.Control type="file" accept="image/*" onChange={handleImageChange} />
             {imageUrl && <img src={imageUrl} alt="Vista previa" style={{ width: '100px', height: '100px', marginTop: '10px' }} />}
           </Form.Group>
         </Form>
