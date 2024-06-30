@@ -79,7 +79,7 @@ const EcommercePage = () => {
       </div>
       <Footer />
       <WhatsAppButton />
-      <button className="floating-cart-button" onClick={handleShowCart}>🛒</button>
+      <button className="floating-cart-button-car" onClick={handleShowCart}>🛒</button>
       <ShoppingCart
         show={showCart}
         handleClose={handleCloseCart}
