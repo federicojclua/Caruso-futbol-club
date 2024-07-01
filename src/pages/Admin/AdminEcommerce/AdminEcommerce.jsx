@@ -33,7 +33,7 @@ const AdminEcommerce = () => {
 
       let response;
       if (updatedRow.id) {
-        response = await axios.put(/api/products`${updatedRow.id}`, formData, {
+        response = await axios.put(`/api/products/${updatedRow.id}`, formData, {
           headers: {
             'Content-Type': 'multipart/form-data'
           }
