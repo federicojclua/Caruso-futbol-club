@@ -14,11 +14,11 @@
   position: fixed;
   top: 120px; /* Posición original */
   right: 20px;
-  background-color: rgba(128, 128, 128, 0.8); /* Gris con transparencia */
+  background-color: rgba(255, 255, 255, 1); /* Gris con transparencia */
   color: white;
   border: none;
   border-radius: 50%;
-  padding: 20px; /* Aumenta el padding para hacer el botón más grande */
+  padding: 10px; /* Aumenta el padding para hacer el botón más grande */
   font-size: 1.5rem; /* Aumenta el tamaño del icono */
   cursor: pointer;
   z-index: 1000;
@@ -26,11 +26,11 @@
   align-items: center;
   justify-content: center;
   transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 0px 4px black;
 }
 
 .floating-cart-button-car:hover {
-  background-color: #808080; /* Cambia el color gris al hacer hover */
-  transform: scale(1.1);
+  transform: scale(1.3);
 }
 
 
@@ -38,6 +38,7 @@
 
 .main-ecommerce-content {
   max-width: 90%;
+  min-height: 100vh;
   margin: auto;
   padding: 100px;
   color: #333;

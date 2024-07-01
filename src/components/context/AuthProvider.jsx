@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-// AuthContext.js
-=======
 // AuthProvider.js
->>>>>>> 57692c22443fefac9dca157ba3f37a61c6fcc40c
 import React, { createContext, useState, useEffect } from 'react';
 
 const AuthContext = createContext();
@@ -53,8 +49,4 @@ export const AuthProvider = ({ children }) => {
     );
 };
 
-<<<<<<< HEAD
 export default AuthContext;
-=======
-export default AuthContext;
->>>>>>> 57692c22443fefac9dca157ba3f37a61c6fcc40c

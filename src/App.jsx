@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-
-import React, { useContext } from 'react';
-=======
 import React, { useEffect, useState } from 'react';
->>>>>>> 57692c22443fefac9dca157ba3f37a61c6fcc40c
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -32,10 +27,6 @@ import Principal from './pages/Principal/Principal';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 import { AuthProvider } from './components/context/AuthProvider';
 import AdminRoute from './components/ProtectedRoute/AdminRoute';
-<<<<<<< HEAD
-
-function App() {
-=======
 
 // Conexión con el back
 import CanchasComponent from './components/apiComponents/CanchasComponent';
@@ -63,7 +54,6 @@ function App() {
 
     fetchData();
   }, []);
->>>>>>> 57692c22443fefac9dca157ba3f37a61c6fcc40c
 
   return (
     <AuthProvider>
@@ -90,14 +80,11 @@ function App() {
           <Route path="/aboutUs" element={<AboutUs />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/Record" element={<Record />} />
-<<<<<<< HEAD
-=======
           <Route path="/canchas" element={<CanchasComponent />} />
           <Route path="/auth" element={<AuthComponent />} />
           <Route path="/users" element={<UserComponent />} />
           <Route path="/reservas" element={<ReserverComponent />} />
           <Route path="/products" element={<ProductsComponent />} />
->>>>>>> 57692c22443fefac9dca157ba3f37a61c6fcc40c
 
           <Route path="/admin" element={
             <AdminRoute>

@@ -10,19 +10,11 @@ const AdminRoute = ({ children }) => {
     }
 
     if (user.role !== 'admin') {
-<<<<<<< HEAD
-        return <Navigate to="/principal" />;
-=======
         return <Navigate to="/admin" />;
->>>>>>> 57692c22443fefac9dca157ba3f37a61c6fcc40c
     }
 
     return children;
 };
 
 
-<<<<<<< HEAD
 export default AdminRoute;
-=======
-export default AdminRoute;
->>>>>>> 57692c22443fefac9dca157ba3f37a61c6fcc40c
