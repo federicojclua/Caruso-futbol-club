@@ -29,7 +29,7 @@ const Record = () => {
 
   const handleTextChange = (setter) => (e) => {
     const value = e.target.value;
-    if (value.length <= 20) {
+    if (value.length <= 40) {
       setter(value);
     }
   };
@@ -82,7 +82,7 @@ const Record = () => {
                   type="text"
                   placeholder="Ingresa tu nombre"
                   value={nombre}
-                  maxLength={40}
+                  maxLength={20}
                   onChange={handleTextChange(setNombre)}
                 />
               </Form.Group>
