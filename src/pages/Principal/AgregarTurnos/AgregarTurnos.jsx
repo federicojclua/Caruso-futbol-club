@@ -38,7 +38,7 @@ const AgregarTurno = ({ agregarTurno, sucursal }) => {
           >
             <option value="">Seleccionar hora</option>
             {horarios.map((horario) => (
-              <option key={horario} value={'${horario}:00'}>
+              <option key={horario} value={`${horario}:00`}>
                 {horario}:00
               </option>
             ))}
