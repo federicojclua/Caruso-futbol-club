@@ -60,7 +60,7 @@ const AdminEcommerce = () => {
 
   const handleDeleteRow = async (row) => {
     try {
-      await axios.delete(/api/products`${row.id}`);
+      await axios.delete(`/api/products/${row.id}`);
       const newProducts = products.filter(r => r.id !== row.id);
       setProducts(newProducts);
     } catch (error) {
@@ -128,7 +128,7 @@ const AdminEcommerce = () => {
               <td>{product.quantity}</td>
               <td>{product.price}</td>
               <td>
-                <img src={product.image} alt={Imagen `${product.id}`} style={{ width: '100px', height: '100px' }} />
+              <img src={product.image} alt={`Imagen ${product.id}`} style={{ width: '100px', height: '100px' }} />
               </td>
               <td>
                 <Button className="btn-custom" onClick={() => handleShowModal(product)}>
