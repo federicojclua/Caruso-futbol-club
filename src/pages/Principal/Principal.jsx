@@ -8,7 +8,7 @@ import Footer from '../../components/footer/Footer';
 import Precios from './Price/Price';
 import pngBall from '../../assets/img/pngball.png';
 import { obtenerTurnos, guardarTurno, eliminarTurno } from '../../context/turnosProvider'; // Ajusta la ruta de importación aquí
-import SucursalesInfo from '../../components/SucursalesInfo/SucursalesInfo'; // Importa el componente
+import SucursalesInfo from '../../pages/Principal/SucursalesInfo'; // Importa el componente
 
 const Principal = () => {
   const [turnos, setTurnos] = useState(obtenerTurnos());
@@ -51,7 +51,7 @@ const Principal = () => {
 
         <div className="content-section">
           <Precios />
-          <SucursalesInfo /> {/* Usa el componente aquí */}
+          <SucursalesInfo /> 
           <div className="side-container-principal">
             <div className="form-container-principal">
               <label className="label-principal">
