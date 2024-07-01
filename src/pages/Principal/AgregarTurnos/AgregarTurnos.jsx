@@ -1,35 +1,24 @@
-// src/pages/Principal/AgregarTurnos/AgregarTurnos.jsx
 import React, { useState } from 'react';
-import { isBeforeCurrentDateTime } from '../TableShifts/dayjs';
 import './AgregarTurnos.css';
 
 const AgregarTurno = ({ agregarTurno, sucursal }) => {
   const [fecha, setFecha] = useState('');
   const [hora, setHora] = useState('');
   const [canchaSeleccionada, setCanchaSeleccionada] = useState('');
-  const [error, setError] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
-    if (isBeforeCurrentDateTime(fecha, hora)) {
-      setError('No se puede reservar en una fecha y hora pasadas.');
-      return;
-    }
-
     agregarTurno({ fecha, hora, sucursal: sucursal.id, cancha: canchaSeleccionada });
     setFecha('');
     setHora('');
     setCanchaSeleccionada('');
-    setError('');
   };
 
-  const horarios = ['09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24'];
+  const horarios = ['09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21'];
 
   return (
     <div className="agregar-turno-container">
       <h2>Agregar Turno en {sucursal.nombre}</h2>
-      {error && <p className="error">{error}</p>}
       <form onSubmit={handleSubmit}>
         <label>
           Fecha:
@@ -49,7 +38,7 @@ const AgregarTurno = ({ agregarTurno, sucursal }) => {
           >
             <option value="">Seleccionar hora</option>
             {horarios.map((horario) => (
-              <option key={horario} value={`${horario}:00`}>
+              <option key={horario} value={'${horario}:00'}>
                 {horario}:00
               </option>
             ))}
@@ -78,4 +67,4 @@ const AgregarTurno = ({ agregarTurno, sucursal }) => {
   );
 };
 
-export default AgregarTurno;
+export default AgregarTurno;
