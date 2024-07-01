@@ -82,7 +82,7 @@ const Record = () => {
                   type="text"
                   placeholder="Ingresa tu nombre"
                   value={nombre}
-                  maxLength={20}
+                  maxLength={40}
                   onChange={handleTextChange(setNombre)}
                 />
               </Form.Group>
@@ -127,7 +127,7 @@ const Record = () => {
                   type="email"
                   placeholder="Ingresa tu email"
                   value={email}
-                  maxLength={20}
+                  maxLength={40}
                   onChange={handleTextChange(setEmail)}
                 />
               </Form.Group>
