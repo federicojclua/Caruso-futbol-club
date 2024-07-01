@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import AgregarTurno from '../Principal/AgregarTurnos/AgregarTurnos';
+
 import TurnosTabla from '../Principal/TableShifts/TurnosTabla';
 import NavBar from '../../components/header/nav-bar/NavBar'; 
 import WhatsAppButton from '../../components/WhatsAppButton/WhatsAppButton';
@@ -37,7 +37,12 @@ const Principal = () => {
     },
   ];
 
-
+    // Función para agregar un nuevo turno
+    const agregarTurno = (nuevoTurno) => {
+      guardarTurno(nuevoTurno); // Guarda el turno en localStorage
+      setTurnos([...turnos, nuevoTurno]); // Actualiza el estado de turnos
+      alert('Su turno fue registrado con éxito. Por cualquier cambio consulte con el administrador.');
+    };
 
   // Obtener la fecha de hoy en formato adecuado
   const getTodayDate = () => {
