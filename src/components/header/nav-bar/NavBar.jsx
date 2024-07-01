@@ -33,6 +33,7 @@ const NavBar = () => {
           </Link>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
+            {user && user.nombre}
             <Nav className="me-auto">
               <Nav.Link as={Link} to="/Ecommerce">Nuestra Tienda</Nav.Link>
               <Nav.Link as={Link} to="/Location">Nuestros Complejos</Nav.Link>
@@ -61,6 +62,7 @@ const NavBar = () => {
                   <NavDropdown.Item as={Link} to="/record">Regístrate</NavDropdown.Item>
                 </NavDropdown>
               )}
+
             </Nav>
           </Navbar.Collapse>
         </Container>
