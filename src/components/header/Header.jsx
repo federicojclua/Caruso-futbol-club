@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import './Header.css';
 import video from '../../assets/video/header-video2.mp4';
 import NavBar from './nav-bar/NavBar';
-import AuthContext from '../../context/AuthProvider'; // Importa AuthContext
+import AuthContext from '../context/AuthProvider'; // Importa AuthContext
 
 const Header = () => {
   const navigate = useNavigate();

@@ -3,13 +3,13 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import "./NavBar.css";
 import Container from 'react-bootstrap/Container';
-import AuthContext from '../../context/AuthProvider'; // Importar AuthContext
+import AuthContext from '../context/AuthProvider'; 
 import navLogo from '../../../assets/img/carpeta/cfc-logo.png';
 import userImagePlaceholder from '../../../assets/img/carpeta/IMAGEN-LOGO.png';
 
 const NavBar = () => {
   const navigate = useNavigate();
-  const { isLoggedIn, user, logout } = useContext(AuthContext); // Utilizar AuthContext
+  const { isLoggedIn, user, logout } = useContext(AuthContext); 
 
   const handleLogout = () => {
     logout();
