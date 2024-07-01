@@ -3,13 +3,13 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import "./NavBar.css";
 import Container from 'react-bootstrap/Container';
-import AuthContext from '../../context/AuthProvider'; 
+import AuthContext from '../../context/AuthProvider'; // Importar AuthContext
 import navLogo from '../../../assets/img/carpeta/cfc-logo.png';
 import userImagePlaceholder from '../../../assets/img/carpeta/IMAGEN-LOGO.png';
 
 const NavBar = () => {
   const navigate = useNavigate();
-  const { isLoggedIn, user, logout } = useContext(AuthContext); 
+  const { isLoggedIn, user, logout } = useContext(AuthContext); // Utilizar AuthContext
 
   const handleLogout = () => {
     logout();
@@ -42,12 +42,12 @@ const NavBar = () => {
                   <NavDropdown.Item as={Link} to="/mis-reservas">Mis Reservas</NavDropdown.Item>
                 )}
               </NavDropdown>
-              {isLoggedIn && user.email === 'admin4@admin4.com' && (
+              {isLoggedIn && user && user.email === 'admin4@admin4.com' && (
                 <Nav.Link as={Link} to="/admin">Administrador</Nav.Link>
               )}
             </Nav>
             <Nav>
-              {isLoggedIn ? ( // Mostrar nombre de usuario si está autenticado
+              {isLoggedIn && user ? ( // Mostrar nombre de usuario si está autenticado
                 <NavDropdown title={user.name || user.email} id="collasible-nav-dropdown">
                   <div className="user-info">
                     <img src={user.image || userImagePlaceholder} alt="User Avatar" className="user-avatar" />
