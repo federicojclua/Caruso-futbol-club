@@ -7,7 +7,6 @@ import './Principal.css';
 import Footer from '../../components/footer/Footer';
 import Precios from './Price/Price';
 import pngBall from '../../assets/img/pngball.png';
-import { obtenerTurnos, guardarTurno, eliminarTurno } from '../../context/turnosProvider'; // Ajusta la ruta de importación aquí
 
 const Principal = () => {
   const [turnos, setTurnos] = useState([]);
@@ -37,12 +36,10 @@ const Principal = () => {
     },
   ];
 
-    // Función para agregar un nuevo turno
-    const agregarTurno = (nuevoTurno) => {
-      guardarTurno(nuevoTurno); // Guarda el turno en localStorage
-      setTurnos([...turnos, nuevoTurno]); // Actualiza el estado de turnos
-      alert('Su turno fue registrado con éxito. Por cualquier cambio consulte con el administrador.');
-    };
+  const agregarTurno = (nuevoTurno) => {
+    setTurnos([...turnos, nuevoTurno]);
+    alert('Su turno fue registrado con éxito. Por cualquier cambio consulte con el administrador.');
+  };
 
   // Obtener la fecha de hoy en formato adecuado
   const getTodayDate = () => {
@@ -60,7 +57,7 @@ const Principal = () => {
       <div className="content">
       <h2 className="title-principal">
           <div className="ball-icons-container">
-            <div className="ball-icons animate__animated animate__rollIn">
+            <div className="ball-icons animate_animated animate_rollIn">
               <img src={pngBall} alt="Ball icon" />
             </div>
             <div>Hace tu reserva</div>
@@ -132,7 +129,6 @@ const Principal = () => {
           />
         )}
       </div>
-
       <div id="how-register" className="how-register-section">
         <h3 className="how-register-title">¿Cómo reservar?</h3>
         <div className="how-register-content">
@@ -148,11 +144,10 @@ const Principal = () => {
           <p>¡Y Listo! Tu turno será registrado y podrás disfrutar de tu juego.</p>
         </div>
       </div>
-      
       <WhatsAppButton />
       <Footer />
     </div>
   );
 };
 
-export default Principal;
+export default Principal;
