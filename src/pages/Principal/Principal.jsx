@@ -37,12 +37,7 @@ const Principal = () => {
     },
   ];
 
-    // Función para agregar un nuevo turno
-    const agregarTurno = (nuevoTurno) => {
-      guardarTurno(nuevoTurno); // Guarda el turno en localStorage
-      setTurnos([...turnos, nuevoTurno]); // Actualiza el estado de turnos
-      alert('Su turno fue registrado con éxito. Por cualquier cambio consulte con el administrador.');
-    };
+
 
   // Obtener la fecha de hoy en formato adecuado
   const getTodayDate = () => {
