@@ -1,7 +1,8 @@
-// src/pages/Principal/TurnosTabla/TurnosTabla.jsx
 import React, { useState, useEffect } from 'react';
-import { isBeforeCurrentDateTime } from './dayjs';
+import moment from 'moment';
+import 'react-toastify/dist/ReactToastify.css';
 import './TurnosTabla.css';
+import { ToastContainer, toast } from 'react-toastify';
 
 const TurnosTabla = ({ turnos, sucursal, tipoCancha, fecha, agregarTurno }) => {
   const horarios = ['09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24'];
@@ -42,8 +43,10 @@ const TurnosTabla = ({ turnos, sucursal, tipoCancha, fecha, agregarTurno }) => {
 
   const handleTurnoClick = (horario, cancha) => {
     const index = sucursal.canchas.findIndex(c => c.id === cancha);
+    const fechaHoraSeleccionada = moment(`${fecha} ${horario}`, 'YYYY-MM-DD HH:mm');
+    const fechaHoraActual = moment();
 
-    if (isBeforeCurrentDateTime(fecha, horario)) {
+    if (fechaHoraSeleccionada.isBefore(fechaHoraActual)) {
       setMostrarAlerta(true);
       return;
     }
@@ -75,6 +78,9 @@ const TurnosTabla = ({ turnos, sucursal, tipoCancha, fecha, agregarTurno }) => {
         agregarTurno(nuevoTurno3);
         nuevosTurnos = [...turnosLocales, nuevoTurno1, nuevoTurno2, nuevoTurno3];
       }
+    } else {
+      toast.error('El turno ya fue registrado anteriormente.');
+      return;
     }
 
     setTurnosLocales(nuevosTurnos);
@@ -82,14 +88,14 @@ const TurnosTabla = ({ turnos, sucursal, tipoCancha, fecha, agregarTurno }) => {
 
   useEffect(() => {
     if (mostrarAlerta) {
-      alert('No se puede reservar en una fecha y hora pasadas.');
+      toast.error('No se puede reservar en una fecha y hora pasadas.');
       setMostrarAlerta(false);
     }
   }, [mostrarAlerta]);
 
   return (
     <div className="turnos-tabla-container">
-      <h2 className="turnos-tabla-titulo">Turnos en {sucursal.nombre} para el {dayjs(fecha).format('DD/MM/YYYY')}</h2>
+      <h2 className="turnos-tabla-titulo">Turnos en {sucursal.nombre} para el {moment(fecha).format('DD/MM/YYYY')}</h2>
       <table className="turnos-tabla">
         <thead>
           <tr>
@@ -102,30 +108,29 @@ const TurnosTabla = ({ turnos, sucursal, tipoCancha, fecha, agregarTurno }) => {
         <tbody>
           {horarios.map((horario) => (
             <tr key={horario}>
-              <td>{horario}:00</td>
-              {sucursal.canchas.map((cancha) => (
-                <td
-                  key={cancha.id}
-                  className={`
-                    turno-cell
-                    ${tipoCancha === 'futbol5' && estaOcupado(horario, cancha.id) ? 'ocupado' : ''}
-                    ${tipoCancha === 'futbol7' && estaOcupadoParaFutbol7(horario, cancha.id) ? 'ocupado' : ''}
-                    ${tipoCancha === 'futbol9' && estaOcupadoParaFutbol9(horario, cancha.id) ? 'ocupado' : ''}
-                  `}
-                  onClick={() => handleTurnoClick(horario, cancha.id)}
-                >
-                  {tipoCancha === 'futbol5' && estaOcupado(horario, cancha.id) && 'Ocupado'}
-                  {tipoCancha === 'futbol7' && estaOcupadoParaFutbol7(horario, cancha.id) && 'Ocupado'}
-                  {tipoCancha === 'futbol9' && estaOcupadoParaFutbol9(horario, cancha.id) && 'Ocupado'}
-                </td>
-              ))}
+              <td>{`${horario}:00`}</td>
+              {sucursal.canchas.map((cancha) => {
+                const ocupado = estaOcupado(horario, cancha.id);
+                const ocupadoFutbol7 = tipoCancha === 'futbol7' && estaOcupadoParaFutbol7(horario, cancha.id);
+                const ocupadoFutbol9 = tipoCancha === 'futbol9' && estaOcupadoParaFutbol9(horario, cancha.id);
+
+                return (
+                  <td
+                    key={cancha.id}
+                    className={ocupado || ocupadoFutbol7 || ocupadoFutbol9 ? 'ocupado' : 'disponible'}
+                    onClick={() => handleTurnoClick(horario, cancha.id)}
+                  >
+                    {ocupado || ocupadoFutbol7 || ocupadoFutbol9 ? 'Ocupado' : 'Disponible'}
+                  </td>
+                );
+              })}
             </tr>
           ))}
         </tbody>
       </table>
+      <ToastContainer />
     </div>
   );
 };
 
 export default TurnosTabla;
-

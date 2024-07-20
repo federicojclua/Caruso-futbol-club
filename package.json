@@ -17,6 +17,7 @@
     "axios": "^1.7.2",
     "bootstrap": "^5.3.3",
     "cors": "^2.8.5",
+    "dayjs": "^1.10.4",
     "dotenv": "^16.4.5",
     "esbuild": "^0.21.5",
     "moment": "^2.30.1",
@@ -26,7 +27,7 @@
     "react-helmet": "^6.1.0",
     "react-icons": "^5.2.1",
     "react-router-dom": "^6.23.1",
-    "dayjs": "^1.10.4"
+    "react-toastify": "^10.0.5"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
@@ -39,7 +40,6 @@
     "rimraf": "^5.0.7",
     "serve": "^14.2.3",
     "vite": "^5.2.0"
-    
   },
   "description": "Proyecto de una plataforma web para la reserva de canchas de fútbol 5 y un ecommerce para la venta de productos relacionados. Desarrollado por *Equipo 2 - Rolling Code* utilizando tecnologías como React, Bootstrap, Node.js, Express y MongoDB.",
   "main": "vite.config.js",
