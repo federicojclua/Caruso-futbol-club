@@ -1,37 +1,39 @@
-.Contact-component {
-  background-image: url(/src/assets/img/fondoBody.jpg);
+body {
+  overflow-x: hidden; /* Oculta el desplazamiento horizontal */
+  margin: 0; /* Elimina el margen por defecto */
+}
+
+.Contact-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: url('/src/assets/img/fondoBody.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  width: 100%; /* Asegura que no se desborde el ancho del viewport */
 }
 
 .main-contact-content {
-  max-width: 60% !important;
-  padding: 0px !important;
-  color: #333333; /* Color del texto principal */
-  text-shadow: 1px 1px 1px rgb(255, 255, 255); /* Añade sombra al texto */
-  margin-bottom: 50px;
-}
-
-.form {
-  margin: 20px 0;
-}
-
-.cont-contact {
-  max-width: 975px;
-  margin: auto;
-  padding: 20px;
-  color: #333333; /* Color del texto */
+  padding-top: 50px;
   display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex: 1; /* Permite que el contenido ocupe todo el espacio disponible */
+  padding: 20px;
+  margin-left: 20px; /* Añadir margen a la izquierda */
 }
 
 .subtitle-contact {
-  font-size: 3vw; /* tamaño base */
-  font-weight: bolder;
+  font-size: 3vw;
+  font-weight: bold;
   display: flex;
-  justify-content: center;
-  padding-top: 100px; /* Ajuste del padding superior */
-  margin-bottom: 30px; /* Espacio inferior */
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 50px; /* Reducido para ajustar mejor en dispositivos pequeños */
+  margin-bottom: 30px;
+  margin-left: 20px; /* Añadir margen a la izquierda */
 }
 
 .ball-icons-container {
@@ -42,157 +44,118 @@
 
 .ball-icons {
   margin: 0 10px;
-  font-size: 3vw; /* Asegúrate de que este tamaño coincida con el texto */
+  font-size: 3vw; /* Ajustado para mantener coherencia */
 }
 
 .ball-icons img {
-  width: 1em; /* Ajusta el tamaño de la imagen para que coincida con el tamaño del texto */
-  height: auto; /* Mantiene la proporción de la imagen */
-  display: inline-block; /* Asegura que la imagen se alinee correctamente con el texto */
+  width: 1em;
+  height: auto;
+  display: inline-block;
 }
 
 .info {
+  width: 50%;
+  text-align: left;
   margin-bottom: 20px;
-  right:  0%;
-  margin-left: 0px;
-  padding-left: 0px;
 }
 
 .info a {
-  color: #333333; /* Color de los enlaces */
+  color: #333333;
   text-decoration: none;
-  font-size: 32px; /* tamaño base */
+  font-size: 24px;
   font-weight: bold;
   transition: color 0.3s ease-in-out;
 }
 
 .info a:hover {
-  color: #258d19; /* Color de hover */
+  color: #258d19;
 }
 
 .info p {
-  font-size: 24px; /* tamaño base */
+  font-size: 18px;
   font-weight: bold;
+  margin-bottom: 8px;
 }
 
 .info p strong {
   color: #258d19;
 }
 
-.contact-list li p a {
-  font-size: 24px; /* tamaño base */
-  font-weight: bold;
+.contact-list {
+  text-align: center;
+  margin-top: 20px;
 }
 
-.contact-list li p {
-  font-size: 24px; /* tamaño base */
-  font-weight: bold;
+.contact-list ul {
+  list-style-type: none;
+  padding: 0;
 }
 
-.contact-list li p strong {
+.contact-list li {
+  margin-bottom: 20px;
+}
+
+.links-contact-list {
+  color: #333333;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+.links-contact-list:hover {
   color: #258d19;
 }
 
 .line-orange {
   display: block;
-  width: 50%;
+  width: 100%;
   height: 3px;
   background-color: #e55812;
-  margin: 10px 0;
-}
-
-li {
-  list-style: none;
-}
-
-.title-contact {
-  display: flex;
-  justify-content: center;
-}
-
-.contact-list {
-  display: flex;
-  justify-content: center;
-  font-size: 24px; /* tamaño base */
-}
-
-a {
-  color: #333333; /* Color de los enlaces */
-  text-decoration: none;
-  transition: color 0.3s ease-in-out;
-}
-
-a:hover {
-  color: #258d19; /* Color de hover */
-}
-
-/* Breakpoints */
-@media (max-width: 1200px) {
-  .subtitle-contact {
-    font-size: 22px;
-  }
-
-  .info a {
-    font-size: 30px;
-  }
-
-  .info p, .contact-list li p, .contact-list {
-    font-size: 22px;
-  }
-}
-
-@media (max-width: 992px) {
-  .subtitle-contact {
-    font-size: 20px;
-  }
-
-  .info a {
-    font-size: 28px;
-  }
-
-  .info p, .contact-list li p, .contact-list {
-    font-size: 20px;
-  }
+  margin: 10px auto;
 }
 
 @media (max-width: 768px) {
   .subtitle-contact {
-    font-size: 18px;
+    font-size: 22px;
   }
 
   .info a {
-    font-size: 26px;
+    font-size: 22px;
   }
 
-  .info p, .contact-list li p, .contact-list {
+  .info p {
+    font-size: 16px;
+  }
+
+  .contact-list {
     font-size: 18px;
+  }
+
+  .links-contact-list {
+    font-size: 22px;
   }
 }
 
 @media (max-width: 576px) {
   .subtitle-contact {
-    font-size: 16px;
+    font-size: 18px;
+    padding-top: 30px; /* Reducido para ajustar mejor en dispositivos pequeños */
   }
 
   .info a {
-    font-size: 24px;
+    font-size: 20px;
   }
 
-  .info p, .contact-list li p, .contact-list {
+  .info p {
+    font-size: 14px;
+  }
+
+  .contact-list {
     font-size: 16px;
   }
-}
 
-@media (max-width: 400px) {
-  .subtitle-contact {
-    font-size: 14px;
-  }
-
-  .info a {
-    font-size: 22px;
-  }
-
-  .info p, .contact-list li p, .contact-list {
-    font-size: 14px;
+  .links-contact-list {
+    font-size: 18px;
   }
 }

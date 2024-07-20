@@ -24,13 +24,14 @@ const NavBar = () => {
   const handleLogout = () => {
     // Aquí simulas el proceso de cierre de sesión
     logout();
+    navigate('/')
   };
 
   const handleProtectedClick = (path) => {
     if (isAuthenticated) {
       navigate(path);
     } else {
-      navigate('/');
+      navigate('/Login');
     }
   };
 
@@ -63,7 +64,7 @@ const NavBar = () => {
                     <img src={userImage || userImagePlaceholder} alt="User Avatar" className="user-avatar" />
                     <span className="user-name">{userName}</span>
                   </div>
-                  {/* <NavDropdown.Item as={Link} to="/perfil">Mi Perfil</NavDropdown.Item> */}
+                  <NavDropdown.Item as={Link} to="/perfil">Mi Perfil</NavDropdown.Item>
                   <NavDropdown.Item onClick={handleLogout}>Cerrar Sesión</NavDropdown.Item>
                 </NavDropdown>
               ) : (

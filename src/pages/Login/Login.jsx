@@ -109,11 +109,10 @@ const Login = () => {
             {passwordError && <p className="text-danger">{passwordError}</p>}
             {serverError && <p className="text-danger">{serverError}</p>}
             <button className="btn-login" onClick={handleSubmit}>Iniciar Sesión</button>
-            <a href="/error404">¿Olvidaste tu contraseña?</a>
             <div className="register-message">
               <p>¿No tienes cuenta? Regístrate haciendo click aquí abajo</p>
               <Link to="/record">
-                <button className="btn-new">Registrarme</button>
+                <button className="btn-new" type="submit">Registrarme</button>
               </Link>
             </div>
           </div>
@@ -126,3 +125,4 @@ const Login = () => {
 };
 
 export default Login;
+

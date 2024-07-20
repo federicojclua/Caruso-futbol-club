@@ -7,7 +7,6 @@ import ProductList from './ProductList';
 import ShoppingCart from './ShoppingCart';
 import './Ecommerce.css';
 import { useNavigate } from 'react-router-dom';
-import pngBall from '../../assets/img/pngball.png';
 
 const EcommercePage = () => {
   const [showCart, setShowCart] = useState(false);
@@ -64,17 +63,7 @@ const EcommercePage = () => {
       </Helmet>
       <NavBar />
       <div className="main-ecommerce-content">
-      <h2 class='subtitle-ecommerce'>
-      <div className="ball-icons-container">
-            <div className="ball-icons animate__animated animate__rollIn">
-              <img src={pngBall} alt="Ball icon" />
-            </div>
-            <div>Bienvenidos a Nuestra tienda</div>
-            <div className="ball-icons rollInRight">
-              <img src={pngBall} alt="Ball icon" />
-            </div>
-          </div>
-        </h2>
+        <h1 className='subtitle-ecommerce'>⚽ Bienvenidos a Nuestra Tienda ⚽</h1>
         <ProductList addToCart={addToCart} />
       </div>
       <Footer />
@@ -93,4 +82,4 @@ const EcommercePage = () => {
   );
 };
 
-export default EcommercePage;
+export default EcommercePage;

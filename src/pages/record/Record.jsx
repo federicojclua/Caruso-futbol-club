@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, Modal } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import NavBar from '../../components/header/nav-bar/NavBar';
@@ -17,6 +17,7 @@ const Record = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
+  const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
 
   const handleDniChange = (e) => {
@@ -46,13 +47,18 @@ const Record = () => {
         password 
       });
       if (response.message === 'Usuario registrado exitosamente') {
-        navigate('/login');
+        setShowModal(true);
       } else {
-        setError(response.data.message); // 28-06
+        setError(response.message || 'Error desconocido al registrarse.');
       }
     } catch (error) {
-      setError('Error al registrarse. Intenta nuevamente.');
+      setError(error.response ? error.response.data.message : 'Error al registrarse. Intenta nuevamente.');
     }
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+    navigate('/login');
   };
 
   return (
@@ -143,8 +149,22 @@ const Record = () => {
       </div>
       <Footer />
       <WhatsAppButton />
+
+      <Modal show={showModal} onHide={handleCloseModal}>
+        <Modal.Header closeButton>
+          <Modal.Title>Registro Exitoso</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          Usuario registrado exitosamente. Serás redirigido al inicio de sesión.
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="primary" onClick={handleCloseModal}>
+            Aceptar
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 };
 
-export default Record;
+export default Record;

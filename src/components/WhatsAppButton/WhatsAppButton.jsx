@@ -5,7 +5,7 @@ import whatsappIcon from '../../assets/img/whatsapp-transparent.png'; // Importa
 const WhatsAppButton = () => {
   return (
     <a
-      href="https://wa.me/1234567890" // Reemplaza con tu número de WhatsApp
+      href="https://wa.me/5491122500777" // Reemplaza con tu número de WhatsApp
       className="whatsapp-button"
       target="_blank"
       rel="noopener noreferrer"

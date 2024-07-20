@@ -70,7 +70,6 @@
   }
 
   .img-sponsors img {
-    height: 80px;
     width: 100%; /* Aumenta el ancho de las imágenes en pantallas pequeñas */
   }
 }

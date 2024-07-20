@@ -6,7 +6,6 @@
   padding-top: 70px;
   padding-bottom: 100px;
   margin: 0 auto; /* Centra el contenedor horizontalmente */
-  padding-bottom: 100px;
 }
 
 .tournament-text, .img-tournament {
@@ -82,9 +81,10 @@
       flex-direction: column; /* Cambia a columna para pantallas más pequeñas */
       align-items: center; /* Centra los elementos hijos verticalmente */
       width: 100%; /* Asegura que ocupe el 100% del ancho en pantallas pequeñas */
+      padding-bottom: 20px;
   }
   .img-tournament img {
-    max-width: 50%; /* Asegura que la imagen ocupe el 100% del contenedor padre */
+    max-width: 80%; /* Asegura que la imagen ocupe el 100% del contenedor padre */
     height: auto; /* Mantiene la proporción de la imagen */
  
   }
@@ -108,7 +108,6 @@
       width: 100%; /* Asegura que ocupe el 100% del ancho en pantallas pequeñas */
   }
   .img-tournament img {
-    max-width: 50%; /* Asegura que la imagen ocupe el 100% del contenedor padre */
     height: auto; /* Mantiene la proporción de la imagen */
  
   }

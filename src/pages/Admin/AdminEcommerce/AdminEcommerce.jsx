@@ -1,87 +1,91 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
 import ModalEcommerce from './ModalEcommerce/ModalEcommerce';
-import fetchProductData from './ProductData';
-import axios from 'axios'; 
 import './AdminEcommerce.css';
+import useProductData from './ProductData';
 
 const AdminEcommerce = () => {
   const [products, setProducts] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [selectedRow, setSelectedRow] = useState(null);
-  const [isNewProduct, setIsNewProduct] = useState(false);
 
-  const fetchProducts = async () => {
-    const data = await fetchProductData();
-    setProducts(data);
-  };
+  useProductData()
 
-  useEffect(() => {
-    fetchProducts();
-  }, []);
-
-  const handleCloseModal = () => {
-    setShowModal(false);
-    setIsNewProduct(false);
-    setSelectedRow(null);
-  };
-
-  const handleShowModal = (product) => {
-    setSelectedRow(product);
+  const handleCloseModal = () => setShowModal(false);
+  const handleShowModal = (row) => {
+    setSelectedRow(row);
     setShowModal(true);
   };
 
-  const handleSaveModal = async (formData) => {
-    if (isNewProduct) {
-      try {
-        const response = await axios.post('http://localhost:5004/api/products/new', formData, {
-          headers: { 'Content-Type': 'multipart/form-data' }
-        });
-        setProducts([...products, response.data.product]); 
-      } catch (error) {
-        console.error('Error creando producto:', error);
-      }
-    } else {
-      try {
-        const response = await axios.put(`http://localhost:5004/api/products/${selectedRow._id}`, formData, {
-          headers: { 'Content-Type': 'multipart/form-data' }
-        });
-        const updatedProduct = response.data.product;
-        setProducts(products.map(product => product._id === updatedProduct._id ? updatedProduct : product));
-      } catch (error) {
-        console.error('Error actualizando producto:', error);
-      }
-    }
-    handleCloseModal();
-  };
-
-  const handleDeleteRow = async (product) => {
+  const handleSaveModal = async (updatedRow) => {
     try {
-      await axios.delete(`http://localhost:5004/api/products/${product._id}`);
-      setProducts(products.filter(p => p._id !== product._id));
+      const formData = new FormData();
+      formData.append('name', updatedRow.name);
+      formData.append('description', updatedRow.description);
+      formData.append('price', updatedRow.price);
+      formData.append('quantity', updatedRow.quantity);
+      if (updatedRow.image) {
+        formData.append('image', updatedRow.image);
+      }
+
+      let response;
+      if (updatedRow.id) {
+        response = await axios.put(`/api/products/${updatedRow.id}`, formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data'
+          }
+        });
+      } else {
+        response = await axios.post('/api/products', formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data'
+          }
+        });
+        console.log(response)
+        setProducts([...products, response.data]); // Añadir el nuevo producto a la lista
+      }
+
+      const newProducts = products.map(row => row.id === response.data.id ? response.data : row);
+      setProducts(newProducts);
+      handleCloseModal();
     } catch (error) {
-      console.error('Error eliminando producto:', error);
+      
+      console.error('Error saving product', error);
+      alert('Error saving product');
     }
   };
 
-  const addProduct = () => {
-    const newProduct = {
+  const handleDeleteRow = async (row) => {
+    try {
+      await axios.delete(`/api/products/${row.id}`);
+      const newProducts = products.filter(r => r.id !== row.id);
+      setProducts(newProducts);
+    } catch (error) {
+      console.error('Error deleting product', error);
+      alert('Error deleting product');
+    }
+  };
+
+  const addRow = () => {
+    setSelectedRow({
+      id: null,
       name: '',
       description: '',
-      price: 0,
-      quantity: 0,
+      price: '',
+      quantity: '',
       image: '',
-    };
-    setSelectedRow(newProduct);
-    setIsNewProduct(true);
+    });
     setShowModal(true);
   };
 
   const handleCheckboxChange = (product) => {
-    const updatedProducts = products.map(p => p._id === product._id ? { ...p, active: !p.active } : p);
-    setProducts(updatedProducts);
+    const newProducts = products.map(p =>
+      p.id === product.id ? { ...p, active: !p.active } : p
+    );
+    setProducts(newProducts);
   };
 
   return (
@@ -91,26 +95,26 @@ const AdminEcommerce = () => {
         handleClose={handleCloseModal} 
         handleSave={handleSaveModal} 
         currentRow={selectedRow}
-        isNewProduct={isNewProduct}
       />
       <h3 className='admin-ecommerce'>Panel Administrador Ecommerce</h3>
-      <Button onClick={addProduct} className="btn-add">Agregar Producto</Button>
-      <Table responsive className="ecommerce-table">
+      <Button onClick={addRow}>Agregar Producto</Button>
+      <Table responsive>
         <thead>
           <tr>
             <th>Selección</th>
-            <th>Nombre</th>
+            <th>ID</th>
+            <th>Nombre del Producto</th>
             <th>Cantidad</th>
             <th>Precio</th>
             <th>Imagen</th>
-            <th>Descripción</th>
+            <th>Descripción del Producto</th>
             <th>Editar</th>
             <th>Eliminar</th>
           </tr>
         </thead>
         <tbody>
-          {products.map((product) => (
-            <tr key={product._id}>
+          {products.lenght >= 0 && products.map((product) => (
+            <tr key={product.id}>
               <td>
                 <input 
                   type="checkbox" 
@@ -118,15 +122,16 @@ const AdminEcommerce = () => {
                   onChange={() => handleCheckboxChange(product)} 
                 />
               </td>
+              <td>{product.id}</td>
               <td>{product.name}</td>
+              <td>{product.description}</td>
               <td>{product.quantity}</td>
               <td>{product.price}</td>
               <td>
-                <img src={product.image} alt={`Imagen ${product._id}`} className="product-image" />
+              <img src={product.image} alt={`Imagen ${product.id}`} style={{ width: '100px', height: '100px' }} />
               </td>
-              <td>{product.description}</td>
               <td>
-                <Button className="btn-action" onClick={() => handleShowModal(product)}>
+                <Button className="btn-custom" onClick={() => handleShowModal(product)}>
                   Editar
                 </Button>
               </td>
@@ -143,4 +148,4 @@ const AdminEcommerce = () => {
   );
 };
 
-export default AdminEcommerce;
+export default AdminEcommerce;

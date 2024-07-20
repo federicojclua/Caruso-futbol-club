@@ -1,112 +1,121 @@
+// ModalEcommerce.jsx
 import React, { useState, useEffect } from 'react';
-import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import Modal from 'react-bootstrap/Modal';
 
-const ModalEcommerce = ({ show, handleClose, handleSave, currentRow, isNewProduct }) => {
-  const [product, setProduct] = useState(currentRow || {});
-  const [imageFile, setImageFile] = useState(null);
-  const [imageUrl, setImageUrl] = useState('');
+function ModalEcommerce({ show, handleClose, handleSave, currentRow }) {
+  const [image, setImageUrl] = useState('');
+  const [name, setName] = useState('');
+  const [quantity, setQuantity] = useState('');
+  const [price, setPrice] = useState('');
+  const [description, setDescription] = useState('');
 
   useEffect(() => {
     if (currentRow) {
-      setProduct(currentRow);
       setImageUrl(currentRow.image);
-    } else {
-      setProduct({ name: '', description: '', price: 0, quantity: 0 });
+      setName(currentRow.name);
+      setQuantity(currentRow.quantity ?? '');
+      setPrice(currentRow.price ?? '');
+      setDescription(currentRow.description);
     }
   }, [currentRow]);
 
   const handleImageChange = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      setImageFile(file);
-      const imageUrl = URL.createObjectURL(file);
-      setImageUrl(imageUrl);
-    }
+    const image = URL.createObjectURL(event.target.files[0]);
+    setImageUrl(image);
   };
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setProduct({ ...product, [name]: value });
-  };
-
-  const handleSubmit = () => {
-    const formData = new FormData();
-    formData.append('name', product.name);
-    formData.append('description', product.description);
-    formData.append('price', product.price);
-    formData.append('quantity', product.quantity);
-    if (imageFile) {
-      formData.append('image', imageFile);
+  const handleSaveChanges = () => {
+    if (quantity.length > 3 || price.length > 5) {
+      alert('La cantidad debe tener como máximo 3 caracteres y el precio como máximo 5 caracteres.');
+      return;
     }
-    handleSave(formData);
-  };
+
+    const quantityValue = parseFloat(quantity);
+    const priceValue = parseFloat(price);
+
+    if (!isNaN(quantityValue) && !isNaN(priceValue)) {
+      handleSave({ ...currentRow, image, name, quantity: quantityValue, price: priceValue, description });
+      handleClose();
+    } else {
+      alert('Por favor, ingrese números válidos para cantidad y precio.');
+    }
+  }
 
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
-        <Modal.Title>{isNewProduct ? 'Agregar Producto' : 'Editar Producto'}</Modal.Title>
+        <Modal.Title>Agregar Producto</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form>
-          <Form.Group controlId="formProductName">
-            <Form.Label>Nombre del Producto</Form.Label>
-            <Form.Control 
-              type="text" 
-              name="name" 
-              value={product.name || ''} 
-              onChange={handleChange} 
-              placeholder="Ingrese el nombre del producto" 
+          <Form.Group className="mb-3" controlId="formName">
+            <Form.Label>Nombre del producto</Form.Label>
+            <Form.Control
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              autoFocus
             />
           </Form.Group>
-          <Form.Group controlId="formProductDescription">
+          <Form.Group className="mb-3" controlId="formDescription">
             <Form.Label>Descripción</Form.Label>
-            <Form.Control 
-              type="text" 
-              name="description" 
-              value={product.description || ''} 
-              onChange={handleChange} 
-              placeholder="Ingrese la descripción del producto" 
+            <Form.Control
+              type="text"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
             />
           </Form.Group>
-          <Form.Group controlId="formProductPrice">
-            <Form.Label>Precio</Form.Label>
-            <Form.Control 
-              type="number" 
-              name="price" 
-              value={product.price || 0} 
-              onChange={handleChange} 
-              placeholder="Ingrese el precio del producto" 
-            />
-          </Form.Group>
-          <Form.Group controlId="formProductQuantity">
+          <Form.Group className="mb-3" controlId="formQuantity">
             <Form.Label>Cantidad</Form.Label>
-            <Form.Control 
-              type="number" 
-              name="quantity" 
-              value={product.quantity || 0} 
-              onChange={handleChange} 
-              placeholder="Ingrese la cantidad del producto" 
+            <Form.Control
+              type="number"
+              value={quantity}
+              onChange={(e) => {
+                if (e.target.value.length <= 3) {
+                  setQuantity(e.target.value);
+                }
+              }}
+              maxLength={3}
             />
           </Form.Group>
-          <Form.Group controlId="formProductImage">
+
+          <Form.Group className="mb-3" controlId="formPrice">
+            <Form.Label>Precio</Form.Label>
+            <Form.Control
+              type="number"
+              value={price}
+              onChange={(e) => {
+                if (e.target.value.length <= 5) {
+                  setPrice(e.target.value);
+                }
+              }}
+              maxLength={5}
+            />
+          </Form.Group>
+
+          <Form.Group className="mb-3">
             <Form.Label>Foto (300 x 200 px)</Form.Label>
+            {image && (
+              <div style={{ marginBottom: '10px' }}>
+                <img src={image} alt="Preview" style={{ width: '100%', maxHeight: '200px' }} />
+              </div>
+            )}
             <Form.Control type="file" accept="image/*" onChange={handleImageChange} />
-            {imageUrl && <img src={imageUrl} alt="Vista previa" style={{ width: '100px', height: '100px', marginTop: '10px' }} />}
           </Form.Group>
         </Form>
       </Modal.Body>
       <Modal.Footer>
         <Button variant="secondary" onClick={handleClose}>
-          Cancelar
+          Cerrar
         </Button>
-        <Button variant="primary" onClick={handleSubmit}>
-          Guardar
+        <Button variant="primary" onClick={handleSaveChanges}>
+          Guardar Cambios
         </Button>
       </Modal.Footer>
     </Modal>
   );
-};
+}
 
-export default ModalEcommerce;
+export default ModalEcommerce;
