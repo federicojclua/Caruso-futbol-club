@@ -7,6 +7,7 @@
     "start": "npm install -g serve && serve -s dist",
     "dev": "vite",
     "build": "vite build",
+    "prebuild": "ls node_modules/react-toastify",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
