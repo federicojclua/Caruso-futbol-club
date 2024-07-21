@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// Cargar variables de entorno
 try {
   require('dotenv').config();
 } catch (e) {
@@ -14,7 +13,7 @@ export default defineConfig({
   build: {
     manifest: false,
     rollupOptions: {
-      // No excluir CSS aquí
+       // Agrega CSS como externo si es necesario
     }
   },
   server: {

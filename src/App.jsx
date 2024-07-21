@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'animate.css';
-import 'react-toastify/dist/ReactToastify.css'; // Importa el CSS de react-toastify
+//import 'react-toastify/dist/ReactToastify.css'; // Importa el CSS de react-toastify
 import './App.css';
 import Info from './components/Info/Info';
 import Footer from './components/footer/Footer';
@@ -29,6 +29,7 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 import { AuthProvider } from './components/context/AuthProvider';
 import AdminRoute from './components/ProtectedRoute/AdminRoute';
 import { ToastContainer } from 'react-toastify'; // Importa ToastContainer
+import 'react-toastify/dist/ReactToastify.css';
 
 // Conexión con el back
 import CanchasComponent from './components/apiComponents/CanchasComponent';
@@ -36,6 +37,7 @@ import AuthComponent from './components/apiComponents/AuthComponent';
 import UserComponent from './components/apiComponents/UserComponent';
 import ProductsComponent from './components/apiComponents/ProductsComponent';
 import ReserverComponent from './components/apiComponents/ReserverComponent';
+
 
 const backendUrl = 'https://caruso-prueba-back-1.onrender.com';
 
