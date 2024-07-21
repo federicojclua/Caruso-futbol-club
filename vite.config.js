@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
+// Cargar variables de entorno
 try {
   require('dotenv').config();
 } catch (e) {
@@ -13,7 +14,7 @@ export default defineConfig({
   build: {
     manifest: false,
     rollupOptions: {
-      // Elimina 'react-toastify' de las dependencias externas
+      // No excluir CSS aquí
     }
   },
   server: {
