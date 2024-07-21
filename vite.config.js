@@ -1,8 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-
-// Intentar cargar dotenv solo si está disponible
 try {
   require('dotenv').config();
 } catch (e) {
@@ -14,8 +12,9 @@ export default defineConfig({
   base: '/', // Ajusta esta ruta según sea necesario
   build: {
     manifest: false,
-   
-    
+    rollupOptions: {
+      // Elimina 'react-toastify' de las dependencias externas
+    }
   },
   server: {
     proxy: {

@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'animate.css';
+import 'react-toastify/dist/ReactToastify.css'; // Importa el CSS de react-toastify
 import './App.css';
 import Info from './components/Info/Info';
 import Footer from './components/footer/Footer';
@@ -27,6 +28,7 @@ import Principal from './pages/Principal/Principal';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 import { AuthProvider } from './components/context/AuthProvider';
 import AdminRoute from './components/ProtectedRoute/AdminRoute';
+import { ToastContainer } from 'react-toastify'; // Importa ToastContainer
 
 // Conexión con el back
 import CanchasComponent from './components/apiComponents/CanchasComponent';
@@ -43,7 +45,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://caruso-prueba-back-1.onrender.com/api/data');
+        const response = await fetch(`${backendUrl}/api/data`);
         const data = await response.json();
         setData(data);
         console.log(data);
@@ -58,47 +60,50 @@ function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={
-            <Container className="Container-Main">
-              <NavBar />
-              <Header />
-              <LocationMain />
-              <Gallery />
-              <Info />
-              <Advertising />
-              <Tournament />
-              <Sponsors />
-              <Footer />
-              <WhatsAppButton />
-            </Container>
-          } />
-          <Route path="/login" element={<Login />} />
-          <Route path="/location" element={<Location />} />
-          <Route path="/ecommerce" element={<Ecommerce />} />
-          <Route path="/payment" element={<PaymentForm />} />
-          <Route path="/aboutUs" element={<AboutUs />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/Record" element={<Record />} />
-          <Route path="/canchas" element={<CanchasComponent />} />
-          <Route path="/auth" element={<AuthComponent />} />
-          <Route path="/users" element={<UserComponent />} />
-          <Route path="/reservas" element={<ReserverComponent />} />
-          <Route path="/products" element={<ProductsComponent />} />
+        <Container className="Container-Main">
+          <NavBar />
+          <ToastContainer /> {/* Agrega el ToastContainer aquí */}
+          <Routes>
+            <Route path="/" element={
+              <>
+                <Header />
+                <LocationMain />
+                <Gallery />
+                <Info />
+                <Advertising />
+                <Tournament />
+                <Sponsors />
+                <Footer />
+                <WhatsAppButton />
+              </>
+            } />
+            <Route path="/login" element={<Login />} />
+            <Route path="/location" element={<Location />} />
+            <Route path="/ecommerce" element={<Ecommerce />} />
+            <Route path="/payment" element={<PaymentForm />} />
+            <Route path="/aboutUs" element={<AboutUs />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/Record" element={<Record />} />
+            <Route path="/canchas" element={<CanchasComponent />} />
+            <Route path="/auth" element={<AuthComponent />} />
+            <Route path="/users" element={<UserComponent />} />
+            <Route path="/reservas" element={<ReserverComponent />} />
+            <Route path="/products" element={<ProductsComponent />} />
 
-          <Route path="/admin" element={
-            <AdminRoute>
-              <Admin />
-            </AdminRoute>
-          } />
+            <Route path="/admin" element={
+              <AdminRoute>
+                <Admin />
+              </AdminRoute>
+            } />
 
-          <Route path="/principal" element={
-            <ProtectedRoute>
-              <Principal />
-            </ProtectedRoute>
-          } />
-          <Route path="*" element={<Error404 />} />
-        </Routes>
+            <Route path="/principal" element={
+              <ProtectedRoute>
+                <Principal />
+              </ProtectedRoute>
+            } />
+            <Route path="*" element={<Error404 />} />
+          </Routes>
+        </Container>
       </BrowserRouter>
     </AuthProvider>
   );
