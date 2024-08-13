@@ -1,10 +1,12 @@
+// AuthContext.js
 import React, { createContext, useState, useEffect } from 'react';
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
     const [isLoggedIn, setIsLoggedIn] = useState(false); // Estado inicialmente falso
-    const [user, setUser] = useState(null); // Estado inicial de usuario nulo
+
+    const [user, setUser] = useState(null);
 
     useEffect(() => {
         // Al cargar la aplicación, intenta leer el token del almacenamiento local
@@ -13,17 +15,22 @@ export const AuthProvider = ({ children }) => {
             // Si se encuentra un token, establece el estado de autenticación en verdadero
             setIsLoggedIn(true);
             // Podrías decodificar el token aquí para obtener información adicional del usuario
+            // Por ejemplo, el ID del usuario, el rol, etc.
             // setUser(user);
         }
     }, []);
 
-    const login = (token, userData) => {
+    const login = (token, user) => {
         // Al iniciar sesión, establece el estado de autenticación en verdadero
         setIsLoggedIn(true);
         // Almacena el token en el almacenamiento local
+        localStorage.setItem('isLoggedIn', 'true'); // Establecer indicador de inicio de sesión
         localStorage.setItem('token', token);
-        // Almacena cualquier información del usuario en el estado
-        setUser(userData);
+
+        // Podrías decodificar el token aquí para obtener información adicional del usuario
+        // setUser(user);
+        setUser(user);
+
     };
 
     const logout = () => {
