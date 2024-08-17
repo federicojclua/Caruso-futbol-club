@@ -1,45 +1,46 @@
-// Authprovider.js
+// AuthProvider.js
 import React, { createContext, useState, useEffect } from 'react';
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
     const [isLoggedIn, setIsLoggedIn] = useState(false); // Estado inicialmente falso
+    const [user, setUser] = useState(null); // Usuario inicialmente nulo
 
-    const [user, setUser] = useState(null);
+    // Decodifica el token para obtener información del usuario
+    const decodeToken = (token) => {
+        // Aquí deberías implementar la lógica para decodificar el token
+        // Por ejemplo, usando jwt-decode si estás manejando JWTs:
+        // const decoded = jwtDecode(token);
+        // return decoded.user;
+        
+        // Por ahora, devuelve un usuario simulado
+        return { email: "user@example.com", name: "User" }; 
+    };
 
     useEffect(() => {
         // Al cargar la aplicación, intenta leer el token del almacenamiento local
         const token = localStorage.getItem('token');
         if (token) {
-            // Si se encuentra un token, establece el estado de autenticación en verdadero
             setIsLoggedIn(true);
-            // Podrías decodificar el token aquí para obtener información adicional del usuario
-            // Por ejemplo, el ID del usuario, el rol, etc.
-            // setUser(user);
+            const decodedUser = decodeToken(token); // Decodifica el token
+            setUser(decodedUser); // Establece el usuario decodificado
         }
     }, []);
 
     const login = (token, user) => {
         // Al iniciar sesión, establece el estado de autenticación en verdadero
         setIsLoggedIn(true);
-        // Almacena el token en el almacenamiento local
-        localStorage.setItem('isLoggedIn', 'true'); // Establecer indicador de inicio de sesión
-        localStorage.setItem('token', token);
-
-        // Podrías decodificar el token aquí para obtener información adicional del usuario
-        // setUser(user);
-        setUser(user);
-
+        localStorage.setItem('isLoggedIn', 'true'); // Almacena el estado de inicio de sesión
+        localStorage.setItem('token', token); // Almacena el token en el almacenamiento local
+        setUser(user); // Establece el usuario desde los datos de login
     };
 
     const logout = () => {
-        // Al cerrar sesión, establece el estado de autenticación en falso
+        // Al cerrar sesión, elimina el token y el estado del usuario
         setIsLoggedIn(false);
-        // Elimina el token del almacenamiento local
-        localStorage.removeItem('token');
-        // Limpia cualquier información del usuario
-        setUser(null);
+        localStorage.removeItem('token'); // Elimina el token del almacenamiento local
+        setUser(null); // Limpia la información del usuario
     };
 
     return (
