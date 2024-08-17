@@ -1,5 +1,6 @@
-// AuthProvider.js
 import React, { createContext, useState, useEffect } from 'react';
+// Importa jwt-decode si estás usando JWTs (descomenta si es necesario)
+// import jwtDecode from 'jwt-decode';
 
 const AuthContext = createContext();
 
@@ -14,7 +15,7 @@ export const AuthProvider = ({ children }) => {
         // const decoded = jwtDecode(token);
         // return decoded.user;
         
-        // Por ahora, devuelve un usuario simulado
+        // Por ahora, devuelve un usuario simulado para pruebas
         return { email: "user@example.com", name: "User" }; 
     };
 
@@ -39,6 +40,7 @@ export const AuthProvider = ({ children }) => {
     const logout = () => {
         // Al cerrar sesión, elimina el token y el estado del usuario
         setIsLoggedIn(false);
+        localStorage.removeItem('isLoggedIn'); // Elimina el estado de inicio de sesión del almacenamiento local
         localStorage.removeItem('token'); // Elimina el token del almacenamiento local
         setUser(null); // Limpia la información del usuario
     };
@@ -51,3 +53,4 @@ export const AuthProvider = ({ children }) => {
 };
 
 export default AuthContext;
+

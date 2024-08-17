@@ -11,6 +11,8 @@ const NavBar = () => {
   const navigate = useNavigate();
   const { isLoggedIn, user, logout } = useContext(AuthContext);
 
+  console.log('User:', user); // Verifica el contenido del objeto user
+
   const handleLogout = () => {
     logout();
     navigate('/');
@@ -41,12 +43,10 @@ const NavBar = () => {
                 <NavDropdown.Item as={Link} to="/mis-reservas">Mis Reservas</NavDropdown.Item>
               )}
             </NavDropdown>
-            {isLoggedIn && user.email === 'admin4@admin4.com' && (
+            {isLoggedIn && user?.email === 'admin4@admin4.com' && (
               <Nav.Link as={Link} to="/admin">Administrador</Nav.Link>
-            )}      
-
-
-  </Nav>
+            )}
+          </Nav>
           <Nav>
             {isLoggedIn && user ? (
               <NavDropdown
@@ -60,7 +60,7 @@ const NavBar = () => {
               >
                 <div className="user-info text-center">
                   <img src={user.image || userImagePlaceholder} alt="User Avatar" className="user-avatar-large" />
-                  <div>{user.name}</div>
+                  <div>{user.name || 'Nombre de Usuario'}</div>
                   <div className="text-muted">{user.email}</div>
                 </div>
                 <NavDropdown.Divider />
