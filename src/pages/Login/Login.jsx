@@ -7,7 +7,7 @@ import WhatsAppButton from '../../components/WhatsAppButton/WhatsAppButton';
 import './Login.css';
 import AuthContext from '../../components/context/AuthProvider'; // Contexto de autenticación
 import { Link } from 'react-router-dom';
-import { loginUser } from '../../api/usuariosAPI'; // Importar la función de login desde la API
+import { loginUser } from '../../api/userApi'; // Importar la función de login desde la API
 
 const Login = () => {
   const [email, setEmail] = useState('');
