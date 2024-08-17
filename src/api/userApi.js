@@ -1,5 +1,3 @@
-// src/api/usuariosAPI.js
-
 import axios from 'axios';
 
 const apiClient = axios.create({
@@ -8,6 +6,17 @@ const apiClient = axios.create({
     'Content-Type': 'application/json',
   },
 });
+
+// Función para iniciar sesión
+export const loginUser = async (email, password) => {
+  try {
+    const response = await apiClient.post('/api/auth/login', { email, password });
+    return response.data; // Devuelve el token y el objeto del usuario
+  } catch (error) {
+    console.error('Error logging in:', error);
+    throw error;
+  }
+};
 
 // Función para obtener todos los usuarios
 export const getAllUsers = async () => {
@@ -63,4 +72,5 @@ export const deleteUser = async (id) => {
     throw error;
   }
 };
-export default apiClient; 
+
+export default apiClient;

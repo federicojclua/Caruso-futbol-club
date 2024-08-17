@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'; // Importar useNavigate
+import React, { useState, useEffect, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import NavBar from '../../components/header/nav-bar/NavBar';
 import Footer from '../../components/footer/Footer';
 import WhatsAppButton from '../../components/WhatsAppButton/WhatsAppButton';
 import './Login.css';
-import { useContext } from 'react';
-import AuthContext from '../../components/context/AuthProvider';
+import AuthContext from '../../components/context/AuthProvider'; // Contexto de autenticación
 import { Link } from 'react-router-dom';
+import { loginUser } from '../../api/usuariosAPI'; // Importar la función de login desde la API
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -16,8 +16,8 @@ const Login = () => {
   const [passwordError, setPasswordError] = useState('');
   const [serverError, setServerError] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
-  const navigate = useNavigate(); // Usar useNavigate
-  const { login, user } = useContext(AuthContext); // Usa useContext para obtener la función de login
+  const navigate = useNavigate();
+  const { login } = useContext(AuthContext); // Usa useContext para obtener la función de login
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -46,35 +46,21 @@ const Login = () => {
       setPasswordError('');
     }
 
-    
-    const apiUrl = `${import.meta.env.VITE_APP_API_URL}/api/auth/login`;
-
     try {
-      const response = await fetch(apiUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, password }),
-      });
+      const data = await loginUser(email, password); // Llama a la API para hacer login
 
-      const data = await response.json();
-
-      if (response.ok) {
+      if (data.token && data.user) {
         setSuccessMessage('Sesión iniciada correctamente. ¡Bienvenido!');
-
-        login(data.token, data.user); // Llama a la función de login del contexto de autenticación
-
-        navigate('/Principal'); // Redirigir al usuario a la página principal
+        login(data.token, data.user); // Llama a la función login del contexto con el token y el usuario
+        navigate('/Principal'); // Redirige al usuario a la página principal
       } else {
-        setServerError(data.message || 'Correo o contraseña incorrecta, por favor, intente de nuevo.');
+        setServerError('Error en la respuesta del servidor.');
       }
     } catch (error) {
       setServerError('Correo o contraseña incorrecta, por favor, intente de nuevo.');
     }
   };
 
-  console.log(user);
   return (
     <div className="Login-component">
       <Helmet>
@@ -125,4 +111,3 @@ const Login = () => {
 };
 
 export default Login;
-
