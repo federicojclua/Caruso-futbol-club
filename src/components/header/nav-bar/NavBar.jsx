@@ -47,11 +47,21 @@ const NavBar = () => {
           </Nav>
           <Nav>
             {isLoggedIn && user ? (
-              <NavDropdown title={user.name || 'Usuario'} id="collasible-nav-dropdown">
-                <div className="user-info">
-                  <img src={user.image || userImagePlaceholder} alt="User Avatar" className="user-avatar" />
-                  <span className="user-name">{user.name || 'Nombre de Usuario'}</span>
+              <NavDropdown
+                title={(
+                  <div className="d-flex align-items-center">
+                    <img src={user.image || userImagePlaceholder} alt="User Avatar" className="user-avatar" />
+                    <span className="ms-2">{user.name || 'Nombre de Usuario'}</span>
+                  </div>
+                )}
+                id="collasible-nav-dropdown"
+              >
+                <div className="user-info text-center">
+                  <img src={user.image || userImagePlaceholder} alt="User Avatar" className="user-avatar-large" />
+                  <div>{user.name}</div>
+                  <div className="text-muted">{user.email}</div>
                 </div>
+                <NavDropdown.Divider />
                 <NavDropdown.Item as={Link} to="/perfil">Mi Perfil</NavDropdown.Item>
                 <NavDropdown.Item onClick={handleLogout}>Cerrar Sesión</NavDropdown.Item>
               </NavDropdown>
@@ -66,7 +76,6 @@ const NavBar = () => {
       </Container>
     </Navbar>
   );
-}
+};
 
 export default NavBar;
-

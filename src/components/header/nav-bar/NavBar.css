@@ -18,7 +18,7 @@
 
 /* Estilo para la barra de navegación */
 .navbar {
-  position: fixed; /* Fija la barra de navegación en la parte superior */
+  position: fixed;
   width: 100%;
   z-index: 50;
   color: #ffffff;
@@ -59,6 +59,37 @@
   font-size: 1vw; 
 }
 
+/* Estilo para el avatar del usuario en la barra de navegación */
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+/* Estilo para el avatar grande dentro del dropdown */
+.user-avatar-large {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  margin-bottom: 8px;
+}
+
+/* Estilo para la información del usuario dentro del dropdown */
+.user-info {
+  padding: 10px;
+  text-align: center;
+}
+
+/* Estilo para el nombre del usuario */
+.user-info .user-name {
+  font-weight: bold;
+}
+
+/* Estilo para el correo del usuario */
+.user-info .text-muted {
+  font-size: 0.875rem;
+}
+
 /* Media query para pantallas hasta 1200 píxeles */
 @media (max-width: 1200px) {
   .navbar {
@@ -75,17 +106,23 @@
     margin-left: 10px;
   }
   
-  .inicio-btn{
+  .inicio-btn {
     font-size: 1.5vw;
-    margin-right: -10px !important  ;
-
+    margin-right: -10px !important;
   }
+
   .me-auto {
     background-color: #258D19;
   }
   
   .dropdown-item {
     font-size: 1.5vw; /* Ajusta el tamaño del texto */
+  }
+
+  /* Ajuste del avatar en pantallas medianas */
+  .user-avatar {
+    width: 24px;
+    height: 24px;
   }
 }
 
@@ -112,6 +149,12 @@
   .dropdown-item {
     font-size: 1.5vw; 
   }
+
+  /* Ajuste del avatar en pantallas pequeñas */
+  .user-avatar {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 /* Media query para pantallas hasta 767 píxeles */
@@ -129,6 +172,7 @@
     font-size: 4vw; 
     margin-right: auto;
   }
+
   .navbar-nav .nav-link {
     padding-right: 100px !important; /* Ajuste para los botones del lado izquierdo */
     text-align: center;
@@ -141,10 +185,21 @@
   .dropdown-item {
     font-size: 3vw; 
   }
+
+  /* Ajuste del avatar en pantallas muy pequeñas */
+  .user-avatar {
+    width: 16px;
+    height: 16px;
+  }
+
+  .user-avatar-large {
+    width: 48px;
+    height: 48px;
+  }
 }
 
 /* Media query para pantallas hasta 430 píxeles */
-@media (max-width: 766px) {
+@media (max-width: 430px) {
   .navbar {
     flex-direction: column; 
     height: auto; 
@@ -166,6 +221,17 @@
 
   .dropdown-item {
     font-size: 3vw; 
+  }
+
+  /* Ajuste del avatar en pantallas muy pequeñas */
+  .user-avatar {
+    width: 14px;
+    height: 14px;
+  }
+
+  .user-avatar-large {
+    width: 40px;
+    height: 40px;
   }
 }
 
